@@ -12,224 +12,250 @@
       content="tienda de mascotas, juguetes para perros, juguetes para gatos, accesorios para mascotas, collares para perros, camas para gatos, tienda online de mascotas"
     />
     <title>WanCos Pet - Accesorios y Juguetes para Mascotas</title>
+
     <style>
-      /*Aqui estan todas las PROPIEDADES que le dan estilo a este proyecto*/
+      /* Reset y tipografías */
       * {
-        /* Reset básico, el *, select universar, sig: aplic esta regl a todos los elem de la pag*/
-        margin: 0; /* Elimina margenes predeterminados */
-        padding: 0; /* Elimina rellenos predeterminados */
-        box-sizing: border-box; /* Incluye el padding y border en el ancho y alto total */
-        font-family: "Poppins", sans-serif, Arial, Helvetica; /* Fuente moderna y legible, más fuen de respal*/
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif, Arial, Helvetica;
       }
+
+      /* SCROLL SUAVE */
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
-        /* Estilo general */
-        background-color: #fefcfb; /* Color de fondo suave y cálido */
-        color: #333; /* Color de texto oscuro para buena legibilidad */
-        line-height: 1.8; /* Espaciado entre líneas para mejorar la lectura */
+        background-color: #fefcfb;
+        color: #333;
+        line-height: 1.8;
       }
+
       header {
-        /* Encabezado */
-        background-color: #ff914d; /* Color vibrante y amigable */
-        color: #fff; /* Texto blanco para contraste */
-        padding: 1rem 2rem; /* Espaciado interno*/
-        text-align: center; /* Centrar texto */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+        background-color: #ff914d;
+        color: #fff;
+        padding: 1rem 2rem;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        position: sticky;
+        top: 0;
+        z-index: 1400;
       }
+
       header h1 {
-        /* Título principal */
-        font-size: 2rem; /* Tamaño grande para destacar */
-        margin-bottom: 0.5rem; /* Espacio debajo del título */
-        font-weight: 700; /* Negrita para resaltar */
+        font-size: 2rem;
+        margin-bottom: 0.25rem;
+        font-weight: 700;
       }
+
       nav {
-        /* Navegación */
-        margin-top: 0.5rem; /* Espacio encima de la navegación */
-        display: flex; /* Usar flexbox para distribuir enlaces */
-        justify-content: center; /* Centrar los enlaces */
-        flex-wrap: wrap; /* Permitir que los enlaces se envuelvan en pantallas pequeñas */
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem;
       }
 
       nav a {
-        color: #fff; /* Color del texto normal */
-        margin: 0 1rem;
-        text-decoration: none; /* Sin subrayado */
+        color: #fff;
+        margin: 0 0.35rem;
+        text-decoration: none;
         font-weight: bold;
-        transition: transform 0.3s ease, color 0.3s ease; /* Transiciones suaves */
-      }
-
-      /* Al pasar el ratón (hover) */
-      nav a:hover {
-        transform: translateY(-3px); /* Levanta el texto 3px */
-        color: #ffd700; /* Cambia a un amarillo dorado */
-      }
-
-      /* Al hacer clic (active) */
-      nav a:active {
-        transform: translateY(0); /* Vuelve a su posición al presionar */
-        color: #ffa500; /* Naranja, para indicar “clic” */
-      }
-
-      /* Para indicar que estás en la sección actual */
-      nav a.active {
-        color: #00bcd4; /* Celeste o color especial */
-      }
-
-      nav a:hover {
-        text-decoration: underline;
-      
+        padding: 0.45rem 0.8rem;
+        border-radius: 8px;
+        transition: transform 0.2s, background 0.2s, color 0.2s;
       }
 
       nav a:hover {
         transform: translateY(-3px);
+        color: #ffd700;
+      }
+
+      /* Clase que marca la pestaña activa (persistente) */
+      nav a.active {
         color: #7e1d1d;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        background: #fff3e8;
+        box-shadow: inset 0 -3px 0 #ff914d;
       }
 
       .hero {
-        background: url("https://cdn.pixabay.com/photo/2017/02/20/18/03/dog-2083492_1280.jpg")
-          center/cover;
-        height: 320px;
+        /* Imagen principal con varios perros y gatos */
+        background: url("https://cdn.pixabay.com/photo/2016/02/19/10/00/pets-1209621_1280.jpg")
+          center/cover no-repeat;
+        height: 340px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        margin-bottom: 1rem;
       }
+
       .hero h2 {
         font-size: 2.2rem;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.45);
         padding: 0.5rem 1rem;
         border-radius: 10px;
         color: #fff;
       }
-      /* Distintivo para la frase: */
+
       .hero .tagline {
-        margin-top: 1rem;
+        margin-top: 0.9rem;
         background: linear-gradient(90deg, #ffd6bd, #ff914d);
         color: #7e1d1d;
-        padding: 0.6rem 1rem;
+        padding: 0.5rem 0.9rem;
         border-radius: 999px;
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 1rem;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       }
 
-      .productos,
-      .ofertas {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        padding: 2rem;
+      /* Contenedor general de secciones */
+      section {
+        padding: 1.6rem 1.2rem;
       }
+
+      h2.section-title {
+        color: #ff914d;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      /* Grid productos */
+      .productos,
+      .ofertas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1rem;
+        padding: 0.6rem 0.6rem;
+      }
+
       .producto,
       .oferta {
         background: #fff;
         border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
         overflow: hidden;
-        transition: transform 0.4s ease;
+        transition: transform 0.25s ease;
+        display: flex;
+        flex-direction: column;
       }
+
       .producto:hover,
       .oferta:hover {
-        transform: translateY(-5px);
+        transform: translateY(-6px);
       }
+
       .producto img,
       .oferta img {
         width: 100%;
-        height: 200px;
+        height: 170px;
         object-fit: cover;
       }
+
       .producto-info,
       .oferta-info {
-        padding: 1rem;
+        padding: 0.9rem;
         text-align: center;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
+
       .producto-info h3,
       .oferta-info h3 {
         color: #ff914d;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.45rem;
+        font-size: 1.05rem;
       }
+
       .producto-info p,
       .oferta-info p {
-        font-size: 0.95rem;
+        font-size: 0.92rem;
         color: #555;
         margin-bottom: 0.8rem;
       }
+
+      .producto-info .price {
+        font-weight: 800;
+        margin-bottom: 0.6rem;
+      }
+
       .producto-info button,
       .oferta-info button {
         background-color: #ff914d;
         border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
+        padding: 0.5rem 0.8rem;
+        border-radius: 6px;
         color: #fff;
         cursor: pointer;
         font-weight: bold;
-        transition: background 0.3s;
       }
+
       .producto-info button:hover,
       .oferta-info button:hover {
         background-color: #ffab70;
       }
 
-      .reseñas {
-        background-color: #fff5ec;
-        padding: 2rem;
-        text-align: center;
-      }
-      .reseñas h2 {
-        color: #ff914d;
-        margin-bottom: 1rem;
-      }
-      .reseña {
-        margin: 1rem auto;
-        max-width: 600px;
-        background: #fff;
+      /* Carrito (icono principal en esquina) - AUMENTADO */
+      .carrito {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        background-color: #ffffff;
+        color: #000000;
+        padding: 0.9rem 1.1rem;
         border-radius: 10px;
-        padding: 1rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      }
-
-      .pago-simulador {
-        padding: 2rem;
-        text-align: center;
-      }
-      .pago-simulador input,
-      .pago-simulador button,
-      .pago-simulador select {
-        padding: 0.6rem;
-        margin: 0.5rem;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-      }
-      .pago-simulador button {
-        background-color: #ff914d;
-        color: #fff;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
         cursor: pointer;
+        z-index: 1500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.25rem;
       }
 
-      /* Sidebar carrito */
+      #carrito-count {
+        background: #ff4d4d;
+        color: #fff;
+        padding: 0.15rem 0.5rem;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+
+      /* Sidebar carrito (mantengo funcionalidad) */
       .sidebar-carrito {
         position: fixed;
         top: 0;
         right: -420px;
-        width: 380px;
+        width: 420px;
+        max-width: 95%;
         height: 100%;
         background-color: #fff;
-        box-shadow: -3px 0 16px rgba(0, 0, 0, 0.15);
-        transition: right 0.3s ease;
+        box-shadow: -6px 0 20px rgba(0, 0, 0, 0.18);
+        transition: right 0.32s ease;
         padding: 1rem;
         overflow-y: auto;
-        z-index: 1200;
+        z-index: 1490;
       }
+
       .sidebar-carrito.active {
         right: 0;
       }
+
       .sidebar-carrito h3 {
-        color: #ff914d;
+        color: #ff4d4d;
         text-align: center;
         margin-bottom: 1rem;
+        box-shadow: inset 0 -3px 0 #ff914d;
+        padding-bottom: 0.6rem;
       }
+
       .item-carrito {
         display: flex;
         justify-content: space-between;
@@ -237,6 +263,7 @@
         padding: 0.6rem 0;
         border-bottom: 1px dashed #eee;
       }
+
       .item-carrito button {
         background: transparent;
         border: none;
@@ -244,17 +271,38 @@
         cursor: pointer;
         font-weight: 700;
       }
-      .carrito {
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
+
+      /* Reseñas & simulador */
+      .reseñas {
+        background-color: #fff5ec;
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .reseña {
+        margin: 0.75rem auto;
+        max-width: 760px;
+        background: #fff;
+        border-radius: 8px;
+        padding: 0.8rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      }
+
+      .pago-simulador input,
+      .pago-simulador button,
+      .pago-simulador select {
+        padding: 0.55rem;
+        margin: 0.35rem;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+
+      .pago-simulador button {
         background-color: #ff914d;
         color: #fff;
-        padding: 0.6rem 1rem;
-        border-radius: 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         cursor: pointer;
-        z-index: 1300;
+        border: none;
       }
 
       footer {
@@ -262,7 +310,7 @@
         color: #fff;
         text-align: center;
         padding: 1rem;
-        margin-top: 2rem;
+        margin-top: 1.6rem;
       }
 
       /* Responsive */
@@ -270,30 +318,44 @@
         .sidebar-carrito {
           width: 100%;
         }
+        .producto img,
+        .oferta img {
+          height: 150px;
+        }
+        header h1 {
+          font-size: 1.5rem;
+        }
       }
     </style>
   </head>
+
   <body>
     <header>
       <h1>🐾 WanCos Pet</h1>
-      <nav>
-        <a href="#productos">Productos</a>
+      <nav id="mainNav">
+        <a href="#juguetes-perros">Juguetes Perros</a>
+        <a href="#accesorios-perros">Accesorios Perros</a>
+        <a href="#juguetes-gatos">Juguetes Gatos</a>
+        <a href="#accesorios-gatos">Accesorios Gatos</a>
         <a href="#ofertas">Ofertas</a>
         <a href="#reseñas">Reseñas</a>
-        <a href="#pago">Simulador de Pago</a>
+        <a href="#pago">Simulador</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </header>
 
-    <div class="hero">
+    <div class="hero" role="img" aria-label="Varios perros y gatos">
       <h2>Accesorios y Juguetes para Mascotas</h2>
       <div class="tagline">¡Cuida y consiente a tu mejor amigo!</div>
     </div>
 
-    <div class="carrito" onclick="toggleCarrito()">
-      🛒 <span id="carrito-count">0</span>
+    <!-- ICONO DE CARRITO (GRANDE) -->
+    <div class="carrito" onclick="toggleCarrito()" aria-label="Abrir carrito">
+      <span style="font-size: 1.6rem">🛒</span>
+      <span id="carrito-count">0</span>
     </div>
 
+    <!-- SIDEBAR CARRITO (funcional) -->
     <aside id="sidebarCarrito" class="sidebar-carrito" aria-hidden="true">
       <h3>Tu carrito</h3>
       <ul
@@ -306,10 +368,12 @@
           onclick="vaciarCarrito()"
           style="
             background: #ff4d4d;
-            color: #fff;
+            color: #ffffff;
             border: none;
             padding: 0.5rem 1rem;
             border-radius: 6px;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
           "
         >
           Vaciar carrito
@@ -326,90 +390,39 @@
       </div>
     </aside>
 
-    <section id="productos" class="productos">
-      <div class="producto">
-        <img
-          src="https://cdn.pixabay.com/photo/2016/02/19/10/00/dog-1209621_1280.jpg"
-          alt="Juguete para perro"
-        />
-        <div class="producto-info">
-          <h3>Pelota interactiva para perro</h3>
-          <p>Hecha de caucho resistente. Ideal para juego y ejercicio.</p>
-          <button
-            onclick="agregarAlCarrito('Pelota interactiva para perro', 25000)"
-          >
-            Añadir al carrito
-          </button>
-        </div>
-      </div>
+    <!-- SECCIONES SOLICITADAS (cada una tendrá 15 productos) -->
+    <section id="juguetes-perros">
+      <h2 class="section-title">Juguetes para perros</h2>
+      <div class="productos" id="lista-juguetes-perros"></div>
+    </section>
 
-      <div class="producto">
-        <img
-          src="https://cdn.pixabay.com/photo/2017/08/01/00/28/cat-2569144_1280.jpg"
-          alt="Cama para gato"
-        />
-        <div class="producto-info">
-          <h3>Cama suave para gato</h3>
-          <p>
-            Suave, cálida y fácil de lavar. Perfecta para el descanso felino.
-          </p>
-          <button onclick="agregarAlCarrito('Cama suave para gato', 40000)">
-            Añadir al carrito
-          </button>
-        </div>
-      </div>
+    <section id="accesorios-perros">
+      <h2 class="section-title">Accesorios para perros</h2>
+      <div class="productos" id="lista-accesorios-perros"></div>
+    </section>
 
-      <div class="producto">
-        <img
-          src="https://cdn.pixabay.com/photo/2019/07/02/16/52/dog-collar-4314947_1280.jpg"
-          alt="Collar para perro"
-        />
-        <div class="producto-info">
-          <h3>Collar ajustable</h3>
-          <p>Colorido y cómodo. Disponible en varias tallas.</p>
-          <button onclick="agregarAlCarrito('Collar ajustable', 30000)">
-            Añadir al carrito
-          </button>
-        </div>
+    <section id="juguetes-gatos">
+      <h2 class="section-title">Juguetes para gatos</h2>
+      <div class="productos" id="lista-juguetes-gatos"></div>
+    </section>
+
+    <section id="accesorios-gatos">
+      <h2 class="section-title">Accesorios para gatos</h2>
+      <div class="productos" id="lista-accesorios-gatos"></div>
+    </section>
+
+    <!-- Ofertas (mantuve parte del layout original) -->
+    <section id="ofertas">
+      <h2 class="section-title">Ofertas</h2>
+      <div class="ofertas-grid" id="ofertas-grid">
+        <!-- 2 ofertas de ejemplo -->
       </div>
     </section>
 
-    <section id="ofertas" class="ofertas">
-      <div class="oferta">
-        <img
-          src="https://cdn.pixabay.com/photo/2016/04/01/10/29/dog-1308619_1280.png"
-          alt="Paquete de juguetes para perro"
-        />
-        <div class="oferta-info">
-          <h3>Pack de juguetes para perro</h3>
-          <p>Incluye 3 juguetes resistentes + hueso de regalo 🦴</p>
-          <button
-            onclick="agregarAlCarrito('Pack de juguetes para perro', 50000)"
-          >
-            Añadir al carrito
-          </button>
-        </div>
-      </div>
-
-      <div class="oferta">
-        <img
-          src="https://cdn.pixabay.com/photo/2015/03/26/09/54/cat-690405_1280.jpg"
-          alt="Combo para gato"
-        />
-        <div class="oferta-info">
-          <h3>Combo para gato aventurero</h3>
-          <p>Cama + rascador + juguete con plumas 🐱</p>
-          <button
-            onclick="agregarAlCarrito('Combo para gato aventurero', 60000)"
-          >
-            Añadir al carrito
-          </button>
-        </div>
-      </div>
-    </section>
-
+    <!-- Reseñas (mantengo tus reseñas originales) -->
     <section id="reseñas" class="reseñas">
-      <h2>Opiniones de nuestros clientes</h2>
+      <h2 class="section-title">Opiniones de nuestros clientes</h2>
+
       <div class="reseña">
         <p>
           <strong>Laura G.:</strong> ¡Excelente calidad y atención! Mi perro ama
@@ -429,8 +442,9 @@
       </div>
     </section>
 
+    <!-- Simulador de pago (restaurado y mejorado) -->
     <section id="pago" class="pago-simulador">
-      <h2>Simulador de Pago</h2>
+      <h2 class="section-title">Simulador de Pago</h2>
       <p>Simula el pago de tu compra antes de finalizar:</p>
       <div style="margin-bottom: 0.6rem">
         <label for="ciudad">Ciudad de entrega:</label>
@@ -464,13 +478,147 @@
     </footer>
 
     <script>
-      let carrito = [];
-      let historialPagos = [];
+      /************ DATOS DE PRODUCTOS (15 por sección) ************/
+      // Imágenes de ejemplo (puedes cambiarlas por las tuyas)
+      const imgPerros = [
+        "https://cdn.pixabay.com/photo/2016/02/19/10/00/dog-1209621_1280.jpg",
+        "https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074_1280.jpg",
+      ];
+      const imgPerrosAcc = [
+        "https://cdn.pixabay.com/photo/2019/07/02/16/52/dog-collar-4314947_1280.jpg",
+      ];
+      const imgGatos = [
+        "https://cdn.pixabay.com/photo/2017/08/01/00/28/cat-2569144_1280.jpg",
+        "https://cdn.pixabay.com/photo/2016/11/29/03/53/cat-1867226_1280.jpg",
+      ];
+      const imgGatosAcc = [
+        "https://cdn.pixabay.com/photo/2016/03/27/22/22/cat-1285634_1280.jpg",
+      ];
+
+      // Genero 15 productos realistas por cada categoría
+      const juguetesPerros = Array.from({ length: 15 }, (_, i) => ({
+        nombre: `Pelota interactiva ${i + 1}`,
+        descripcion: "Caucho resistente, ideal para lanzar y morder.",
+        precio: 20000 + (i % 5) * 5000,
+        img: imgPerros[i % imgPerros.length],
+      }));
+
+      const accesoriosPerros = Array.from({ length: 15 }, (_, i) => ({
+        nombre: `Collar ajustable ${["S", "M", "L"][i % 3]} ${i + 1}`,
+        descripcion: "Collar resistente y cómodo.",
+        precio: 25000 + (i % 6) * 4000,
+        img: imgPerrosAcc[0],
+      }));
+
+      const juguetesGatos = Array.from({ length: 15 }, (_, i) => ({
+        nombre: `Juguete con plumas ${i + 1}`,
+        descripcion: "Estimula el instinto y el ejercicio.",
+        precio: 15000 + (i % 4) * 3000,
+        img: imgGatos[i % imgGatos.length],
+      }));
+
+      const accesoriosGatos = Array.from({ length: 15 }, (_, i) => ({
+        nombre: `Rascador modelo ${i + 1}`,
+        descripcion: "Ideal para afilar uñas y descansar.",
+        precio: 35000 + (i % 5) * 6000,
+        img: imgGatosAcc[0],
+      }));
+
+      const ofertas = [
+        {
+          nombre: "Pack juguetes mixto (3 unidades)",
+          descripcion: "Ahorra comprando el pack mixto.",
+          precio: 48000,
+          img: "https://cdn.pixabay.com/photo/2016/04/01/10/29/dog-1308619_1280.png",
+        },
+        {
+          nombre: "Combo para gato aventurero",
+          descripcion: "Cama + rascador + juguete.",
+          precio: 60000,
+          img: "https://cdn.pixabay.com/photo/2015/03/26/09/54/cat-690405_1280.jpg",
+        },
+      ];
+
+      /************ RENDERIZAR PRODUCTOS EN EL DOM ************/
+      function renderLista(idContenedor, lista) {
+        const cont = document.getElementById(idContenedor);
+        cont.innerHTML = "";
+        lista.forEach((p, idx) => {
+          const prod = document.createElement("article");
+          prod.className = "producto";
+          prod.innerHTML = `
+            <img src="${p.img}" alt="${p.nombre}" />
+            <div class="producto-info">
+              <div>
+                <h3>${p.nombre}</h3>
+                <p>${p.descripcion}</p>
+              </div>
+              <div>
+                <div class="price">$${p.precio.toLocaleString()} COP</div>
+                <button onclick="agregarAlCarrito('${escapeHtml(p.nombre)}', ${
+            p.precio
+          })">Añadir al carrito</button>
+              </div>
+            </div>
+          `;
+          cont.appendChild(prod);
+        });
+      }
+
+      // escapar comillas para inyectar en onclick
+      function escapeHtml(text) {
+        return text.replace(/'/g, "\\'");
+      }
+
+      // inicializo
+      renderLista("lista-juguetes-perros", juguetesPerros);
+      renderLista("lista-accesorios-perros", accesoriosPerros);
+      renderLista("lista-juguetes-gatos", juguetesGatos);
+      renderLista("lista-accesorios-gatos", accesoriosGatos);
+
+      // Ofertas
+      const ofertasGrid = document.getElementById("ofertas-grid");
+      ofertas.forEach((o) => {
+        const el = document.createElement("div");
+        el.className = "oferta";
+        el.innerHTML = `
+          <img src="${o.img}" alt="${o.nombre}" />
+          <div class="oferta-info">
+            <div>
+              <h3>${o.nombre}</h3>
+              <p>${o.descripcion}</p>
+            </div>
+            <div>
+              <div class="price">$${o.precio.toLocaleString()} COP</div>
+              <button onclick="agregarAlCarrito('${escapeHtml(o.nombre)}', ${
+          o.precio
+        })">Añadir al carrito</button>
+            </div>
+          </div>
+        `;
+        ofertasGrid.appendChild(el);
+      });
+
+      /************ CARRITO (GUARDADO temporalmente EN MEMORIA) ************/
+      let carrito = JSON.parse(
+        localStorage.getItem("wancos_carrito_v1") || "[]"
+      );
+      let historialPagos = JSON.parse(
+        localStorage.getItem("wancos_pagos_v1") || "[]"
+      );
+
+      function guardarCarrito() {
+        localStorage.setItem("wancos_carrito_v1", JSON.stringify(carrito));
+      }
+      function guardarHistorial() {
+        localStorage.setItem("wancos_pagos_v1", JSON.stringify(historialPagos));
+      }
 
       function agregarAlCarrito(producto, precio) {
         carrito.push({ producto, precio });
         document.getElementById("carrito-count").innerText = carrito.length;
         actualizarSidebar();
+        guardarCarrito();
       }
 
       function toggleCarrito() {
@@ -496,34 +644,35 @@
         totalEl.textContent = carrito.length
           ? `Total: $${total.toLocaleString()} COP`
           : "Carrito vacío";
+        document.getElementById("carrito-count").innerText = carrito.length;
         actualizarHistorialUI();
       }
 
       function eliminarDelCarrito(index) {
         carrito.splice(index, 1);
-        document.getElementById("carrito-count").innerText = carrito.length;
         actualizarSidebar();
+        guardarCarrito();
       }
 
       function vaciarCarrito() {
         carrito = [];
-        document.getElementById("carrito-count").innerText = 0;
         actualizarSidebar();
+        guardarCarrito();
       }
 
+      /************ SIMULADOR DE PAGO (mantengo tus funciones) ************/
       function simularPagoCarrito() {
-        // Usa total del carrito si monto no se especifica
         let subtotal = carrito.reduce((s, it) => s + it.precio, 0);
         const montoInput = parseFloat(document.getElementById("monto").value);
-        if (!isNaN(montoInput) && montoInput > 0) subtotal = montoInput; // permite sobreescribir
+        if (!isNaN(montoInput) && montoInput > 0) subtotal = montoInput;
 
         const ciudad = document.getElementById("ciudad").value;
         const incluirEnvio =
           document.getElementById("incluirEnvio").value === "si";
         const envio = ciudad.toLowerCase().startsWith("bog") ? 0 : 10000;
         const envioAplicado = incluirEnvio ? envio : 0;
-        const iva = subtotal * 0.19;
-        const total = subtotal + iva + envioAplicado;
+        const iva = Math.round(subtotal * 0.19);
+        const total = Math.round(subtotal + iva + envioAplicado);
 
         const pago = {
           tipo: "carrito",
@@ -535,6 +684,7 @@
         };
         historialPagos.push(pago);
         actualizarHistorialUI();
+        guardarHistorial();
 
         document.getElementById(
           "resultado-pago"
@@ -553,8 +703,8 @@
           document.getElementById("incluirEnvio").value === "si";
         const envio = ciudad.toLowerCase().startsWith("bog") ? 0 : 10000;
         const envioAplicado = incluirEnvio ? envio : 0;
-        const iva = montoInput * 0.19;
-        const total = montoInput + iva + envioAplicado;
+        const iva = Math.round(montoInput * 0.19);
+        const total = Math.round(montoInput + iva + envioAplicado);
 
         const pago = {
           tipo: "manual",
@@ -566,6 +716,7 @@
         };
         historialPagos.push(pago);
         actualizarHistorialUI();
+        guardarHistorial();
 
         document.getElementById(
           "resultado-pago"
@@ -594,8 +745,64 @@
           : "No hay pagos registrados";
       }
 
-      // iniciar interfaz
+      /************ INICIALIZACIÓN UI ************/
       actualizarSidebar();
+
+      /************ PERSISTENCIA Y RESALTADO DE MENU (funciona en escritorio y móvil) ************/
+      const links = document.querySelectorAll("nav a");
+      const sections = document.querySelectorAll("section[id]");
+
+      // Guardar al hacer click y aplicar 'active'
+      links.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          // Al hacer click guardo la sección en localStorage
+          const href = this.getAttribute("href");
+          localStorage.setItem("wancos_seccionActiva_v1", href);
+          marcarActivo(href);
+          // dejar que el browser haga scroll suave al ancla (scroll-behavior: smooth en css)
+        });
+      });
+
+      function marcarActivo(href) {
+        links.forEach((l) => {
+          l.classList.toggle("active", l.getAttribute("href") === href);
+        });
+      }
+
+      // Al cargar la página, restaura lo guardado
+      function restaurarActivoAlCargar() {
+        const guardado = localStorage.getItem("wancos_seccionActiva_v1");
+        if (guardado) {
+          marcarActivo(guardado);
+        } else {
+          // si no hay nada guardado, marca la primera
+          // (opcional) marcarActivo(links[0].getAttribute("href"));
+        }
+      }
+      window.addEventListener("load", restaurarActivoAlCargar);
+
+      // También actualizamos el enlace activo en base al scroll (mejora UX en desktop)
+      window.addEventListener("scroll", () => {
+        const y = window.scrollY;
+        let elegido = null;
+        sections.forEach((sec) => {
+          const rect = sec.getBoundingClientRect();
+          const top = rect.top + window.scrollY;
+          if (y >= top - 160) {
+            elegido = "#" + sec.id;
+          }
+        });
+        if (elegido) {
+          marcarActivo(elegido);
+          localStorage.setItem("wancos_seccionActiva_v1", elegido);
+        }
+      });
+
+      /************ UTILIDADES ADICIONALES ************/
+      // si quieres limpiar datos en desarrollo:
+      // localStorage.removeItem("wancos_carrito_v1");
+      // localStorage.removeItem("wancos_pagos_v1");
+      // localStorage.removeItem("wancos_seccionActiva_v1");
     </script>
   </body>
 </html>
