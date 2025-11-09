@@ -1,0 +1,403 @@
+/* Reset y tipografías */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Asegúrate de que Poppins esté enlazada en el HTML */
+  font-family: "Poppins", sans-serif, Arial, Helvetica;
+}
+
+/* SCROLL SUAVE */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fefcfb;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* --- HEADER y NAV MEJORADOS --- */
+header {
+  background-color: #ff914d;
+  color: #fff;
+  padding: 1rem 1rem; /* Reducido para móvil */
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1400;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+nav {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permitir que los enlaces se envuelvan */
+  gap: 0.4rem; /* Reducido para móvil */
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.45rem 0.6rem; /* Ajustado para caber más */
+  border-radius: 8px;
+  transition: transform 0.2s, background 0.2s, color 0.2s;
+  font-size: 0.85rem; /* Letra más pequeña para móvil */
+}
+
+nav a:hover {
+  transform: translateY(-3px);
+  color: #ffd700;
+}
+
+/* Clase que marca la pestaña activa (persistente) */
+nav a.active {
+  color: #7e1d1d;
+  background: #fff3e8;
+  box-shadow: inset 0 -3px 0 #ff914d;
+}
+
+/* --- HERO --- */
+.hero {
+  background: url("./img_sitio/imgdivhero.jpg")
+    center/cover no-repeat;
+  height: 300px; /* Altura ajustada para móvil */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  margin-bottom: 1rem;
+}
+
+.hero h2 {
+  font-size: 1.8rem; /* Reducido para móvil */
+  background-color: rgba(0, 0, 0, 0.45);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.hero .tagline {
+  margin-top: 0.9rem;
+  background: linear-gradient(90deg, #ffd6bd, #ff914d);
+  color: #7e1d1d;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Contenedor general de secciones */
+section {
+  padding: 1.6rem 0.8rem; /* Padding reducido para móvil */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2.section-title {
+  color: #ff914d;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  font-size: 1.7rem;
+  border-bottom: 2px solid #ff914d;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid productos */
+.productos,
+.ofertas-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(180px, 1fr)
+  ); /* Mínimo más pequeño para móvil */
+  gap: 1rem;
+  padding: 0.6rem 0;
+}
+
+.producto,
+.oferta {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition: transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.producto:hover,
+.oferta:hover {
+  transform: translateY(-6px);
+}
+
+.producto img,
+.oferta img {
+  width: 100%;
+  height: 150px; /* Altura ajustada */
+  object-fit: cover;
+}
+
+.producto-info,
+.oferta-info {
+  padding: 0.7rem; /* Padding ajustado */
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.producto-info h3,
+.oferta-info h3 {
+  color: #ff914d;
+  margin-bottom: 0.45rem;
+  font-size: 1rem; /* Ajustado */
+}
+
+.producto-info p,
+.oferta-info p {
+  font-size: 0.85rem; /* Ajustado */
+  color: #555;
+  margin-bottom: 0.6rem;
+}
+
+.producto-info .price {
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.producto-info button,
+.oferta-info button {
+  background-color: #ff914d;
+  border: none;
+  padding: 0.4rem 0.6rem; /* Ajustado */
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.producto-info button:hover,
+.oferta-info button:hover {
+  background-color: #ffab70;
+}
+
+/* --- CARRITO (icono principal en esquina) --- */
+.carrito {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0.7rem 0.9rem; /* Reducido un poco */
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.1rem;
+}
+
+#carrito-count {
+  background: #ff4d4d;
+  color: #fff;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+/* Sidebar carrito */
+.sidebar-carrito {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Ajustado a 300px (más pequeño) */
+  width: 300px; /* Ancho más pequeño para móvil */
+  max-width: 95%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -6px 0 20px rgba(0, 0, 0, 0.18);
+  transition: right 0.32s ease;
+  padding: 1rem;
+  overflow-y: auto;
+  z-index: 1490;
+}
+
+.sidebar-carrito.active {
+  right: 0;
+}
+
+.sidebar-carrito h3 {
+  color: #ff4d4d;
+  text-align: center;
+  margin-bottom: 1rem;
+  box-shadow: inset 0 -3px 0 #ff914d;
+  padding-bottom: 0.6rem;
+}
+
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed #eee;
+  font-size: 0.9rem; /* Ajustado */
+}
+
+.item-carrito button {
+  background: transparent;
+  border: none;
+  color: #ff4d4d;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* Botón de vaciar carrito en el sidebar */
+#vaciar-btn {
+  background: #ff4d4d;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* --- Reseñas & simulador --- */
+.reseñas {
+  background-color: #fff5ec;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.reseña {
+  margin: 0.75rem auto;
+  max-width: 760px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.pago-simulador {
+  text-align: center;
+}
+
+.simulador-controles {
+  display: flex;
+  flex-direction: column; /* Apilar elementos en móvil */
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pago-simulador input,
+.pago-simulador button,
+.pago-simulador select {
+  padding: 0.55rem;
+  margin: 0.35rem 0; /* Ajuste vertical para móvil */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%; /* Ocupar todo el ancho disponible */
+  max-width: 300px; /* Limitar ancho máximo */
+}
+
+.pago-simulador button {
+  background-color: #ff914d;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+
+.pago-simulador #resultado-pago {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #ff4d4d;
+  padding: 0.5rem;
+  border: 1px dashed #ff914d;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* --- FOOTER --- */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1.6rem;
+  font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE GENERAL (ajustes para pantallas más grandes) --- */
+@media (min-width: 768px) {
+  /* Restablecer o aumentar tamaños para escritorio */
+  header h1 {
+    font-size: 2.2rem;
+  }
+  nav {
+    gap: 0.6rem;
+  }
+  nav a {
+    font-size: 1rem;
+    padding: 0.45rem 0.8rem;
+  }
+  .hero {
+    height: 400px;
+  }
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  /* Ajustar grid de productos para escritorio */
+  .productos,
+  .ofertas-grid {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    padding: 0.6rem 2rem;
+  }
+
+  .sidebar-carrito {
+    width: 420px; /* Más ancho en escritorio */
+    right: -420px;
+  }
+
+  .simulador-controles {
+    flex-direction: row; /* Volver a horizontal en escritorio */
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .pago-simulador input,
+  .pago-simulador select {
+    width: auto;
+    max-width: none;
+  }
+  .pago-simulador button {
+    width: auto;
+    max-width: none;
+  }
+}

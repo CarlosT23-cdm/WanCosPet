@@ -12,321 +12,13 @@
       content="tienda de mascotas, juguetes para perros, juguetes para gatos, accesorios para mascotas, collares para perros, camas para gatos, tienda online de mascotas"
     />
     <title>WanCos Pet - Accesorios y Juguetes para Mascotas</title>
+    <link rel="icon" type="img/png" href="./img_sitio/favicon_pata.png" />
 
-    <style>
-      /* Reset y tipografías */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif, Arial, Helvetica;
-      }
-
-      /* SCROLL SUAVE */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        background-color: #fefcfb;
-        color: #333;
-        line-height: 1.8;
-      }
-
-      header {
-        background-color: #ff914d;
-        color: #fff;
-        padding: 1rem 2rem;
-        text-align: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        position: sticky;
-        top: 0;
-        z-index: 1400;
-      }
-
-      header h1 {
-        font-size: 2rem;
-        margin-bottom: 0.25rem;
-        font-weight: 700;
-      }
-
-      nav {
-        margin-top: 0.5rem;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 0.6rem;
-      }
-
-      nav a {
-        color: #fff;
-        margin: 0 0.35rem;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 0.45rem 0.8rem;
-        border-radius: 8px;
-        transition: transform 0.2s, background 0.2s, color 0.2s;
-      }
-
-      nav a:hover {
-        transform: translateY(-3px);
-        color: #ffd700;
-      }
-
-      /* Clase que marca la pestaña activa (persistente) */
-      nav a.active {
-        color: #7e1d1d;
-        background: #fff3e8;
-        box-shadow: inset 0 -3px 0 #ff914d;
-      }
-
-      .hero {
-        /* Imagen principal con varios perros y gatos */
-        background: url("https://cdn.pixabay.com/photo/2016/02/19/10/00/pets-1209621_1280.jpg")
-          center/cover no-repeat;
-        height: 340px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-        margin-bottom: 1rem;
-      }
-
-      .hero h2 {
-        font-size: 2.2rem;
-        background-color: rgba(0, 0, 0, 0.45);
-        padding: 0.5rem 1rem;
-        border-radius: 10px;
-        color: #fff;
-      }
-
-      .hero .tagline {
-        margin-top: 0.9rem;
-        background: linear-gradient(90deg, #ffd6bd, #ff914d);
-        color: #7e1d1d;
-        padding: 0.5rem 0.9rem;
-        border-radius: 999px;
-        font-weight: 700;
-        font-size: 1rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-      }
-
-      /* Contenedor general de secciones */
-      section {
-        padding: 1.6rem 1.2rem;
-      }
-
-      h2.section-title {
-        color: #ff914d;
-        margin-bottom: 1rem;
-        text-align: center;
-      }
-
-      /* Grid productos */
-      .productos,
-      .ofertas-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        gap: 1rem;
-        padding: 0.6rem 0.6rem;
-      }
-
-      .producto,
-      .oferta {
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-        overflow: hidden;
-        transition: transform 0.25s ease;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .producto:hover,
-      .oferta:hover {
-        transform: translateY(-6px);
-      }
-
-      .producto img,
-      .oferta img {
-        width: 100%;
-        height: 170px;
-        object-fit: cover;
-      }
-
-      .producto-info,
-      .oferta-info {
-        padding: 0.9rem;
-        text-align: center;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-
-      .producto-info h3,
-      .oferta-info h3 {
-        color: #ff914d;
-        margin-bottom: 0.45rem;
-        font-size: 1.05rem;
-      }
-
-      .producto-info p,
-      .oferta-info p {
-        font-size: 0.92rem;
-        color: #555;
-        margin-bottom: 0.8rem;
-      }
-
-      .producto-info .price {
-        font-weight: 800;
-        margin-bottom: 0.6rem;
-      }
-
-      .producto-info button,
-      .oferta-info button {
-        background-color: #ff914d;
-        border: none;
-        padding: 0.5rem 0.8rem;
-        border-radius: 6px;
-        color: #fff;
-        cursor: pointer;
-        font-weight: bold;
-      }
-
-      .producto-info button:hover,
-      .oferta-info button:hover {
-        background-color: #ffab70;
-      }
-
-      /* Carrito (icono principal en esquina) - AUMENTADO */
-      .carrito {
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        background-color: #ffffff;
-        color: #000000;
-        padding: 0.9rem 1.1rem;
-        border-radius: 10px;
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
-        cursor: pointer;
-        z-index: 1500;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 1.25rem;
-      }
-
-      #carrito-count {
-        background: #ff4d4d;
-        color: #fff;
-        padding: 0.15rem 0.5rem;
-        border-radius: 999px;
-        font-weight: 700;
-        font-size: 0.85rem;
-      }
-
-      /* Sidebar carrito (mantengo funcionalidad) */
-      .sidebar-carrito {
-        position: fixed;
-        top: 0;
-        right: -420px;
-        width: 420px;
-        max-width: 95%;
-        height: 100%;
-        background-color: #fff;
-        box-shadow: -6px 0 20px rgba(0, 0, 0, 0.18);
-        transition: right 0.32s ease;
-        padding: 1rem;
-        overflow-y: auto;
-        z-index: 1490;
-      }
-
-      .sidebar-carrito.active {
-        right: 0;
-      }
-
-      .sidebar-carrito h3 {
-        color: #ff4d4d;
-        text-align: center;
-        margin-bottom: 1rem;
-        box-shadow: inset 0 -3px 0 #ff914d;
-        padding-bottom: 0.6rem;
-      }
-
-      .item-carrito {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.6rem 0;
-        border-bottom: 1px dashed #eee;
-      }
-
-      .item-carrito button {
-        background: transparent;
-        border: none;
-        color: #ff4d4d;
-        cursor: pointer;
-        font-weight: 700;
-      }
-
-      /* Reseñas & simulador */
-      .reseñas {
-        background-color: #fff5ec;
-        padding: 1rem;
-        border-radius: 12px;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-      }
-
-      .reseña {
-        margin: 0.75rem auto;
-        max-width: 760px;
-        background: #fff;
-        border-radius: 8px;
-        padding: 0.8rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-      }
-
-      .pago-simulador input,
-      .pago-simulador button,
-      .pago-simulador select {
-        padding: 0.55rem;
-        margin: 0.35rem;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-      }
-
-      .pago-simulador button {
-        background-color: #ff914d;
-        color: #fff;
-        cursor: pointer;
-        border: none;
-      }
-
-      footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 1rem;
-        margin-top: 1.6rem;
-      }
-
-      /* Responsive */
-      @media (max-width: 700px) {
-        .sidebar-carrito {
-          width: 100%;
-        }
-        .producto img,
-        .oferta img {
-          height: 150px;
-        }
-        header h1 {
-          font-size: 1.5rem;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="estiloswancos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -349,13 +41,11 @@
       <div class="tagline">¡Cuida y consiente a tu mejor amigo!</div>
     </div>
 
-    <!-- ICONO DE CARRITO (GRANDE) -->
     <div class="carrito" onclick="toggleCarrito()" aria-label="Abrir carrito">
       <span style="font-size: 1.6rem">🛒</span>
       <span id="carrito-count">0</span>
     </div>
 
-    <!-- SIDEBAR CARRITO (funcional) -->
     <aside id="sidebarCarrito" class="sidebar-carrito" aria-hidden="true">
       <h3>Tu carrito</h3>
       <ul
@@ -364,20 +54,7 @@
       ></ul>
       <p id="total-carrito" style="font-weight: 700; text-align: center"></p>
       <div style="text-align: center; margin-top: 1rem">
-        <button
-          onclick="vaciarCarrito()"
-          style="
-            background: #ff4d4d;
-            color: #ffffff;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-          "
-        >
-          Vaciar carrito
-        </button>
+        <button id="vaciar-btn">Vaciar carrito</button>
       </div>
       <hr style="margin: 1rem 0" />
       <div>
@@ -390,7 +67,6 @@
       </div>
     </aside>
 
-    <!-- SECCIONES SOLICITADAS (cada una tendrá 15 productos) -->
     <section id="juguetes-perros">
       <h2 class="section-title">Juguetes para perros</h2>
       <div class="productos" id="lista-juguetes-perros"></div>
@@ -411,15 +87,11 @@
       <div class="productos" id="lista-accesorios-gatos"></div>
     </section>
 
-    <!-- Ofertas (mantuve parte del layout original) -->
     <section id="ofertas">
       <h2 class="section-title">Ofertas</h2>
-      <div class="ofertas-grid" id="ofertas-grid">
-        <!-- 2 ofertas de ejemplo -->
-      </div>
+      <div class="ofertas-grid" id="ofertas-grid"></div>
     </section>
 
-    <!-- Reseñas (mantengo tus reseñas originales) -->
     <section id="reseñas" class="reseñas">
       <h2 class="section-title">Opiniones de nuestros clientes</h2>
 
@@ -442,32 +114,33 @@
       </div>
     </section>
 
-    <!-- Simulador de pago (restaurado y mejorado) -->
     <section id="pago" class="pago-simulador">
       <h2 class="section-title">Simulador de Pago</h2>
       <p>Simula el pago de tu compra antes de finalizar:</p>
-      <div style="margin-bottom: 0.6rem">
-        <label for="ciudad">Ciudad de entrega:</label>
-        <select id="ciudad">
-          <option value="Bogotá">Bogotá</option>
-          <option value="Otro">Otro departamento (Colombia)</option>
-        </select>
+      <div class="simulador-controles">
+        <div>
+          <label for="ciudad">Ciudad de entrega:</label>
+          <select id="ciudad">
+            <option value="Bogotá">Bogotá</option>
+            <option value="Otro">Otro departamento (Colombia)</option>
+          </select>
+        </div>
+        <div>
+          <label for="incluirEnvio">Incluir envío:</label>
+          <select id="incluirEnvio">
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <input
+          type="number"
+          id="monto"
+          placeholder="Monto COP (0 para usar total carrito)"
+        />
+        <br />
+        <button id="simular-carrito-btn">Simular pago del carrito</button>
+        <button id="simular-manual-btn">Simular pago manual</button>
       </div>
-      <div style="margin-bottom: 0.6rem">
-        <label for="incluirEnvio">Incluir envío:</label>
-        <select id="incluirEnvio">
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-      <input
-        type="number"
-        id="monto"
-        placeholder="Ingresa el monto en COP (o deja 0 para usar total del carrito)"
-      />
-      <br />
-      <button onclick="simularPagoCarrito()">Simular pago del carrito</button>
-      <button onclick="simularPagoManual()">Simular pago manual</button>
       <p id="resultado-pago"></p>
     </section>
 
@@ -477,332 +150,6 @@
       <p>Email - wancos.pet@gmail.com</p>
     </footer>
 
-    <script>
-      /************ DATOS DE PRODUCTOS (15 por sección) ************/
-      // Imágenes de ejemplo (puedes cambiarlas por las tuyas)
-      const imgPerros = [
-        "https://cdn.pixabay.com/photo/2016/02/19/10/00/dog-1209621_1280.jpg",
-        "https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074_1280.jpg",
-      ];
-      const imgPerrosAcc = [
-        "https://cdn.pixabay.com/photo/2019/07/02/16/52/dog-collar-4314947_1280.jpg",
-      ];
-      const imgGatos = [
-        "https://cdn.pixabay.com/photo/2017/08/01/00/28/cat-2569144_1280.jpg",
-        "https://cdn.pixabay.com/photo/2016/11/29/03/53/cat-1867226_1280.jpg",
-      ];
-      const imgGatosAcc = [
-        "https://cdn.pixabay.com/photo/2016/03/27/22/22/cat-1285634_1280.jpg",
-      ];
-
-      // Genero 15 productos realistas por cada categoría
-      const juguetesPerros = Array.from({ length: 15 }, (_, i) => ({
-        nombre: `Pelota interactiva ${i + 1}`,
-        descripcion: "Caucho resistente, ideal para lanzar y morder.",
-        precio: 20000 + (i % 5) * 5000,
-        img: imgPerros[i % imgPerros.length],
-      }));
-
-      const accesoriosPerros = Array.from({ length: 15 }, (_, i) => ({
-        nombre: `Collar ajustable ${["S", "M", "L"][i % 3]} ${i + 1}`,
-        descripcion: "Collar resistente y cómodo.",
-        precio: 25000 + (i % 6) * 4000,
-        img: imgPerrosAcc[0],
-      }));
-
-      const juguetesGatos = Array.from({ length: 15 }, (_, i) => ({
-        nombre: `Juguete con plumas ${i + 1}`,
-        descripcion: "Estimula el instinto y el ejercicio.",
-        precio: 15000 + (i % 4) * 3000,
-        img: imgGatos[i % imgGatos.length],
-      }));
-
-      const accesoriosGatos = Array.from({ length: 15 }, (_, i) => ({
-        nombre: `Rascador modelo ${i + 1}`,
-        descripcion: "Ideal para afilar uñas y descansar.",
-        precio: 35000 + (i % 5) * 6000,
-        img: imgGatosAcc[0],
-      }));
-
-      const ofertas = [
-        {
-          nombre: "Pack juguetes mixto (3 unidades)",
-          descripcion: "Ahorra comprando el pack mixto.",
-          precio: 48000,
-          img: "https://cdn.pixabay.com/photo/2016/04/01/10/29/dog-1308619_1280.png",
-        },
-        {
-          nombre: "Combo para gato aventurero",
-          descripcion: "Cama + rascador + juguete.",
-          precio: 60000,
-          img: "https://cdn.pixabay.com/photo/2015/03/26/09/54/cat-690405_1280.jpg",
-        },
-      ];
-
-      /************ RENDERIZAR PRODUCTOS EN EL DOM ************/
-      function renderLista(idContenedor, lista) {
-        const cont = document.getElementById(idContenedor);
-        cont.innerHTML = "";
-        lista.forEach((p, idx) => {
-          const prod = document.createElement("article");
-          prod.className = "producto";
-          prod.innerHTML = `
-            <img src="${p.img}" alt="${p.nombre}" />
-            <div class="producto-info">
-              <div>
-                <h3>${p.nombre}</h3>
-                <p>${p.descripcion}</p>
-              </div>
-              <div>
-                <div class="price">$${p.precio.toLocaleString()} COP</div>
-                <button onclick="agregarAlCarrito('${escapeHtml(p.nombre)}', ${
-            p.precio
-          })">Añadir al carrito</button>
-              </div>
-            </div>
-          `;
-          cont.appendChild(prod);
-        });
-      }
-
-      // escapar comillas para inyectar en onclick
-      function escapeHtml(text) {
-        return text.replace(/'/g, "\\'");
-      }
-
-      // inicializo
-      renderLista("lista-juguetes-perros", juguetesPerros);
-      renderLista("lista-accesorios-perros", accesoriosPerros);
-      renderLista("lista-juguetes-gatos", juguetesGatos);
-      renderLista("lista-accesorios-gatos", accesoriosGatos);
-
-      // Ofertas
-      const ofertasGrid = document.getElementById("ofertas-grid");
-      ofertas.forEach((o) => {
-        const el = document.createElement("div");
-        el.className = "oferta";
-        el.innerHTML = `
-          <img src="${o.img}" alt="${o.nombre}" />
-          <div class="oferta-info">
-            <div>
-              <h3>${o.nombre}</h3>
-              <p>${o.descripcion}</p>
-            </div>
-            <div>
-              <div class="price">$${o.precio.toLocaleString()} COP</div>
-              <button onclick="agregarAlCarrito('${escapeHtml(o.nombre)}', ${
-          o.precio
-        })">Añadir al carrito</button>
-            </div>
-          </div>
-        `;
-        ofertasGrid.appendChild(el);
-      });
-
-      /************ CARRITO (GUARDADO temporalmente EN MEMORIA) ************/
-      let carrito = JSON.parse(
-        localStorage.getItem("wancos_carrito_v1") || "[]"
-      );
-      let historialPagos = JSON.parse(
-        localStorage.getItem("wancos_pagos_v1") || "[]"
-      );
-
-      function guardarCarrito() {
-        localStorage.setItem("wancos_carrito_v1", JSON.stringify(carrito));
-      }
-      function guardarHistorial() {
-        localStorage.setItem("wancos_pagos_v1", JSON.stringify(historialPagos));
-      }
-
-      function agregarAlCarrito(producto, precio) {
-        carrito.push({ producto, precio });
-        document.getElementById("carrito-count").innerText = carrito.length;
-        actualizarSidebar();
-        guardarCarrito();
-      }
-
-      function toggleCarrito() {
-        const sb = document.getElementById("sidebarCarrito");
-        sb.classList.toggle("active");
-        sb.setAttribute("aria-hidden", !sb.classList.contains("active"));
-      }
-
-      function actualizarSidebar() {
-        const lista = document.getElementById("lista-carrito");
-        const totalEl = document.getElementById("total-carrito");
-        lista.innerHTML = "";
-        let total = 0;
-        carrito.forEach((item, index) => {
-          const li = document.createElement("li");
-          li.className = "item-carrito";
-          li.innerHTML = `<span>${
-            item.producto
-          } - $${item.precio.toLocaleString()}</span> <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
-          lista.appendChild(li);
-          total += item.precio;
-        });
-        totalEl.textContent = carrito.length
-          ? `Total: $${total.toLocaleString()} COP`
-          : "Carrito vacío";
-        document.getElementById("carrito-count").innerText = carrito.length;
-        actualizarHistorialUI();
-      }
-
-      function eliminarDelCarrito(index) {
-        carrito.splice(index, 1);
-        actualizarSidebar();
-        guardarCarrito();
-      }
-
-      function vaciarCarrito() {
-        carrito = [];
-        actualizarSidebar();
-        guardarCarrito();
-      }
-
-      /************ SIMULADOR DE PAGO (mantengo tus funciones) ************/
-      function simularPagoCarrito() {
-        let subtotal = carrito.reduce((s, it) => s + it.precio, 0);
-        const montoInput = parseFloat(document.getElementById("monto").value);
-        if (!isNaN(montoInput) && montoInput > 0) subtotal = montoInput;
-
-        const ciudad = document.getElementById("ciudad").value;
-        const incluirEnvio =
-          document.getElementById("incluirEnvio").value === "si";
-        const envio = ciudad.toLowerCase().startsWith("bog") ? 0 : 10000;
-        const envioAplicado = incluirEnvio ? envio : 0;
-        const iva = Math.round(subtotal * 0.19);
-        const total = Math.round(subtotal + iva + envioAplicado);
-
-        const pago = {
-          tipo: "carrito",
-          subtotal,
-          iva,
-          envio: envioAplicado,
-          total,
-          fecha: new Date().toISOString(),
-        };
-        historialPagos.push(pago);
-        actualizarHistorialUI();
-        guardarHistorial();
-
-        document.getElementById(
-          "resultado-pago"
-        ).innerText = `Subtotal: $${subtotal.toLocaleString()} | IVA: $${iva.toLocaleString()} | Envío: $${envioAplicado.toLocaleString()} | Total: $${total.toLocaleString()} COP`;
-      }
-
-      function simularPagoManual() {
-        const montoInput = parseFloat(document.getElementById("monto").value);
-        if (isNaN(montoInput) || montoInput <= 0) {
-          document.getElementById("resultado-pago").innerText =
-            "Por favor ingresa un monto válido para simular el pago manual.";
-          return;
-        }
-        const ciudad = document.getElementById("ciudad").value;
-        const incluirEnvio =
-          document.getElementById("incluirEnvio").value === "si";
-        const envio = ciudad.toLowerCase().startsWith("bog") ? 0 : 10000;
-        const envioAplicado = incluirEnvio ? envio : 0;
-        const iva = Math.round(montoInput * 0.19);
-        const total = Math.round(montoInput + iva + envioAplicado);
-
-        const pago = {
-          tipo: "manual",
-          subtotal: montoInput,
-          iva,
-          envio: envioAplicado,
-          total,
-          fecha: new Date().toISOString(),
-        };
-        historialPagos.push(pago);
-        actualizarHistorialUI();
-        guardarHistorial();
-
-        document.getElementById(
-          "resultado-pago"
-        ).innerText = `Subtotal: $${montoInput.toLocaleString()} | IVA: $${iva.toLocaleString()} | Envío: $${envioAplicado.toLocaleString()} | Total: $${total.toLocaleString()} COP`;
-      }
-
-      function actualizarHistorialUI() {
-        const historialEl = document.getElementById("historial-pagos");
-        const acumuladoEl = document.getElementById("acumulado-pagos");
-        historialEl.innerHTML = "";
-        let acumulado = 0;
-        historialPagos.forEach((pago, i) => {
-          const li = document.createElement("li");
-          li.style.padding = "0.4rem 0";
-          li.style.borderBottom = "1px solid #f0f0f0";
-          li.innerHTML = `${
-            i + 1
-          }. ${pago.tipo.toUpperCase()} - Total: $${pago.total.toLocaleString()} - Fecha: ${new Date(
-            pago.fecha
-          ).toLocaleString()}`;
-          historialEl.appendChild(li);
-          acumulado += pago.total;
-        });
-        acumuladoEl.textContent = historialPagos.length
-          ? `Total pagado (acumulado): $${acumulado.toLocaleString()} COP`
-          : "No hay pagos registrados";
-      }
-
-      /************ INICIALIZACIÓN UI ************/
-      actualizarSidebar();
-
-      /************ PERSISTENCIA Y RESALTADO DE MENU (funciona en escritorio y móvil) ************/
-      const links = document.querySelectorAll("nav a");
-      const sections = document.querySelectorAll("section[id]");
-
-      // Guardar al hacer click y aplicar 'active'
-      links.forEach((link) => {
-        link.addEventListener("click", function (e) {
-          // Al hacer click guardo la sección en localStorage
-          const href = this.getAttribute("href");
-          localStorage.setItem("wancos_seccionActiva_v1", href);
-          marcarActivo(href);
-          // dejar que el browser haga scroll suave al ancla (scroll-behavior: smooth en css)
-        });
-      });
-
-      function marcarActivo(href) {
-        links.forEach((l) => {
-          l.classList.toggle("active", l.getAttribute("href") === href);
-        });
-      }
-
-      // Al cargar la página, restaura lo guardado
-      function restaurarActivoAlCargar() {
-        const guardado = localStorage.getItem("wancos_seccionActiva_v1");
-        if (guardado) {
-          marcarActivo(guardado);
-        } else {
-          // si no hay nada guardado, marca la primera
-          // (opcional) marcarActivo(links[0].getAttribute("href"));
-        }
-      }
-      window.addEventListener("load", restaurarActivoAlCargar);
-
-      // También actualizamos el enlace activo en base al scroll (mejora UX en desktop)
-      window.addEventListener("scroll", () => {
-        const y = window.scrollY;
-        let elegido = null;
-        sections.forEach((sec) => {
-          const rect = sec.getBoundingClientRect();
-          const top = rect.top + window.scrollY;
-          if (y >= top - 160) {
-            elegido = "#" + sec.id;
-          }
-        });
-        if (elegido) {
-          marcarActivo(elegido);
-          localStorage.setItem("wancos_seccionActiva_v1", elegido);
-        }
-      });
-
-      /************ UTILIDADES ADICIONALES ************/
-      // si quieres limpiar datos en desarrollo:
-      // localStorage.removeItem("wancos_carrito_v1");
-      // localStorage.removeItem("wancos_pagos_v1");
-      // localStorage.removeItem("wancos_seccionActiva_v1");
-    </script>
+    <script src="logicawancos.js"></script>
   </body>
 </html>
