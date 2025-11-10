@@ -1,49 +1,138 @@
-/************ DATOS DE PRODUCTOS (15 por sección) ************/
-// Imágenes de ejemplo (puedes cambiarlas por las tuyas)
-const imgPerros = [
-  "https://cdn.pixabay.com/photo/2016/02/19/10/00/dog-1209621_1280.jpg",
-  "https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074_1280.jpg",
-];
-const imgPerrosAcc = [
-  "https://cdn.pixabay.com/photo/2019/07/02/16/52/dog-collar-4314947_1280.jpg",
-];
-const imgGatos = [
-  "https://cdn.pixabay.com/photo/2017/08/01/00/28/cat-2569144_1280.jpg",
-  "https://cdn.pixabay.com/photo/2016/11/29/03/53/cat-1867226_1280.jpg",
-];
-const imgGatosAcc = [
-  "https://cdn.pixabay.com/photo/2016/03/27/22/22/cat-1285634_1280.jpg",
+//DATOS DE PRODUCTOS WANCOSPET//
+
+//Rutas base
+const rutaBasePerrosJug = "./img_tienda/img_perros_juguetes/";
+const rutaBasePerrosAcc = "./img_tienda/img_perros_accesorios/";
+const rutaBaseGatosJug = "./img_tienda/img_gatos_juguetes/";
+const rutaBaseGatosAcc = "./img_tienda/img_gatos_accesorios/";
+
+//Lista juguetes para perros.
+const nombresImgPerrosJug = [
+  "Ardilla_chillona_dog_01.jpg",
+  "Ardilla_chillona_dog_02.jpg",
+  "Berengena_chillona_dog_jug_01.jpg",
+  "Cangrejo_dog_01.jpg",
+  "Cerdito_chillon_peq_jug_dog_01.jpg",
+  "Dona_antisarro_jug_dog_01.jpg",
+  "Hueso_bicolor_x2_dog_jug_01.jpg",
+  "Hueso_dentado_3x4_dog_jug_01.jpg",
+  "Hueso_dino_dog_jug_01.jpg",
+  "Hueso_mordedor_jug_dog_01.jpg",
+  "Hueso_pitbull_dog_jug_01.jpg",
+  "Jalador_trenza_mediano_dog_jug_01.jpg",
+  "Pelota_chillona_futbol_americano_jug_dog_01.jpg",
+  "Pelota_disco_jug_dog_01.jpg",
+  "Pelota_lazo_dog_jug_01.jpg",
+  "Pelota_lazo_dog_jug_02.jpg",
+  "Pelota_lazo_tenis_jug_dog_01.jpg",
+  "Pelota_rugby_sonido_jug_dog_01.jpg",
+  "Pelota_snack_dog_jug_01.jpg",
+  "Peluche_lona_jug_dog_01.jpg",
+  "Peluche_pequeño_sonido_dog_jug_01.jpg",
+  "Pesa_Antisarro_dog_jug_01.jpg",
 ];
 
-// Genero 15 productos realistas por cada categoría
+//Lista accesorios para perros.
+const nombresImgPerrosAcc = [
+  "Bebedero_4_en_uno_dog_acc_01.jpg",
+  "Bolsas_repuesto_paquete_dog_x6_acc_01.jpg",
+  "Bolsas_repuesto_x3_acc_dog_01.jpg",
+  "Cepillo_universal_grande_acc_dog_01.jpg",
+  "Comedero_alto_acc_dog_01.jpg",
+  "Comedero_flor_dog_acc_01.jpg",
+  "Comedero_flor_dog_acc_02.jpg",
+  "Correa_retractil_acc_dog_01.jpg",
+  "Dispensador_bolsas_fino_acc_dog_01.jpg",
+  "Dispensador_bolsas_fino_acc_dog_02.jpg",
+  "Dispensador_bolsas_linterna_acc_dog_01.jpg",
+  "Dosificador_dog_acc_01.jpg",
+  "Dosificador_dog_acc_02.jpg",
+  "guante_quita_pelo_dog_acc_01.jpg",
+  "guante_quita_pelo_dog_acc_02.jpg",
+  "Wanda_impermeable_dog_acc_02.jpg",
+  "Wanda_impermeable_dog_acc_01.jpg",
+  "Wanda_impermeable_dog_acc_04.jpg",
+  "Wanda_impermeable_dog_acc_05.jpg",
+  "Wanda_impermeable_dog_acc_09.jpg",
+];
+
+//Lista juguetes para gatos.
+const nombresImgGatosJug = [
+  "aguacate_jug_cat_01.jpg",
+  "Caña_flores_cat_jug_01.jpg",
+  "Caña_pluma_cat_jug_02.jpg",
+  "Catnip_cuerpoespin_dosenuno_cat_jug_01.jpg",
+  "Catnip_gato_jug_01.jpg",
+  "Catnip_mariquita_cat_jug_01.jpg",
+  "Juguete_catnip_mas_pelota_cat_jug_01.jpg",
+  "Juguete_resorte_gato_cat_jug_01.jpg",
+  "Mazorca_chillona_cat_jug_01.jpg",
+  "Paquete_juguete_x3_cat_jug_01.jpg",
+  "Paquete_raton_x3_cat_jug_01.jpg",
+  "Pelota_asteroide_dog_jug_01.jpg",
+  "pelota_loca_pequeña_jug_cat_02.jpg",
+  "pelota_loca_pequeña_jug_cat_03.jpg",
+  "Peluche_con_catnip_cat_jug_01.jpg",
+  "peluche_con_juguete_jug_cat_01.jpg",
+  "peluche_con_juguete_jug_cat_02.jpg",
+  "queso_amarillo_jug_cat_01.jpg",
+];
+
+//Lista accesorios para gatos.
+const nombresImgGatosAcc = [
+  "Arenera_gris_cat_acc_01.jpg",
+  "Arenera_morada_cat_acc_01.jpg",
+  "Arenera_morada_cat_acc_02.jpg",
+  "Comedero_alto_acc_cat__01.jpg",
+  "Comedero_flor_acc_cat_01.jpg",
+  "Comedero_flor_acc_cat_02.jpg",
+  "Comedero_flor_acc_cat_03.jpg",
+  "Palas_cara_gato_cat_acc__01.jpg",
+  "Palas_cara_gato_cat_acc_02.jpg",
+  "Palas_jarra_cat_acc_01.jpg",
+];
+
+// Categoria productos (Array.from)
+// Usa nombresImgPerrosJug.length para asegurar que no exceda el número de imágenes.
 const juguetesPerros = Array.from({ length: 15 }, (_, i) => ({
-  nombre: `Pelota interactiva ${i + 1}`,
-  descripcion: "Caucho resistente, ideal para lanzar y morder.",
-  precio: 20000 + (i % 5) * 5000,
-  img: imgPerros[i % imgPerros.length],
+  //Repetido para Juguetes Perros
+  nombre: `${nombresImgPerrosJug[i % nombresImgPerrosJug.length]}`, // Asigna el nombre de archivo y usa el operador módulo para rotar
+  descripcion: "Caucho resistente, ideal para lanzar y morder.", // Descripción genérica
+  precio: 20000 + (i % 5) * 5000, // Precio que varia según el índice del producto
+  img: `${rutaBasePerrosJug}${  // Ruta completa de la imagen
+    nombresImgPerrosJug[i % nombresImgPerrosJug.length] // Concatena la ruta base con el nombre de archivo de la lista
+  }`,
 }));
 
 const accesoriosPerros = Array.from({ length: 15 }, (_, i) => ({
-  nombre: `Collar ajustable ${["S", "M", "L"][i % 3]} ${i + 1}`,
-  descripcion: "Collar resistente y cómodo.",
+  nombre: `${nombresImgPerrosAcc[i % nombresImgPerrosAcc.length]}`,
+  descripcion:
+    "Accesorios de la más alta calidad para la comodidad de tu perro.",
   precio: 25000 + (i % 6) * 4000,
-  img: imgPerrosAcc[0],
+  img: `${rutaBasePerrosAcc}${
+    nombresImgPerrosAcc[i % nombresImgPerrosAcc.length]
+  }`,
 }));
 
 const juguetesGatos = Array.from({ length: 15 }, (_, i) => ({
-  nombre: `Juguete con plumas ${i + 1}`,
-  descripcion: "Estimula el instinto y el ejercicio.",
+  nombre: `${nombresImgGatosJug[i % nombresImgGatosJug.length]}`,
+  descripcion: "Juguetes que estimulan el instinto y el ejercicio de tu gato.",
   precio: 15000 + (i % 4) * 3000,
-  img: imgGatos[i % imgGatos.length],
+  img: `${rutaBaseGatosJug}${
+    nombresImgGatosJug[i % nombresImgGatosJug.length]
+  }`,
 }));
 
 const accesoriosGatos = Array.from({ length: 15 }, (_, i) => ({
-  nombre: `Rascador modelo ${i + 1}`,
-  descripcion: "Ideal para afilar uñas y descansar.",
+  nombre: `${nombresImgGatosAcc[i % nombresImgGatosAcc.length]}`,
+  descripcion: "Accesorios esenciales para el cuidado e higiene de tu gato.",
   precio: 35000 + (i % 5) * 6000,
-  img: imgGatosAcc[0],
+  img: `${rutaBaseGatosAcc}${
+    nombresImgGatosAcc[i % nombresImgGatosAcc.length]
+  }`,
 }));
 
+// Ofertas especiales
 const ofertas = [
   {
     nombre: "Pack juguetes mixto (3 unidades)",

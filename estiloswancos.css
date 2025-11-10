@@ -68,8 +68,7 @@ nav a.active {
 
 /* --- HERO --- */
 .hero {
-  background: url("./img_sitio/imgdivhero.jpg")
-    center/cover no-repeat;
+  background: url("./img_sitio/imgdivhero.jpg") center/cover no-repeat;
   height: 300px; /* Altura ajustada para móvil */
   display: flex;
   flex-direction: column;
