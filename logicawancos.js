@@ -92,20 +92,52 @@ const nombresImgGatosAcc = [
   "Palas_jarra_cat_acc_01.jpg",
 ];
 
+// Función para limpiar el nombre del archivo y hacerlo profesional
+function limpiarNombreProducto(nombreArchivo) {
+  // 1. Eliminar la extensión de archivo (.jpg, .png, etc.)
+  let nombreLimpio = nombreArchivo.replace(/\.[^/.]+$/, "");
+
+  // 2. Eliminar códigos de inventario y números consecutivos (ej. _dog_01, _cat_acc_03)
+  // Se eliminan los números al final (01, 02) y los códigos de inventario (_dog_, _cat_jug_, _acc_, _x2_)
+  nombreLimpio = nombreLimpio.replace(
+    /(_(dog|cat|dyc|jug|acc|x\d+|peq|3x4)_\d+)|(_\d+)$/gi,
+    ""
+  );
+  nombreLimpio = nombreLimpio.replace(
+    /(_(dog|cat|dyc|jug|acc|peq|x\d+|3x4))/gi,
+    ""
+  );
+  nombreLimpio = nombreLimpio.replace(/(_\d+)$/gi, ""); // Elimina cualquier número suelto al final
+
+  // 3. Reemplazar guiones bajos por espacios
+  nombreLimpio = nombreLimpio.replace(/_/g, " ");
+
+  // 4. Poner la primera letra en mayúscula y quitar espacios extra
+  if (nombreLimpio.length > 0) {
+    nombreLimpio = nombreLimpio.trim();
+    nombreLimpio = nombreLimpio.charAt(0).toUpperCase() + nombreLimpio.slice(1);
+  }
+
+  return nombreLimpio.trim();
+}
+
 // Categoria productos (Array.from)
-// Usa nombresImgPerrosJug.length para asegurar que no exceda el número de imágenes.
+// con funcion
 const juguetesPerros = Array.from({ length: 15 }, (_, i) => ({
-  //Repetido para Juguetes Perros
-  nombre: `${nombresImgPerrosJug[i % nombresImgPerrosJug.length]}`, // Asigna el nombre de archivo y usa el operador módulo para rotar
-  descripcion: "Caucho resistente, ideal para lanzar y morder.", // Descripción genérica
-  precio: 20000 + (i % 5) * 5000, // Precio que varia según el índice del producto
-  img: `${rutaBasePerrosJug}${  // Ruta completa de la imagen
-    nombresImgPerrosJug[i % nombresImgPerrosJug.length] // Concatena la ruta base con el nombre de archivo de la lista
+  nombre: limpiarNombreProducto(
+    nombresImgPerrosJug[i % nombresImgPerrosJug.length]
+  ),
+  descripcion: "Caucho resistente, ideal para lanzar y morder.",
+  precio: 20000 + (i % 5) * 5000,
+  img: `${rutaBasePerrosJug}${
+    nombresImgPerrosJug[i % nombresImgPerrosJug.length]
   }`,
 }));
 
 const accesoriosPerros = Array.from({ length: 15 }, (_, i) => ({
-  nombre: `${nombresImgPerrosAcc[i % nombresImgPerrosAcc.length]}`,
+  nombre: limpiarNombreProducto(
+    nombresImgPerrosAcc[i % nombresImgPerrosAcc.length]
+  ),
   descripcion:
     "Accesorios de la más alta calidad para la comodidad de tu perro.",
   precio: 25000 + (i % 6) * 4000,
@@ -115,7 +147,9 @@ const accesoriosPerros = Array.from({ length: 15 }, (_, i) => ({
 }));
 
 const juguetesGatos = Array.from({ length: 15 }, (_, i) => ({
-  nombre: `${nombresImgGatosJug[i % nombresImgGatosJug.length]}`,
+  nombre: limpiarNombreProducto(
+    nombresImgGatosJug[i % nombresImgGatosJug.length]
+  ),
   descripcion: "Juguetes que estimulan el instinto y el ejercicio de tu gato.",
   precio: 15000 + (i % 4) * 3000,
   img: `${rutaBaseGatosJug}${
@@ -124,7 +158,9 @@ const juguetesGatos = Array.from({ length: 15 }, (_, i) => ({
 }));
 
 const accesoriosGatos = Array.from({ length: 15 }, (_, i) => ({
-  nombre: `${nombresImgGatosAcc[i % nombresImgGatosAcc.length]}`,
+  nombre: limpiarNombreProducto(
+    nombresImgGatosAcc[i % nombresImgGatosAcc.length]
+  ),
   descripcion: "Accesorios esenciales para el cuidado e higiene de tu gato.",
   precio: 35000 + (i % 5) * 6000,
   img: `${rutaBaseGatosAcc}${
