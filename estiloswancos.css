@@ -58,7 +58,7 @@ nav a:hover {
 }
 
 nav a.active {
-  color: #7e1d1d;
+  color: #111010;
   background: #fff3e8;
   box-shadow: inset 0 -0.1875rem 0 #ff914d;
 }
@@ -86,8 +86,8 @@ nav a.active {
 
 .hero .tagline {
   margin-top: 0.5625rem;
-  background: linear-gradient(90deg, #ffd6bd, #ff914d);
-  color: #7e1d1d;
+  background: linear-gradient(90deg, #ff7e43, #f5e5e5);
+  color: #070606;
   padding: 0.5rem 0.9rem;
   border-radius: 62.4375rem;
   font-weight: 700;
@@ -192,6 +192,34 @@ h2.section-title {
 .producto-info button:hover,
 .oferta-info button:hover {
   background-color: #ffab70;
+}
+
+/* --- Estilos Adicionales para Resaltar las Ofertas --- */
+
+/* Hace que el contenedor de la oferta se vea diferente */
+.oferta {
+  /* Cambia el fondo a un color que contraste fuertemente (rojo suave) */
+  background-color: #fff9f9;
+  /* Borde distintivo */
+  border: 0.1875rem solid #ff4d4d; /* 👈 Borde rojo más grueso (3px) */
+  /* Sombra más marcada para que sobresalga */
+  box-shadow: 0 0.5rem 1rem rgba(255, 77, 77, 0.4);
+}
+
+/* Resalta el título de la oferta */
+.oferta-info h3 {
+  color: #cc3d3d; /* Tono de rojo oscuro */
+  font-weight: 800;
+}
+
+/* Resalta el botón de "Añadir al carrito" de las ofertas */
+.oferta-info button {
+  background-color: #ff4d4d; /* Fondo rojo fuerte */
+  transition: background-color 0.3s;
+}
+
+.oferta-info button:hover {
+  background-color: #e63946; /* Rojo aún más fuerte al pasar el ratón */
 }
 
 /* --- CARRITO (Icono y Sidebar) --- */

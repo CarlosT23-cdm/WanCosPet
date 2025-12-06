@@ -109,10 +109,10 @@ function limpiarNombreProducto(nombreArchivo) {
   );
   nombreLimpio = nombreLimpio.replace(/(_\d+)$/gi, ""); // Elimina cualquier número suelto al final
 
-  // 3. Reemplazar guiones bajos por espacios
+  // 3. Reemplazace guiones bajos por espacios
   nombreLimpio = nombreLimpio.replace(/_/g, " ");
 
-  // 4. Poner la primera letra en mayúscula y quitar espacios extra
+  // 4. Este proceso pone la primera letra en mayúscula y quita espacios extra
   if (nombreLimpio.length > 0) {
     nombreLimpio = nombreLimpio.trim();
     nombreLimpio = nombreLimpio.charAt(0).toUpperCase() + nombreLimpio.slice(1);
@@ -376,7 +376,7 @@ function actualizarHistorialUI() {
     : "No hay pagos registrados";
 }
 
-/************ INICIALIZACIÓN y LISTENERS ************/
+/*INICIALIZACIÓN y LISTENERS*/
 document.addEventListener("DOMContentLoaded", () => {
   initRender(); // Renderiza los productos
   actualizarSidebar(); // Carga y actualiza el carrito y el historial al iniciar
