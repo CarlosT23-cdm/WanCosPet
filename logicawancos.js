@@ -1,12 +1,12 @@
 //DATOS DE PRODUCTOS WANCOSPET//
 
-//Rutas base
+// Rutas base
 const rutaBasePerrosJug = "./img_tienda/img_perros_juguetes/";
 const rutaBasePerrosAcc = "./img_tienda/img_perros_accesorios/";
 const rutaBaseGatosJug = "./img_tienda/img_gatos_juguetes/";
 const rutaBaseGatosAcc = "./img_tienda/img_gatos_accesorios/";
 
-//Lista juguetes para perros.
+// Lista juguetes para perros.
 const nombresImgPerrosJug = [
   "Ardilla_chillona_dog_01.jpg",
   "Ardilla_chillona_dog_02.jpg",
@@ -32,7 +32,7 @@ const nombresImgPerrosJug = [
   "Pesa_Antisarro_dog_jug_01.jpg",
 ];
 
-//Lista accesorios para perros.
+// Lista accesorios para perros.
 const nombresImgPerrosAcc = [
   "Bebedero_4_en_uno_dog_acc_01.jpg",
   "Bolsas_repuesto_paquete_dog_x6_acc_01.jpg",
@@ -56,7 +56,7 @@ const nombresImgPerrosAcc = [
   "Wanda_impermeable_dog_acc_09.jpg",
 ];
 
-//Lista juguetes para gatos.
+// Lista juguetes para gatos.
 const nombresImgGatosJug = [
   "aguacate_jug_cat_01.jpg",
   "Caña_flores_cat_jug_01.jpg",
@@ -78,7 +78,7 @@ const nombresImgGatosJug = [
   "queso_amarillo_jug_cat_01.jpg",
 ];
 
-//Lista accesorios para gatos.
+// Lista accesorios para gatos.
 const nombresImgGatosAcc = [
   "Arenera_gris_cat_acc_01.jpg",
   "Arenera_morada_cat_acc_01.jpg",
@@ -98,7 +98,6 @@ function limpiarNombreProducto(nombreArchivo) {
   let nombreLimpio = nombreArchivo.replace(/\.[^/.]+$/, "");
 
   // 2. Eliminar códigos de inventario y números consecutivos (ej. _dog_01, _cat_acc_03)
-  // Se eliminan los números al final (01, 02) y los códigos de inventario (_dog_, _cat_jug_, _acc_, _x2_)
   nombreLimpio = nombreLimpio.replace(
     /(_(dog|cat|dyc|jug|acc|x\d+|peq|3x4)_\d+)|(_\d+)$/gi,
     ""
@@ -119,6 +118,11 @@ function limpiarNombreProducto(nombreArchivo) {
   }
 
   return nombreLimpio.trim();
+}
+
+// FORMATO DE MONEDA
+function formatCurrency(price) {
+  return `$${price.toLocaleString()} COP`;
 }
 
 // Categoria productos (Array.from)
@@ -196,15 +200,29 @@ function renderLista(idContenedor, lista) {
   lista.forEach((p, idx) => {
     const prod = document.createElement("article");
     prod.className = "producto";
+
+    // Contenido de la leyenda (caption) para Fancybox
+    const captionContent = `
+        <h3>${p.nombre}</h3>
+        <p>${p.descripcion}</p>
+        <p class='price'>${formatCurrency(p.precio)}</p>
+    `;
+
+    // MODIFICACIÓN CLAVE: Envolver la imagen en un <a> con atributos Fancybox
     prod.innerHTML = `
-        <img src="${p.img}" alt="${p.nombre}" />
+        <a data-fancybox="productos-galeria" 
+           data-src="${p.img}" 
+           data-caption="${escapeHtml(captionContent)}"
+           href="javascript:;">
+           <img src="${p.img}" alt="${p.nombre}" />
+        </a>
         <div class="producto-info">
           <div>
             <h3>${p.nombre}</h3>
             <p>${p.descripcion}</p>
           </div>
           <div>
-            <div class="price">$${p.precio.toLocaleString()} COP</div>
+            <div class="price">${formatCurrency(p.precio)}</div>
             <button onclick="agregarAlCarrito('${escapeHtml(p.nombre)}', ${
       p.precio
     })">Añadir al carrito</button>
@@ -226,15 +244,29 @@ function initRender() {
   ofertas.forEach((o) => {
     const el = document.createElement("div");
     el.className = "oferta";
+
+    // Contenido de la leyenda (caption) para Fancybox
+    const captionContent = `
+        <h3>${o.nombre}</h3>
+        <p>${o.descripcion}</p>
+        <p class='price'>${formatCurrency(o.precio)}</p>
+    `;
+
+    // MODIFICACIÓN CLAVE: Envolver la imagen de la oferta en un <a> con atributos Fancybox
     el.innerHTML = `
-        <img src="${o.img}" alt="${o.nombre}" />
+        <a data-fancybox="productos-galeria" 
+           data-src="${o.img}" 
+           data-caption="${escapeHtml(captionContent)}"
+           href="javascript:;">
+           <img src="${o.img}" alt="${o.nombre}" />
+        </a>
         <div class="oferta-info">
           <div>
             <h3>${o.nombre}</h3>
             <p>${o.descripcion}</p>
           </div>
           <div>
-            <div class="price">$${o.precio.toLocaleString()} COP</div>
+            <div class="price">${formatCurrency(o.precio)}</div>
             <button onclick="agregarAlCarrito('${escapeHtml(o.nombre)}', ${
       o.precio
     })">Añadir al carrito</button>
@@ -279,14 +311,14 @@ function actualizarSidebar() {
   carrito.forEach((item, index) => {
     const li = document.createElement("li");
     li.className = "item-carrito";
-    li.innerHTML = `<span>${
-      item.producto
-    } - $${item.precio.toLocaleString()}</span> <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
+    li.innerHTML = `<span>${item.producto} - ${formatCurrency(
+      item.precio
+    )}</span> <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
     lista.appendChild(li);
     total += item.precio;
   });
   totalEl.textContent = carrito.length
-    ? `Total: $${total.toLocaleString()} COP`
+    ? `Total: ${formatCurrency(total)}`
     : "Carrito vacío";
   document.getElementById("carrito-count").innerText = carrito.length;
   actualizarHistorialUI();
@@ -341,7 +373,11 @@ function simularPago(montoManual) {
 
   document.getElementById(
     "resultado-pago"
-  ).innerText = `Subtotal: $${subtotal.toLocaleString()} | IVA (19%): $${iva.toLocaleString()} | Envío: $${envioAplicado.toLocaleString()} | Total: $${total.toLocaleString()} COP`;
+  ).innerText = `Subtotal: ${formatCurrency(
+    subtotal
+  )} | IVA (19%): ${formatCurrency(iva)} | Envío: ${formatCurrency(
+    envioAplicado
+  )} | Total: ${formatCurrency(total)}`;
 }
 
 function simularPagoCarritoHandler() {
@@ -365,14 +401,14 @@ function actualizarHistorialUI() {
     const li = document.createElement("li");
     li.style.padding = "0.4rem 0";
     li.style.borderBottom = "1px solid #f0f0f0";
-    li.innerHTML = `${pago.tipo.toUpperCase()} - **Total: $${pago.total.toLocaleString()}** - ${new Date(
-      pago.fecha
-    ).toLocaleDateString()}`;
+    li.innerHTML = `${pago.tipo.toUpperCase()} - **Total: ${formatCurrency(
+      pago.total
+    )}** - ${new Date(pago.fecha).toLocaleDateString()}`;
     historialEl.appendChild(li);
     acumulado += pago.total;
   });
   acumuladoEl.textContent = historialPagos.length
-    ? `Total pagado (acumulado): $${acumulado.toLocaleString()} COP`
+    ? `Total pagado (acumulado): ${formatCurrency(acumulado)}`
     : "No hay pagos registrados";
 }
 
@@ -391,6 +427,42 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("vaciar-btn")
     .addEventListener("click", vaciarCarrito);
+
+  // --- INICIALIZACIÓN DE FANCYBOX PARA EL VISOR DE IMÁGENES (ÚNICA VEZ) ---
+  // Fancybox debe estar disponible globalmente (cargado en el HTML antes de este script)
+  if (typeof Fancybox !== "undefined") {
+    Fancybox.bind("[data-fancybox='productos-galeria']", {
+      // Te permite usar la rueda del ratón para hacer zoom
+      wheel: "slide",
+
+      // Opciones para las herramientas de la barra superior (Zoom, Pan, Cierre)
+      Toolbar: {
+        display: [
+          { id: "zoom", position: "left" }, // Botón de Zoom
+          { id: "pan", position: "left" }, // Botón para activar el arrastre
+          "close",
+        ],
+      },
+
+      // Configuración específica del zoom y arrastre (Panzoom)
+      Panzoom: {
+        // Habilita el arrastre de la imagen cuando está ampliada
+        mouseMoveFriction: 0.1,
+        // Escala mínima y máxima de zoom
+        maxScale: 4,
+        minScale: 1,
+      },
+      // Asegura que la información de la descripción se muestre en el caption
+      caption: (fancybox, slide) => {
+        return slide.caption || slide.content;
+      },
+    });
+  } else {
+    console.warn(
+      "Fancybox JS no se encontró. Asegúrate de que el script CDN esté enlazado correctamente en el HTML."
+    );
+  }
+  // --- FIN INICIALIZACIÓN FANCYBOX ---
 });
 
 // Resaltado de navegación (persistencia y scroll)
