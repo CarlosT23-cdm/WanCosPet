@@ -409,6 +409,61 @@ footer {
   color: #ffd700;
 }
 
+/* --- ESTILOS DE LA SECCIÓN CLIENTES FELICES --- */
+
+.clientes-felices-grid {
+  background-color: #f7f7f7;
+  padding: 2rem 0.8rem;
+  border-top: 5px solid #ff914d;
+}
+
+.galeria-clientes {
+  /* Usamos un grid para organizar las fotos/videos */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.2rem;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.cliente-item {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* Para manejar bien el alto de la imagen/iframe */
+  display: flex;
+  flex-direction: column;
+}
+
+.cliente-item img {
+  width: 100%;
+  /* Altura para uniformidad */
+  height: 15rem;
+  object-fit: cover;
+}
+
+.cliente-item iframe {
+  /* Ajusta la altura del iframe para que se vea bien */
+  height: 15rem;
+  border: none;
+}
+
+.caption-cliente {
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Ajuste para que se vea bien en pantallas grandes */
+@media (min-width: 48rem) {
+  .galeria-clientes {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
+
 /* --- MEDIA QUERIES --- */
 
 /* Solución de Solapamiento Móvil (hasta 767px) */

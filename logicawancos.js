@@ -268,14 +268,14 @@ function initRender() {
   // Mantenemos la inicialización aquí para asegurar que los elementos existan
   if (typeof Fancybox !== "undefined") {
     Fancybox.bind('[data-fancybox="productos-galeria"]', {
-        // Configuraciones mínimas para expansión
-        wheel: "slide",
-        // Solo mostramos el texto simple de data-caption sin formato HTML
-        caption: (fancybox, slide) => {
-            return slide.caption || slide.content;
-        },
-        // Opcional: Para asegurar que Fancybox se activa en cualquier click del elemento a
-        delegate: 'a[data-fancybox]', 
+      // Configuraciones mínimas para expansión
+      wheel: "slide",
+      // Solo mostramos el texto simple de data-caption sin formato HTML
+      caption: (fancybox, slide) => {
+        return slide.caption || slide.content;
+      },
+      // Opcional: Para asegurar que Fancybox se activa en cualquier click del elemento a
+      delegate: "a[data-fancybox]",
     });
   } else {
     console.warn(
@@ -320,9 +320,9 @@ function actualizarSidebar() {
   carrito.forEach((item, index) => {
     const li = document.createElement("li");
     li.className = "item-carrito";
-    li.innerHTML = `<span>${
-      item.producto
-    } - ${formatCurrency(item.precio)}</span> <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
+    li.innerHTML = `<span>${item.producto} - ${formatCurrency(
+      item.precio
+    )}</span> <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
     lista.appendChild(li);
     total += item.precio;
   });
@@ -380,7 +380,11 @@ function simularPago(montoManual) {
 
   document.getElementById(
     "resultado-pago"
-  ).innerText = `Subtotal: ${formatCurrency(subtotal)} | IVA (19%): ${formatCurrency(iva)} | Envío: ${formatCurrency(envioAplicado)} | Total: ${formatCurrency(total)}`;
+  ).innerText = `Subtotal: ${formatCurrency(
+    subtotal
+  )} | IVA (19%): ${formatCurrency(iva)} | Envío: ${formatCurrency(
+    envioAplicado
+  )} | Total: ${formatCurrency(total)}`;
 }
 
 function simularPagoCarritoHandler() {
@@ -402,9 +406,9 @@ function actualizarHistorialUI() {
     const li = document.createElement("li");
     li.style.padding = "0.4rem 0";
     li.style.borderBottom = "1px solid #f0f0f0";
-    li.innerHTML = `${pago.tipo.toUpperCase()} - **Total: ${formatCurrency(pago.total)}** - ${new Date(
-      pago.fecha
-    ).toLocaleDateString()}`;
+    li.innerHTML = `${pago.tipo.toUpperCase()} - **Total: ${formatCurrency(
+      pago.total
+    )}** - ${new Date(pago.fecha).toLocaleDateString()}`;
     historialEl.appendChild(li);
     acumulado += pago.total;
   });
@@ -419,7 +423,7 @@ function actualizarHistorialUI() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initRender(); // Renderiza los productos E INICIALIZA FANCYBOX DENTRO
-  actualizarSidebar(); 
+  actualizarSidebar();
 
   // Asignar Event Listeners a los botones
   document
@@ -432,7 +436,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("vaciar-btn")
     .addEventListener("click", vaciarCarrito);
 });
-
 
 // Resaltado de navegación (persistencia y scroll)
 const links = document.querySelectorAll("nav a");
