@@ -1,4 +1,6 @@
-//DATOS DE PRODUCTOS WANCOSPET//
+// =====================================================================
+// === DATOS Y RUTAS (DEBEN ESTAR AL INICIO Y FUERA DE FUNCIONES) ===
+// =====================================================================
 
 // Rutas base
 const rutaBasePerrosJug = "./img_tienda/img_perros_juguetes/";
@@ -94,10 +96,7 @@ const nombresImgGatosAcc = [
 
 // Función para limpiar el nombre del archivo y hacerlo profesional
 function limpiarNombreProducto(nombreArchivo) {
-  // 1. Eliminar la extensión de archivo (.jpg, .png, etc.)
   let nombreLimpio = nombreArchivo.replace(/\.[^/.]+$/, "");
-
-  // 2. Eliminar códigos de inventario y números consecutivos (ej. _dog_01, _cat_acc_03)
   nombreLimpio = nombreLimpio.replace(
     /(_(dog|cat|dyc|jug|acc|x\d+|peq|3x4)_\d+)|(_\d+)$/gi,
     ""
@@ -106,17 +105,12 @@ function limpiarNombreProducto(nombreArchivo) {
     /(_(dog|cat|dyc|jug|acc|peq|x\d+|3x4))/gi,
     ""
   );
-  nombreLimpio = nombreLimpio.replace(/(_\d+)$/gi, ""); // Elimina cualquier número suelto al final
-
-  // 3. Reemplazace guiones bajos por espacios
+  nombreLimpio = nombreLimpio.replace(/(_\d+)$/gi, "");
   nombreLimpio = nombreLimpio.replace(/_/g, " ");
-
-  // 4. Este proceso pone la primera letra en mayúscula y quita espacios extra
   if (nombreLimpio.length > 0) {
     nombreLimpio = nombreLimpio.trim();
     nombreLimpio = nombreLimpio.charAt(0).toUpperCase() + nombreLimpio.slice(1);
   }
-
   return nombreLimpio.trim();
 }
 
@@ -126,7 +120,6 @@ function formatCurrency(price) {
 }
 
 // Categoria productos (Array.from)
-// con funcion
 const juguetesPerros = Array.from({ length: 15 }, (_, i) => ({
   nombre: limpiarNombreProducto(
     nombresImgPerrosJug[i % nombresImgPerrosJug.length]
@@ -188,10 +181,14 @@ const ofertas = [
   },
 ];
 
-/************ RENDERIZAR PRODUCTOS EN EL DOM ************/
-// escapar comillas para inyectar en onclick
+// =====================================================================
+// === FUNCIONES DE RENDERIZADO SIMPLIFICADAS (SIN CAPTIONS COMPLEJOS) ===
+// =====================================================================
+
+// Se mantiene el escapeHtml solo por si las dudas en los nombres
 function escapeHtml(text) {
-  return text.replace(/'/g, "\\'");
+  let escaped = JSON.stringify(text).slice(1, -1);
+  return escaped.replace(/'/g, "\\'");
 }
 
 function renderLista(idContenedor, lista) {
@@ -201,18 +198,14 @@ function renderLista(idContenedor, lista) {
     const prod = document.createElement("article");
     prod.className = "producto";
 
-    // Contenido de la leyenda (caption) para Fancybox
-    const captionContent = `
-        <h3>${p.nombre}</h3>
-        <p>${p.descripcion}</p>
-        <p class='price'>${formatCurrency(p.precio)}</p>
-    `;
+    // ✅ SIMPLIFICACIÓN: Usamos el nombre como caption simple
+    const captionSimple = `${p.nombre} - ${formatCurrency(p.precio)}`;
 
-    // MODIFICACIÓN CLAVE: Envolver la imagen en un <a> con atributos Fancybox
+    // ✅ SIMPLIFICACIÓN EN EL HTML: Solo pasamos el nombre de la imagen al data-caption
     prod.innerHTML = `
         <a data-fancybox="productos-galeria" 
            data-src="${p.img}" 
-           data-caption="${escapeHtml(captionContent)}"
+           data-caption="${escapeHtml(captionSimple)}"
            href="javascript:;">
            <img src="${p.img}" alt="${p.nombre}" />
         </a>
@@ -245,18 +238,13 @@ function initRender() {
     const el = document.createElement("div");
     el.className = "oferta";
 
-    // Contenido de la leyenda (caption) para Fancybox
-    const captionContent = `
-        <h3>${o.nombre}</h3>
-        <p>${o.descripcion}</p>
-        <p class='price'>${formatCurrency(o.precio)}</p>
-    `;
+    // ✅ SIMPLIFICACIÓN: Usamos el nombre como caption simple
+    const captionSimple = `${o.nombre} - ${formatCurrency(o.precio)}`;
 
-    // MODIFICACIÓN CLAVE: Envolver la imagen de la oferta en un <a> con atributos Fancybox
     el.innerHTML = `
         <a data-fancybox="productos-galeria" 
            data-src="${o.img}" 
-           data-caption="${escapeHtml(captionContent)}"
+           data-caption="${escapeHtml(captionSimple)}"
            href="javascript:;">
            <img src="${o.img}" alt="${o.nombre}" />
         </a>
@@ -275,9 +263,30 @@ function initRender() {
       `;
     ofertasGrid.appendChild(el);
   });
+
+  // 🚨 INICIALIZACIÓN DE FANCYBOX MÁS SENCILLA
+  // Mantenemos la inicialización aquí para asegurar que los elementos existan
+  if (typeof Fancybox !== "undefined") {
+    Fancybox.bind('[data-fancybox="productos-galeria"]', {
+        // Configuraciones mínimas para expansión
+        wheel: "slide",
+        // Solo mostramos el texto simple de data-caption sin formato HTML
+        caption: (fancybox, slide) => {
+            return slide.caption || slide.content;
+        },
+        // Opcional: Para asegurar que Fancybox se activa en cualquier click del elemento a
+        delegate: 'a[data-fancybox]', 
+    });
+  } else {
+    console.warn(
+      "Fancybox JS no se encontró. Asegúrate de que el script CDN esté enlazado correctamente en el HTML."
+    );
+  }
 }
 
-/************ CARRITO (PERSISTENCIA Y FUNCIONALIDAD) ************/
+// =====================================================================
+// === LÓGICA DE CARRITO, PERSISTENCIA Y PAGOS (SE MANTIENE FUNCIONAL) ===
+// =====================================================================
 let carrito = JSON.parse(localStorage.getItem("wancos_carrito_v1") || "[]");
 let historialPagos = JSON.parse(
   localStorage.getItem("wancos_pagos_v1") || "[]"
@@ -311,9 +320,9 @@ function actualizarSidebar() {
   carrito.forEach((item, index) => {
     const li = document.createElement("li");
     li.className = "item-carrito";
-    li.innerHTML = `<span>${item.producto} - ${formatCurrency(
-      item.precio
-    )}</span> <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
+    li.innerHTML = `<span>${
+      item.producto
+    } - ${formatCurrency(item.precio)}</span> <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
     lista.appendChild(li);
     total += item.precio;
   });
@@ -336,7 +345,6 @@ function vaciarCarrito() {
   guardarCarrito();
 }
 
-/************ SIMULADOR DE PAGO ************/
 function simularPago(montoManual) {
   let subtotal = carrito.reduce((s, it) => s + it.precio, 0);
   let tipo = "carrito";
@@ -353,7 +361,6 @@ function simularPago(montoManual) {
 
   const ciudad = document.getElementById("ciudad").value;
   const incluirEnvio = document.getElementById("incluirEnvio").value === "si";
-  // Envío: 0 para Bogotá, 10000 COP para otros
   const envio = ciudad.toLowerCase().startsWith("bog") ? 0 : 10000;
   const envioAplicado = incluirEnvio ? envio : 0;
   const iva = Math.round(subtotal * 0.19);
@@ -373,22 +380,17 @@ function simularPago(montoManual) {
 
   document.getElementById(
     "resultado-pago"
-  ).innerText = `Subtotal: ${formatCurrency(
-    subtotal
-  )} | IVA (19%): ${formatCurrency(iva)} | Envío: ${formatCurrency(
-    envioAplicado
-  )} | Total: ${formatCurrency(total)}`;
+  ).innerText = `Subtotal: ${formatCurrency(subtotal)} | IVA (19%): ${formatCurrency(iva)} | Envío: ${formatCurrency(envioAplicado)} | Total: ${formatCurrency(total)}`;
 }
 
 function simularPagoCarritoHandler() {
   const montoInput = parseFloat(document.getElementById("monto").value);
-  // Si el usuario ingresa un monto en el campo, lo usamos. Si no, usamos el total del carrito.
   simularPago(montoInput > 0 ? montoInput : undefined);
 }
 
 function simularPagoManualHandler() {
   const montoInput = parseFloat(document.getElementById("monto").value);
-  simularPago(montoInput); // Obliga a usar el monto ingresado
+  simularPago(montoInput);
 }
 
 function actualizarHistorialUI() {
@@ -397,13 +399,12 @@ function actualizarHistorialUI() {
   historialEl.innerHTML = "";
   let acumulado = 0;
   historialPagos.slice(-5).forEach((pago, i) => {
-    // Mostrar solo los últimos 5
     const li = document.createElement("li");
     li.style.padding = "0.4rem 0";
     li.style.borderBottom = "1px solid #f0f0f0";
-    li.innerHTML = `${pago.tipo.toUpperCase()} - **Total: ${formatCurrency(
-      pago.total
-    )}** - ${new Date(pago.fecha).toLocaleDateString()}`;
+    li.innerHTML = `${pago.tipo.toUpperCase()} - **Total: ${formatCurrency(pago.total)}** - ${new Date(
+      pago.fecha
+    ).toLocaleDateString()}`;
     historialEl.appendChild(li);
     acumulado += pago.total;
   });
@@ -412,10 +413,13 @@ function actualizarHistorialUI() {
     : "No hay pagos registrados";
 }
 
-/*INICIALIZACIÓN y LISTENERS*/
+// =====================================================================
+// === INICIALIZACIÓN Y LISTENERS ===
+// =====================================================================
+
 document.addEventListener("DOMContentLoaded", () => {
-  initRender(); // Renderiza los productos
-  actualizarSidebar(); // Carga y actualiza el carrito y el historial al iniciar
+  initRender(); // Renderiza los productos E INICIALIZA FANCYBOX DENTRO
+  actualizarSidebar(); 
 
   // Asignar Event Listeners a los botones
   document
@@ -427,43 +431,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("vaciar-btn")
     .addEventListener("click", vaciarCarrito);
-
-  // --- INICIALIZACIÓN DE FANCYBOX PARA EL VISOR DE IMÁGENES (ÚNICA VEZ) ---
-  // Fancybox debe estar disponible globalmente (cargado en el HTML antes de este script)
-  if (typeof Fancybox !== "undefined") {
-    Fancybox.bind("[data-fancybox='productos-galeria']", {
-      // Te permite usar la rueda del ratón para hacer zoom
-      wheel: "slide",
-
-      // Opciones para las herramientas de la barra superior (Zoom, Pan, Cierre)
-      Toolbar: {
-        display: [
-          { id: "zoom", position: "left" }, // Botón de Zoom
-          { id: "pan", position: "left" }, // Botón para activar el arrastre
-          "close",
-        ],
-      },
-
-      // Configuración específica del zoom y arrastre (Panzoom)
-      Panzoom: {
-        // Habilita el arrastre de la imagen cuando está ampliada
-        mouseMoveFriction: 0.1,
-        // Escala mínima y máxima de zoom
-        maxScale: 4,
-        minScale: 1,
-      },
-      // Asegura que la información de la descripción se muestre en el caption
-      caption: (fancybox, slide) => {
-        return slide.caption || slide.content;
-      },
-    });
-  } else {
-    console.warn(
-      "Fancybox JS no se encontró. Asegúrate de que el script CDN esté enlazado correctamente en el HTML."
-    );
-  }
-  // --- FIN INICIALIZACIÓN FANCYBOX ---
 });
+
 
 // Resaltado de navegación (persistencia y scroll)
 const links = document.querySelectorAll("nav a");
@@ -490,7 +459,6 @@ window.addEventListener("scroll", () => {
   sections.forEach((sec) => {
     const rect = sec.getBoundingClientRect();
     const top = rect.top + window.scrollY;
-    // La sección se considera activa si su borde superior está cerca de la parte superior de la ventana (-160px del header)
     if (y >= top - 160) {
       elegido = "#" + sec.id;
     }
