@@ -99,11 +99,11 @@ function limpiarNombreProducto(nombreArchivo) {
   let nombreLimpio = nombreArchivo.replace(/\.[^/.]+$/, "");
   nombreLimpio = nombreLimpio.replace(
     /(_(dog|cat|dyc|jug|acc|x\d+|peq|3x4)_\d+)|(_\d+)$/gi,
-    ""
+    "",
   );
   nombreLimpio = nombreLimpio.replace(
     /(_(dog|cat|dyc|jug|acc|peq|x\d+|3x4))/gi,
-    ""
+    "",
   );
   nombreLimpio = nombreLimpio.replace(/(_\d+)$/gi, "");
   nombreLimpio = nombreLimpio.replace(/_/g, " ");
@@ -122,7 +122,7 @@ function formatCurrency(price) {
 // Categoria productos (Array.from)
 const juguetesPerros = Array.from({ length: 15 }, (_, i) => ({
   nombre: limpiarNombreProducto(
-    nombresImgPerrosJug[i % nombresImgPerrosJug.length]
+    nombresImgPerrosJug[i % nombresImgPerrosJug.length],
   ),
   descripcion: "Caucho resistente, ideal para lanzar y morder.",
   precio: 20000 + (i % 5) * 5000,
@@ -133,7 +133,7 @@ const juguetesPerros = Array.from({ length: 15 }, (_, i) => ({
 
 const accesoriosPerros = Array.from({ length: 15 }, (_, i) => ({
   nombre: limpiarNombreProducto(
-    nombresImgPerrosAcc[i % nombresImgPerrosAcc.length]
+    nombresImgPerrosAcc[i % nombresImgPerrosAcc.length],
   ),
   descripcion:
     "Accesorios de la más alta calidad para la comodidad de tu perro.",
@@ -145,7 +145,7 @@ const accesoriosPerros = Array.from({ length: 15 }, (_, i) => ({
 
 const juguetesGatos = Array.from({ length: 15 }, (_, i) => ({
   nombre: limpiarNombreProducto(
-    nombresImgGatosJug[i % nombresImgGatosJug.length]
+    nombresImgGatosJug[i % nombresImgGatosJug.length],
   ),
   descripcion: "Juguetes que estimulan el instinto y el ejercicio de tu gato.",
   precio: 15000 + (i % 4) * 3000,
@@ -156,7 +156,7 @@ const juguetesGatos = Array.from({ length: 15 }, (_, i) => ({
 
 const accesoriosGatos = Array.from({ length: 15 }, (_, i) => ({
   nombre: limpiarNombreProducto(
-    nombresImgGatosAcc[i % nombresImgGatosAcc.length]
+    nombresImgGatosAcc[i % nombresImgGatosAcc.length],
   ),
   descripcion: "Accesorios esenciales para el cuidado e higiene de tu gato.",
   precio: 35000 + (i % 5) * 6000,
@@ -217,8 +217,8 @@ function renderLista(idContenedor, lista) {
           <div>
             <div class="price">${formatCurrency(p.precio)}</div>
             <button onclick="agregarAlCarrito('${escapeHtml(p.nombre)}', ${
-      p.precio
-    })">Añadir al carrito</button>
+              p.precio
+            })">Añadir al carrito</button>
           </div>
         </div>
       `;
@@ -256,8 +256,8 @@ function initRender() {
           <div>
             <div class="price">${formatCurrency(o.precio)}</div>
             <button onclick="agregarAlCarrito('${escapeHtml(o.nombre)}', ${
-      o.precio
-    })">Añadir al carrito</button>
+              o.precio
+            })">Añadir al carrito</button>
           </div>
         </div>
       `;
@@ -279,7 +279,7 @@ function initRender() {
     });
   } else {
     console.warn(
-      "Fancybox JS no se encontró. Asegúrate de que el script CDN esté enlazado correctamente en el HTML."
+      "Fancybox JS no se encontró. Asegúrate de que el script CDN esté enlazado correctamente en el HTML.",
     );
   }
 }
@@ -289,7 +289,7 @@ function initRender() {
 // =====================================================================
 let carrito = JSON.parse(localStorage.getItem("wancos_carrito_v1") || "[]");
 let historialPagos = JSON.parse(
-  localStorage.getItem("wancos_pagos_v1") || "[]"
+  localStorage.getItem("wancos_pagos_v1") || "[]",
 );
 
 function guardarCarrito() {
@@ -321,7 +321,7 @@ function actualizarSidebar() {
     const li = document.createElement("li");
     li.className = "item-carrito";
     li.innerHTML = `<span>${item.producto} - ${formatCurrency(
-      item.precio
+      item.precio,
     )}</span> <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
     lista.appendChild(li);
     total += item.precio;
@@ -378,13 +378,12 @@ function simularPago(montoManual) {
   actualizarHistorialUI();
   guardarHistorial();
 
-  document.getElementById(
-    "resultado-pago"
-  ).innerText = `Subtotal: ${formatCurrency(
-    subtotal
-  )} | IVA (19%): ${formatCurrency(iva)} | Envío: ${formatCurrency(
-    envioAplicado
-  )} | Total: ${formatCurrency(total)}`;
+  document.getElementById("resultado-pago").innerText =
+    `Subtotal: ${formatCurrency(
+      subtotal,
+    )} | IVA (19%): ${formatCurrency(iva)} | Envío: ${formatCurrency(
+      envioAplicado,
+    )} | Total: ${formatCurrency(total)}`;
 }
 
 function simularPagoCarritoHandler() {
@@ -407,7 +406,7 @@ function actualizarHistorialUI() {
     li.style.padding = "0.4rem 0";
     li.style.borderBottom = "1px solid #f0f0f0";
     li.innerHTML = `${pago.tipo.toUpperCase()} - **Total: ${formatCurrency(
-      pago.total
+      pago.total,
     )}** - ${new Date(pago.fecha).toLocaleDateString()}`;
     historialEl.appendChild(li);
     acumulado += pago.total;
@@ -463,7 +462,7 @@ window.addEventListener("scroll", () => {
     const rect = sec.getBoundingClientRect();
     const top = rect.top + window.scrollY;
     if (y >= top - 160) {
-      elegido = "#" + sec.id;
+      chosen = "#" + sec.id;
     }
   });
   if (elegido) {
@@ -471,3 +470,69 @@ window.addEventListener("scroll", () => {
     localStorage.setItem("wancos_seccionActiva_v1", elegido);
   }
 });
+
+function enviarPedidoWhatsApp() {
+  if (carrito.length === 0) {
+    alert("El carrito está vacío. ¡Agrega algunos productos primero!");
+    return;
+  }
+
+  const miTelefono = "573022375413";
+
+  let mensaje = "¡Hola WanCos Pet! Quiero realizar el siguiente pedido:\n\n";
+
+  let subtotal = 0;
+  carrito.forEach((item, index) => {
+    mensaje += `${index + 1}. *${item.producto}* - ${formatCurrency(item.precio)}\n`;
+    subtotal += item.precio;
+  });
+
+  // Calcular valores - lógica de tu simulador
+  const ciudad = document.getElementById("ciudad").value;
+  const envio = ciudad.toLowerCase().startsWith("bog") ? 0 : 10000;
+  const iva = Math.round(subtotal * 0.19);
+  const total = subtotal + iva + envio;
+
+  mensaje += `\n--------------------------`;
+  mensaje += `\n*Subtotal:* ${formatCurrency(subtotal)}`;
+  mensaje += `\n*IVA (19%):* ${formatCurrency(iva)}`;
+  mensaje += `\n*Envío:* ${formatCurrency(envio)} (${ciudad})`;
+  mensaje += `\n*TOTAL A PAGAR: ${formatCurrency(total)}*`;
+  mensaje += `\n--------------------------`;
+  mensaje += `\n\n¿Me podrían confirmar la disponibilidad?`;
+
+  // 3. Codificar el mensaje para la URL
+  const mensajeCodificado = encodeURIComponent(mensaje);
+  const urlWhatsApp = `https://wa.me/${miTelefono}?text=${mensajeCodificado}`;
+
+  // Abrir WhatsApp
+  window.open(urlWhatsApp, "_blank");
+}
+
+// =====================================================================
+// === CAPA DE SEGURIDAD PROTECTORA ANTI-INSPECCIÓN ===
+// =====================================================================
+
+// Bloqueo de Clic Derecho
+document.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+  console.warn("Función deshabilitada por seguridad de WanCos Pet.");
+});
+
+// Bloqueo de atajos de teclado F12, Ctrl+Shift+I, Ctrl+U
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "F12" ||
+    (event.ctrlKey && event.shiftKey && event.key === "I") ||
+    (event.ctrlKey && event.key === "u")
+  ) {
+    event.preventDefault();
+    alert("El acceso al código fuente está restringido.");
+  }
+});
+
+// Validación extra para montos en consola
+function validarMontoSeguro(monto) {
+  const m = parseFloat(monto);
+  return !isNaN(m) && m >= 0 && m < 10000000; // Máximo 10 millones para evitar abusos
+}

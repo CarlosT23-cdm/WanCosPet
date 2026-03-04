@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -26,7 +26,7 @@
     />
   </head>
 
-  <body>
+  <body oncontextmenu="return false;">
     <header>
       <h1>🐾 WanCos Pet</h1>
       <nav id="mainNav">
@@ -57,18 +57,41 @@
         id="lista-carrito"
         style="list-style: none; padding-left: 0; margin-bottom: 1rem"
       ></ul>
-      <p id="total-carrito" style="font-weight: 700; text-align: center"></p>
+
+      <div
+        id="total-carrito"
+        style="font-weight: 700; text-align: center; margin-bottom: 1rem"
+      ></div>
+
       <div style="text-align: center; margin-top: 1rem">
-        <button id="vaciar-btn">Vaciar carrito</button>
+        <button
+          id="finalizar-compra-btn"
+          onclick="enviarPedidoWhatsApp()"
+          style="
+            background-color: #25d366;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        >
+          Finalizar Compra por WhatsApp 📱
+        </button>
+        <br />
+        <button id="vaciar-btn">Vaciar Carrito</button>
       </div>
+
       <hr style="margin: 1rem 0" />
       <div>
         <h4 style="color: #333; text-align: center">Historial de pagos</h4>
         <ul id="historial-pagos" style="list-style: none; padding-left: 0"></ul>
-        <p
+        <div
           id="acumulado-pagos"
           style="font-weight: 700; text-align: center; margin-top: 0.8rem"
-        ></p>
+        ></div>
       </div>
     </aside>
 
@@ -99,7 +122,6 @@
 
     <section id="reseñas" class="reseñas">
       <h2 class="section-title">Opiniones de nuestros clientes</h2>
-
       <div class="reseña">
         <p>
           <strong>Laura G.:</strong> ¡Excelente calidad y atención! Mi perro ama
@@ -130,11 +152,18 @@
         <div class="cliente-item">
           <iframe
             width="100%"
-            height="auto"
+            height="315"
             src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0"
             title="Ejemplo de Cliente Feliz"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+            "
             allowfullscreen
           ></iframe>
           <p class="caption-cliente">Max jugando con su nuevo hueso.</p>
@@ -171,6 +200,8 @@
         <input
           type="number"
           id="monto"
+          min="0"
+          max="10000000"
           placeholder="Monto COP (0 para usar total carrito)"
         />
         <br />
@@ -190,5 +221,4 @@
     <script src="logicawancos.js"></script>
   </body>
 </html>
-
 <!-- https://pixabay.com/es/photos/search/perros%20y%20gatos%20juntos/ -->
