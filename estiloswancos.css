@@ -239,11 +239,20 @@ section {
 /* Evita que el botón tape el título en celulares */
 @media (max-width: 480px) {
   .carrito {
-    top: auto; /* Desactiva la posición superior */
-    bottom: 25px; /* Lo ubica abajo */
-    right: 20px; /* Lo mantiene a la derecha */
-    padding: 12px 18px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    top: auto !important; /* Fuerza a ignorar el 'top: 20px' */
+    bottom: 30px !important; /* Lo ubica abajo con fuerza */
+    right: 20px !important;
+    position: fixed !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5) !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  /* Ajuste extra para que el título respire */
+  header h1 {
+    font-size: 1.6rem !important;
+    padding-right: 0 !important;
   }
 }
 
