@@ -277,7 +277,7 @@ body.sidebar-abierto .carrito {
 .sidebar-carrito {
   position: fixed;
   top: 0;
-  right: -20rem;
+  right: -100%; /* <-- AHORA ESTÁ 100% FUERA DE LA PANTALLA POR DEFECTO */
   width: 20rem;
   max-width: 95%;
   height: 100%;
