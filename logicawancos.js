@@ -349,4 +349,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const m = parseFloat(document.getElementById("monto").value);
       simularPago(m);
     });
+  // Forzar posición del carrito en móviles mediante JS para evitar problemas de caché CSS
+  if (window.innerWidth <= 480) {
+    const carritoBtn = document.getElementById("boton-carrito-flotante");
+    if (carritoBtn) {
+      carritoBtn.style.top = "auto";
+      carritoBtn.style.bottom = "30px";
+      carritoBtn.style.right = "20px";
+      carritoBtn.style.position = "fixed";
+    }
+  }
 });
