@@ -3,29 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Tienda de mascotas online: accesorios, juguetes y productos para perros y gatos. Compra segura y entrega rápida."
-    />
-    <meta
-      name="keywords"
-      content="tienda de mascotas, juguetes para perros, juguetes para gatos, accesorios para mascotas, collares para perros, camas para gatos, tienda online de mascotas"
-    />
-    <title>WanCos Pet - Accesorios y Juguetes para Mascotas</title>
+    <title>WanCos Pet - Accesorios y Juguetes</title>
+
     <link rel="icon" type="image/png" href="./img_sitio/favicon_pata.png" />
 
-    <link rel="stylesheet" href="estiloswancos.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="estiloswancos.css" />
 
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
     />
   </head>
-
   <body oncontextmenu="return false;">
     <header>
       <h1>🐾 WanCos Pet</h1>
@@ -35,37 +27,39 @@
         <a href="#juguetes-gatos">Juguetes Gatos</a>
         <a href="#accesorios-gatos">Accesorios Gatos</a>
         <a href="#ofertas">Ofertas</a>
-        <a href="#reseñas">Reseñas</a>
         <a href="#pago">Simulador</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </header>
 
-    <div class="hero" role="img" aria-label="Varios perros y gatos">
+    <div class="hero">
       <h2>Accesorios y Juguetes para Mascotas</h2>
       <div class="tagline">¡Cuida y consiente a tu mejor amigo!</div>
     </div>
 
-    <div class="carrito" onclick="toggleCarrito()" aria-label="Abrir carrito">
+    <div class="carrito" onclick="toggleCarrito()">
       <span style="font-size: 1.6rem">🛒</span>
       <span id="carrito-count">0</span>
     </div>
 
-    <aside id="sidebarCarrito" class="sidebar-carrito" aria-hidden="true">
+    <div
+      id="carrito-overlay"
+      class="carrito-overlay"
+      onclick="toggleCarrito()"
+    ></div>
+
+    <aside id="sidebarCarrito" class="sidebar-carrito">
       <h3>Tu carrito</h3>
-      <ul
-        id="lista-carrito"
-        style="list-style: none; padding-left: 0; margin-bottom: 1rem"
-      ></ul>
 
-      <div
-        id="total-carrito"
-        style="font-weight: 700; text-align: center; margin-bottom: 1rem"
-      ></div>
+      <ul id="lista-carrito"></ul>
 
-      <div style="text-align: center; margin-top: 1rem">
+      <div id="total-carrito">
+        <strong>Total: $0 COP</strong>
+      </div>
+
+      <div class="acciones-carrito">
         <button
-          id="finalizar-compra-btn"
+          id="btn-whatsapp"
           onclick="enviarPedidoWhatsApp()"
           style="
             background-color: #25d366;
@@ -73,152 +67,104 @@
             font-weight: bold;
             margin-bottom: 10px;
             border: none;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 12px;
+            border-radius: 8px;
+            width: 100%;
             cursor: pointer;
+            font-size: 1rem;
           "
         >
           Finalizar Compra por WhatsApp 📱
         </button>
-        <br />
-        <button id="vaciar-btn">Vaciar Carrito</button>
+        <button
+          id="vaciar-btn"
+          style="
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            font-weight: bold;
+          "
+        >
+          Vaciar Carrito
+        </button>
       </div>
 
-      <hr style="margin: 1rem 0" />
-      <div>
-        <h4 style="color: #333; text-align: center">Historial de pagos</h4>
-        <ul id="historial-pagos" style="list-style: none; padding-left: 0"></ul>
-        <div
-          id="acumulado-pagos"
-          style="font-weight: 700; text-align: center; margin-top: 0.8rem"
-        ></div>
+      <div class="footer-sidebar">
+        <h4>Ocultar bandeja</h4>
+        <button onclick="toggleCarrito()" class="btn-ocultar">Ocultar</button>
       </div>
     </aside>
 
-    <section id="juguetes-perros">
-      <h2 class="section-title">Juguetes para perros</h2>
-      <div class="productos" id="lista-juguetes-perros"></div>
-    </section>
+    <main>
+      <section id="juguetes-perros">
+        <h2 class="section-title">Juguetes para perros</h2>
+        <div class="productos" id="lista-juguetes-perros"></div>
+      </section>
 
-    <section id="accesorios-perros">
-      <h2 class="section-title">Accesorios para perros</h2>
-      <div class="productos" id="lista-accesorios-perros"></div>
-    </section>
+      <section id="accesorios-perros">
+        <h2 class="section-title">Accesorios para perros</h2>
+        <div class="productos" id="lista-accesorios-perros"></div>
+      </section>
 
-    <section id="juguetes-gatos">
-      <h2 class="section-title">Juguetes para gatos</h2>
-      <div class="productos" id="lista-juguetes-gatos"></div>
-    </section>
+      <section id="juguetes-gatos">
+        <h2 class="section-title">Juguetes para gatos</h2>
+        <div class="productos" id="lista-juguetes-gatos"></div>
+      </section>
 
-    <section id="accesorios-gatos">
-      <h2 class="section-title">Accesorios para gatos</h2>
-      <div class="productos" id="lista-accesorios-gatos"></div>
-    </section>
+      <section id="accesorios-gatos">
+        <h2 class="section-title">Accesorios para gatos</h2>
+        <div class="productos" id="lista-accesorios-gatos"></div>
+      </section>
 
-    <section id="ofertas">
-      <h2 class="section-title">Ofertas</h2>
-      <div class="ofertas-grid" id="ofertas-grid"></div>
-    </section>
+      <section id="ofertas">
+        <h2 class="section-title">Ofertas Especiales</h2>
+        <div class="ofertas-grid" id="ofertas-grid"></div>
+      </section>
 
-    <section id="reseñas" class="reseñas">
-      <h2 class="section-title">Opiniones de nuestros clientes</h2>
-      <div class="reseña">
-        <p>
-          <strong>Laura G.:</strong> ¡Excelente calidad y atención! Mi perro ama
-          su nueva pelota.
-        </p>
-      </div>
-      <div class="reseña">
-        <p>
-          <strong>Carlos R.:</strong> Muy recomendados. Envío rápido y productos
-          bien empacados.
-        </p>
-      </div>
-      <div class="reseña">
-        <p>
-          <strong>María P.:</strong> La cama de mi gato es hermosa y muy cómoda.
-        </p>
-      </div>
-    </section>
+      <section id="pago" class="pago-simulador">
+        <h2 class="section-title">Simulador de Pago</h2>
+        <div class="simulador-controles">
+          <div class="campo">
+            <label>Ciudad de destino:</label>
+            <select id="ciudad">
+              <option value="Bogotá">Bogotá (Envío Gratis)</option>
+              <option value="Otro">Fuera de Bogotá ($10.000)</option>
+            </select>
+          </div>
 
-    <section id="clientes-felices" class="clientes-felices-grid">
-      <h2 class="section-title">Clientes Felices y sus Mascotas</h2>
-      <p style="text-align: center; margin-bottom: 1.5rem">
-        ¡Gracias por compartirnos las fotos y videos de sus mejores amigos
-        disfrutando de sus compras!
-      </p>
+          <div class="campo">
+            <label>¿Incluir envío en el total?</label>
+            <select id="incluirEnvio">
+              <option value="si">Sí, incluir envío</option>
+              <option value="no">No, solo productos</option>
+            </select>
+          </div>
 
-      <div id="galeria-clientes" class="galeria-clientes">
-        <div class="cliente-item">
-          <iframe
-            width="100%"
-            height="315"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0"
-            title="Ejemplo de Cliente Feliz"
-            frameborder="0"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-            "
-            allowfullscreen
-          ></iframe>
-          <p class="caption-cliente">Max jugando con su nuevo hueso.</p>
+          <div class="campo">
+            <label>Monto manual (opcional):</label>
+            <input type="number" id="monto" placeholder="Ej: 50000" />
+          </div>
+
+          <div class="botones-simulador">
+            <button id="simular-carrito-btn">Simular con Carrito</button>
+            <button id="simular-manual-btn">Simular Monto Manual</button>
+          </div>
         </div>
 
-        <div class="cliente-item">
-          <img
-            src="./img_sitio/ejemplo_cliente_feliz.jpg"
-            alt="Foto de un gato feliz"
-          />
-          <p class="caption-cliente">Luna disfrutando su nueva cama.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="pago" class="pago-simulador">
-      <h2 class="section-title">Simulador de Pago</h2>
-      <p>Simula el pago de tu compra antes de finalizar:</p>
-      <div class="simulador-controles">
-        <div>
-          <label for="ciudad">Ciudad de entrega:</label>
-          <select id="ciudad">
-            <option value="Bogotá">Bogotá</option>
-            <option value="Otro">Otro departamento (Colombia)</option>
-          </select>
-        </div>
-        <div>
-          <label for="incluirEnvio">Incluir envío:</label>
-          <select id="incluirEnvio">
-            <option value="si">Sí</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-        <input
-          type="number"
-          id="monto"
-          min="0"
-          max="10000000"
-          placeholder="Monto COP (0 para usar total carrito)"
-        />
-        <br />
-        <button id="simular-carrito-btn">Simular pago del carrito</button>
-        <button id="simular-manual-btn">Simular pago manual</button>
-      </div>
-      <p id="resultado-pago"></p>
-    </section>
+        <div id="resultado-pago" class="resultado-caja"></div>
+      </section>
+    </main>
 
     <footer id="contacto">
-      <p>📍 Tienda Virtual | Bogotá | 📞 WhatsApp: +57 302 237 54 13</p>
-      <p>© 2025 WanCos Pet - Amor y cuidado para tus mascotas.</p>
-      <p>Email - wancos.pet@gmail.com</p>
+      <p>&copy; 2026 WanCos Pet - Bucaramanga, Colombia</p>
+      <p>Síguenos en nuestras redes sociales</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="logicawancos.js"></script>
   </body>
 </html>
-<!-- https://pixabay.com/es/photos/search/perros%20y%20gatos%20juntos/ -->
