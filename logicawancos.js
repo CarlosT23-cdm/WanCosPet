@@ -20,7 +20,7 @@ const juguetesPerros = [
   },
   {
     nombre: "Pelota Huesos Premio",
-    precio: 20000,
+    precio: 16000,
     img: rutaBasePerrosJug + "Pelota_snack_dog_jug_01.jpg",
     descripcion: "Ideal para esconder snacks.",
   },
@@ -50,13 +50,13 @@ const juguetesPerros = [
   },
   {
     nombre: "Peluche Pequeño Sonido",
-    precio: 15500,
+    precio: 15000,
     img: rutaBasePerrosJug + "Peluche_pequeño_sonido_dog_jug_01.jpg",
     descripcion: "Textura suave para cachorros.",
   },
   {
     nombre: "Hueso Pitbull",
-    precio: 18500,
+    precio: 8000,
     img: rutaBasePerrosJug + "Hueso_pitbull_dog_jug_01.jpg",
     descripcion: "Extra resistente.",
   },
@@ -95,7 +95,7 @@ const accesoriosPerros = [
   },
   {
     nombre: "Bolsas Repuesto x3",
-    precio: 8500,
+    precio: 7000,
     img: rutaBasePerrosAcc + "Bolsas_repuesto_x3_acc_dog_01.jpg",
     descripcion: "Bolsas resistentes.",
   },
@@ -104,13 +104,13 @@ const accesoriosPerros = [
 const juguetesGatos = [
   {
     nombre: "Catnip Aguacate",
-    precio: 10000,
+    precio: 12000,
     img: rutaBaseGatosJug + "aguacate_jug_cat_01.jpg",
     descripcion: "Gira 360 grados y relaja.",
   },
   {
     nombre: "Caña Libélula",
-    precio: 11500,
+    precio: 12000,
     img: rutaBaseGatosJug + "Caña_flores_cat_jug_01.jpg",
     descripcion: "Fomenta el instinto de caza.",
   },
@@ -122,7 +122,7 @@ const juguetesGatos = [
   },
   {
     nombre: "Ratones Chillones x3",
-    precio: 5800,
+    precio: 6000,
     img: rutaBaseGatosJug + "Paquete_raton_x3_cat_jug_01.jpg",
     descripcion: "Diversión clásica.",
   },
@@ -143,7 +143,7 @@ const accesoriosGatos = [
   },
   {
     nombre: "Guacal Extragrande",
-    precio: 55000,
+    precio: 31000,
     img: rutaBaseGatosAcc + "Palas_jarra_cat_acc_01.jpg",
     descripcion: "Viajes cómodos y seguros.",
   },
@@ -157,9 +157,9 @@ const accesoriosGatos = [
 
 const ofertas = [
   {
-    nombre: "Combo Gato Aventurero",
-    descripcion: "Cama + Juguete Catnip.",
-    precio: 60000,
+    nombre: "Combo Gato Cacero",
+    descripcion: "Catnip Aguacate + arenera gris.",
+    precio: 46000,
     img: "./img_sitio/ejemplo_cliente_feliz.jpg",
   },
 ];
