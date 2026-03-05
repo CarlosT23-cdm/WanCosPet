@@ -274,19 +274,52 @@ body.sidebar-abierto .carrito {
   font-size: 0.75rem;
 }
 
+/* =====================================================================
+   === SIDEBAR CARRITO ===
+   ===================================================================== */
+
 .sidebar-carrito {
   position: fixed;
   top: 0;
-  right: -100%; /* <-- AHORA ESTÁ 100% FUERA DE LA PANTALLA POR DEFECTO */
-  width: 20rem;
-  max-width: 95%;
+  right: -110vw; /* Se mueve más allá del ancho total de la pantalla */
+  width: 25rem;
+  max-width: 90%;
   height: 100%;
   background-color: #fff;
-  box-shadow: -0.37rem 0 1.25rem rgba(0, 0, 0, 0.18);
-  transition: right 0.32s ease;
-  padding: 1rem;
+  box-shadow: -0.5rem 0 1.5rem rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease-in-out;
+  padding: 1.5rem;
   overflow-y: auto;
-  z-index: 1600; /* Por encima del botón */
+  z-index: 3000; /* Prioridad máxima */
+}
+
+.sidebar-carrito.active {
+  right: 0; /* Entra a la pantalla */
+}
+
+/* Contenedor del botón de cierre abajo */
+.footer-carrito {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.footer-carrito h4 {
+  margin-bottom: 0.8rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.btn-ocultar {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
 }
 
 .sidebar-carrito.active {

@@ -412,6 +412,38 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", vaciarCarrito);
 });
 
+function actualizarVista() {
+  const lista = document.getElementById("lista-carrito");
+  const totalEl = document.getElementById("total-carrito");
+  const countEl = document.getElementById("carrito-count");
+
+  lista.innerHTML = "";
+  let total = 0;
+
+  carrito.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.className = "item-carrito";
+    div.innerHTML = `
+            <span>${item.nombre} - $${item.precio.toLocaleString()}</span>
+            <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
+        `;
+    lista.appendChild(div);
+    total += item.precio;
+  });
+
+  // Añadir el bloque de "Ocultar bandeja" al final
+  const footerDiv = document.createElement("div");
+  footerDiv.className = "footer-carrito";
+  footerDiv.innerHTML = `
+        <h4>Ocultar bandeja</h4>
+        <button class="btn-ocultar" onclick="toggleCarrito()">Ocultar</button>
+    `;
+  lista.appendChild(footerDiv);
+
+  totalEl.innerHTML = `<strong>Total: $${total.toLocaleString()} COP</strong>`;
+  countEl.innerText = carrito.length;
+}
+
 function enviarPedidoWhatsApp() {
   if (carrito.length === 0) {
     alert("El carrito está vacío.");
