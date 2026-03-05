@@ -8,7 +8,6 @@ body {
   user-select: none;
 }
 
-/* Permitir selección en formularios */
 input,
 select,
 textarea {
@@ -19,7 +18,7 @@ img {
   -webkit-user-drag: none;
   user-drag: none;
   pointer-events: auto;
-  cursor: zoom-in; /* Indica que se puede expandir */
+  cursor: zoom-in;
 }
 
 * {
@@ -115,7 +114,7 @@ nav a:hover {
 }
 
 /* =====================================================================
-   === GRID DE PRODUCTOS Y MOVIMIENTO ===
+   === GRID DE PRODUCTOS ===
    ===================================================================== */
 section {
   padding: 40px 20px;
@@ -129,7 +128,6 @@ section {
   margin-bottom: 30px;
   border-bottom: 3px solid #ff914d;
   display: inline-block;
-  width: auto;
   padding-bottom: 5px;
 }
 
@@ -151,7 +149,6 @@ section {
   flex-direction: column;
 }
 
-/* Efecto de elevación suave */
 .producto:hover,
 .oferta:hover {
   transform: translateY(-12px);
@@ -194,112 +191,11 @@ section {
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-  transition: 0.3s;
-}
-
-.producto-info button:hover {
-  background-color: #e67e3a;
-}
-
-/* Estilo Ofertas (Rojo) */
-.oferta {
-  border: 2px solid #ff4d4d;
-  background: #fff9f9;
-}
-.oferta-info h3 {
-  color: #cc3d3d;
-}
-.oferta-info button {
-  background-color: #ff4d4d;
 }
 
 /* =====================================================================
-   === CARRITO SIDEBAR Y OVERLAY ===
+   === SIDEBAR CARRITO (BANDEJA) ===
    ===================================================================== */
-/* =====================================================================
-   === MODIFICACIÓN DEL CARRITO (COPIAR Y REEMPLAZAR ESTE BLOQUE) ===
-   ===================================================================== */
-
-.carrito {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: white;
-  padding: 10px 20px;
-  border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  z-index: 1500;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: 0.3s;
-}
-
-/* Evita que el botón tape el título en celulares */
-@media (max-width: 480px) {
-  .carrito {
-    top: auto !important; /* Fuerza a ignorar el 'top: 20px' */
-    bottom: 30px !important; /* Lo ubica abajo con fuerza */
-    right: 20px !important;
-    position: fixed !important;
-    background-color: #ffffff !important;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5) !important;
-    width: auto !important;
-    height: auto !important;
-  }
-
-  /* Ajuste extra para que el título respire */
-  header h1 {
-    font-size: 1.6rem !important;
-    padding-right: 0 !important;
-  }
-}
-
-/* Estilos para el desglose de precios dentro del carrito */
-.desglose-carrito {
-  margin-top: 10px;
-  padding: 12px;
-  background: #fdfdfd;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  font-size: 0.9rem;
-}
-
-/* Letrero informativo de envíos */
-.info-envios {
-  margin: 10px 0;
-  padding: 10px;
-  background: #fff3e8;
-  border-left: 4px solid #ff914d;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #444;
-  text-align: left;
-}
-
-body.sidebar-abierto .carrito {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* ===================================================================== */
-
-.info-envios {
-  margin: 10px 0;
-  padding: 8px;
-  background: #fff3e8;
-  border-left: 4px solid #ff914d;
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: #333;
-}
-
-body.sidebar-abierto .carrito {
-  opacity: 0;
-  pointer-events: none;
-}
-
 .sidebar-carrito {
   position: fixed;
   top: 0;
@@ -327,6 +223,27 @@ body.sidebar-abierto .carrito {
   margin-bottom: 20px;
 }
 
+/* Desglose de precios e información */
+.desglose-carrito {
+  margin-top: 10px;
+  padding: 12px;
+  background: #fdfdfd;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.info-envios {
+  margin: 10px 0;
+  padding: 10px;
+  background: #fff3e8;
+  border-left: 4px solid #ff914d;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #444;
+  text-align: left;
+}
+
 .item-carrito {
   display: flex;
   justify-content: space-between;
@@ -349,6 +266,10 @@ body.sidebar-abierto .carrito {
 body.sidebar-abierto .carrito-overlay {
   display: block;
 }
+body.sidebar-abierto .carrito {
+  opacity: 0;
+  pointer-events: none;
+}
 
 .btn-ocultar {
   background: #333;
@@ -359,6 +280,47 @@ body.sidebar-abierto .carrito-overlay {
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+}
+
+/* =====================================================================
+   === BOTÓN CARRITO FLOTANTE (ESTRATEGIA FINAL) ===
+   ===================================================================== */
+.carrito {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+/* =====================================================================
+   === AJUSTES MÓVILES (MUEVE EL CARRITO ABAJO) ===
+   ===================================================================== */
+@media (max-width: 480px) {
+  /* ESTA ES LA REGLA CLAVE: Mueve el carrito al fondo */
+  .carrito {
+    top: auto !important;
+    bottom: 30px !important;
+    right: 20px !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  header h1 {
+    font-size: 1.5rem !important;
+    padding-right: 0 !important; /* Libera el espacio del título */
+  }
+
+  .sidebar-carrito {
+    width: 100%;
+  }
 }
 
 /* =====================================================================
@@ -385,6 +347,7 @@ body.sidebar-abierto .carrito-overlay {
   font-weight: bold;
   margin-bottom: 5px;
 }
+
 input,
 select {
   padding: 10px;
@@ -398,7 +361,6 @@ select {
   background: #fff5ec;
   border-left: 5px solid #ff914d;
   border-radius: 5px;
-  min-height: 50px;
 }
 
 footer {
@@ -407,14 +369,4 @@ footer {
   padding: 40px 20px;
   text-align: center;
   margin-top: 50px;
-}
-
-/* Mobile Adjustments */
-@media (max-width: 480px) {
-  .sidebar-carrito {
-    width: 100%;
-  }
-  header h1 {
-    font-size: 1.5rem;
-  }
 }
