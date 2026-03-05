@@ -216,6 +216,10 @@ section {
 /* =====================================================================
    === CARRITO SIDEBAR Y OVERLAY ===
    ===================================================================== */
+/* =====================================================================
+   === MODIFICACIÓN DEL CARRITO (COPIAR Y REEMPLAZAR ESTE BLOQUE) ===
+   ===================================================================== */
+
 .carrito {
   position: fixed;
   top: 20px;
@@ -232,29 +236,45 @@ section {
   transition: 0.3s;
 }
 
-/* ESTO CORRIGE EL CARRITO EN CELULARES */
+/* Evita que el botón tape el título en celulares */
 @media (max-width: 480px) {
   .carrito {
-    top: auto; /* Quita la posición de arriba */
-    bottom: 20px; /* Lo pone abajo */
-    right: 20px; /* En la esquina derecha */
-    padding: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  }
-  header h1 {
-    padding-right: 0; /* Libera el espacio que ocupaba el botón */
+    top: auto; /* Desactiva la posición superior */
+    bottom: 25px; /* Lo ubica abajo */
+    right: 20px; /* Lo mantiene a la derecha */
+    padding: 12px 18px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   }
 }
 
-/* Estilos para el desglose del carrito */
+/* Estilos para el desglose de precios dentro del carrito */
 .desglose-carrito {
   margin-top: 10px;
-  padding: 10px;
-  background: #f9f9f9;
+  padding: 12px;
+  background: #fdfdfd;
+  border: 1px solid #eee;
   border-radius: 8px;
   font-size: 0.9rem;
-  color: #555;
 }
+
+/* Letrero informativo de envíos */
+.info-envios {
+  margin: 10px 0;
+  padding: 10px;
+  background: #fff3e8;
+  border-left: 4px solid #ff914d;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #444;
+  text-align: left;
+}
+
+body.sidebar-abierto .carrito {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ===================================================================== */
 
 .info-envios {
   margin: 10px 0;
