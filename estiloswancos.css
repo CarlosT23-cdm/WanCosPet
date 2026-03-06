@@ -86,13 +86,19 @@ nav a:hover {
 .hero {
   background:
     linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("./img_sitio/dalmataAdulto.jpg") center/contain no-repeat; /* Cambiado a contain, fondo o a center, al frente, segun la imagen */
-  height: 450px; /*Subir la imagen*/
-  background-color: #5c3a3a; /*Color de fondo*/
+    url("./img_sitio/cosmoWanda_hero_encabezado_01.png") no-repeat;
+
+  /* EL CAMBIO MAESTRO */
+  background-position: center bottom; /* Centrado horizontal, pero pegado abajo verticalmente */
+  background-size: contain; /* 'contain' hará que la imagen se vea completa de arriba a abajo */
+
+  height: 500px; /* Subimos un poco el alto para darles más protagonismo */
+  background-color: #ffffff;
+
   display: flex;
   flex-direction: column;
-  align-items: space-between;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   text-align: center;
   color: rgb(255, 253, 253);
 }
