@@ -82,13 +82,18 @@ const juguetesPerros = [
     descripcion: "Cuerda de algodón de alta calidad.",
   },
   {
-    nombre: "Pelota Rugby",
-    precio: 20000,
+    nombre: "Pelota Futbol Americano",
+    precio: 10200,
     imagenes: [
-      rutaBasePerrosJug + "Pelota_chillona_futbol_americano_jug_dog.jpg",
-      rutaBasePerrosJug + "Pelota_rugby_sonido_jug_dog_01.jpg",
+      rutaBasePerrosJug + "Pelota_chillona_futbol_americano_jug_dog_01.jpg",
     ],
     descripcion: "Rebota de forma impredecible.",
+  },
+  {
+    nombre: "Pelota Rugby",
+    precio: 27000,
+    imagenes: [rutaBasePerrosJug + "Pelota_rugby_sonido_jug_dog_01.jpg"],
+    descripcion: "Con un plastico resistente y muy ligera.",
   },
   {
     nombre: "Pelota Disco",
@@ -154,12 +159,15 @@ const accesoriosPerros = [
     descripcion: "Agua, comida, bolsas y pala.",
   },
   {
+    nombre: "Bolsas de repuesto por 6",
+    precio: 13500,
+    imagenes: [rutaBasePerrosAcc + "Bolsas_repuesto_paquete_dog_x6_acc_01.jpg"],
+    descripcion: "Paquete surtido de 6 rollos resistentes.",
+  },
+  {
     nombre: "Bolsas de Repuesto",
     precio: 7000,
-    imagenes: [
-      rutaBasePerrosAcc + "Bolsas_repuesto_x3_acc_dog_01.jpg",
-      rutaBasePerrosAcc + "Bolsas_repuesto_paquete_dog_x6_acc_01.jpg",
-    ],
+    imagenes: [rutaBasePerrosAcc + "Bolsas_repuesto_x3_acc_dog_01.jpg"],
     descripcion: "Rollos de bolsas resistentes para desechos.",
   },
   {
@@ -170,13 +178,13 @@ const accesoriosPerros = [
   },
   {
     nombre: "Comedero Alto",
-    precio: 0,
+    precio: 14000,
     imagenes: [rutaBasePerrosAcc + "Comedero_alto_acc_dog_01.jpg"],
     descripcion: "Diseño elevado para mejor digestión.",
   },
   {
     nombre: "Comederos Flor",
-    precio: 0,
+    precio: 13000,
     imagenes: [
       rutaBasePerrosAcc + "Comedero_flor_dog_acc_01.jpg",
       rutaBasePerrosAcc + "Comedero_flor_dog_acc_02.jpg",
@@ -191,17 +199,24 @@ const accesoriosPerros = [
   },
   {
     nombre: "Dispensadores de Bolsas",
-    precio: 0,
+    precio: 11000,
     imagenes: [
       rutaBasePerrosAcc + "Dispensador_bolsas_fino_acc_dog_01.jpg",
       rutaBasePerrosAcc + "Dispensador_bolsas_fino_acc_dog_02.jpg",
-      rutaBasePerrosAcc + "Dispensador_bolsas_linterna_acc_dog_01.jpg",
     ],
     descripcion: "Modelos elegantes y con linterna.",
   },
   {
+    nombre: "Dispensador bolsas con linterna",
+    precio: 20000,
+    imagenes: [
+      rutaBasePerrosAcc + "Dispensador_bolsas_linterna_acc_dog_01.jpg",
+    ],
+    descripcion: "Para quye no te enrredes con tus bolsas.",
+  },
+  {
     nombre: "Dosificador de Comida",
-    precio: 0,
+    precio: 16000,
     imagenes: [
       rutaBasePerrosAcc + "Dosificador_dog_acc_01.jpg",
       rutaBasePerrosAcc + "Dosificador_dog_acc_02.jpg",
@@ -210,7 +225,7 @@ const accesoriosPerros = [
   },
   {
     nombre: "Guante Quita Pelo",
-    precio: 0,
+    precio: 14000,
     imagenes: [
       rutaBasePerrosAcc + "guante_quita_pelo_dog_acc_01.jpg",
       rutaBasePerrosAcc + "guante_quita_pelo_dog_acc_02.jpg",
@@ -218,7 +233,7 @@ const accesoriosPerros = [
     descripcion: "Remueve el pelo muerto mientras lo acaricias.",
   },
   {
-    nombre: "Impermeables Wanda",
+    nombre: "Impermeable Wanda",
     precio: 41000,
     imagenes: [
       rutaBasePerrosAcc + "Wanda_impermeable_dog_acc_01.jpg",
@@ -239,37 +254,62 @@ const juguetesGatos = [
     descripcion: "Gira 360 grados y relaja a tu gato.",
   },
   {
-    nombre: "Cañas Divertidas",
+    nombre: "Caña libelula",
     precio: 12000,
-    imagenes: [
-      rutaBaseGatosJug + "Caña_flores_cat_jug_01.jpg",
-      rutaBaseGatosJug + "Caña_pluma_cat_jug_02.jpg",
-    ],
-    descripcion: "Fomenta el instinto de caza con plumas y flores.",
+    imagenes: [rutaBaseGatosJug + "Caña_flores_cat_jug_01.jpg"],
+    descripcion: "Fomenta el instinto de caza flores.",
+  },
+  {
+    nombre: "Caña Flores",
+    precio: 10000,
+    imagenes: [rutaBaseGatosJug + "Caña_pluma_cat_jug_02.jpg"],
+    descripcion: "Intensifica la actividad de casa mediante plumas.",
   },
   {
     nombre: "Juguetes con Catnip",
-    precio: 0,
-    imagenes: [
-      rutaBaseGatosJug + "Catnip_gato_jug_01.jpg",
-      rutaBaseGatosJug + "Catnip_mariquita_cat_jug_01.jpg",
-      rutaBaseGatosJug + "Catnip_cuerpoespin_dosenuno_cat_jug_01.jpg",
-      rutaBaseGatosJug + "Peluche_con_catnip_cat_jug_01.jpg",
-    ],
+    precio: 12000,
+    imagenes: [rutaBaseGatosJug + "Catnip_gato_jug_01.jpg"],
     descripcion: "Peluches suaves con hierba gatera premium.",
   },
   {
-    nombre: "Juguetes Interactivos",
-    precio: 0,
-    imagenes: [
-      rutaBaseGatosJug + "Juguete_catnip_mas_pelota_cat_jug_01.jpg",
-      rutaBaseGatosJug + "Juguete_resorte_gato_cat_jug_01.jpg",
-    ],
-    descripcion: "Combinación de texturas para horas de juego.",
+    nombre: "Peluche con Catnip",
+    precio: 12000,
+    imagenes: [rutaBaseGatosJug + "Peluche_con_catnip_cat_jug_01.jpg"],
+    descripcion: "Un hermoso peluche en forma de gato, para tu amigo.",
+  },
+  {
+    nombre: "Catnip Puercoespin",
+    precio: 10000,
+    imagenes: [rutaBaseGatosJug + "Catnip_cuerpoespin_dosenuno_cat_jug_01.jpg"],
+    descripcion: "Divertido juguete con hierba gatera.",
+  },
+  {
+    nombre: "Catnip Vaquita",
+    precio: 10000,
+    imagenes: [rutaBaseGatosJug + "Catnip_mariquita_cat_jug_01.jpg"],
+    descripcion: "Un divertido escarabajo con hierba gatera.",
+  },
+  {
+    nombre: "Catnip Queso",
+    precio: 12000,
+    imagenes: [rutaBaseGatosJug + "queso_amarillo_jug_cat_01.jpg"],
+    descripcion: "Un recipiente de hierba gatera plastico con forma de queso.",
+  },
+  {
+    nombre: "Ratón Catnip Más Pelota",
+    precio: 10000,
+    imagenes: [rutaBaseGatosJug + "Juguete_catnip_mas_pelota_cat_jug_01.jpg"],
+    descripcion: "Combinación de catnip más pelota.",
+  },
+  {
+    nombre: "Juguete Con Resorte",
+    precio: 20000,
+    imagenes: [rutaBaseGatosJug + "Juguete_resorte_gato_cat_jug_01.jpg"],
+    descripcion: "Ampliamente saltarin.",
   },
   {
     nombre: "Mazorca Chillona",
-    precio: 0,
+    precio: 9600,
     imagenes: [rutaBaseGatosJug + "Mazorca_chillona_cat_jug_01.jpg"],
     descripcion: "Juguete con sonido y textura resistente.",
   },
@@ -284,21 +324,20 @@ const juguetesGatos = [
   },
   {
     nombre: "Pelotas Locas",
-    precio: 0,
+    precio: 14000,
     imagenes: [
       rutaBaseGatosJug + "pelota_loca_pequeña_jug_cat_02.jpg",
       rutaBaseGatosJug + "pelota_loca_pequeña_jug_cat_03.jpg",
       rutaBaseGatosJug + "Pelota_asteroide_dog_jug_01.jpg",
     ],
-    descripcion: "Rebotan de forma impredecible.",
+    descripcion: "De goma y rebotan de forma impredecible.",
   },
   {
     nombre: "Peluches Variados",
-    precio: 0,
+    precio: 6500,
     imagenes: [
       rutaBaseGatosJug + "peluche_con_juguete_jug_cat_01.jpg",
       rutaBaseGatosJug + "peluche_con_juguete_jug_cat_02.jpg",
-      rutaBaseGatosJug + "queso_amarillo_jug_cat_01.jpg",
     ],
     descripcion: "Compañeros suaves para la siesta y el juego.",
   },
@@ -307,23 +346,28 @@ const juguetesGatos = [
 const accesoriosGatos = [
   {
     nombre: "Arenera Moderna",
-    precio: 0,
+    precio: 37000,
     imagenes: [
-      rutaBaseGatosAcc + "Arenera_gris_cat_acc_01.jpg",
       rutaBaseGatosAcc + "Arenera_morada_cat_acc_01.jpg",
       rutaBaseGatosAcc + "Arenera_morada_cat_acc_02.jpg",
     ],
-    descripcion: "Diseño amplio y fácil de limpiar, varios colores.",
+    descripcion: "Execelente diseño plastico.",
+  },
+  {
+    nombre: "Arenera Gris",
+    precio: 25000,
+    imagenes: [rutaBaseGatosAcc + "Arenera_gris_cat_acc_01.jpg"],
+    descripcion: "Diseño amplio y fácil de limpiar.",
   },
   {
     nombre: "Comedero Alto",
-    precio: 0,
+    precio: 14000,
     imagenes: [rutaBaseGatosAcc + "Comedero_alto_acc_cat__01.jpg"],
     descripcion: "Postura ergonómica para tu gato.",
   },
   {
     nombre: "Comederos Flor",
-    precio: 0,
+    precio: 13000,
     imagenes: [
       rutaBaseGatosAcc + "Comedero_flor_acc_cat_01.jpg",
       rutaBaseGatosAcc + "Comedero_flor_acc_cat_02.jpg",
@@ -332,14 +376,19 @@ const accesoriosGatos = [
     descripcion: "Diseños coloridos y divertidos.",
   },
   {
-    nombre: "Kit de Palas",
-    precio: 0,
+    nombre: "Palas Cara de Gato",
+    precio: 5000,
     imagenes: [
-      rutaBaseGatosAcc + "Palas_cara_gato_cat_acc_01.jpg",
+      rutaBaseGatosAcc + "Palas_cara_gato_cat_acc__01.jpg",
       rutaBaseGatosAcc + "Palas_cara_gato_cat_acc_02.jpg",
-      rutaBaseGatosAcc + "Palas_jarra_cat_acc_01.jpg",
     ],
     descripcion: "Palas resistentes para limpieza de arena.",
+  },
+  {
+    nombre: "Palas Jarra",
+    precio: 8000,
+    imagenes: [rutaBaseGatosAcc + "Palas_jarra_cat_acc_01.jpg"],
+    descripcion: "Pala plastica grande.",
   },
 ];
 
