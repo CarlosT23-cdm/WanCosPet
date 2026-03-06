@@ -498,3 +498,38 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("vaciar-btn")
     .addEventListener("click", vaciarCarrito);
 });
+// === ENVÍO WHATSAPP CON TICKET FORMATEADO ===
+function enviarPedidoWhatsApp() {
+  if (carrito.length === 0) {
+    return alert(
+      "El carrito está vacío. ¡Agrega algunos productos antes de pedir!",
+    );
+  }
+
+  const miTelefono = "573022375413";
+
+  let subtotal = 0;
+  let detalleProductos = "";
+
+  carrito.forEach((item) => {
+    detalleProductos += `✅ ${item.producto} - ${formatCurrency(item.precio)}\n`;
+    subtotal += item.precio;
+  });
+
+  const iva = Math.round(subtotal * 0.19);
+  const totalGral = subtotal + iva;
+
+  // TICKET DIRECTO Y PROFESIONAL
+  let mensaje = `*📦 NUEVO PEDIDO - WANCOS PET* 🐾\n\n`;
+  mensaje += `*PRODUCTOS:*\n${detalleProductos}\n`;
+  mensaje += `------------------------------------------\n`;
+  mensaje += `💰 *Subtotal:* ${formatCurrency(subtotal)}\n`;
+  mensaje += `🧾 *IVA (19%):* ${formatCurrency(iva)}\n`;
+  mensaje += `🔥 *TOTAL ESTIMADO: ${formatCurrency(totalGral)}*\n`;
+  mensaje += `------------------------------------------\n\n`;
+  mensaje += `_Nota: El costo de envío a ciudades fuera de Bogotá se coordinará en este 
+  chat según la transportadora de su preferencia._`;
+
+  const urlWhatsApp = `https://api.whatsapp.com/send?phone=${miTelefono}&text=${encodeURIComponent(mensaje)}`;
+  window.open(urlWhatsApp, "_blank");
+}
