@@ -86,14 +86,15 @@ nav a:hover {
 .hero {
   background:
     linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("./img_sitio/imgdivhero.jpg") center/cover no-repeat;
-  height: 300px;
+    url("./img_sitio/dalmataAdulto.jpg") center/contain no-repeat; /* Cambiado a contain, fondo o a center, al frente, segun la imagen */
+  height: 450px; /*Subir la imagen*/
+  background-color: #5c3a3a; /*Color de fondo*/
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: space-between;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: rgb(255, 253, 253);
 }
 
 .hero h2 {
