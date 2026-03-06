@@ -348,8 +348,21 @@ const ofertas = [
     nombre: "Combo Gato Casero",
     descripcion: "Catnip Aguacate + arenera gris.",
     precio: 46000,
-    imagenes: ["./img_sitio/ejemplo_cliente_feliz.jpg"],
+    imagenes: [
+      rutaBaseGatosJug + "aguacate_jug_cat_01.jpg",
+      rutaBaseGatosAcc + "Arenera_gris_cat_acc_01.jpg",
+    ],
   },
+  {
+    nombre: "Combo Limpieza Total",
+    descripcion: "Arenera morada + Kit de palas.",
+    precio: 35000,
+    imagenes: [
+      rutaBaseGatosAcc + "Arenera_morada_cat_acc_01.jpg",
+      rutaBaseGatosAcc + "Palas_jarra_cat_acc_01.jpg",
+    ],
+  },
+  // Puedes añadir más ofertas siguiendo esta misma estructura
 ];
 
 // === FUNCIONES DE RENDERIZADO ===
@@ -412,17 +425,34 @@ function initRender() {
   const ofertasGrid = document.getElementById("ofertas-grid");
   if (ofertasGrid) {
     ofertasGrid.innerHTML = "";
-    ofertas.forEach((o) => {
-      const el = document.createElement("div");
+    ofertas.forEach((o, index) => {
+      // Creamos un ID único para cada oferta basado en su índice
+      const galeriaID = `galeria-oferta-${index}`;
+      const el = document.createElement("article");
       el.className = "oferta";
+
+      const imgPrincipal = o.imagenes[0];
+      // Generamos los enlaces ocultos para el resto de imágenes
+      const imagenesExtra = o.imagenes
+        .slice(1)
+        .map(
+          (img) =>
+            `<a data-fancybox="${galeriaID}" href="${img}" style="display:none;"></a>`,
+        )
+        .join("");
+
       el.innerHTML = `
-        <a data-fancybox="galeria-ofertas" href="${o.imagenes[0]}" data-caption="${o.nombre}">
-            <img src="${o.imagenes[0]}" alt="${o.nombre}">
+        <a data-fancybox="${galeriaID}" href="${imgPrincipal}" data-caption="${o.nombre}">
+            <img src="${imgPrincipal}" alt="${o.nombre}" loading="lazy">
         </a>
-        <div class="oferta-info">
-            <h3>${o.nombre}</h3><p>${o.descripcion}</p><div class="price">${formatCurrency(o.precio)}</div>
+        ${imagenesExtra}
+        <div class="producto-info">
+            <h3>${o.nombre}</h3>
+            <p>${o.descripcion}</p>
+            <div class="price">${formatCurrency(o.precio)}</div>
             <button onclick="agregarAlCarrito('${o.nombre.replace(/'/g, "\\'")}', ${o.precio})">Añadir al carrito</button>
-        </div>`;
+        </div>
+      `;
       ofertasGrid.appendChild(el);
     });
   }
