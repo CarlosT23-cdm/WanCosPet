@@ -81,37 +81,62 @@ nav a:hover {
 }
 
 /* =====================================================================
-   === HERO SECTION ===
+   === HERO SECTION (CON FONDO DE GARABATOS DE WHATSAPP) ===
    ===================================================================== */
 .hero {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("./img_sitio/cosmoWanda_hero_encabezado_01.png") no-repeat;
+  /* Fondo base: El patrón de garabatos que generamos */
+  background-image: url("./img_sitio/header_container_fondo_encabezadoWC.jpg");
+  background-repeat: repeat;
+  background-size: 300px; /* Ajusta este número para que los dibujos se vean más grandes o pequeños */
+  background-color: #1a1a1a;
 
-  /* EL CAMBIO MAESTRO */
-  background-position: center bottom; /* Centrado horizontal, pero pegado abajo verticalmente */
-  background-size: contain; /* 'contain' hará que la imagen se vea completa de arriba a abajo */
-
-  height: 500px; /* Subimos un poco el alto para darles más protagonismo */
-  background-color: #ffffff;
-
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   text-align: center;
   color: rgb(255, 253, 253);
+  position: relative; /* Necesario para que el ::before funcione */
+  overflow: hidden;
+}
+
+/* Capa superior: La foto de Wanda y Cosmo o el Perro y Gato */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("./img_sitio/cosmoWanda_hero_encabezado_01.png") no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  pointer-events: none; /* No interfiere con los botones o textos */
+  z-index: 1;
+}
+
+.hero h2,
+.hero .tagline {
+  position: relative;
+  z-index: 2; /* Pone el texto por encima de la foto de las mascotas */
 }
 
 .hero h2 {
   font-size: 2rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Un poco más oscuro para leer mejor sobre los dibujos */
   padding: 10px 20px;
   border-radius: 10px;
+  margin-top: 40px;
 }
 
 .hero .tagline {
-  margin-top: 15px;
+  margin-bottom: 20px;
   background: linear-gradient(90deg, #ff7e43, #f5e5e5);
   color: #333;
   padding: 8px 25px;
@@ -207,23 +232,6 @@ section {
   padding: 20px;
 }
 
-.oferta {
-  background: #fff;
-  border-radius: 15px;
-  padding: 15px;
-  width: 280px; /* Tamaño fijo igual a tus otros productos */
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.oferta img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
 /* =====================================================================
    === SIDEBAR CARRITO (BANDEJA) ===
    ===================================================================== */
@@ -254,16 +262,6 @@ section {
   margin-bottom: 20px;
 }
 
-/* Desglose de precios e información */
-.desglose-carrito {
-  margin-top: 10px;
-  padding: 12px;
-  background: #fdfdfd;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  font-size: 0.9rem;
-}
-
 .info-envios {
   margin: 10px 0;
   padding: 10px;
@@ -273,14 +271,6 @@ section {
   font-weight: 700;
   color: #444;
   text-align: left;
-}
-
-.item-carrito {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
 }
 
 .carrito-overlay {
@@ -297,24 +287,9 @@ section {
 body.sidebar-abierto .carrito-overlay {
   display: block;
 }
-body.sidebar-abierto .carrito {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.btn-ocultar {
-  background: #333;
-  color: white;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
 
 /* =====================================================================
-   === BOTÓN CARRITO FLOTANTE (ESTRATEGIA FINAL) ===
+   === BOTÓN CARRITO FLOTANTE ===
    ===================================================================== */
 .carrito {
   position: fixed;
@@ -333,31 +308,31 @@ body.sidebar-abierto .carrito {
 }
 
 /* =====================================================================
-   === AJUSTES MÓVILES (MUEVE EL CARRITO ABAJO) ===
+   === AJUSTES MÓVILES ===
    ===================================================================== */
 @media (max-width: 480px) {
-  /* ESTA ES LA REGLA CLAVE: Mueve el carrito al fondo */
   .carrito {
     top: auto !important;
     bottom: 30px !important;
     right: 20px !important;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4) !important;
   }
 
   header h1 {
     font-size: 1.5rem !important;
-    padding-right: 0 !important; /* Libera el espacio del título */
   }
 
   .sidebar-carrito {
     width: 100%;
   }
+
+  .hero {
+    height: 400px; /* Un poco más bajo en móviles */
+  }
 }
 
 /* =====================================================================
-   === SIMULADOR Y FOOTER ===
+   === FOOTER ===
    ===================================================================== */
-
 footer {
   background: #333;
   color: white;
