@@ -10,7 +10,7 @@ function formatCurrency(price) {
   return `$${price.toLocaleString()} COP`;
 }
 
-// === LISTADO DE PRODUCTOS ===
+// === LISTADO DE PRODUCTOS (Mantenido igual) ===
 const juguetesPerros = [
   {
     nombre: "Ardilla Chillona",
@@ -45,7 +45,6 @@ const juguetesPerros = [
     imagenes: [rutaBasePerrosJug + "Dona_antisarro_jug_dog_01.jpg"],
     descripcion: "Limpieza dental mientras juegan.",
   },
-  //Aqui va otrro producto, otra dona
   {
     nombre: "Huesos Bicolor x2",
     precio: 14000,
@@ -409,11 +408,9 @@ const ofertas = [
       rutaBaseGatosAcc + "Palas_jarra_cat_acc_01.jpg",
     ],
   },
-  // Puedes añadir más ofertas siguiendo esta misma estructura
 ];
 
-// === FUNCIONES DE RENDERIZADO ===
-// Añadimos 'nombreGaleria' para separar por categorías
+// === FUNCIONES DE RENDERIZADO (Mejoradas con Accesibilidad) ===
 function renderLista(idContenedor, lista, nombreGaleria) {
   const cont = document.getElementById(idContenedor);
   if (!cont) return;
@@ -422,17 +419,16 @@ function renderLista(idContenedor, lista, nombreGaleria) {
     const prod = document.createElement("article");
     prod.className = "producto";
     const imgPrincipal = p.imagenes[0];
-    // Ahora cada categoría tiene su propio nombre de galería
     const imagenesExtra = p.imagenes
       .slice(1)
       .map(
         (img) =>
-          `<a data-fancybox="${nombreGaleria}" href="${img}" data-caption="${p.nombre} - ${formatCurrency(p.precio)}" style="display:none;"></a>`,
+          `<a data-fancybox="${nombreGaleria}" href="${img}" data-caption="${p.nombre} - ${formatCurrency(p.precio)}" style="display:none;" aria-hidden="true"></a>`,
       )
       .join("");
 
     prod.innerHTML = `
-      <a data-fancybox="${nombreGaleria}" href="${imgPrincipal}" data-caption="${p.nombre} - ${formatCurrency(p.precio)}">
+      <a data-fancybox="${nombreGaleria}" href="${imgPrincipal}" data-caption="${p.nombre} - ${formatCurrency(p.precio)}" aria-label="Ver imagen ampliada de ${p.nombre}">
           <img src="${imgPrincipal}" alt="${p.nombre}" loading="lazy">
       </a>
       ${imagenesExtra}
@@ -442,8 +438,8 @@ function renderLista(idContenedor, lista, nombreGaleria) {
               <p style="font-size: 0.85rem; color: #666; margin-bottom: 5px;">${p.descripcion}</p>
           </div>
           <div>
-              <div class="price">${formatCurrency(p.precio)}</div>
-              <button onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})">Añadir al carrito</button>
+              <div class="price" aria-label="Precio: ${formatCurrency(p.precio)}">${formatCurrency(p.precio)}</div>
+              <button onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})" aria-label="Agregar ${p.nombre} al carrito de compras">Añadir al carrito</button>
           </div>
       </div>`;
     cont.appendChild(prod);
@@ -451,7 +447,6 @@ function renderLista(idContenedor, lista, nombreGaleria) {
 }
 
 function initRender() {
-  // Pasamos un nombre único por categoría
   renderLista(
     "lista-juguetes-perros",
     juguetesPerros,
@@ -473,31 +468,29 @@ function initRender() {
   if (ofertasGrid) {
     ofertasGrid.innerHTML = "";
     ofertas.forEach((o, index) => {
-      // Creamos un ID único para cada oferta basado en su índice
       const galeriaID = `galeria-oferta-${index}`;
       const el = document.createElement("article");
       el.className = "oferta";
 
       const imgPrincipal = o.imagenes[0];
-      // Generamos los enlaces ocultos para el resto de imágenes
       const imagenesExtra = o.imagenes
         .slice(1)
         .map(
           (img) =>
-            `<a data-fancybox="${galeriaID}" href="${img}" style="display:none;"></a>`,
+            `<a data-fancybox="${galeriaID}" href="${img}" style="display:none;" aria-hidden="true"></a>`,
         )
         .join("");
 
       el.innerHTML = `
-        <a data-fancybox="${galeriaID}" href="${imgPrincipal}" data-caption="${o.nombre}">
+        <a data-fancybox="${galeriaID}" href="${imgPrincipal}" data-caption="${o.nombre}" aria-label="Ver oferta: ${o.nombre}">
             <img src="${imgPrincipal}" alt="${o.nombre}" loading="lazy">
         </a>
         ${imagenesExtra}
         <div class="producto-info">
             <h3>${o.nombre}</h3>
             <p>${o.descripcion}</p>
-            <div class="price">${formatCurrency(o.precio)}</div>
-            <button onclick="agregarAlCarrito('${o.nombre.replace(/'/g, "\\'")}', ${o.precio})">Añadir al carrito</button>
+            <div class="price" aria-label="Precio de oferta: ${formatCurrency(o.precio)}">${formatCurrency(o.precio)}</div>
+            <button onclick="agregarAlCarrito('${o.nombre.replace(/'/g, "\\'")}', ${o.precio})" aria-label="Agregar oferta ${o.nombre} al carrito de compras">Añadir al carrito</button>
         </div>
       `;
       ofertasGrid.appendChild(el);
@@ -505,9 +498,8 @@ function initRender() {
   }
 
   if (typeof Fancybox !== "undefined") {
-    // Vinculamos todas las galerías que empiecen con "galeria-"
     Fancybox.bind("[data-fancybox^='galeria-']", {
-      infinite: true, // Se repite al llegar al final de la categoría
+      infinite: true,
       keyboard: true,
       Toolbar: {
         display: { right: ["slideshow", "fullScreen", "thumbs", "close"] },
@@ -541,8 +533,16 @@ function vaciarCarrito() {
 
 function toggleCarrito() {
   const sidebar = document.getElementById("sidebarCarrito");
+  const isOpening = !document.body.classList.contains("sidebar-abierto");
+
   document.body.classList.toggle("sidebar-abierto");
   sidebar.classList.toggle("active");
+
+  // Accesibilidad: avisar al lector si el carrito está abierto o cerrado
+  sidebar.setAttribute("aria-hidden", !isOpening);
+  if (isOpening) {
+    sidebar.focus(); // Enfocar el carrito al abrirlo
+  }
 }
 
 function actualizarVista() {
@@ -556,7 +556,7 @@ function actualizarVista() {
   carrito.forEach((item, index) => {
     const li = document.createElement("li");
     li.className = "item-carrito";
-    li.innerHTML = `<span>${item.producto}</span> <span>${formatCurrency(item.precio)} <button onclick="eliminarDelCarrito(${index})" style="color:#ff4d4d; border:none; background:none; font-weight:bold; cursor:pointer; margin-left:10px;">X</button></span>`;
+    li.innerHTML = `<span>${item.producto}</span> <span>${formatCurrency(item.precio)} <button onclick="eliminarDelCarrito(${index})" style="color:#ff4d4d; border:none; background:none; font-weight:bold; cursor:pointer; margin-left:10px;" aria-label="Quitar ${item.producto} del carrito">X</button></span>`;
     lista.appendChild(li);
     subtotal += item.precio;
   });
@@ -575,6 +575,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("vaciar-btn")
     .addEventListener("click", vaciarCarrito);
 });
+
 // === ENVÍO WHATSAPP CON TICKET FORMATEADO ===
 function enviarPedidoWhatsApp() {
   if (carrito.length === 0) {
@@ -584,7 +585,6 @@ function enviarPedidoWhatsApp() {
   }
 
   const miTelefono = "573022375413";
-
   let subtotal = 0;
   let detalleProductos = "";
 
@@ -596,7 +596,6 @@ function enviarPedidoWhatsApp() {
   const iva = Math.round(subtotal * 0.19);
   const totalGral = subtotal + iva;
 
-  // TICKET DIRECTO Y PROFESIONAL
   let mensaje = `*📦 NUEVO PEDIDO - WANCOS PET* 🐾\n\n`;
   mensaje += `*PRODUCTOS:*\n${detalleProductos}\n`;
   mensaje += `------------------------------------------\n`;
@@ -604,8 +603,7 @@ function enviarPedidoWhatsApp() {
   mensaje += `🧾 *IVA (19%):* ${formatCurrency(iva)}\n`;
   mensaje += `🔥 *TOTAL ESTIMADO: ${formatCurrency(totalGral)}*\n`;
   mensaje += `------------------------------------------\n\n`;
-  mensaje += `_Nota: El costo de envío a ciudades fuera de Bogotá se coordinará en este 
-  chat según la transportadora de su preferencia._`;
+  mensaje += `_Nota: El costo de envío a ciudades fuera de Bogotá se coordinará en este chat según la transportadora de su preferencia._`;
 
   const urlWhatsApp = `https://api.whatsapp.com/send?phone=${miTelefono}&text=${encodeURIComponent(mensaje)}`;
   window.open(urlWhatsApp, "_blank");
