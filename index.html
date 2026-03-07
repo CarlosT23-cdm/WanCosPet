@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WanCos Pet - Accesorios y Juguetes</title>
+    <title>WanCos Pet - Accesorios y Juguetes para Mascotas</title>
 
     <link rel="icon" type="image/png" href="./img_sitio/favicon_pata.png" />
 
@@ -21,7 +21,7 @@
   <body oncontextmenu="return false;">
     <header>
       <h1>🐾 WanCos Pet</h1>
-      <nav id="mainNav">
+      <nav id="mainNav" aria-label="Menú principal">
         <a href="#juguetes-perros">Juguetes Perros</a>
         <a href="#accesorios-perros">Accesorios Perros</a>
         <a href="#juguetes-gatos">Juguetes Gatos</a>
@@ -31,28 +31,42 @@
       </nav>
     </header>
 
-    <div class="hero">
+    <div class="hero" role="img" aria-label="Fondo decorativo de WanCos Pet">
       <h2>Accesorios y Juguetes para Mascotas</h2>
       <div class="tagline">¡Cuida y consiente a tu mejor amigo!</div>
     </div>
 
-    <div class="carrito" id="boton-carrito-flotante" onclick="toggleCarrito()">
-      <span style="font-size: 1.6rem">🛒</span>
-      <span id="carrito-count">0</span>
+    <div
+      class="carrito"
+      id="boton-carrito-flotante"
+      onclick="toggleCarrito()"
+      role="button"
+      tabindex="0"
+      aria-label="Ver carrito de compras"
+    >
+      <span aria-hidden="true" style="font-size: 1.6rem">🛒</span>
+      <span id="carrito-count" aria-live="polite">0</span>
     </div>
 
     <div
       id="carrito-overlay"
       class="carrito-overlay"
       onclick="toggleCarrito()"
+      aria-hidden="true"
     ></div>
 
-    <aside id="sidebarCarrito" class="sidebar-carrito">
-      <h3>Tu carrito</h3>
+    <aside
+      id="sidebarCarrito"
+      class="sidebar-carrito"
+      aria-labelledby="titulo-carrito"
+      role="dialog"
+      aria-modal="true"
+    >
+      <h3 id="titulo-carrito">Tu carrito</h3>
 
-      <ul id="lista-carrito"></ul>
+      <ul id="lista-carrito" aria-live="gentle"></ul>
 
-      <div id="total-carrito">
+      <div id="total-carrito" aria-live="polite">
         <strong>Total: $0 COP</strong>
       </div>
 
@@ -77,6 +91,7 @@
         </button>
         <button
           id="vaciar-btn"
+          aria-label="Vaciar todos los productos del carrito"
           style="
             background-color: #ff4d4d;
             color: white;
@@ -94,33 +109,41 @@
 
       <div class="footer-sidebar">
         <h4>Ocultar bandeja</h4>
-        <button onclick="toggleCarrito()" class="btn-ocultar">Ocultar</button>
+        <button
+          onclick="toggleCarrito()"
+          class="btn-ocultar"
+          aria-label="Cerrar carrito"
+        >
+          Ocultar
+        </button>
       </div>
     </aside>
 
     <main>
-      <section id="juguetes-perros">
-        <h2 class="section-title">Juguetes para perros</h2>
+      <section id="juguetes-perros" aria-labelledby="title-j-perros">
+        <h2 id="title-j-perros" class="section-title">Juguetes para perros</h2>
         <div class="productos" id="lista-juguetes-perros"></div>
       </section>
 
-      <section id="accesorios-perros">
-        <h2 class="section-title">Accesorios para perros</h2>
+      <section id="accesorios-perros" aria-labelledby="title-a-perros">
+        <h2 id="title-a-perros" class="section-title">
+          Accesorios para perros
+        </h2>
         <div class="productos" id="lista-accesorios-perros"></div>
       </section>
 
-      <section id="juguetes-gatos">
-        <h2 class="section-title">Juguetes para gatos</h2>
+      <section id="juguetes-gatos" aria-labelledby="title-j-gatos">
+        <h2 id="title-j-gatos" class="section-title">Juguetes para gatos</h2>
         <div class="productos" id="lista-juguetes-gatos"></div>
       </section>
 
-      <section id="accesorios-gatos">
-        <h2 class="section-title">Accesorios para gatos</h2>
+      <section id="accesorios-gatos" aria-labelledby="title-a-gatos">
+        <h2 id="title-a-gatos" class="section-title">Accesorios para gatos</h2>
         <div class="productos" id="lista-accesorios-gatos"></div>
       </section>
 
-      <section id="ofertas">
-        <h2 class="section-title">Ofertas Especiales</h2>
+      <section id="ofertas" aria-labelledby="title-ofertas">
+        <h2 id="title-ofertas" class="section-title">Ofertas Especiales</h2>
         <div id="ofertas-grid" class="ofertas-grid"></div>
       </section>
     </main>
