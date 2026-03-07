@@ -28,8 +28,8 @@ const juguetesPerros = [
     descripcion: "Diseño ergonómico y sonido.",
   },
   {
-    nombre: "Cangrejo Divertido",
-    precio: 15000,
+    nombre: "Cangrejo Limpia dientes",
+    precio: 10000,
     imagenes: [rutaBasePerrosJug + "Cangrejo_dog_01.jpg"],
     descripcion: "Juguete de textura única.",
   },
@@ -45,44 +45,45 @@ const juguetesPerros = [
     imagenes: [rutaBasePerrosJug + "Dona_antisarro_jug_dog_01.jpg"],
     descripcion: "Limpieza dental mientras juegan.",
   },
+  //Aqui va otrro producto, otra dona
   {
     nombre: "Huesos Bicolor x2",
-    precio: 12000,
+    precio: 14000,
     imagenes: [rutaBasePerrosJug + "Hueso_bicolor_x2_dog_jug_01.jpg"],
     descripcion: "Set de dos huesos resistentes.",
   },
   {
     nombre: "Hueso Dentado",
-    precio: 11000,
+    precio: 9000,
     imagenes: [rutaBasePerrosJug + "Hueso_dentado_3x4_dog_jug_01.jpg"],
     descripcion: "Masajea encías y limpia dientes.",
   },
   {
     nombre: "Hueso Dino",
-    precio: 14000,
+    precio: 10000,
     imagenes: [rutaBasePerrosJug + "Hueso_dino_dog_jug_01.jpg"],
     descripcion: "Forma divertida y gran resistencia.",
   },
   {
     nombre: "Hueso Mordedor",
-    precio: 8500,
+    precio: 14000,
     imagenes: [rutaBasePerrosJug + "hueso_mordedor_jug_dog_01.jpg"],
     descripcion: "Clásico para morder por horas.",
   },
   {
     nombre: "Hueso Pitbull",
-    precio: 18000,
+    precio: 8000,
     imagenes: [rutaBasePerrosJug + "Hueso_pitbull_dog_jug_01.jpg"],
     descripcion: "Extra duradero para mandíbulas fuertes.",
   },
   {
     nombre: "Jalador Trenza",
-    precio: 16500,
+    precio: 11000,
     imagenes: [rutaBasePerrosJug + "Jalador_trenza_mediano_dog_jug_01.jpg"],
     descripcion: "Cuerda de algodón de alta calidad.",
   },
   {
-    nombre: "Pelota Futbol Americano",
+    nombre: "Pelota Cillona Futbol Americano",
     precio: 10200,
     imagenes: [
       rutaBasePerrosJug + "Pelota_chillona_futbol_americano_jug_dog_01.jpg",
@@ -91,19 +92,19 @@ const juguetesPerros = [
   },
   {
     nombre: "Pelota Rugby",
-    precio: 27000,
+    precio: 20000,
     imagenes: [rutaBasePerrosJug + "Pelota_rugby_sonido_jug_dog_01.jpg"],
     descripcion: "Con un plastico resistente y muy ligera.",
   },
   {
     nombre: "Pelota Disco",
-    precio: 13000,
+    precio: 28000,
     imagenes: [rutaBasePerrosJug + "pelota_disco_jug_dog_01.jpg"],
     descripcion: "Textura llamativa y resistente.",
   },
   {
-    nombre: "Pelota con Lazo",
-    precio: 14500,
+    nombre: "Pelota Lazo",
+    precio: 10000,
     imagenes: [
       rutaBasePerrosJug + "Pelota_lazo_dog_jug_01.jpg",
       rutaBasePerrosJug + "Pelota_lazo_dog_jug_02.jpg",
@@ -111,7 +112,7 @@ const juguetesPerros = [
     descripcion: "Ideal para juegos de lanzar.",
   },
   {
-    nombre: "Pelota Lazo Tenis",
+    nombre: "Lazo Pelota de Tenis",
     precio: 11000,
     imagenes: [
       rutaBasePerrosJug + "Pelota_lazo_tenis_jug_dog_01.jpg",
@@ -120,32 +121,32 @@ const juguetesPerros = [
     descripcion: "Combinación de texturas favorita.",
   },
   {
-    nombre: "Pelota Loca",
-    precio: 6000,
+    nombre: "Pelota Loca Pequeña",
+    precio: 14000,
     imagenes: [rutaBasePerrosJug + "pelota_loca_pequeña_jug_dog_01.jpg"],
     descripcion: "Pequeña pero muy saltarina.",
   },
   {
     nombre: "Pelota Snacks",
-    precio: 16000,
+    precio: 20000,
     imagenes: [rutaBasePerrosJug + "Pelota_snack_dog_jug_01.jpg"],
     descripcion: "Rellénala con sus snacks favoritos.",
   },
   {
     nombre: "Peluche Lona",
-    precio: 19000,
+    precio: 15000,
     imagenes: [rutaBasePerrosJug + "Peluche_lona_jug_dog_01.jpg"],
     descripcion: "Tela reforzada para mayor duración.",
   },
   {
-    nombre: "Peluche Sonido",
-    precio: 15000,
+    nombre: "Peluche Kiwi Chillón",
+    precio: 10000,
     imagenes: [rutaBasePerrosJug + "Peluche_pequeño_sonido_dog_jug_01.jpg"],
     descripcion: "Compañero suave para cachorros.",
   },
   {
     nombre: "Pesa Antisarro",
-    precio: 12500,
+    precio: 9000,
     imagenes: [rutaBasePerrosJug + "Pesa_Antisarro_dog_jug_01.jpg"],
     descripcion: "Forma de pesa para fácil agarre.",
   },
@@ -159,13 +160,13 @@ const accesoriosPerros = [
     descripcion: "Agua, comida, bolsas y pala.",
   },
   {
-    nombre: "Bolsas de repuesto por 6",
+    nombre: "Bolsas Biodegradable por 6",
     precio: 13500,
     imagenes: [rutaBasePerrosAcc + "Bolsas_repuesto_paquete_dog_x6_acc_01.jpg"],
     descripcion: "Paquete surtido de 6 rollos resistentes.",
   },
   {
-    nombre: "Bolsas de Repuesto",
+    nombre: "Bolsas Biodegradable por 3",
     precio: 7000,
     imagenes: [rutaBasePerrosAcc + "Bolsas_repuesto_x3_acc_dog_01.jpg"],
     descripcion: "Rollos de bolsas resistentes para desechos.",
@@ -198,7 +199,7 @@ const accesoriosPerros = [
     descripcion: "5 metros de libertad.",
   },
   {
-    nombre: "Dispensadores de Bolsas",
+    nombre: "Dispensadores de Bolsas Fino",
     precio: 11000,
     imagenes: [
       rutaBasePerrosAcc + "Dispensador_bolsas_fino_acc_dog_01.jpg",
@@ -215,7 +216,7 @@ const accesoriosPerros = [
     descripcion: "Para quye no te enrredes con tus bolsas.",
   },
   {
-    nombre: "Dosificador de Comida",
+    nombre: "Dosificador Dog Agua",
     precio: 16000,
     imagenes: [
       rutaBasePerrosAcc + "Dosificador_dog_acc_01.jpg",
@@ -236,9 +237,6 @@ const accesoriosPerros = [
     nombre: "Impermeable Wanda",
     precio: 41000,
     imagenes: [
-      rutaBasePerrosAcc + "Wanda_impermeable_dog_acc_01.jpg",
-      rutaBasePerrosAcc + "Wanda_impermeable_dog_acc_02.jpg",
-      rutaBasePerrosAcc + "Wanda_impermeable_dog_acc_04.jpg",
       rutaBasePerrosAcc + "Wanda_impermeable_dog_acc_05.jpg",
       rutaBasePerrosAcc + "Wanda_impermeable_dog_acc_09.jpg",
     ],
