@@ -87,7 +87,7 @@ nav a:hover {
   /* Fondo base: El patrón de garabatos que generamos */
   background-image: url("./img_sitio/alternativa_fondoMasClaro_encabezadoWC");
   background-repeat: repeat;
-  background-size: 950px; /* Ajusta este número para que los dibujos se vean más grandes o pequeños */
+  background-size: 1200px; /* Ajusta este número para que los dibujos se vean más grandes o pequeños */
   background-color: #f0f0f0;
 
   height: 500px;
