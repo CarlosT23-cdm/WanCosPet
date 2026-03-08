@@ -433,14 +433,16 @@ function renderLista(idContenedor, lista, nombreGaleria) {
       </a>
       ${imagenesExtra}
       <div class="producto-info">
-          <div>
-              <h3>${p.nombre}</h3>
-              <p style="font-size: 0.85rem; color: #666; margin-bottom: 5px;">${p.descripcion}</p>
-          </div>
-          <div>
-              <div class="price" aria-label="Precio: ${formatCurrency(p.precio)}">${formatCurrency(p.precio)}</div>
-              <button onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})" aria-label="Agregar ${p.nombre} al carrito de compras">Añadir al carrito</button>
-          </div>
+         <div class="price" aria-label="Precio: ${formatCurrency(p.precio)}">${formatCurrency(p.precio)}</div>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <button onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})" aria-label="Agregar ${p.nombre} al carrito">Añadir al carrito</button>
+                <button onclick="toggleFavorito('${p.nombre.replace(/'/g, "\\'")}')" 
+                        id="fav-${p.nombre.replace(/\s+/g, "-")}"
+                        style="background: none; border: none; font-size: 1.5rem; cursor: pointer; transition: transform 0.2s;" 
+                        aria-label="Marcar ${p.nombre} como favorito">
+                    🤍
+                </button>
+              </div>
       </div>`;
     cont.appendChild(prod);
   });
@@ -506,6 +508,7 @@ function initRender() {
       },
     });
   }
+  cargarFavoritos();
 }
 
 // === LÓGICA DE CARRITO ===
@@ -608,8 +611,34 @@ function enviarPedidoWhatsApp() {
   mensaje += `------------------------------------------\n`;
   mensaje += `🔥 *TOTAL A PAGAR: ${formatCurrency(totalGral)}*\n`;
   mensaje += `------------------------------------------\n\n`;
-  mensaje += `_Nota: Envíos a Bogotá y otras ciudades.`;
+  mensaje += `_Nota: Envíos a Bogotá y otras ciudades, el envío se hace vía interrapidisimo.`;
 
   const urlWhatsApp = `https://api.whatsapp.com/send?phone=${miTelefono}&text=${encodeURIComponent(mensaje)}`;
   window.open(urlWhatsApp, "_blank");
+}
+
+// === LÓGICA DE FAVORITOS ===
+let favoritos = JSON.parse(localStorage.getItem("wancos_favoritos") || "[]");
+
+function toggleFavorito(nombre) {
+  const index = favoritos.indexOf(nombre);
+  const btn = document.getElementById(`fav-${nombre.replace(/\s+/g, "-")}`);
+
+  if (index === -1) {
+    favoritos.push(nombre);
+    btn.innerText = "❤️";
+  } else {
+    favoritos.splice(index, 1);
+    btn.innerText = "🤍";
+  }
+
+  localStorage.setItem("wancos_favoritos", JSON.stringify(favoritos));
+}
+
+// Función para restaurar corazones al cargar la página
+function cargarFavoritos() {
+  favoritos.forEach((nombre) => {
+    const btn = document.getElementById(`fav-${nombre.replace(/\s+/g, "-")}`);
+    if (btn) btn.innerText = "❤️";
+  });
 }

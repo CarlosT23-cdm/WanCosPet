@@ -96,8 +96,7 @@ nav a:hover {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  color: rgb(255, 253, 253)
-  ;
+  color: rgb(255, 253, 253);
   position: relative; /* Necesario para que el ::before funcione */
   overflow: hidden;
 }
@@ -233,6 +232,10 @@ section {
   padding: 20px;
 }
 
+/* Estilo para el icono de favoritos */
+.producto-info button:last-child:hover {
+  transform: scale(1.2);
+}
 /* =====================================================================
    === SIDEBAR CARRITO (BANDEJA) ===
    ===================================================================== */
@@ -292,43 +295,41 @@ body.sidebar-abierto .carrito-overlay {
    === ESTILO PARA EL BOTÓN OCULTAR (OPCIÓN A - MINIMALISTA) ===
    ===================================================================== */
 .footer-sidebar .btn-ocultar {
-    /* Eliminamos el estilo básico de Windows */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: none;
-    border: none;
-    outline: none;
+  /* Eliminamos el estilo básico de Windows */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
 
-    /* Estilo del botón */
-    color: #ff914d; /* Color naranja de la marca */
-    background-color: #fff3e8; /* Un naranja muy pálido de fondo */
-    border: 2px solid transparent; /* Para el efecto hover */
-    padding: 10px 20px;
-    font-weight: 700; /* Texto en negrita para que se note */
-    font-size: 0.9rem;
-    cursor: pointer;
-    border-radius: 50px; /* Bordes totalmente redondeados */
-    text-transform: uppercase; /* Todo en mayúsculas para un toque moderno */
-    letter-spacing: 1px; /* Espaciado entre letras */
-    transition: all 0.3s ease; /* Transición suave */
-    display: block; /* Centrado */
-    margin: 0 auto;
-    width: auto; /* Que no ocupe todo el ancho */
-    margin-top: 10px;
+  /* Estilo del botón */
+  color: #ff914d; /* Color naranja de la marca */
+  background-color: #fff3e8; /* Un naranja muy pálido de fondo */
+  border: 2px solid transparent; /* Para el efecto hover */
+  padding: 10px 20px;
+  font-weight: 700; /* Texto en negrita para que se note */
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 50px; /* Bordes totalmente redondeados */
+  text-transform: uppercase; /* Todo en mayúsculas para un toque moderno */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  transition: all 0.3s ease; /* Transición suave */
+  display: block; /* Centrado */
+  margin: 0 auto;
+  width: auto; /* Que no ocupe todo el ancho */
+  margin-top: 10px;
 }
 
 /* Efecto al pasar el mouse (hover) o al tocar en móvil */
 .footer-sidebar .btn-ocultar:hover,
 .footer-sidebar .btn-ocultar:focus {
-    color: #fff;
-    background-color: #ff914d; /* Se llena de naranja */
-    border-color: #ff914d;
-    transform: scale(1.05); /* Un pequeño aumento de tamaño */
-    box-shadow: 0 4px 10px rgba(255, 145, 77, 0.3); /* Sombra naranja suave */
+  color: #fff;
+  background-color: #ff914d; /* Se llena de naranja */
+  border-color: #ff914d;
+  transform: scale(1.05); /* Un pequeño aumento de tamaño */
+  box-shadow: 0 4px 10px rgba(255, 145, 77, 0.3); /* Sombra naranja suave */
 }
-
-
 
 /* =====================================================================
    === BOTÓN CARRITO FLOTANTE ===
