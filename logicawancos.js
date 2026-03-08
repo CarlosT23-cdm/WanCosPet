@@ -16,10 +16,13 @@ const fotosClientes = [
   "./img_sitio/cliente3.jpg",
 ];
 
+// Nueva lista para videos de clientes
+const videosClientes = ["./video_tienda/video_cliente1.mp4"];
+
 function renderClientes() {
   const grid = document.getElementById("clientes-grid");
   if (!grid) return;
-
+  grid.innerHTML = "";
   fotosClientes.forEach((foto) => {
     const img = document.createElement("img");
     img.src = foto;
@@ -29,8 +32,32 @@ function renderClientes() {
   });
 }
 
-// === LISTADO DE PRODUCTOS (Mantenido igual) ===
+function renderVideosClientes() {
+  const grid = document.getElementById("videos-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  videosClientes.forEach((video) => {
+    const videoCard = document.createElement("div");
+    videoCard.className = "cliente-video-card";
+    videoCard.innerHTML = `
+      <video width="100%" height="auto" controls style="border-radius:15px; background:#000;">
+        <source src="${video}" type="video/mp4">
+        Tu navegador no soporta videos.
+      </video>
+    `;
+    grid.appendChild(videoCard);
+  });
+}
+
+// === LISTADO DE PRODUCTOS ===
 const juguetesPerros = [
+  {
+    nombre: "Juguete Ratón Cuerda",
+    precio: 0,
+    imagenes: [rutaBaseGatosJug + "Paquete_raton_x3_cat_jug_01.jpg"],
+    video: "./video_tienda/Raton_cuerda_pequeño_cat_jug.mp4",
+    descripcion: "Ratón de cuerda color negro, plástico, tamaño mediano.",
+  },
   {
     nombre: "Ardilla Chillona",
     precio: 10000,
@@ -231,7 +258,7 @@ const accesoriosPerros = [
     imagenes: [
       rutaBasePerrosAcc + "Dispensador_bolsas_linterna_acc_dog_01.jpg",
     ],
-    descripcion: "Para quye no te enrredes con tus bolsas.",
+    descripcion: "Para que no te enredes con tus bolsas.",
   },
   {
     nombre: "Dosificador Dog Agua",
@@ -429,9 +456,8 @@ const ofertas = [
   },
 ];
 
-// === FUNCIONES DE RENDERIZADO (Mejoradas con Accesibilidad) ===
 // =====================================================================
-// === LÓGICA DE RENDERIZADO CON BUSCADOR Y DESCRIPCIÓN RESTAURADA ===
+// === FUNCIONES DE RENDERIZADO ===
 // =====================================================================
 
 function renderLista(idContenedor, lista, nombreGaleria) {
@@ -441,8 +467,19 @@ function renderLista(idContenedor, lista, nombreGaleria) {
   lista.forEach((p) => {
     const prod = document.createElement("article");
     prod.className = "producto";
-    const imgPrincipal = p.imagenes[0];
-    const imagenesExtra = p.imagenes
+
+    // Si no tiene imágenes pero tiene video, usamos placeholder
+    const imgPrincipal =
+      p.imagenes && p.imagenes.length > 0
+        ? p.imagenes[0]
+        : "https://via.placeholder.com/300?text=WanCos+Pet";
+
+    // Botón de video (Fancybox lo abre automáticamente si es .mp4)
+    const botonVideo = p.video
+      ? `<a data-fancybox="${nombreGaleria}" href="${p.video}" class="btn-video" style="display:block; margin: 10px 0; color: #ff914d; font-weight: bold; text-decoration: none; cursor:pointer;">🎥 Ver Video</a>`
+      : "";
+
+    const imagenesExtra = (p.imagenes || [])
       .slice(1)
       .map(
         (img) =>
@@ -458,6 +495,7 @@ function renderLista(idContenedor, lista, nombreGaleria) {
       <div class="producto-info">
           <h3>${p.nombre}</h3>
           <p style="font-size: 0.85rem; color: #666; margin-bottom: 10px;">${p.descripcion}</p>
+          ${botonVideo}
           <div class="price" aria-label="Precio: ${formatCurrency(p.precio)}">${formatCurrency(p.precio)}</div>
               <div style="display: flex; gap: 10px; align-items: center; justify-content: center;">
                 <button onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})" aria-label="Agregar ${p.nombre} al carrito">Añadir al carrito</button>
@@ -472,47 +510,6 @@ function renderLista(idContenedor, lista, nombreGaleria) {
     cont.appendChild(prod);
   });
 }
-
-// === INICIO CONSOLIDADO ===
-document.addEventListener("DOMContentLoaded", () => {
-  initRender();
-  actualizarVista();
-  cargarFavoritos();
-
-  const vaciarBtn = document.getElementById("vaciar-btn");
-  if (vaciarBtn) vaciarBtn.addEventListener("click", vaciarCarrito);
-
-  // Lógica del buscador
-  const buscador = document.getElementById("buscador");
-  if (buscador) {
-    buscador.addEventListener("input", (e) => {
-      const termino = e.target.value.toLowerCase();
-      const filtrar = (lista, idContenedor, galeria) => {
-        const filtrados = lista.filter((p) =>
-          p.nombre.toLowerCase().includes(termino),
-        );
-        renderLista(idContenedor, filtrados, galeria);
-      };
-
-      filtrar(
-        juguetesPerros,
-        "lista-juguetes-perros",
-        "galeria-juguetes-perros",
-      );
-      filtrar(
-        accesoriosPerros,
-        "lista-accesorios-perros",
-        "galeria-accesorios-perros",
-      );
-      filtrar(juguetesGatos, "lista-juguetes-gatos", "galeria-juguetes-gatos");
-      filtrar(
-        accesoriosGatos,
-        "lista-accesorios-gatos",
-        "galeria-accesorios-gatos",
-      );
-    });
-  }
-});
 
 function initRender() {
   renderLista(
@@ -539,26 +536,25 @@ function initRender() {
       const galeriaID = `galeria-oferta-${index}`;
       const el = document.createElement("article");
       el.className = "oferta";
-
       const imgPrincipal = o.imagenes[0];
       const imagenesExtra = o.imagenes
         .slice(1)
         .map(
           (img) =>
-            `<a data-fancybox="${galeriaID}" href="${img}" style="display:none;" aria-hidden="true"></a>`,
+            `<a data-fancybox="${galeriaID}" href="${img}" style="display:none;"></a>`,
         )
         .join("");
 
       el.innerHTML = `
-        <a data-fancybox="${galeriaID}" href="${imgPrincipal}" data-caption="${o.nombre}" aria-label="Ver oferta: ${o.nombre}">
+        <a data-fancybox="${galeriaID}" href="${imgPrincipal}" data-caption="${o.nombre}">
             <img src="${imgPrincipal}" alt="${o.nombre}" loading="lazy">
         </a>
         ${imagenesExtra}
         <div class="producto-info">
             <h3>${o.nombre}</h3>
             <p>${o.descripcion}</p>
-            <div class="price" aria-label="Precio de oferta: ${formatCurrency(o.precio)}">${formatCurrency(o.precio)}</div>
-            <button onclick="agregarAlCarrito('${o.nombre.replace(/'/g, "\\'")}', ${o.precio})" aria-label="Agregar oferta ${o.nombre} al carrito de compras">Añadir al carrito</button>
+            <div class="price">${formatCurrency(o.precio)}</div>
+            <button onclick="agregarAlCarrito('${o.nombre.replace(/'/g, "\\'")}', ${o.precio})">Añadir al carrito</button>
         </div>
       `;
       ofertasGrid.appendChild(el);
@@ -569,13 +565,11 @@ function initRender() {
     Fancybox.bind("[data-fancybox^='galeria-']", {
       infinite: true,
       keyboard: true,
-      Toolbar: {
-        display: { right: ["slideshow", "fullScreen", "thumbs", "close"] },
-      },
     });
   }
   cargarFavoritos();
   renderClientes();
+  renderVideosClientes();
 }
 
 // === LÓGICA DE CARRITO ===
@@ -603,16 +597,8 @@ function vaciarCarrito() {
 
 function toggleCarrito() {
   const sidebar = document.getElementById("sidebarCarrito");
-  const isOpening = !document.body.classList.contains("sidebar-abierto");
-
   document.body.classList.toggle("sidebar-abierto");
   sidebar.classList.toggle("active");
-
-  // Accesibilidad: avisar al lector si el carrito está abierto o cerrado
-  sidebar.setAttribute("aria-hidden", !isOpening);
-  if (isOpening) {
-    sidebar.focus(); // Enfocar el carrito al abrirlo
-  }
 }
 
 function actualizarVista() {
@@ -622,17 +608,16 @@ function actualizarVista() {
   if (!lista || !totalEl || !countEl) return;
 
   lista.innerHTML = "";
-  let totalFinal = 0; // Cambiamos subtotal por totalFinal
+  let totalFinal = 0;
 
   carrito.forEach((item, index) => {
     const li = document.createElement("li");
     li.className = "item-carrito";
-    li.innerHTML = `<span>${item.producto}</span> <span>${formatCurrency(item.precio)} <button onclick="eliminarDelCarrito(${index})" style="color:#ff4d4d; border:none; background:none; font-weight:bold; cursor:pointer; margin-left:10px;" aria-label="Quitar ${item.producto} del carrito">X</button></span>`;
+    li.innerHTML = `<span>${item.producto}</span> <span>${formatCurrency(item.precio)} <button onclick="eliminarDelCarrito(${index})" style="color:#ff4d4d; border:none; background:none; font-weight:bold; cursor:pointer; margin-left:10px;">X</button></span>`;
     lista.appendChild(li);
     totalFinal += item.precio;
   });
 
-  // Estructura simplificada: Eliminamos IVA y Subtotal. Solo dejamos el Total en negro.
   totalEl.innerHTML = `
     <div class="info-envios">🚚 Envíos GRATIS en Bogotá</div>
     <div class="desglose-carrito">
@@ -645,67 +630,79 @@ function actualizarVista() {
   countEl.innerText = carrito.length;
 }
 
-// === INICIO ===
-document.addEventListener("DOMContentLoaded", () => {
-  initRender();
-  actualizarVista();
-  document
-    .getElementById("vaciar-btn")
-    .addEventListener("click", vaciarCarrito);
-});
-
-// === ENVÍO WHATSAPP CON TICKET SIMPLIFICADO ===
+// === ENVÍO WHATSAPP ===
 function enviarPedidoWhatsApp() {
-  if (carrito.length === 0) {
-    return alert(
-      "El carrito está vacío. ¡Agrega algunos productos antes de pedir!",
-    );
-  }
-
+  if (carrito.length === 0) return alert("El carrito está vacío.");
   const miTelefono = "573022375413";
-
   let totalGral = 0;
   let detalleProductos = "";
-
   carrito.forEach((item) => {
     detalleProductos += `✅ ${item.producto} - ${formatCurrency(item.precio)}\n`;
     totalGral += item.precio;
   });
-
-  // TICKET LIMPIO Y DIRECTO (Sin Subtotal ni IVA)
-  let mensaje = `*📦 NUEVO PEDIDO - WANCOS PET* 🐾\n\n`;
-  mensaje += `*PRODUCTOS:*\n${detalleProductos}\n`;
-  mensaje += `------------------------------------------\n`;
-  mensaje += `🔥 *TOTAL A PAGAR: ${formatCurrency(totalGral)}*\n`;
-  mensaje += `------------------------------------------\n\n`;
-  mensaje += `_Nota: Envíos a Bogotá y otras ciudades, el envío se hace vía interrapidisimo.`;
-
-  const urlWhatsApp = `https://api.whatsapp.com/send?phone=${miTelefono}&text=${encodeURIComponent(mensaje)}`;
-  window.open(urlWhatsApp, "_blank");
+  let mensaje = `*📦 NUEVO PEDIDO - WANCOS PET* 🐾\n\n*PRODUCTOS:*\n${detalleProductos}\n------------------------------------------\n🔥 *TOTAL A PAGAR: ${formatCurrency(totalGral)}*\n------------------------------------------\n\n_Nota: Envíos a Bogotá y otras ciudades vía interrapidisimo.`;
+  window.open(
+    `https://api.whatsapp.com/send?phone=${miTelefono}&text=${encodeURIComponent(mensaje)}`,
+    "_blank",
+  );
 }
 
-// === LÓGICA DE FAVORITOS ===
+// === FAVORITOS ===
 let favoritos = JSON.parse(localStorage.getItem("wancos_favoritos") || "[]");
-
 function toggleFavorito(nombre) {
   const index = favoritos.indexOf(nombre);
   const btn = document.getElementById(`fav-${nombre.replace(/\s+/g, "-")}`);
-
   if (index === -1) {
     favoritos.push(nombre);
-    btn.innerText = "❤️";
+    if (btn) btn.innerText = "❤️";
   } else {
     favoritos.splice(index, 1);
-    btn.innerText = "🤍";
+    if (btn) btn.innerText = "🤍";
   }
-
   localStorage.setItem("wancos_favoritos", JSON.stringify(favoritos));
 }
 
-// Función para restaurar corazones al cargar la página
 function cargarFavoritos() {
   favoritos.forEach((nombre) => {
     const btn = document.getElementById(`fav-${nombre.replace(/\s+/g, "-")}`);
     if (btn) btn.innerText = "❤️";
   });
 }
+
+// === INICIO CONSOLIDADO CON BUSCADOR ===
+document.addEventListener("DOMContentLoaded", () => {
+  initRender();
+  actualizarVista();
+
+  const vaciarBtn = document.getElementById("vaciar-btn");
+  if (vaciarBtn) vaciarBtn.addEventListener("click", vaciarCarrito);
+
+  const buscador = document.getElementById("buscador");
+  if (buscador) {
+    buscador.addEventListener("input", (e) => {
+      const termino = e.target.value.toLowerCase();
+      const filtrar = (lista, idContenedor, galeria) => {
+        const filtrados = lista.filter((p) =>
+          p.nombre.toLowerCase().includes(termino),
+        );
+        renderLista(idContenedor, filtrados, galeria);
+      };
+      filtrar(
+        juguetesPerros,
+        "lista-juguetes-perros",
+        "galeria-juguetes-perros",
+      );
+      filtrar(
+        accesoriosPerros,
+        "lista-accesorios-perros",
+        "galeria-accesorios-perros",
+      );
+      filtrar(juguetesGatos, "lista-juguetes-gatos", "galeria-juguetes-gatos");
+      filtrar(
+        accesoriosGatos,
+        "lista-accesorios-gatos",
+        "galeria-accesorios-gatos",
+      );
+    });
+  }
+});
