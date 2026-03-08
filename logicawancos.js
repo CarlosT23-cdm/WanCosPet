@@ -552,18 +552,26 @@ function actualizarVista() {
   if (!lista || !totalEl || !countEl) return;
 
   lista.innerHTML = "";
-  let subtotal = 0;
+  let totalFinal = 0; // Cambiamos subtotal por totalFinal
+
   carrito.forEach((item, index) => {
     const li = document.createElement("li");
     li.className = "item-carrito";
     li.innerHTML = `<span>${item.producto}</span> <span>${formatCurrency(item.precio)} <button onclick="eliminarDelCarrito(${index})" style="color:#ff4d4d; border:none; background:none; font-weight:bold; cursor:pointer; margin-left:10px;" aria-label="Quitar ${item.producto} del carrito">X</button></span>`;
     lista.appendChild(li);
-    subtotal += item.precio;
+    totalFinal += item.precio;
   });
 
-  const iva = Math.round(subtotal * 0.19);
-  const totalConIva = subtotal + iva;
-  totalEl.innerHTML = `<div class="info-envios">🚚 Envíos GRATIS en Bogotá</div><div class="desglose-carrito"><div>Subtotal: ${formatCurrency(subtotal)}</div><div>IVA (19%): ${formatCurrency(iva)}</div><hr><strong>TOTAL: ${formatCurrency(totalConIva)}</strong></div>`;
+  // Estructura simplificada: Eliminamos IVA y Subtotal. Solo dejamos el Total en negro.
+  totalEl.innerHTML = `
+    <div class="info-envios">🚚 Envíos GRATIS en Bogotá</div>
+    <div class="desglose-carrito">
+      <hr>
+      <div style="color: black; font-size: 1.2rem;">
+        <strong>TOTAL: ${formatCurrency(totalFinal)}</strong>
+      </div>
+    </div>`;
+
   countEl.innerText = carrito.length;
 }
 
