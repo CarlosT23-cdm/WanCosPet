@@ -609,7 +609,7 @@ function enviarPedidoWhatsApp() {
   mensaje += `🔥 *TOTAL A PAGAR: ${formatCurrency(totalGral)}*\n`;
   mensaje += `------------------------------------------\n\n`;
   mensaje += `_Nota: Envíos gratis en Bogotá. 
-  El costo de envío a otras ciudades depende de la transportadora de su preferencia._`;
+  El costo de envío a otras ciudades depende de la transportadora que el cliente seleccione._`;
 
   const urlWhatsApp = `https://api.whatsapp.com/send?phone=${miTelefono}&text=${encodeURIComponent(mensaje)}`;
   window.open(urlWhatsApp, "_blank");
