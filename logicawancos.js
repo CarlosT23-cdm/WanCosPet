@@ -430,6 +430,10 @@ const ofertas = [
 ];
 
 // === FUNCIONES DE RENDERIZADO (Mejoradas con Accesibilidad) ===
+// =====================================================================
+// === LÓGICA DE RENDERIZADO CON BUSCADOR Y DESCRIPCIÓN RESTAURADA ===
+// =====================================================================
+
 function renderLista(idContenedor, lista, nombreGaleria) {
   const cont = document.getElementById(idContenedor);
   if (!cont) return;
@@ -452,8 +456,10 @@ function renderLista(idContenedor, lista, nombreGaleria) {
       </a>
       ${imagenesExtra}
       <div class="producto-info">
-         <div class="price" aria-label="Precio: ${formatCurrency(p.precio)}">${formatCurrency(p.precio)}</div>
-              <div style="display: flex; gap: 10px; align-items: center;">
+          <h3>${p.nombre}</h3>
+          <p style="font-size: 0.85rem; color: #666; margin-bottom: 10px;">${p.descripcion}</p>
+          <div class="price" aria-label="Precio: ${formatCurrency(p.precio)}">${formatCurrency(p.precio)}</div>
+              <div style="display: flex; gap: 10px; align-items: center; justify-content: center;">
                 <button onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})" aria-label="Agregar ${p.nombre} al carrito">Añadir al carrito</button>
                 <button onclick="toggleFavorito('${p.nombre.replace(/'/g, "\\'")}')" 
                         id="fav-${p.nombre.replace(/\s+/g, "-")}"
@@ -466,6 +472,47 @@ function renderLista(idContenedor, lista, nombreGaleria) {
     cont.appendChild(prod);
   });
 }
+
+// === INICIO CONSOLIDADO ===
+document.addEventListener("DOMContentLoaded", () => {
+  initRender();
+  actualizarVista();
+  cargarFavoritos();
+
+  const vaciarBtn = document.getElementById("vaciar-btn");
+  if (vaciarBtn) vaciarBtn.addEventListener("click", vaciarCarrito);
+
+  // Lógica del buscador
+  const buscador = document.getElementById("buscador");
+  if (buscador) {
+    buscador.addEventListener("input", (e) => {
+      const termino = e.target.value.toLowerCase();
+      const filtrar = (lista, idContenedor, galeria) => {
+        const filtrados = lista.filter((p) =>
+          p.nombre.toLowerCase().includes(termino),
+        );
+        renderLista(idContenedor, filtrados, galeria);
+      };
+
+      filtrar(
+        juguetesPerros,
+        "lista-juguetes-perros",
+        "galeria-juguetes-perros",
+      );
+      filtrar(
+        accesoriosPerros,
+        "lista-accesorios-perros",
+        "galeria-accesorios-perros",
+      );
+      filtrar(juguetesGatos, "lista-juguetes-gatos", "galeria-juguetes-gatos");
+      filtrar(
+        accesoriosGatos,
+        "lista-accesorios-gatos",
+        "galeria-accesorios-gatos",
+      );
+    });
+  }
+});
 
 function initRender() {
   renderLista(
