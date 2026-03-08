@@ -10,6 +10,25 @@ function formatCurrency(price) {
   return `$${price.toLocaleString()} COP`;
 }
 
+const fotosClientes = [
+  "./img_sitio/cliente1.jpg",
+  "./img_sitio/cliente2.jpg",
+  "./img_sitio/cliente3.jpg",
+];
+
+function renderClientes() {
+  const grid = document.getElementById("clientes-grid");
+  if (!grid) return;
+
+  fotosClientes.forEach((foto) => {
+    const img = document.createElement("img");
+    img.src = foto;
+    img.className = "cliente-foto";
+    img.alt = "Mascota feliz con su producto WanCos Pet";
+    grid.appendChild(img);
+  });
+}
+
 // === LISTADO DE PRODUCTOS (Mantenido igual) ===
 const juguetesPerros = [
   {
@@ -509,6 +528,7 @@ function initRender() {
     });
   }
   cargarFavoritos();
+  renderClientes();
 }
 
 // === LÓGICA DE CARRITO ===

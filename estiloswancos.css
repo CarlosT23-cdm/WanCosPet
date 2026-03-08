@@ -236,6 +236,28 @@ section {
 .producto-info button:last-child:hover {
   transform: scale(1.2);
 }
+
+/* Estilo para la sección de Clientes Felices */
+.clientes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.cliente-foto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff914d;
+  transition: transform 0.3s;
+}
+
+.cliente-foto:hover {
+  transform: scale(1.1);
+}
 /* =====================================================================
    === SIDEBAR CARRITO (BANDEJA) ===
    ===================================================================== */
