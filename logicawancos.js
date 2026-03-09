@@ -62,6 +62,13 @@ const juguetesPerros = [
       "Juguete de peluche con textura suave, genera sonido al presionarlo, es ideal parta morder y sacudir promoviendo la atención.",
   },
   {
+    nombre: "Cangrejo Limpia Dientes",
+    precio: 10000,
+    imagenes: [rutaBasePerrosJug + "Cangrejo_dog_01.jpg"],
+    descripcion:
+      "Cuerpo esférico con puntas de fricción, extremidades flexibles y correa de agarre superior. Incluye pito interno para juego interactivo y limpieza dental.",
+  },
+  {
     nombre: "Berenjena Chillona",
     precio: 9800,
     imagenes: [rutaBasePerrosJug + "Berengena_chillona_dog_jug_01.jpg"],
@@ -69,36 +76,33 @@ const juguetesPerros = [
       "Juguete resistente con diseño divertido en forma de berenjena, elaborado en goma flexible que ayuda a estimular la mordida y el juego activo. Incorpora sonido al presionarlo, lo que capta la atención de tu mascota y fomenta momentos de entretenimiento y ejercicio.",
   },
   {
-    nombre: "Cangrejo Limpia dientes",
-    precio: 10000,
-    imagenes: [rutaBasePerrosJug + "Cangrejo_dog_01.jpg"],
+    nombre: "Dona Antisarro",
+    precio: 9000,
+    imagenes: [rutaBasePerrosJug + "dona_antisarro_jug_dog_01.jpg"],
     descripcion:
-      "Fabricado con goma duradera y de grado seguro para mascotas, las múltiples texturas y puntas ayudan a remover el sarro y la placa al masticar, diseño Interactivo, alivia la ansiedad de masticar y fortalece las encías.",
+      "Aro de goma termoplástica con relieves circulares y texturizados. Diseñado para masajear encías y desprender residuos durante la masticación persistente.",
   },
   {
     nombre: "Cerdito Chillón",
     precio: 7000,
-    imagenes: [rutaBasePerrosJug + "Cerdito_chillon_peq_jug_dog_01.jpg"],
-    video: "./video_tienda/Cerdito_chillon_dog_jug.mp4",
-    descripcion: "Látex suave con sonido divertido.",
-  },
-  {
-    nombre: "Dona Antisarro",
-    precio: 9000,
-    imagenes: [rutaBasePerrosJug + "Dona_antisarro_jug_dog_01.jpg"],
-    descripcion: "Limpieza dental mientras juegan.",
+    imagenes: [rutaBasePerrosJug + "cerdito_chillon_peq_jug_dog_01.jpg"],
+    video: "./video_tienda/cerdito_chillon_dog_jug.mp4",
+    descripcion:
+      "Vinilo flexible de alta resistencia con dispositivo sonoro interno. Su superficie lisa y cuerpo blando facilitan el agarre y la estimulación auditiva al presionar.",
   },
   {
     nombre: "Huesos Bicolor x2",
     precio: 14000,
-    imagenes: [rutaBasePerrosJug + "Hueso_bicolor_x2_dog_jug_01.jpg"],
-    descripcion: "Set de dos huesos resistentes.",
+    imagenes: [rutaBasePerrosJug + "hueso_bicolor_x2_dog_jug_01.jpg"],
+    descripcion:
+      "Set de dos piezas en caucho macizo bicolor de alta densidad. Estructura rígida sin sonido, ideal para fortalecer la mandíbula en perros de mordida media.",
   },
   {
     nombre: "Hueso Dentado",
     precio: 9000,
-    imagenes: [rutaBasePerrosJug + "Hueso_dentado_3x4_dog_jug_01.jpg"],
-    descripcion: "Masajea encías y limpia dientes.",
+    imagenes: [rutaBasePerrosJug + "hueso_dentado_3x4_dog_jug_01.jpg"],
+    descripcion:
+      "Estructura ergonómica con cerdas de goma cónicas y ranuras laterales. Actúa como cepillo mecánico que limpia zonas de difícil acceso mientras el perro muerde.",
   },
   {
     nombre: "Hueso Dino",

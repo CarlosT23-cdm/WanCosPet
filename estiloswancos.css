@@ -301,6 +301,25 @@ section {
 .producto-info button:last-child:hover {
   transform: scale(1.2);
 }
+/* Contenedor relativo para que la etiqueta se ubique sobre la imagen */
+.producto-card {
+  position: relative;
+}
+
+/* Estilo de la etiqueta de stock */
+.etiqueta-stock {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff914d; /* Naranja WanCos */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
 /* Estilo para la sección de Clientes Felices */
 .clientes-grid {
