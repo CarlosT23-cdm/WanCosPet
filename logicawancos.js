@@ -72,7 +72,8 @@ const juguetesPerros = [
     nombre: "Cangrejo Limpia dientes",
     precio: 10000,
     imagenes: [rutaBasePerrosJug + "Cangrejo_dog_01.jpg"],
-    descripcion: "",
+    descripcion:
+      "Material: Goma duradera y de grado seguro para mascotas, las múltiples texturas y puntas ayudan a remover el sarro y la placa al masticar, diseño Interactivo, alivia la ansiedad de masticar, fortalece las encías y entretiene.",
   },
   {
     nombre: "Cerdito Chillón",
