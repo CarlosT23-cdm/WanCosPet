@@ -17,7 +17,7 @@ const fotosClientes = [
 ];
 
 // Nueva lista para videos de clientes
-const videosClientes = ["./video_tienda/video_cliente1.mp4"];
+const videosClientes = ["./video_tienda/Cerdito_chillon_dog_jug.mp4"];
 
 function renderClientes() {
   const grid = document.getElementById("clientes-grid");
@@ -52,13 +52,6 @@ function renderVideosClientes() {
 // === LISTADO DE PRODUCTOS ===
 const juguetesPerros = [
   {
-    nombre: "Juguete Ratón Cuerda",
-    precio: 0,
-    imagenes: [rutaBaseGatosJug + "Paquete_raton_x3_cat_jug_01.jpg"],
-    video: "./video_tienda/Raton_cuerda_pequeño_cat_jug.mp4",
-    descripcion: "Ratón de cuerda color negro, plástico, tamaño mediano.",
-  },
-  {
     nombre: "Ardilla Chillona",
     precio: 10000,
     imagenes: [
@@ -83,6 +76,7 @@ const juguetesPerros = [
     nombre: "Cerdito Chillón",
     precio: 7000,
     imagenes: [rutaBasePerrosJug + "Cerdito_chillon_peq_jug_dog_01.jpg"],
+    video: "./video_tienda/Cerdito_chillon_dog_jug.mp4",
     descripcion: "Látex suave con sonido divertido.",
   },
   {
@@ -290,6 +284,12 @@ const accesoriosPerros = [
 ];
 
 const juguetesGatos = [
+  {
+    nombre: "Paquete Ratones por 3",
+    precio: 7200,
+    imagenes: [rutaBaseGatosJug + "Paquete_raton_x3_cat_jug_01.jpg"],
+    descripcion: "Ratón de cuerda color negro, plástico, tamaño mediano.",
+  },
   {
     nombre: "Catnip Aguacate",
     precio: 12000,

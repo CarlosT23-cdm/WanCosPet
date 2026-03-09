@@ -98,6 +98,19 @@ nav a:hover {
 .btn-video:hover {
   text-decoration: underline;
 }
+/* Ajusta el contenedor del video */
+.cliente-video-card {
+  max-width: 300px; /* Ancho máximo del video en la cuadrícula */
+  margin: 0 auto; /* Centra el video en su espacio */
+}
+
+.cliente-video-card video {
+  width: 100%;
+  height: 500px; /* Altura fija para que todos se vean iguales */
+  object-fit: cover; /* Corta el video para que llene el recuadro sin deformarse */
+  border-radius: 15px;
+  border: 2px solid #ff914d; /* Un borde naranja estilo WanCos */
+}
 /* =====================================================================
    === HERO SECTION ===
    ===================================================================== */
