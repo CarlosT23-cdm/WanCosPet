@@ -78,24 +78,22 @@ const juguetesPerros = [
   {
     nombre: "Dona Antisarro",
     precio: 9000,
-    imagenes: [rutaBasePerrosJug + "dona_antisarro_jug_dog_01.jpg"],
-    descripcion:
-      "Aro de goma termoplástica con relieves circulares y texturizados. Diseñado para masajear encías y desprender residuos durante la masticación persistente.",
+    imagenes: [rutaBasePerrosJug + "Dona_antisarro_jug_dog_01.jpg"], // <-- Asegúrate que la D sea Mayúscula si el archivo lo es
+    descripcion: "Aro de goma termoplástica diseñado para masajear encías.",
   },
   {
     nombre: "Cerdito Chillón",
     precio: 7000,
-    imagenes: [rutaBasePerrosJug + "cerdito_chillon_peq_jug_dog_01.jpg"],
+    imagenes: [rutaBasePerrosJug + "Cerdito_chillon_peq_jug_dog_01.jpg"], // <-- C mayúscula
     video: "./video_tienda/cerdito_chillon_dog_jug.mp4",
-    descripcion:
-      "Vinilo flexible de alta resistencia con dispositivo sonoro interno. Su superficie lisa y cuerpo blando facilitan el agarre y la estimulación auditiva al presionar.",
+    descripcion: "Vinilo flexible de alta resistencia con dispositivo sonoro.",
   },
   {
-    nombre: "Huesos Bicolor x2",
-    precio: 14000,
-    imagenes: [rutaBasePerrosJug + "hueso_bicolor_x2_dog_jug_01.jpg"],
+    nombre: "Hueso Dentado",
+    precio: 9000,
+    imagenes: [rutaBasePerrosJug + "Hueso_dentado_3x4_dog_jug_01.jpg"], // <-- H mayúscula
     descripcion:
-      "Set de dos piezas en caucho macizo bicolor de alta densidad. Estructura rígida sin sonido, ideal para fortalecer la mandíbula en perros de mordida media.",
+      "Actúa como cepillo mecánico que limpia zonas de difícil acceso.",
   },
   {
     nombre: "Hueso Dentado",
