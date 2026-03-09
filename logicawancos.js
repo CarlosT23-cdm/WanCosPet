@@ -17,7 +17,7 @@ const fotosClientes = [
 ];
 
 // Nueva lista para videos de clientes
-const videosClientes = ["./video_tienda/Cerdito_chillon_dog_jug.mp4"];
+const videosClientes = ["./video_tienda/Cliente_feli_Estefania.mp4"];
 
 function renderClientes() {
   const grid = document.getElementById("clientes-grid");
