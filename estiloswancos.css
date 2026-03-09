@@ -82,6 +82,40 @@ nav a:hover {
   color: #191917;
   background: rgb(255, 253, 253);
 }
+/* =====================================================================
+   === ESTILOS CORREGIDOS DEL MENÚ DE NAVEGACIÓN ===
+   ===================================================================== */
+
+/* 1. Estado Normal del enlace */
+.nav-link {
+  text-decoration: none;
+  color: white !important; /* Texto blanco sobre fondo naranja */
+  padding: 12px 20px; /* Espaciado para que parezca un botón */
+  border-radius: 25px; /* Bordes redondeados estilo WanCos */
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease; /* Transición suave para hover y activo */
+  display: inline-block;
+}
+
+/* 2. Estado Hover (Al pasar el mouse) */
+.nav-link:hover {
+  background-color: #e67e22; /* Un naranja un poco más oscuro */
+  color: white !important; /* Mantenemos el texto blanco */
+  transform: translateY(-2px); /* Un pequeño salto hacia arriba */
+}
+
+/* 3. Estado Activo (La categoría seleccionada) */
+.nav-link.activo {
+  background-color: white !important; /* Fondo blanco que se mantiene */
+  color: #ff914d !important; /* Texto naranja de tu marca */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Una sombra suave para resaltarlo */
+}
+
+/* 4. Evitar el enfoque predeterminado feo del navegador */
+.nav-link:focus {
+  outline: none;
+}
 
 /* =====================================================================
    === SECCIÓN VIDEO ===

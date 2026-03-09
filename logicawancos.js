@@ -58,19 +58,21 @@ const juguetesPerros = [
       rutaBasePerrosJug + "Ardilla_chillona_dog_01.jpg",
       rutaBasePerrosJug + "Ardilla_chillona_dog_02.jpg",
     ],
-    descripcion: "Peluche resistente con sonido.",
+    descripcion:
+      "Juguete de peluche con textura suave, genera sonido al presionarlo, es ideal parta morder y sacudir promoviendo la atención.",
   },
   {
     nombre: "Berenjena Chillona",
     precio: 9800,
     imagenes: [rutaBasePerrosJug + "Berengena_chillona_dog_jug_01.jpg"],
-    descripcion: "Diseño ergonómico y sonido.",
+    descripcion:
+      "Juguete resistente con diseño divertido en forma de berenjena, elaborado en goma flexible que ayuda a estimular la mordida y el juego activo. Incorpora sonido al presionarlo, lo que capta la atención de tu mascota y fomenta momentos de entretenimiento y ejercicio.",
   },
   {
     nombre: "Cangrejo Limpia dientes",
     precio: 10000,
     imagenes: [rutaBasePerrosJug + "Cangrejo_dog_01.jpg"],
-    descripcion: "Juguete de textura única.",
+    descripcion: "",
   },
   {
     nombre: "Cerdito Chillón",
@@ -356,14 +358,12 @@ const juguetesGatos = [
     imagenes: [rutaBaseGatosJug + "Mazorca_chillona_cat_jug_01.jpg"],
     descripcion: "Juguete con sonido y textura resistente.",
   },
+
   {
-    nombre: "Paquete de Ratones y Juguetes",
-    precio: 6000,
-    imagenes: [
-      rutaBaseGatosJug + "Paquete_raton_x3_cat_jug_01.jpg",
-      rutaBaseGatosJug + "Paquete_juguete_x3_cat_jug_01.jpg",
-    ],
-    descripcion: "Sets de juguetes variados para mayor diversión.",
+    nombre: "Paquete Juguete Gato x 3",
+    precio: 10000,
+    imagenes: [rutaBaseGatosJug + "Paquete_juguete_x3_cat_jug_01.jpg"],
+    descripcion: "Ratón de felpa, pelota con cascabel y pes de tela.",
   },
   {
     nombre: "Pelotas Locas",
@@ -705,4 +705,16 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     });
   }
+  // Lógica para subrayar la categoría activa
+  const links = document.querySelectorAll(".nav-link"); // Asegúrate que tus <a> del menú tengan esta clase
+
+  links.forEach((link) => {
+    link.addEventListener("click", function () {
+      // 1. Quitar la clase 'activo' de todos los links
+      links.forEach((l) => l.classList.remove("activo"));
+
+      // 2. Ponerle la clase 'activo' solo al que tocamos
+      this.classList.add("activo");
+    });
+  });
 });
