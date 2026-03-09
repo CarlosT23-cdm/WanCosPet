@@ -471,3 +471,44 @@ footer {
   text-align: center;
   margin-top: 50px;
 }
+
+.footer-wancos {
+  background-color: #333;
+  color: white;
+  padding: 30px 5%;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: flex; /* Esto pone todo en horizontal */
+  justify-content: space-between; /* Espaciado extremo a extremo */
+  align-items: center;
+  flex-wrap: wrap; /* Para que se vea bien en celulares */
+  gap: 20px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.logo-img {
+  width: 50px; /* Ajusta el tamaño de tu logo */
+}
+
+.footer-social a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  border-top: 1px solid #555;
+  padding-top: 15px;
+}

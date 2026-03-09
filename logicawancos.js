@@ -73,7 +73,7 @@ const juguetesPerros = [
     precio: 10000,
     imagenes: [rutaBasePerrosJug + "Cangrejo_dog_01.jpg"],
     descripcion:
-      "Material: Goma duradera y de grado seguro para mascotas, las múltiples texturas y puntas ayudan a remover el sarro y la placa al masticar, diseño Interactivo, alivia la ansiedad de masticar, fortalece las encías y entretiene.",
+      "Fabricado con goma duradera y de grado seguro para mascotas, las múltiples texturas y puntas ayudan a remover el sarro y la placa al masticar, diseño Interactivo, alivia la ansiedad de masticar y fortalece las encías.",
   },
   {
     nombre: "Cerdito Chillón",
