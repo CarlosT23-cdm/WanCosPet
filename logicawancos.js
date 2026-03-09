@@ -78,20 +78,20 @@ const juguetesPerros = [
   {
     nombre: "Dona Antisarro",
     precio: 9000,
-    imagenes: [rutaBasePerrosJug + "Dona_antisarro_jug_dog_01.jpg"], // <-- Asegúrate que la D sea Mayúscula si el archivo lo es
+    imagenes: [rutaBasePerrosJug + "Dona_antisarro_jug_dog_01.jpg"],
     descripcion: "Aro de goma termoplástica diseñado para masajear encías.",
   },
   {
     nombre: "Cerdito Chillón",
     precio: 7000,
-    imagenes: [rutaBasePerrosJug + "Cerdito_chillon_peq_jug_dog_01.jpg"], // <-- C mayúscula
+    imagenes: [rutaBasePerrosJug + "Cerdito_chillon_peq_jug_dog_01.jpg"],
     video: "./video_tienda/cerdito_chillon_dog_jug.mp4",
     descripcion: "Vinilo flexible de alta resistencia con dispositivo sonoro.",
   },
   {
     nombre: "Hueso Dentado",
     precio: 9000,
-    imagenes: [rutaBasePerrosJug + "Hueso_dentado_3x4_dog_jug_01.jpg"], // <-- H mayúscula
+    imagenes: [rutaBasePerrosJug + "Hueso_dentado_3x4_dog_jug_01,jpg"],
     descripcion:
       "Actúa como cepillo mecánico que limpia zonas de difícil acceso.",
   },
