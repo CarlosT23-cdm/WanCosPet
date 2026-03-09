@@ -91,13 +91,6 @@ const juguetesPerros = [
   {
     nombre: "Hueso Dentado",
     precio: 9000,
-    imagenes: [rutaBasePerrosJug + "Hueso_dentado_3x4_dog_jug_01,jpg"],
-    descripcion:
-      "Actúa como cepillo mecánico que limpia zonas de difícil acceso.",
-  },
-  {
-    nombre: "Hueso Dentado",
-    precio: 9000,
     imagenes: [rutaBasePerrosJug + "hueso_dentado_3x4_dog_jug_01.jpg"],
     descripcion:
       "Estructura ergonómica con cerdas de goma cónicas y ranuras laterales. Actúa como cepillo mecánico que limpia zonas de difícil acceso mientras el perro muerde.",
