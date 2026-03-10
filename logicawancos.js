@@ -480,17 +480,34 @@ function renderLista(idContenedor, lista, nombreGaleria) {
   const cont = document.getElementById(idContenedor);
   if (!cont) return;
   cont.innerHTML = "";
+
   lista.forEach((p) => {
     const prod = document.createElement("article");
     prod.className = "producto";
 
-    const imgPrincipal =
-      p.imagenes && p.imagenes.length > 0
-        ? p.imagenes[0]
-        : "https://via.placeholder.com/300?text=WanCos+Pet";
+    // LÓGICA: ¿Video o Imagen?
+    let mediaHTML = "";
+    if (p.video) {
+      // Si hay video, mostramos el video
+      mediaHTML = `
+            <video class="producto-media" autoplay muted loop playsinline poster="${p.imagenes ? p.imagenes[0] : ""}">
+                <source src="${p.video}" type="video/mp4">
+            </video>`;
+    } else {
+      // Si no hay video, mostramos la imagen
+      const imgPrincipal =
+        p.imagenes && p.imagenes.length > 0
+          ? p.imagenes[0]
+          : "https://via.placeholder.com/300?text=WanCos+Pet";
+
+      mediaHTML = `
+            <a data-fancybox="${nombreGaleria}" href="${imgPrincipal}" data-caption="${p.nombre} - ${formatCurrency(p.precio)}">
+                <img src="${imgPrincipal}" alt="${p.nombre}" class="producto-media" loading="lazy">
+            </a>`;
+    }
 
     const botonVideo = p.video
-      ? `<a data-fancybox="${nombreGaleria}" href="${p.video}" class="btn-video">🎥 Ver Video</a>`
+      ? `<a data-fancybox="${nombreGaleria}" href="${p.video}" class="btn-video">🎥 Ver Video Completo</a>`
       : "";
 
     const imagenesExtra = (p.imagenes || [])
@@ -504,9 +521,7 @@ function renderLista(idContenedor, lista, nombreGaleria) {
     const idFavorito = `fav-${normalizarID(p.nombre)}`;
 
     prod.innerHTML = `
-      <a data-fancybox="${nombreGaleria}" href="${imgPrincipal}" data-caption="${p.nombre} - ${formatCurrency(p.precio)}">
-          <img src="${imgPrincipal}" alt="${p.nombre}" loading="lazy">
-      </a>
+      ${mediaHTML}
       ${imagenesExtra}
       <div class="producto-info">
           <h3>${p.nombre}</h3>
