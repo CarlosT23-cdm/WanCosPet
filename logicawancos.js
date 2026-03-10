@@ -101,7 +101,7 @@ const juguetesPerros = [
   {
     nombre: "Hueso Dentado",
     precio: 9000,
-    imagenes: [rutaBasePerrosJug + "hueso_dentado_3x4_dog_jug_01.jpg"],
+    imagenes: [rutaBasePerrosJug + "Hueso_dentado_3x4_dog_jug_01.jpg"],
     descripcion:
       "Actúa como cepillo mecánico que limpia mientras el perro muerde.",
   },
@@ -135,7 +135,8 @@ const juguetesPerros = [
     imagenes: [
       rutaBasePerrosJug + "Pelota_chillona_futbol_americano_jug_dog_01.jpg",
     ],
-    descripcion: "Rebota de forma impredecible.",
+    descripcion:
+      "Juguete interactivo con sonido diseñado para estimular el instinto de juego de tu mascota. Al presionarlo emite un divertido chillido que capta la atención del perro y promueve la actividad física. Su material flexible y tamaño compacto lo hacen ideal para juegos de mordida suave, lanzar y recoger. Un accesorio perfecto para mantener a tu perro entretenido y activo. 🐾",
   },
   {
     nombre: "Pelota Rugby",
