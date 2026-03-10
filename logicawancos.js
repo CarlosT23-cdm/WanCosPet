@@ -62,6 +62,13 @@ const juguetesPerros = [
       "Juguete de peluche con textura suave, genera sonido al presionarlo, es ideal parta morder y sacudir promoviendo la atención.",
   },
   {
+    nombre: "Hueso Dentado",
+    precio: 9000,
+    imagenes: [rutaBasePerrosJug + "hueso_dentado_3x4_dog_jug_01.jpg"],
+    descripcion:
+      "Estructura ergonómica con cerdas de goma cónicas y ranuras laterales. Actúa como cepillo mecánico que limpia zonas de difícil acceso mientras el perro muerde.",
+  },
+  {
     nombre: "Cangrejo Limpia Dientes",
     precio: 10000,
     imagenes: [rutaBasePerrosJug + "Cangrejo_dog_01.jpg"],
