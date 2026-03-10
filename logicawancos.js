@@ -88,7 +88,8 @@ const juguetesPerros = [
     nombre: "Dona Antisarro",
     precio: 9000,
     imagenes: [rutaBasePerrosJug + "Dona_antisarro_jug_dog_01.jpg"],
-    descripcion: "Aro de goma termoplástica diseñado para masajear encías.",
+    descripcion:
+      "Resistente juguete de goma maciza en forma de dona, ideal para morder, lanzar y mantener a tu perro entretenido. Sus puntas ayudan a masajear las encías y favorecen la limpieza dental mientras juega. Perfecto para perros activos que necesitan liberar energía de forma segura. 🦷🦴",
   },
   {
     nombre: "Cerdito Chillón",
