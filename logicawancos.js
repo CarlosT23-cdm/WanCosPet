@@ -10,13 +10,23 @@ function formatCurrency(price) {
   return `$${price.toLocaleString()} COP`;
 }
 
+// Función para normalizar IDs (quita tildes, eñes y espacios)
+// Esto asegura que "Cerdito Chillón" se convierta en "cerdito-chillon" para el ID de HTML
+function normalizarID(texto) {
+  return texto
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // Quita tildes
+    .replace(/\s+/g, "-") // Espacios por guiones
+    .replace(/[^a-z0-9-]/g, ""); // Quita caracteres especiales
+}
+
 const fotosClientes = [
   "./img_sitio/cliente1.jpg",
   "./img_sitio/cliente2.jpg",
   "./img_sitio/cliente3.jpg",
 ];
 
-// Nueva lista para videos de clientes
 const videosClientes = ["./video_tienda/Cliente_feli_Estefania.mp4"];
 
 function renderClientes() {
@@ -59,28 +69,20 @@ const juguetesPerros = [
       rutaBasePerrosJug + "Ardilla_chillona_dog_02.jpg",
     ],
     descripcion:
-      "Juguete de peluche con textura suave, genera sonido al presionarlo, es ideal parta morder y sacudir promoviendo la atención.",
-  },
-  {
-    nombre: "Hueso Dentado",
-    precio: 9000,
-    imagenes: [rutaBasePerrosJug + "hueso_dentado_3x4_dog_jug_01.jpg"],
-    descripcion:
-      "Estructura ergonómica con cerdas de goma cónicas y ranuras laterales. Actúa como cepillo mecánico que limpia zonas de difícil acceso mientras el perro muerde.",
+      "Juguete de peluche con textura suave, genera sonido al presionarlo.",
   },
   {
     nombre: "Cangrejo Limpia Dientes",
     precio: 10000,
     imagenes: [rutaBasePerrosJug + "Cangrejo_dog_01.jpg"],
     descripcion:
-      "Cuerpo esférico con puntas de fricción, extremidades flexibles y correa de agarre superior. Incluye pito interno para juego interactivo y limpieza dental.",
+      "Incluye pito interno para juego interactivo y limpieza dental.",
   },
   {
-    nombre: "Berengena Chillona",
+    nombre: "Berenjena Chillona",
     precio: 9800,
     imagenes: [rutaBasePerrosJug + "Berengena_chillona_dog_jug_01.jpg"],
-    descripcion:
-      "Juguete resistente con diseño divertido en forma de berenjena, elaborado en goma flexible que ayuda a estimular la mordida y el juego activo. Incorpora sonido al presionarlo, lo que capta la atención de tu mascota y fomenta momentos de entretenimiento y ejercicio.",
+    descripcion: "Elaborado en goma flexible que ayuda a estimular la mordida.",
   },
   {
     nombre: "Dona Antisarro",
@@ -94,6 +96,13 @@ const juguetesPerros = [
     imagenes: [rutaBasePerrosJug + "Cerdito_chillon_peq_jug_dog_01.jpg"],
     video: "./video_tienda/cerdito_chillon_dog_jug.mp4",
     descripcion: "Vinilo flexible de alta resistencia con dispositivo sonoro.",
+  },
+  {
+    nombre: "Hueso Dentado",
+    precio: 9000,
+    imagenes: [rutaBasePerrosJug + "hueso_dentado_3x4_dog_jug_01.jpg"],
+    descripcion:
+      "Actúa como cepillo mecánico que limpia mientras el perro muerde.",
   },
   {
     nombre: "Hueso Dino",
@@ -131,7 +140,7 @@ const juguetesPerros = [
     nombre: "Pelota Rugby",
     precio: 20000,
     imagenes: [rutaBasePerrosJug + "Pelota_rugby_sonido_jug_dog_01.jpg"],
-    descripcion: "Con un plastico resistente y muy ligera.",
+    descripcion: "Con un plástico resistente y muy ligera.",
   },
   {
     nombre: "Pelota Disco",
@@ -316,7 +325,7 @@ const juguetesGatos = [
     nombre: "Peluche con Catnip",
     precio: 12000,
     imagenes: [rutaBaseGatosJug + "Peluche_con_catnip_cat_jug_01.jpg"],
-    descripcion: "Un hermoso peluche en forma de gato, para tu amigo.",
+    descripcion: "Un hermoso peluche en forma de gato.",
   },
   {
     nombre: "Catnip Puercoespin",
@@ -334,7 +343,7 @@ const juguetesGatos = [
     nombre: "Catnip Queso",
     precio: 12000,
     imagenes: [rutaBaseGatosJug + "queso_amarillo_jug_cat_01.jpg"],
-    descripcion: "Un recipiente de hierba gatera plastico con forma de queso.",
+    descripcion: "Un recipiente de hierba gatera plástico con forma de queso.",
   },
   {
     nombre: "Ratón Catnip Más Pelota",
@@ -346,7 +355,7 @@ const juguetesGatos = [
     nombre: "Juguete Con Resorte",
     precio: 20000,
     imagenes: [rutaBaseGatosJug + "Juguete_resorte_gato_cat_jug_01.jpg"],
-    descripcion: "Ampliamente saltarin.",
+    descripcion: "Ampliamente saltarín.",
   },
   {
     nombre: "Mazorca Chillona",
@@ -354,12 +363,11 @@ const juguetesGatos = [
     imagenes: [rutaBaseGatosJug + "Mazorca_chillona_cat_jug_01.jpg"],
     descripcion: "Juguete con sonido y textura resistente.",
   },
-
   {
     nombre: "Paquete Juguete Gato x 3",
     precio: 10000,
     imagenes: [rutaBaseGatosJug + "Paquete_juguete_x3_cat_jug_01.jpg"],
-    descripcion: "Ratón de felpa, pelota con cascabel y pes de tela.",
+    descripcion: "Ratón de felpa, pelota con cascabel y pez de tela.",
   },
   {
     nombre: "Pelotas Locas",
@@ -367,7 +375,6 @@ const juguetesGatos = [
     imagenes: [
       rutaBaseGatosJug + "pelota_loca_pequeña_jug_cat_02.jpg",
       rutaBaseGatosJug + "pelota_loca_pequeña_jug_cat_03.jpg",
-      rutaBaseGatosJug + "Pelota_asteroide_dog_jug_01.jpg",
     ],
     descripcion: "De goma y rebotan de forma impredecible.",
   },
@@ -378,7 +385,7 @@ const juguetesGatos = [
       rutaBaseGatosJug + "peluche_con_juguete_jug_cat_01.jpg",
       rutaBaseGatosJug + "peluche_con_juguete_jug_cat_02.jpg",
     ],
-    descripcion: "Compañeros suaves para la siesta y el juego.",
+    descripcion: "Compañeros suaves para la siesta.",
   },
 ];
 
@@ -390,7 +397,7 @@ const accesoriosGatos = [
       rutaBaseGatosAcc + "Arenera_morada_cat_acc_01.jpg",
       rutaBaseGatosAcc + "Arenera_morada_cat_acc_02.jpg",
     ],
-    descripcion: "Execelente diseño plastico.",
+    descripcion: "Excelente diseño plástico.",
   },
   {
     nombre: "Arenera Gris",
@@ -410,7 +417,6 @@ const accesoriosGatos = [
     imagenes: [
       rutaBaseGatosAcc + "Comedero_flor_acc_cat_01.jpg",
       rutaBaseGatosAcc + "Comedero_flor_acc_cat_02.jpg",
-      rutaBaseGatosAcc + "Comedero_flor_acc_cat_03.jpg",
     ],
     descripcion: "Diseños coloridos y divertidos.",
   },
@@ -427,7 +433,7 @@ const accesoriosGatos = [
     nombre: "Palas Jarra",
     precio: 8000,
     imagenes: [rutaBaseGatosAcc + "Palas_jarra_cat_acc_01.jpg"],
-    descripcion: "Pala plastica grande.",
+    descripcion: "Pala plástica grande.",
   },
 ];
 
@@ -464,27 +470,27 @@ function renderLista(idContenedor, lista, nombreGaleria) {
     const prod = document.createElement("article");
     prod.className = "producto";
 
-    // Si no tiene imágenes pero tiene video, usamos placeholder
     const imgPrincipal =
       p.imagenes && p.imagenes.length > 0
         ? p.imagenes[0]
         : "https://via.placeholder.com/300?text=WanCos+Pet";
 
-    // Botón de video (Fancybox lo abre automáticamente si es .mp4)
     const botonVideo = p.video
-      ? `<a data-fancybox="${nombreGaleria}" href="${p.video}" class="btn-video" style="display:block; margin: 10px 0; color: #ff914d; font-weight: bold; text-decoration: none; cursor:pointer;">🎥 Ver Video</a>`
+      ? `<a data-fancybox="${nombreGaleria}" href="${p.video}" class="btn-video">🎥 Ver Video</a>`
       : "";
 
     const imagenesExtra = (p.imagenes || [])
       .slice(1)
       .map(
         (img) =>
-          `<a data-fancybox="${nombreGaleria}" href="${img}" data-caption="${p.nombre} - ${formatCurrency(p.precio)}" style="display:none;" aria-hidden="true"></a>`,
+          `<a data-fancybox="${nombreGaleria}" href="${img}" data-caption="${p.nombre}" style="display:none;"></a>`,
       )
       .join("");
 
+    const idFavorito = `fav-${normalizarID(p.nombre)}`;
+
     prod.innerHTML = `
-      <a data-fancybox="${nombreGaleria}" href="${imgPrincipal}" data-caption="${p.nombre} - ${formatCurrency(p.precio)}" aria-label="Ver imagen ampliada de ${p.nombre}">
+      <a data-fancybox="${nombreGaleria}" href="${imgPrincipal}" data-caption="${p.nombre} - ${formatCurrency(p.precio)}">
           <img src="${imgPrincipal}" alt="${p.nombre}" loading="lazy">
       </a>
       ${imagenesExtra}
@@ -492,16 +498,15 @@ function renderLista(idContenedor, lista, nombreGaleria) {
           <h3>${p.nombre}</h3>
           <p style="font-size: 0.85rem; color: #666; margin-bottom: 10px;">${p.descripcion}</p>
           ${botonVideo}
-          <div class="price" aria-label="Precio: ${formatCurrency(p.precio)}">${formatCurrency(p.precio)}</div>
-              <div style="display: flex; gap: 10px; align-items: center; justify-content: center;">
-                <button onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})" aria-label="Agregar ${p.nombre} al carrito">Añadir al carrito</button>
-                <button onclick="toggleFavorito('${p.nombre.replace(/'/g, "\\'")}')" 
-                        id="fav-${p.nombre.replace(/\s+/g, "-")}"
-                        style="background: none; border: none; font-size: 1.5rem; cursor: pointer; transition: transform 0.2s;" 
-                        aria-label="Marcar ${p.nombre} como favorito">
-                    🤍
-                </button>
-              </div>
+          <div class="price">${formatCurrency(p.precio)}</div>
+          <div style="display: flex; gap: 10px; align-items: center; justify-content: center;">
+            <button onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})">Añadir al carrito</button>
+            <button onclick="toggleFavorito('${p.nombre.replace(/'/g, "\\'")}')" 
+                    id="${idFavorito}"
+                    style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">
+                🤍
+            </button>
+          </div>
       </div>`;
     cont.appendChild(prod);
   });
@@ -532,36 +537,22 @@ function initRender() {
       const galeriaID = `galeria-oferta-${index}`;
       const el = document.createElement("article");
       el.className = "oferta";
-      const imgPrincipal = o.imagenes[0];
-      const imagenesExtra = o.imagenes
-        .slice(1)
-        .map(
-          (img) =>
-            `<a data-fancybox="${galeriaID}" href="${img}" style="display:none;"></a>`,
-        )
-        .join("");
-
       el.innerHTML = `
-        <a data-fancybox="${galeriaID}" href="${imgPrincipal}" data-caption="${o.nombre}">
-            <img src="${imgPrincipal}" alt="${o.nombre}" loading="lazy">
+        <a data-fancybox="${galeriaID}" href="${o.imagenes[0]}">
+            <img src="${o.imagenes[0]}" alt="${o.nombre}" loading="lazy">
         </a>
-        ${imagenesExtra}
         <div class="producto-info">
             <h3>${o.nombre}</h3>
             <p>${o.descripcion}</p>
             <div class="price">${formatCurrency(o.precio)}</div>
             <button onclick="agregarAlCarrito('${o.nombre.replace(/'/g, "\\'")}', ${o.precio})">Añadir al carrito</button>
-        </div>
-      `;
+        </div>`;
       ofertasGrid.appendChild(el);
     });
   }
 
   if (typeof Fancybox !== "undefined") {
-    Fancybox.bind("[data-fancybox^='galeria-']", {
-      infinite: true,
-      keyboard: true,
-    });
+    Fancybox.bind("[data-fancybox^='galeria-']", { infinite: true });
   }
   cargarFavoritos();
   renderClientes();
@@ -609,19 +600,15 @@ function actualizarVista() {
   carrito.forEach((item, index) => {
     const li = document.createElement("li");
     li.className = "item-carrito";
-    li.innerHTML = `<span>${item.producto}</span> <span>${formatCurrency(item.precio)} <button onclick="eliminarDelCarrito(${index})" style="color:#ff4d4d; border:none; background:none; font-weight:bold; cursor:pointer; margin-left:10px;">X</button></span>`;
+    li.innerHTML = `<span>${item.producto}</span> <span>${formatCurrency(item.precio)} <button onclick="eliminarDelCarrito(${index})" style="color:#ff4d4d; border:none; background:none; font-weight:bold; cursor:pointer;">X</button></span>`;
     lista.appendChild(li);
     totalFinal += item.precio;
   });
 
   totalEl.innerHTML = `
     <div class="info-envios">🚚 Envíos GRATIS en Bogotá</div>
-    <div class="desglose-carrito">
-      <hr>
-      <div style="color: black; font-size: 1.2rem;">
-        <strong>TOTAL: ${formatCurrency(totalFinal)}</strong>
-      </div>
-    </div>`;
+    <hr>
+    <div style="color: black; font-size: 1.2rem;"><strong>TOTAL: ${formatCurrency(totalFinal)}</strong></div>`;
 
   countEl.innerText = carrito.length;
 }
@@ -636,7 +623,7 @@ function enviarPedidoWhatsApp() {
     detalleProductos += `✅ ${item.producto} - ${formatCurrency(item.precio)}\n`;
     totalGral += item.precio;
   });
-  let mensaje = `*📦 NUEVO PEDIDO - WANCOS PET* 🐾\n\n*PRODUCTOS:*\n${detalleProductos}\n------------------------------------------\n🔥 *TOTAL A PAGAR: ${formatCurrency(totalGral)}*\n------------------------------------------\n\n_Nota: Envíos a Bogotá y otras ciudades vía interrapidisimo.`;
+  let mensaje = `*📦 NUEVO PEDIDO - WANCOS PET*\n\n*PRODUCTOS:*\n${detalleProductos}\n*TOTAL: ${formatCurrency(totalGral)}*\n\n_Nota: Envíos vía Interrapidisimo._`;
   window.open(
     `https://api.whatsapp.com/send?phone=${miTelefono}&text=${encodeURIComponent(mensaje)}`,
     "_blank",
@@ -645,9 +632,12 @@ function enviarPedidoWhatsApp() {
 
 // === FAVORITOS ===
 let favoritos = JSON.parse(localStorage.getItem("wancos_favoritos") || "[]");
+
 function toggleFavorito(nombre) {
   const index = favoritos.indexOf(nombre);
-  const btn = document.getElementById(`fav-${nombre.replace(/\s+/g, "-")}`);
+  const idElemento = `fav-${normalizarID(nombre)}`;
+  const btn = document.getElementById(idElemento);
+
   if (index === -1) {
     favoritos.push(nombre);
     if (btn) btn.innerText = "❤️";
@@ -660,29 +650,28 @@ function toggleFavorito(nombre) {
 
 function cargarFavoritos() {
   favoritos.forEach((nombre) => {
-    const btn = document.getElementById(`fav-${nombre.replace(/\s+/g, "-")}`);
+    const idElemento = `fav-${normalizarID(nombre)}`;
+    const btn = document.getElementById(idElemento);
     if (btn) btn.innerText = "❤️";
   });
 }
 
-// === INICIO CONSOLIDADO CON BUSCADOR ===
+// === INICIO ===
 document.addEventListener("DOMContentLoaded", () => {
   initRender();
   actualizarVista();
-
-  const vaciarBtn = document.getElementById("vaciar-btn");
-  if (vaciarBtn) vaciarBtn.addEventListener("click", vaciarCarrito);
 
   const buscador = document.getElementById("buscador");
   if (buscador) {
     buscador.addEventListener("input", (e) => {
       const termino = e.target.value.toLowerCase();
-      const filtrar = (lista, idContenedor, galeria) => {
-        const filtrados = lista.filter((p) =>
-          p.nombre.toLowerCase().includes(termino),
+      const filtrar = (lista, id, gal) =>
+        renderLista(
+          id,
+          lista.filter((p) => p.nombre.toLowerCase().includes(termino)),
+          gal,
         );
-        renderLista(idContenedor, filtrados, galeria);
-      };
+
       filtrar(
         juguetesPerros,
         "lista-juguetes-perros",
@@ -701,15 +690,11 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     });
   }
-  // Lógica para subrayar la categoría activa
-  const links = document.querySelectorAll(".nav-link"); // Asegúrate que tus <a> del menú tengan esta clase
 
+  const links = document.querySelectorAll(".nav-link");
   links.forEach((link) => {
     link.addEventListener("click", function () {
-      // 1. Quitar la clase 'activo' de todos los links
       links.forEach((l) => l.classList.remove("activo"));
-
-      // 2. Ponerle la clase 'activo' solo al que tocamos
       this.classList.add("activo");
     });
   });
