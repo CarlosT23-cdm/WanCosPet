@@ -69,20 +69,21 @@ const juguetesPerros = [
       rutaBasePerrosJug + "Ardilla_chillona_dog_02.jpg",
     ],
     descripcion:
-      "Juguete de peluche con textura suave, genera sonido al presionarlo.",
+      "¿Tu peludo está aburrido? ¡Dale una sorpresa! Esta adorable ardilla chillona es el juguete perfecto para despertar su instinto más juguetón. Con su textura increíblemente suave y ese sonido irresistible que hace al morderla, ¡no podrá soltarla!. ¡La compañera de aventuras que tu mascota necesita! 🐿️✨",
   },
   {
     nombre: "Cangrejo Limpia Dientes",
     precio: 10000,
     imagenes: [rutaBasePerrosJug + "Cangrejo_dog_01.jpg"],
     descripcion:
-      "Incluye pito interno para juego interactivo y limpieza dental.",
+      "¿Tu perro necesita liberar energía? ¡Este es su nuevo juguete favorito! Este cangrejo de goma no solo es súper resistente para las mordidas más intensas, sino que sus pinchos ayudan a masajear sus encías y mantener sus dientes limpios mientras juega. ¡Un cangrejito listo para la batalla! 🦀💥",
   },
   {
     nombre: "Berenjena Chillona",
     precio: 9800,
     imagenes: [rutaBasePerrosJug + "Berengena_chillona_dog_jug_01.jpg"],
-    descripcion: "Elaborado en goma flexible que ayuda a estimular la mordida.",
+    descripcion:
+      "¡Dile adiós al aburrimiento con esta original berenjena mordedor! Es el juguete ideal para que tu perro se divierta un buen rato mientras cuida su salud dental. Gracias a sus texturas en relieve, ayuda a masajear sus encías y limpiar sus dientes de forma natural. ¡A morder con estilo! 🍆🐾",
   },
   {
     nombre: "Dona Antisarro",
