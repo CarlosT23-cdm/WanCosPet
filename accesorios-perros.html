@@ -3,27 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WanCos Pet</title>
+    <title>WanCos Pet - Accesorios Perros</title>
+    <link rel="icon" type="image/x-icon" href="./img_sitio/Favicon/Extra_favicon_io/favicon-16x16.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="estilos.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css"
-    />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        renderLista(
-          "lista-productos",
-          accesoriosPerros,
-          "galeria-accesorios-perros",
-        );
-        actualizarVista();
-      });
-    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
   </head>
   <body>
     <header>
-      <h1>WanCos Pet</h1>
-      <nav>
+      <h1>
+        <img src="./img_sitio/logo_tienda_wancospet.jpg" class="logo-titulo" alt="Logo" />
+        WanCos Pet
+      </h1>
+      <nav id="mainNav">
         <a href="juguetes-perros.html" class="nav-link">Juguetes Perros</a>
         <a href="accesorios-perros.html" class="nav-link">Accesorios Perros</a>
         <a href="juguetes-gatos.html" class="nav-link">Juguetes Gatos</a>
@@ -31,16 +23,44 @@
       </nav>
     </header>
 
-    <main id="contenido-principal">
-      <section id="lista-productos" class="grid-productos"></section>
+    <div class="carrito" onclick="toggleCarrito()">
+      🛒 <span id="carrito-count">0</span>
+    </div>
+
+    <aside id="sidebarCarrito" class="sidebar-carrito">
+      <h3>Tu carrito</h3>
+      <ul id="lista-carrito"></ul>
+      <div id="total-carrito"></div>
+      <button onclick="enviarPedidoWhatsApp()" class="btn-whatsapp">Finalizar Compra WhatsApp</button>
+      <button onclick="toggleCarrito()">Cerrar</button>
+    </aside>
+
+    <section class="hero">
+      <h2>Accesorios para Perros</h2>
+      <div class="tagline">Calidad y comodidad para su día a día.</div>
+    </section>
+
+    <main>
+      <section id="productos-section">
+        <div id="lista-productos" class="grid-productos"></div>
+      </section>
     </main>
 
-    <footer>
-      <p>Contáctanos: 302 237 5413 | Bogotá, Colombia</p>
-      <p>&copy; 2026 WanCos Pet - Todo para tu mascota</p>
+    <footer class="footer-wancos">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="./img_sitio/logo_tienda_wancospet.jpg" class="logo-img" alt="Logo" />
+          <span>WanCos Pet</span>
+        </div>
+        <div class="footer-social">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="datos.js"></script>
     <script src="logica.js"></script>
   </body>

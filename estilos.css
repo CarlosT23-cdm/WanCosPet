@@ -1,38 +1,9 @@
-/* =====================================================================
-   === CAPA DE PROTECCIÓN Y BASE ===
-   ===================================================================== */
-body {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-#buscador:focus {
-  outline: none;
-  box-shadow: 0 0 10px rgba(255, 145, 77, 0.3);
-}
-input,
-select,
-textarea {
-  user-select: text;
-}
-
-img {
-  -webkit-user-drag: none;
-  user-drag: none;
-  pointer-events: auto;
-  cursor: zoom-in;
-}
-
+/* --- RESET Y ESTILOS BASE --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -42,9 +13,7 @@ body {
   overflow-x: hidden;
 }
 
-/* =====================================================================
-   === HEADER Y NAVEGACIÓN ===
-   ===================================================================== */
+/* --- HEADER --- */
 header {
   background-color: #ff914d;
   color: #fff;
@@ -52,13 +21,23 @@ header {
   text-align: center;
   position: sticky;
   top: 0;
-  z-index: 1400;
+  z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo-titulo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 nav {
@@ -66,388 +45,70 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
+  margin-top: 10px;
 }
 
-nav a {
+.nav-link {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 0.9rem;
-  transition: 0.3s;
-  padding: 5px 10px;
+  padding: 5px 15px;
   border-radius: 5px;
+  transition: 0.3s;
 }
 
-nav a:hover {
-  color: #191917;
-  background: rgb(255, 253, 253);
-}
-/* =====================================================================
-   === ESTILOS CORREGIDOS DEL MENÚ DE NAVEGACIÓN ===
-   ===================================================================== */
-
-/* 1. Estado Normal del enlace */
-.nav-link {
-  text-decoration: none;
-  color: white !important; /* Texto blanco sobre fondo naranja */
-  padding: 12px 20px; /* Espaciado para que parezca un botón */
-  border-radius: 25px; /* Bordes redondeados estilo WanCos */
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: all 0.3s ease; /* Transición suave para hover y activo */
-  display: inline-block;
-}
-
-/* 2. Estado Hover (Al pasar el mouse) */
-.nav-link:hover {
-  background-color: #e67e22; /* Un naranja un poco más oscuro */
-  color: white !important; /* Mantenemos el texto blanco */
-  transform: translateY(-2px); /* Un pequeño salto hacia arriba */
-}
-
-/* 3. Estado Activo (La categoría seleccionada) */
 .nav-link.activo {
-  background-color: white !important; /* Fondo blanco que se mantiene */
-  color: #ff914d !important; /* Texto naranja de tu marca */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Una sombra suave para resaltarlo */
-}
-
-/* 4. Evitar el enfoque predeterminado feo del navegador */
-.nav-link:focus {
-  outline: none;
-}
-
-/* =====================================================================
-   === SECCIÓN VIDEO ===
-   ===================================================================== */
-
-.btn-video {
-  display: inline-block;
-  margin: 5px 0;
+  background-color: white;
   color: #ff914d;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-.btn-video:hover {
-  text-decoration: underline;
-}
-/* Ajusta el contenedor del video */
-.cliente-video-card {
-  max-width: 300px; /* Ancho máximo del video en la cuadrícula */
-  margin: 0 auto; /* Centra el video en su espacio */
 }
 
-.cliente-video-card video {
-  width: 100%;
-  height: 500px; /* Altura fija para que todos se vean iguales */
-  object-fit: cover; /* Corta el video para que llene el recuadro sin deformarse */
-  border-radius: 15px;
-  border: 2px solid #ff914d; /* Un borde naranja estilo WanCos */
-}
-/* =====================================================================
-   === HERO SECTION ===
-   ===================================================================== */
-.hero {
-  /* Fondo base: El patrón de garabatos que generamos */
-  background-image: url("./img_sitio/alternativa_fondoMasClaro_encabezadoWC");
-  background-repeat: repeat;
-  background-size: 1200px; /* Ajusta este número para que los dibujos se vean más grandes o pequeños */
-  background-color: #f0f0f0;
-
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
-  color: rgb(255, 253, 253);
-  position: relative; /* Necesario para que el ::before funcione */
-  overflow: hidden;
-}
-
-/* Capa superior: La foto de Wanda y Cosmo o el Perro y Gato */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("./img_sitio/cosmoWanda_hero_encabezado_01.png") no-repeat;
-  background-position: center bottom;
-  background-size: contain;
-  pointer-events: none; /* No interfiere con los botones o textos */
-  z-index: 1;
-}
-
-.hero h2,
-.hero .tagline {
-  position: relative;
-  z-index: 2; /* Pone el texto por encima de la foto de las mascotas */
-}
-
-.hero h2 {
-  font-size: 2rem;
-  background: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Un poco más oscuro para leer mejor sobre los dibujos */
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-top: 40px;
-}
-
-.hero .tagline {
-  margin-bottom: 20px;
-  background: linear-gradient(90deg, #ff7e43, #f5e5e5);
-  color: #333;
-  padding: 8px 25px;
-  border-radius: 50px;
-  font-weight: 800;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-}
-
-/* =====================================================================
-   === GRID DE PRODUCTOS ===
-   ===================================================================== */
-/* Esto normaliza el tamaño de lo que sea que esté en la parte superior */
-.producto-media {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  border-radius: 15px 15px 0 0;
-}
-section {
-  padding: 40px 20px;
+/* --- GRID DE PRODUCTOS --- */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.section-title {
-  color: #ff914d;
-  text-align: center;
-  margin-bottom: 30px;
-  border-bottom: 3px solid #ff914d;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-.productos,
-.ofertas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-}
-
-.producto,
-.oferta {
+.producto {
   background: white;
   border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
-}
-
-.producto:hover,
-.oferta:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.producto img,
-.oferta img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.producto-info,
-.oferta-info {
-  padding: 15px;
-  text-align: center;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.producto-info h3 {
-  color: #ff914d;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
-.price {
-  font-weight: 800;
-  font-size: 1.2rem;
-  margin: 10px 0;
-}
-
-.producto-info button {
-  background-color: #ff914d;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.ofertas-grid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-/* Estilo para el icono de favoritos */
-.producto-info button:last-child:hover {
-  transform: scale(1.2);
-}
-/* Contenedor relativo para que la etiqueta se ubique sobre la imagen */
-.producto-card {
-  position: relative;
-}
-
-/* Estilo de la etiqueta de stock */
-.etiqueta-stock {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #ff914d; /* Naranja WanCos */
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilo para la sección de Clientes Felices */
-.clientes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  justify-items: center;
-}
-
-.cliente-foto {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #ff914d;
   transition: transform 0.3s;
 }
 
-.cliente-foto:hover {
-  transform: scale(1.1);
-}
-/* =====================================================================
-   === SIDEBAR CARRITO (BANDEJA) ===
-   ===================================================================== */
-.sidebar-carrito {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 380px;
-  max-width: 90%;
-  height: 100%;
-  background: white;
-  z-index: 3000;
-  transition: 0.5s ease-in-out;
-  padding: 25px;
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
-  overflow-y: auto;
+.producto:hover {
+  transform: translateY(-5px);
 }
 
-.sidebar-carrito.active {
-  right: 0;
-}
-
-.sidebar-carrito h3 {
-  text-align: center;
-  color: #ff4d4d;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 15px;
-  margin-bottom: 20px;
-}
-
-.info-envios {
-  margin: 10px 0;
-  padding: 10px;
-  background: #fff3e8;
-  border-left: 4px solid #ff914d;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #444;
-  text-align: left;
-}
-
-.carrito-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+.producto img {
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 2500;
-  display: none;
-}
-
-body.sidebar-abierto .carrito-overlay {
+  height: 200px;
+  object-fit: cover;
   display: block;
 }
-/* =====================================================================
-   === ESTILO PARA EL BOTÓN OCULTAR (OPCIÓN A - MINIMALISTA) ===
-   ===================================================================== */
-.footer-sidebar .btn-ocultar {
-  /* Eliminamos el estilo básico de Windows */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-  border: none;
-  outline: none;
 
-  /* Estilo del botón */
-  color: #ff914d; /* Color naranja de la marca */
-  background-color: #fff3e8; /* Un naranja muy pálido de fondo */
-  border: 2px solid transparent; /* Para el efecto hover */
+.producto-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.producto-info button {
+  background: #ff914d;
+  color: white;
+  border: none;
   padding: 10px 20px;
-  font-weight: 700; /* Texto en negrita para que se note */
-  font-size: 0.9rem;
+  border-radius: 5px;
   cursor: pointer;
-  border-radius: 50px; /* Bordes totalmente redondeados */
-  text-transform: uppercase; /* Todo en mayúsculas para un toque moderno */
-  letter-spacing: 1px; /* Espaciado entre letras */
-  transition: all 0.3s ease; /* Transición suave */
-  display: block; /* Centrado */
-  margin: 0 auto;
-  width: auto; /* Que no ocupe todo el ancho */
   margin-top: 10px;
 }
 
-/* Efecto al pasar el mouse (hover) o al tocar en móvil */
-.footer-sidebar .btn-ocultar:hover,
-.footer-sidebar .btn-ocultar:focus {
-  color: #fff;
-  background-color: #ff914d; /* Se llena de naranja */
-  border-color: #ff914d;
-  transform: scale(1.05); /* Un pequeño aumento de tamaño */
-  box-shadow: 0 4px 10px rgba(255, 145, 77, 0.3); /* Sombra naranja suave */
-}
-
-/* =====================================================================
-   === BOTÓN CARRITO FLOTANTE ===
-   ===================================================================== */
+/* --- CARRITO (Sidebar) --- */
 .carrito {
   position: fixed;
   top: 20px;
@@ -455,127 +116,45 @@ body.sidebar-abierto .carrito-overlay {
   background: white;
   padding: 10px 20px;
   border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   z-index: 1500;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* =====================================================================
-   === AJUSTES MÓVILES ===
-   ===================================================================== */
-@media (max-width: 480px) {
-  .carrito {
-    top: auto !important;
-    bottom: 30px !important;
-    right: 20px !important;
-  }
-
-  header h1 {
-    font-size: 1.5rem !important;
-  }
-
-  .sidebar-carrito {
-    width: 100%;
-  }
-
-  .hero {
-    height: 400px; /* Un poco más bajo en móviles */
-    background-size: 400px; /* Un poco más pequeños en móvil para que quepan más figuras */
-  }
-}
-
-/* =====================================================================
-   === DISEÑO DE TARJETAS CONCEJOS RAPIDOS ===
-   ===================================================================== */
-
-.tips-section {
-  padding: 50px 5%;
-  background-color: #f9f9f9;
-}
-
-.tips-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.tip-card {
+.sidebar-carrito {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 380px;
+  height: 100%;
   background: white;
-  padding: 20px;
-  border-radius: 15px;
-  width: 300px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  z-index: 2000;
+  transition: 0.5s;
+  padding: 25px;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
 }
 
-.tip-card:hover {
-  transform: translateY(-10px);
+.sidebar-carrito.active {
+  right: 0;
 }
 
-.tip-card span {
-  font-size: 2.5rem;
+.btn-whatsapp {
+  background: #25d366;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #333;
-}
-
-/* =====================================================================
-   === FOOTER ===
-   ===================================================================== */
-footer {
+/* --- FOOTER --- */
+.footer-wancos {
   background: #333;
   color: white;
   padding: 40px 20px;
   text-align: center;
   margin-top: 50px;
-}
-
-.footer-wancos {
-  background-color: #333;
-  color: white;
-  padding: 30px 5%;
-  margin-top: 50px;
-}
-
-.footer-container {
-  display: flex; /* Esto pone todo en horizontal */
-  justify-content: space-between; /* Espaciado extremo a extremo */
-  align-items: center;
-  flex-wrap: wrap; /* Para que se vea bien en celulares */
-  gap: 20px;
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.logo-img {
-  width: 50px; /* Ajusta el tamaño de tu logo */
-}
-
-.footer-social a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.8rem;
-  border-top: 1px solid #555;
-  padding-top: 15px;
 }
