@@ -83,7 +83,7 @@ const juguetesPerros = [
     precio: 9800,
     imagenes: [rutaBasePerrosJug + "Berengena_chillona_dog_jug_01.jpg"],
     descripcion:
-      "¡Dile adiós al aburrimiento con esta original berenjena mordedor! Es el juguete ideal para que tu perro se divierta un buen rato mientras cuida su salud dental. Gracias a sus texturas en relieve, ayuda a masajear sus encías y limpiar sus dientes de forma natural. ¡A morder con estilo! 🍆🐾",
+      "¡Dile adiós al aburrimiento con esta original berenjena chillona! Es el juguete ideal para que tu perro se divierta un buen rato mientras cuida su salud dental. Gracias a sus texturas en relieve, ayuda a masajear sus encías y limpiar sus dientes de forma natural. ¡A morder con estilo! 🍆🐾",
   },
   {
     nombre: "Dona Antisarro",
@@ -118,7 +118,8 @@ const juguetesPerros = [
     nombre: "Hueso Mordedor",
     precio: 14000,
     imagenes: [rutaBasePerrosJug + "hueso_mordedor_jug_dog_01.jpg"],
-    descripcion: "Clásico para morder por horas.",
+    descripcion:
+      "¡Diversión garantizada para tu peludo! Este hueso de goma con puntitos y relieve está hecho para morder, jugar y entretener durante horas. Además, ayuda a masajear las encías mientras tu perro se divierte. ¡El juguete perfecto para perros inquietos! 😄.",
   },
   {
     nombre: "Hueso Pitbull",
@@ -296,6 +297,14 @@ const accesoriosPerros = [
 ];
 
 const juguetesGatos = [
+  {
+    nombre: "Bola Electrica",
+    precio: 22000,
+    video:
+      "./video_tienda/video_jugetes_perros&Gatos/Bola_electrica_cat_jut.mp4",
+    descripcion:
+      "¡La diversión que se mueve sola! Este juguete interactivo mantendrá a tu mascota persiguiéndolo, golpeándolo y jugando sin parar. Ideal para estimular su mente, despertar su instinto de caza y mantener a perros y gatos activos y entretenidos. 🎾⚡😸",
+  },
   {
     nombre: "Paquete Ratones por 3",
     precio: 7200,
