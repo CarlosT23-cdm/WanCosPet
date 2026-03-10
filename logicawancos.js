@@ -69,7 +69,7 @@ const juguetesPerros = [
       "Cuerpo esférico con puntas de fricción, extremidades flexibles y correa de agarre superior. Incluye pito interno para juego interactivo y limpieza dental.",
   },
   {
-    nombre: "Berenjena Chillona",
+    nombre: "Berengena Chillona",
     precio: 9800,
     imagenes: [rutaBasePerrosJug + "Berengena_chillona_dog_jug_01.jpg"],
     descripcion:
@@ -87,13 +87,6 @@ const juguetesPerros = [
     imagenes: [rutaBasePerrosJug + "Cerdito_chillon_peq_jug_dog_01.jpg"],
     video: "./video_tienda/cerdito_chillon_dog_jug.mp4",
     descripcion: "Vinilo flexible de alta resistencia con dispositivo sonoro.",
-  },
-  {
-    nombre: "Hueso Dentado",
-    precio: 9000,
-    imagenes: [rutaBasePerrosJug + "hueso_dentado_3x4_dog_jug_01.jpg"],
-    descripcion:
-      "Estructura ergonómica con cerdas de goma cónicas y ranuras laterales. Actúa como cepillo mecánico que limpia zonas de difícil acceso mientras el perro muerde.",
   },
   {
     nombre: "Hueso Dino",
