@@ -31,20 +31,22 @@
       </nav>
     </header>
 
-    <section class="hero" aria-labelledby="hero-title">
-      <h2 id="hero-title">Accesorios y Juguetes para Mascotas</h2>
+    <div class="hero" role="img" aria-label="Fondo decorativo de WanCos Pet">
+      <h2>Accesorios y Juguetes para Mascotas</h2>
       <div class="tagline">¡Cuida y consiente a tu mejor amigo!</div>
-    </section>
+    </div>
 
-    <button
+    <div
       class="carrito"
       id="boton-carrito-flotante"
       onclick="toggleCarrito()"
+      role="button"
+      tabindex="0"
       aria-label="Ver carrito de compras"
     >
       <span aria-hidden="true" style="font-size: 1.6rem">🛒</span>
       <span id="carrito-count" aria-live="polite">0</span>
-    </button>
+    </div>
 
     <div
       id="carrito-overlay"
@@ -89,7 +91,6 @@
         </button>
         <button
           id="vaciar-btn"
-          onclick="vaciarCarrito()"
           aria-label="Vaciar todos los productos del carrito"
           style="
             background-color: #ff4d4d;
@@ -124,7 +125,6 @@
           type="text"
           id="buscador"
           placeholder="🔍 Buscar productos..."
-          aria-label="Buscar productos en la tienda"
           style="
             width: 100%;
             max-width: 600px;
@@ -137,7 +137,6 @@
           "
         />
       </section>
-
       <section id="juguetes-perros" aria-labelledby="title-j-perros">
         <h2 id="title-j-perros" class="section-title">Juguetes para perros</h2>
         <div class="productos" id="lista-juguetes-perros"></div>
@@ -164,51 +163,54 @@
         <h2 id="title-ofertas" class="section-title">Ofertas Especiales</h2>
         <div id="ofertas-grid" class="ofertas-grid"></div>
       </section>
-
       <section id="clientes-felices" aria-labelledby="title-clientes">
         <h2 id="title-clientes" class="section-title">Clientes Felices</h2>
         <div class="clientes-grid" id="clientes-grid"></div>
       </section>
-
-      <section id="videos-clientes-section" aria-labelledby="title-videos">
-        <h2 id="title-videos" class="section-title">
-          Videos de Clientes Felices
-        </h2>
-        <div id="videos-grid" class="videos-grid-container"></div>
+      <section id="videos-clientes-section">
+        <h2 class="titulo-seccion">Videos de Clientes Felices</h2>
+        <div
+          id="videos-grid"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+          "
+        ></div>
       </section>
     </main>
-
     <section class="tips-section">
       <h2 class="section-title">Tips WanCos Pet</h2>
       <div class="tips-container">
-        <article class="tip-card">
-          <span role="img" aria-label="Huella">🐾</span>
+        <div class="tip-card">
+          <span>🐾</span>
           <h3>¿Cómo elegir el juguete ideal?</h3>
           <p>
             Observa el estilo de mordida de tu perro; si es un destructor
             profesional, busca caucho macizo.
           </p>
-        </article>
-        <article class="tip-card">
-          <span role="img" aria-label="Gato">🐱</span>
+        </div>
+        <div class="tip-card">
+          <span>🐱</span>
           <h3>¿Tu gato no juega?</h3>
           <p>
             Prueba con catnip fresco y rota sus juguetes cada semana para
             mantener el interés.
           </p>
-        </article>
-        <article class="tip-card">
-          <span role="img" aria-label="Gota de agua">💧</span>
+        </div>
+        <div class="tip-card">
+          <span>💧</span>
           <h3>Hidratación en paseos</h3>
           <p>
             Lleva siempre un bebedero portátil; un perro hidratado es un perro
             más activo y feliz.
           </p>
-        </article>
+        </div>
       </div>
     </section>
 
-    <footer id="contacto" class="footer-wancos">
+    <footer class="footer-wancos">
       <div class="footer-container">
         <div class="footer-logo">
           <img
@@ -220,18 +222,9 @@
         </div>
 
         <div class="footer-social">
-          <a href="https://facebook.com" target="_blank" rel="noopener"
-            >Facebook</a
-          >
-          <a href="https://instagram.com" target="_blank" rel="noopener"
-            >Instagram</a
-          >
-          <a
-            href="https://tiktok.com/@wancos_pet"
-            target="_blank"
-            rel="noopener"
-            >TikTok</a
-          >
+          <a href="https://facebook.com" target="_blank">Facebook</a>
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="https://tiktok.com/@wancos_pet" target="_blank">TikTok</a>
         </div>
 
         <div class="footer-contact">
