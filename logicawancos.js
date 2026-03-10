@@ -97,20 +97,22 @@ const juguetesPerros = [
     precio: 7000,
     imagenes: [rutaBasePerrosJug + "Cerdito_chillon_peq_jug_dog_01.jpg"],
     video: "./video_tienda/cerdito_chillon_dog_jug.mp4",
-    descripcion: "Vinilo flexible de alta resistencia con dispositivo sonoro.",
+    descripcion:
+      "¡Prepárate para las risas! Este cerdito chillón es el juguete que todo perro necesita para animar sus tardes. Con cada apretón, su sonido característico volverá loco a tu peludo de la emoción. Es suave, ligero y perfecto para horas de juego interactivo. ¡El cerdito más ruidoso y divertido del grupo! 🐷💨",
   },
   {
     nombre: "Hueso Dentado",
     precio: 9000,
     imagenes: [rutaBasePerrosJug + "Hueso_dentado_3x4_dog_jug_01.jpg"],
     descripcion:
-      "Actúa como cepillo mecánico que limpia mientras el perro muerde.",
+      "¿Quieres consentir a tu perro mientras cuidas su sonrisa? Este Hueso Dentado es el aliado perfecto. Gracias a sus texturas en relieve, ayuda a limpiar sus dientes y masajear sus encías de forma natural mientras él se divierte mordiéndolo. ¡Dientes fuertes y diversión sin fin! 🦴✨",
   },
   {
     nombre: "Hueso Dino",
     precio: 10000,
     imagenes: [rutaBasePerrosJug + "Hueso_dino_dog_jug_01.jpg"],
-    descripcion: "Forma divertida y gran resistencia.",
+    descripcion:
+      "¿Tu perro es un experto en mordidas? El Hueso Dino llegó para poner a prueba su energía. Su textura llena de relieve no solo lo hace súper entretenido, sino que ayuda a masajear sus encías y mantener sus dientes más limpios mientras juega. ¡DiverSIÓN jurásica para tu mejor amigo! 🦴🦖",
   },
   {
     nombre: "Hueso Mordedor",
