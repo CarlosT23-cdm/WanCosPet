@@ -207,7 +207,7 @@ nav a:hover {
   padding: 8px 25px;
   border-radius: 50px;
   font-weight: 800;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
 }
 
 /* =====================================================================

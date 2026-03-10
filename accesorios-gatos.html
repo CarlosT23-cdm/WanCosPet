@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WanCos Pet</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css"
+    />
+    <script>
+      // Al cargar la página, le ordenamos a logica.js que use la lista de accesoriosGatos
+      document.addEventListener("DOMContentLoaded", () => {
+        renderLista(
+          "lista-productos",
+          accesoriosGatos,
+          "galeria-accesorios-gatos",
+        );
+        actualizarVista();
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>WanCos Pet</h1>
+      <nav>
+        <a href="juguetes-perros.html" class="nav-link">Juguetes Perros</a>
+        <a href="accesorios-perros.html" class="nav-link">Accesorios Perros</a>
+        <a href="juguetes-gatos.html" class="nav-link">Juguetes Gatos</a>
+        <a href="accesorios-gatos.html" class="nav-link">Accesorios Gatos</a>
+      </nav>
+    </header>
+
+    <main id="contenido-principal">
+      <section id="lista-productos" class="grid-productos"></section>
+    </main>
+
+    <footer>
+      <p>Contáctanos: 302 237 5413 | Bogotá, Colombia</p>
+      <p>&copy; 2026 WanCos Pet - Todo para tu mascota</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
+    <script src="datos.js"></script>
+    <script src="logica.js"></script>
+  </body>
+</html>
