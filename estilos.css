@@ -1,3 +1,46 @@
+/* --- SECCIÓN HERO (TÍTULOS) --- */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #fbb0e3; /* Tu rosa suave seleccionado */
+  margin-bottom: 30px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.05); /* Un detalle sutil de profundidad */
+}
+
+.hero h2 {
+  font-size: 2.8rem;
+  color: #000; /* Negro sólido */
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Huellas decorativas */
+.hero h2::before,
+.hero h2::after {
+  content: "🐾";
+  font-size: 1.8rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+}
+
+.hero h2::before {
+  left: -55px;
+}
+.hero h2::after {
+  right: -55px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #333; /* Un gris muy oscuro, casi negro */
+  margin-top: 10px;
+  font-weight: 500;
+}
 /* --- RESET Y ESTILOS BASE --- */
 * {
   margin: 0;

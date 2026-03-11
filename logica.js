@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 2. Mapeo de páginas a datos (Centralizado)
   const mapas = {
-    "juguetes-perros.html": { data: juguetesPerros, gal: "galeria-perros" },
+    "index.html": { data: juguetesPerros, gal: "galeria-perros" },
     "accesorios-perros.html": { data: accesoriosPerros, gal: "galeria-perros" },
     "juguetes-gatos.html": { data: juguetesGatos, gal: "galeria-gatos" },
     "accesorios-gatos.html": { data: accesoriosGatos, gal: "galeria-gatos" },
