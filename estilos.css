@@ -158,3 +158,103 @@ nav {
   text-align: center;
   margin-top: 50px;
 }
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px; /* Espacio entre los iconos */
+}
+
+.footer-social a {
+  color: white;
+  font-size: 24px; /* Tamaño de los iconos */
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #ff914d; /* Color naranja al pasar el mouse */
+}
+
+/* --- FOOTER FINAL UNIFICADO --- */
+.footer-wancos {
+  background: #333;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-copy {
+  text-align: center;
+  flex: 1;
+}
+
+.footer-copy p {
+  font-size: 0.9rem;
+  color: #bbb;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.footer-copy p span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #ff914d;
+  display: block;
+  margin-top: 5px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-social a {
+  color: white;
+  font-size: 1.5rem; /* Ajustado a 24px aprox */
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #ff914d;
+  transform: scale(1.2);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
