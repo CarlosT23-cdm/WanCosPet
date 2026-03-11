@@ -20,7 +20,6 @@
 /* Huellas decorativas */
 .hero h2::before,
 .hero h2::after {
-  content: "🐾";
   font-size: 1.8rem;
   position: absolute;
   top: 50%;
