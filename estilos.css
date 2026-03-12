@@ -153,46 +153,139 @@ nav {
   margin-top: 10px;
 }
 
-/* --- 5. CARRITO (Sidebar) --- */
+/* --- CARRITO --- */
 .carrito {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  background: white;
-  padding: 10px 20px;
+  bottom: 30px;
+  right: 30px;
+  background: #fffffffb; /* Naranja corporativo */
+  color: rgb(10, 5, 5);
+  padding: 15px 25px;
   border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(255, 145, 77, 0.4);
   cursor: pointer;
   z-index: 1500;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  border: 2px solid rgb(255, 72, 27);
 }
 
+.carrito:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 145, 77, 0.6);
+}
+
+/* Ajuste del icono dentro del botón */
+.carrito i {
+  font-size: 1.5rem;
+}
+
+/* --- 5. SIDEBAR CARRITO --- */
 .sidebar-carrito {
   position: fixed;
-  top: 0;
-  right: -400px;
-  width: 380px;
-  height: 100%;
-  background: white;
-  z-index: 2000;
-  transition: 0.5s;
-  padding: 25px;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  top: 20px; /* Separado del borde superior en escritorio */
+  right: -400px; /* Oculto fuera de pantalla */
+  width: 350px;
+  max-height: 80vh; /* Para que no ocupe toda la altura y se vea flotante */
+  background: #ffffff;
+  z-index: 9999;
+  border-radius: 20px; /* Bordes redondeados para efecto premium */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra para elevarlo */
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+.sidebar-carrito.active {
+  right: 20px; /* Se queda a 20px del borde derecho */
+}
+
+.sidebar-header {
+  padding: 20px;
+  background: #fbb0e3;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-header h3 {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.btn-cerrar {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #000;
+  line-height: 1;
+}
+
+#lista-carrito {
+  list-style: none;
+  padding: 20px;
+  flex-grow: 1;
   overflow-y: auto;
 }
 
-.sidebar-carrito.active {
-  right: 0;
+/* Estilo de cada producto dentro del carrito */
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  animation: fadeIn 0.4s ease forwards;
 }
 
-.btn-whatsapp {
-  background: #25d366;
-  color: white;
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-nombre {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.item-precio {
+  color: #ff914d;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.btn-eliminar {
+  background: #ffeded;
+  color: #ff4d4d;
   border: none;
-  padding: 10px;
-  width: 100%;
-  margin: 10px 0;
+  padding: 5px 10px;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-eliminar:hover {
+  background: #ff4d4d;
+  color: white;
+}
+
+.footer-carrito {
+  padding: 20px;
+  background: #fafafa;
+  border-top: 1px solid #eee;
+}
+
+#total-carrito {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  display: block;
+  text-align: center;
 }
 
 /* --- 6. FOOTER (Unificado) --- */
@@ -258,13 +351,34 @@ nav {
 }
 
 /* --- 7. RESPONSIVO (Media Queries) --- */
+/* --- 7. RESPONSIVO UNIFICADO Y COMPLETO --- */
+
+/* Ajustes Generales para Celulares */
 @media (max-width: 768px) {
+  /* Footer vertical */
   .footer-container {
     flex-direction: column;
     text-align: center;
   }
+
+  /* Botón carrito flotante */
+  .carrito {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 18px;
+  }
+
+  /* Bandeja carrito (Ocupa todo en móvil) */
+  .sidebar-carrito {
+    width: 100% !important;
+    right: -100% !important;
+  }
+  .sidebar-carrito.active {
+    right: 0 !important;
+  }
 }
 
+/* Ajustes Específicos para el Hero (Patitas y Títulos) */
 @media (max-width: 480px) {
   .hero h2 {
     font-size: 1.8rem;
@@ -277,9 +391,43 @@ nav {
     right: -35px;
     font-size: 1.2rem;
   }
+}
 
-  .sidebar-carrito {
-    width: 100%; /* El carrito ocupa toda la pantalla en celular */
-    right: -100%;
-  }
+/*ICONOS DE REDES SOCIALES CARRITO Y FOOTER */
+/* Mejora de tamaño para iconos en redes sociales */
+.footer-social a i {
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por los iconos del footer */
+.footer-social a:hover i {
+  transform: scale(1.2);
+  color: #ff914d;
+}
+
+/* Estilo para el icono de WhatsApp en el botón del carrito */
+.btn-whatsapp i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.btn-whatsapp {
+  background: #25d366; /* Verde WhatsApp */
+  color: white;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.btn-whatsapp:hover {
+  background: #128c7e;
 }

@@ -77,8 +77,21 @@ function renderLista(idContenedor, lista, nombreGaleria) {
 // === LÓGICA CARRITO Y PERSISTENCIA ===
 let carrito = JSON.parse(localStorage.getItem("wancos_carrito_v1") || "[]");
 
+function vaciarCarrito() {
+  if (
+    confirm(
+      "¿Estás seguro de que deseas eliminar todos los productos del carrito?",
+    )
+  ) {
+    carrito = [];
+    localStorage.removeItem("wancos_carrito_v1");
+    actualizarVista();
+  }
+}
+
 function toggleCarrito() {
-  document.getElementById("sidebarCarrito").classList.toggle("active");
+  const sidebar = document.getElementById("sidebarCarrito");
+  sidebar.classList.toggle("active"); // Esto activa/desactiva la clase CSS
 }
 
 function agregarAlCarrito(producto, precio) {
@@ -99,15 +112,27 @@ function actualizarVista() {
   const countEl = document.getElementById("carrito-count");
   if (!lista) return;
 
+  // Renderizado con el nuevo diseño Premium
   lista.innerHTML = carrito
     .map(
-      (i, idx) =>
-        `<li>${i.producto} - $${i.precio.toLocaleString()} <button onclick="eliminarDelCarrito(${idx})">X</button></li>`,
+      (i, idx) => `
+        <li class="item-carrito">
+          <div class="item-info">
+            <span class="item-nombre">${i.producto}</span>
+            <span class="item-precio">$${i.precio.toLocaleString()} COP</span>
+          </div>
+          <button class="btn-eliminar" onclick="eliminarDelCarrito(${idx})">
+            <i class="fas fa-trash"></i>
+          </button>
+        </li>
+      `,
     )
     .join("");
+
   const total = carrito.reduce((sum, i) => sum + i.precio, 0);
-  if (totalEl)
+  if (totalEl) {
     totalEl.innerHTML = `<strong>Total: $${total.toLocaleString()} COP</strong>`;
+  }
   if (countEl) countEl.innerText = carrito.length;
 }
 

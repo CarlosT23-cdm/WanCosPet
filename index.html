@@ -41,18 +41,59 @@
       </nav>
     </header>
 
-    <div class="carrito" onclick="toggleCarrito()">
-      🛒 <span id="carrito-count">0</span>
+    <div
+      class="carrito"
+      onclick="toggleCarrito()"
+      style="font-size: 1.2rem; display: flex; align-items: center; gap: 8px"
+    >
+      <i class="fas fa-shopping-basket" style="font-size: 1.8rem"></i>
+      <span
+        id="carrito-count"
+        style="
+          background: #ff4d4d;
+          color: white;
+          border-radius: 50%;
+          padding: 2px 8px;
+          font-size: 0.9rem;
+        "
+        >0</span
+      >
     </div>
 
     <aside id="sidebarCarrito" class="sidebar-carrito">
-      <h3>Tu carrito</h3>
+      <div class="sidebar-header">
+        <h3>🛒 Tu Pedido</h3>
+        <button onclick="toggleCarrito()" class="btn-cerrar">✕</button>
+      </div>
+
       <ul id="lista-carrito"></ul>
-      <div id="total-carrito"></div>
-      <button onclick="enviarPedidoWhatsApp()" class="btn-whatsapp">
-        Finalizar Compra WhatsApp
-      </button>
-      <button onclick="toggleCarrito()">Cerrar</button>
+
+      <div class="footer-carrito">
+        <div id="total-carrito"></div>
+        <div class="footer-carrito">
+          <div id="total-carrito"></div>
+
+          <button
+            onclick="vaciarCarrito()"
+            style="
+              background: none;
+              border: 1px solid #ff4d4d;
+              color: #ff4d4d;
+              width: 100%;
+              padding: 8px;
+              border-radius: 5px;
+              margin-bottom: 10px;
+              cursor: pointer;
+            "
+          >
+            <i class="fas fa-trash-alt"></i> Vaciar Carrito
+          </button>
+
+          <button onclick="enviarPedidoWhatsApp()" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Finalizar Compra
+          </button>
+        </div>
+      </div>
     </aside>
 
     <section class="hero">

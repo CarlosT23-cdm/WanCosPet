@@ -179,11 +179,6 @@ const accesoriosPerros = [
 
 const juguetesGatos = [
   {
-    nombre: "Bola Electrica",
-    precio: 22000,
-    imagenes: [rutaBaseGatosJug + "Bola_electrica_cat_jut.jpg"],
-  },
-  {
     nombre: "Paquete Ratones por 3",
     precio: 7200,
     imagenes: [rutaBaseGatosJug + "Paquete_raton_x3_cat_jug_01.jpg"],
@@ -257,6 +252,11 @@ const juguetesGatos = [
     nombre: "Peluches Variados",
     precio: 6500,
     imagenes: [rutaBaseGatosJug + "peluche_con_juguete_jug_cat_01.jpg"],
+  },
+  {
+    nombre: "Bola Electrica",
+    precio: 22000,
+    imagenes: [rutaBaseGatosJug + "Bola_electrica_jug_cat.jpg"],
   },
 ];
 
