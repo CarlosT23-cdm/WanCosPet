@@ -180,7 +180,12 @@ nav {
 
 /* Ajuste del icono dentro del botón */
 .carrito i {
-  font-size: 1.5rem;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+  transition: transform 0.2s;
+}
+
+.carrito:hover i {
+  transform: scale(1.1) rotate(-10deg);
 }
 
 /* --- 5. SIDEBAR CARRITO --- */
