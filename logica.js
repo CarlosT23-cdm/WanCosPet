@@ -1,12 +1,22 @@
 // === LÓGICA MAESTRA WANCOS PET ===
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Navegación Activa
+  // 1. Obtener la ruta actual
   const path = window.location.pathname;
+
+  // 2. Navegación Activa (Resaltar botón del menú)
   document.querySelectorAll(".nav-link").forEach((link) => {
-    if (path.includes(link.getAttribute("href"))) link.classList.add("activo");
+    if (path.includes(link.getAttribute("href"))) {
+      link.classList.add("activo");
+    } else if (
+      (path.endsWith("/") || path.includes("index.html")) &&
+      link.getAttribute("href") === "index.html"
+    ) {
+      // Caso especial para que el botón de "Juguetes Perros" se vea activo en el Inicio
+      link.classList.add("activo");
+    }
   });
 
-  // 2. Mapeo de páginas a datos (Centralizado)
+  // 3. Mapeo de páginas a datos (Centralizado)
   const mapas = {
     "index.html": { data: juguetesPerros, gal: "galeria-perros" },
     "accesorios-perros.html": { data: accesoriosPerros, gal: "galeria-perros" },
@@ -14,9 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
     "accesorios-gatos.html": { data: accesoriosGatos, gal: "galeria-gatos" },
   };
 
-  // 3. Renderizado Automático según la URL
-  const currentPage = Object.keys(mapas).find((page) => path.includes(page));
-  if (currentPage) {
+  // 4. Renderizado Inteligente
+  // Buscamos si la URL coincide con alguna de nuestras páginas
+  let currentPage = Object.keys(mapas).find((page) => path.includes(page));
+
+  // SI ES EL INDEX O LA RAÍZ: Forzamos que use los datos de index.html
+  if (!currentPage || path.endsWith("/") || path.includes("index.html")) {
+    currentPage = "index.html";
+  }
+
+  // Ejecutamos el renderizado solo si tenemos datos válidos
+  if (currentPage && mapas[currentPage]) {
     renderLista(
       "lista-productos",
       mapas[currentPage].data,
