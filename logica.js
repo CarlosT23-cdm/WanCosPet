@@ -56,21 +56,41 @@ function initFancybox() {
 function renderLista(idContenedor, lista, nombreGaleria) {
   const cont = document.getElementById(idContenedor);
   if (!cont || !lista) return;
+
   cont.innerHTML = lista
-    .map(
-      (p) => `
+    .map((p) => {
+      // 1. Definimos las variables necesarias para el corazón DENTRO del map
+      const imgPrincipal =
+        p.imagenes && p.imagenes.length > 0
+          ? p.imagenes[0]
+          : "https://via.placeholder.com/300?text=WanCos+Pet";
+      const esFavorito = favoritos.some((f) => f.nombre === p.nombre);
+      const claseCorazon = esFavorito ? "btn-favorito activo" : "btn-favorito";
+      const iconoCorazon = esFavorito ? "❤️" : "🤍";
+
+      // 2. Retornamos el HTML del producto
+      return `
         <article class="producto">
-            <a data-fancybox="${nombreGaleria}" href="${p.imagenes[0]}">
-                <img src="${p.imagenes[0]}" alt="${p.nombre}" loading="lazy">
+            <a data-fancybox="${nombreGaleria}" href="${imgPrincipal}">
+                <img src="${imgPrincipal}" alt="${p.nombre}" loading="lazy" decoding="async">
             </a>
             <div class="producto-info">
                 <h3>${p.nombre}</h3>
                 <div class="price">$${p.precio.toLocaleString()} COP</div>
-                <button onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})">Añadir al carrito</button>
+                
+                <div style="display: flex; gap: 10px; align-items: center; justify-content: center;">
+                    <button onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})">
+                        Añadir al carrito
+                    </button>
+                    
+                    <button class="${claseCorazon}" onclick="toggleFavorito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio}, '${imgPrincipal}')">
+                        ${iconoCorazon}
+                    </button>
+                </div>
             </div>
         </article>
-    `,
-    )
+      `;
+    })
     .join("");
 }
 
@@ -147,3 +167,57 @@ function enviarPedidoWhatsApp() {
     "_blank",
   );
 }
+// Variable global para favoritos
+let favoritos = JSON.parse(localStorage.getItem("wancos_favoritos") || "[]");
+
+function toggleFavorito(nombre, precio, imagen) {
+  console.log("Cambiando favorito de:", nombre); // Esto te confirmará el clic en la consola
+
+  const index = favoritos.findIndex((p) => p.nombre === nombre);
+
+  if (index === -1) {
+    favoritos.push({ nombre, precio, imagen });
+  } else {
+    favoritos.splice(index, 1);
+  }
+
+  // Guardar
+  localStorage.setItem("wancos_favoritos", JSON.stringify(favoritos));
+
+  // 1. Actualizar la bandeja de arriba
+  actualizarVistaFavoritos();
+
+  // 2. RE-DIBUJAR TODO EL SITIO (Esto hace que el corazón cambie de color)
+  if (typeof initRender === "function") {
+    initRender();
+  } else {
+    console.error("La función initRender no está definida o no es accesible.");
+  }
+}
+
+function actualizarVistaFavoritos() {
+  const contenedor = document.getElementById("contenedor-favoritos");
+  if (!contenedor) return;
+
+  if (favoritos.length === 0) {
+    contenedor.innerHTML =
+      '<p class="fav-vacio-msj">Selecciona tus favoritos dando "me gusta" ❤️</p>';
+    return;
+  }
+
+  contenedor.innerHTML = favoritos
+    .map(
+      (p) => `
+        <div class="item-favorito-mini" style="min-width: 120px; text-align: center;">
+            <img src="${p.imagen}" style="width: 80px; height: 80px; border-radius: 10px; object-fit: cover;">
+            <p style="font-size: 0.8rem; font-weight: bold; margin-top: 5px;">${p.nombre}</p>
+        </div>
+    `,
+    )
+    .join("");
+}
+
+// Llama a esta función dentro de tu DOMContentLoaded para que cargue al abrir la página
+document.addEventListener("DOMContentLoaded", () => {
+  actualizarVistaFavoritos();
+});

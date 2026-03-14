@@ -436,3 +436,50 @@ nav {
 .btn-whatsapp:hover {
   background: #128c7e;
 }
+/* --- FAVORITOS ESTILO INSTAGRAM --- */
+.btn-favorito {
+  background: white;
+  border: 2px solid #000;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-favorito.activo {
+  background: #ff4d4d;
+  border-color: #ff4d4d;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Sección: Bandeja Superior de Favoritos */
+.seccion-favoritos {
+  background: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 2px dashed #ff914d;
+}
+
+.favoritos-grid {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.fav-vacio-msj {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  width: 100%;
+}

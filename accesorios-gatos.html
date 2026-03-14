@@ -33,12 +33,7 @@
         />
         WanCos Pet
       </h1>
-      <nav id="mainNav">
-        <a href="index.html" class="nav-link">Juguetes Perros</a>
-        <a href="accesorios-perros.html" class="nav-link">Accesorios Perros</a>
-        <a href="juguetes-gatos.html" class="nav-link">Juguetes Gatos</a>
-        <a href="accesorios-gatos.html" class="nav-link">Accesorios Gatos</a>
-      </nav>
+      <nav id="mainNav"></nav>
     </header>
 
     <div
@@ -100,7 +95,16 @@
       <h2>Accesorios para Gatos</h2>
       <div class="tagline">Todo lo necesario para el confort de tu felino.</div>
     </section>
-
+    <section class="seccion-favoritos">
+      <h2 style="text-align: center; font-size: 1.5rem; color: #ff914d">
+        🐾 Tus Favoritos
+      </h2>
+      <div id="contenedor-favoritos" class="favoritos-grid">
+        <p class="fav-vacio-msj">
+          Selecciona tus favoritos dando "me gusta" ❤️
+        </p>
+      </div>
+    </section>
     <main>
       <section id="productos-section">
         <div id="lista-productos" class="grid-productos"></div>
@@ -145,5 +149,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="datos.js"></script>
     <script src="logica.js"></script>
+    <script src="menu.js"></script>
   </body>
 </html>
