@@ -19,6 +19,43 @@ const rutaBaseGatosAcc = "./img_tienda/img_gatos_accesorios/";
 // Listado de juguetes para perros
 const juguetesPerros = [
   {
+    nombre: "Pelota Asteroide",
+    precio: 14000,
+    imagenes: [rutaBasePerrosJug + "Pelota_asteroide_dog_jug_01.jpg"],
+  },
+  {
+    nombre: "Muslo Macizo",
+    precio: 7600,
+    imagenes: [rutaBasePerrosJug + "Muslo_dog_jug.jpg"],
+  },
+  {
+    nombre: "Mordedor Cuerda Circular",
+    precio: 9600,
+    imagenes: [rutaBasePerrosJug + "Mordedor_cuerda_circular_dog_jug.jpg"],
+  },
+  {
+    nombre: "Mordedor Con Hueso Chillon",
+    precio: 14000,
+    imagenes: [rutaBasePerrosJug + "Mordedor_con_hueso_chillon_jug_dog.jpg"],
+  },
+  {
+    nombre: "Mazorca Chillona",
+    precio: 9800,
+    imagenes: [rutaBasePerrosJug + "Mazorca_chillona_cat_jug_01.jpg"],
+  },
+  {
+    nombre: "Llanta",
+    precio: 10800,
+    imagenes: [rutaBasePerrosJug + "Llanta_jug_dog.jpg"],
+    descripcion: "",
+  },
+  {
+    nombre: "Lazo Hueso",
+    precio: 7400,
+    imagenes: [rutaBasePerrosJug + "Lazo_hueso_jug_dog.jpg"],
+    descripcion: "",
+  },
+  {
     nombre: "Dona",
     precio: 19000,
     imagenes: [rutaBasePerrosJug + "Dona_jug_dog.jpg"],
@@ -259,11 +296,7 @@ const juguetesGatos = [
     precio: 20000,
     imagenes: [rutaBaseGatosJug + "Juguete_resorte_gato_cat_jug_01.jpg"],
   },
-  {
-    nombre: "Mazorca Chillona",
-    precio: 9600,
-    imagenes: [rutaBaseGatosJug + "Mazorca_chillona_cat_jug_01.jpg"],
-  },
+
   {
     nombre: "Paquete Juguete Gato x 3",
     precio: 10000,
