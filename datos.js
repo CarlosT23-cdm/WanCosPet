@@ -2,6 +2,11 @@
  * WANCOS PET - BASE DE DATOS DE PRODUCTOS
  * Este archivo funciona como un almacén central. Todos los productos de la tienda
  * están registrados aquí para que sea más fácil encontrarlos y editarlos.
+ *   {
+    nombre: "ccc",
+    precio: cccc,
+    imagenes: [rutaBasePerrosJug + "cccccc"],
+  },
  */
 
 // --- NOTA EXPLICATIVA ---
@@ -18,6 +23,27 @@ const rutaBaseGatosAcc = "./img_tienda/img_gatos_accesorios/";
 
 // Listado de juguetes para perros
 const juguetesPerros = [
+  {
+    nombre: "Oso Jalador",
+    precio: 20000,
+    imagenes: [
+      rutaBasePerrosJug + "Oso_Jalador_jug_dog_01.jpg",
+      "Oso_Jalador_jug_dog_02.jpg",
+    ],
+  },
+  {
+    nombre: "Paquete de Peloytas por 5",
+    precio: 25000,
+    imagenes: [rutaBasePerrosJug + "Paquete_pelotas_x5_jug_dog.jpg"],
+  },
+  {
+    nombre: "Pelota Chillona",
+    precio: 6000,
+    imagenes: [
+      rutaBasePerrosJug + "Pelota_Chillona_dog_jug.jpg",
+      rutaBasePerrosJug + "Pelota_Chillona_02_dog_jug.jpg",
+    ],
+  },
   {
     nombre: "Pelota Asteroide",
     precio: 14000,
@@ -113,7 +139,10 @@ const juguetesPerros = [
   {
     nombre: "Jalador Trenza",
     precio: 11000,
-    imagenes: [rutaBasePerrosJug + "Jalador_trenza_mediano_dog_jug_01.jpg"],
+    imagenes: [
+      rutaBasePerrosJug + "Jalador_trenza_mediano_dog_jug_01.jpg",
+      rutaBasePerrosJug + "Jalador_trenza_mediano_dog_jug_02",
+    ],
   },
   {
     nombre: "Pelota Chillona Futbol Americano",
@@ -121,6 +150,7 @@ const juguetesPerros = [
     imagenes: [
       rutaBasePerrosJug + "Pelota_chillona_futbol_americano_jug_dog_01.jpg",
     ],
+    descripcion: "",
   },
   {
     nombre: "Pelota Rugby",
@@ -301,16 +331,6 @@ const juguetesGatos = [
     nombre: "Paquete Juguete Gato x 3",
     precio: 10000,
     imagenes: [rutaBaseGatosJug + "Paquete_juguete_x3_cat_jug_01.jpg"],
-  },
-  {
-    nombre: "Pelotas Locas",
-    precio: 14000,
-    imagenes: [rutaBaseGatosJug + "pelota_loca_pequeña_jug_cat_02.jpg"],
-  },
-  {
-    nombre: "Peluches Variados",
-    precio: 6500,
-    imagenes: [rutaBaseGatosJug + "peluche_con_juguete_jug_cat_01.jpg"],
   },
   {
     nombre: "Bola Electrica",
