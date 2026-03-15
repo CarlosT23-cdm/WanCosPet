@@ -19,6 +19,16 @@ const rutaBaseGatosAcc = "./img_tienda/img_gatos_accesorios/";
 // Listado de juguetes para perros
 const juguetesPerros = [
   {
+    nombre: "Dona",
+    precio: 19000,
+    imagenes: [rutaBasePerrosJug + "Dona_jug_dog.jpg"],
+  },
+  {
+    nombre: "Cuerda Pelota Pequeña",
+    precio: 7400,
+    imagenes: [rutaBasePerrosJug + "Cuerda_pelota_pequeña_dog_jug.jpg"],
+  },
+  {
     nombre: "Ardilla Chillona",
     precio: 10000,
     imagenes: [rutaBasePerrosJug + "Ardilla_chillona_dog_01.jpg"],
