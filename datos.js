@@ -41,7 +41,7 @@ const juguetesPerros = [
     ],
   },
   {
-    nombre: "Paquete de Peloytas por cinco",
+    nombre: "Paquete de Pelotas por cinco",
     precio: 25000,
     imagenes: [rutaBasePerrosJug + "Paquete_pelotas_x5_jug_dog.jpg"],
   },
