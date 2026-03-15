@@ -7,6 +7,7 @@
     precio: cccc,
     imagenes: [rutaBasePerrosJug + "cccccc"],
   },
+  Paleta_para_refrigerar_dog_jug_01
  */
 
 // --- NOTA EXPLICATIVA ---
@@ -23,6 +24,14 @@ const rutaBaseGatosAcc = "./img_tienda/img_gatos_accesorios/";
 
 // Listado de juguetes para perros
 const juguetesPerros = [
+  {
+    nombre: "Paleta para Refrigerar",
+    precio: 12000,
+    imagenes: [
+      rutaBasePerrosJug + "Paleta_para_refrigerar_dog_jug_01.jpg",
+      "Paleta_para_refrigerar_dog_jug_02.jpg",
+    ],
+  },
   {
     nombre: "Oso Jalador",
     precio: 20000,
