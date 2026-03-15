@@ -67,7 +67,7 @@ const juguetesPerros = [
   {
     nombre: "Mazorca Chillona",
     precio: 9800,
-    imagenes: [rutaBasePerrosJug + "Mazorca_chillona_cat_jug_01.jpg"],
+    imagenes: [rutaBasePerrosJug + "Mazorca_chillona_dog_jug_01.jpg"],
   },
   {
     nombre: "Llanta",
@@ -175,7 +175,12 @@ const juguetesPerros = [
   {
     nombre: "Pelota Loca Pequeña",
     precio: 14000,
-    imagenes: [rutaBasePerrosJug + "pelota_loca_pequeña_jug_dog_01.jpg"],
+    imagenes: [
+      rutaBasePerrosJug + "pelota_loca_pequeña_jug_dog_01.jpg",
+      rutaBasePerrosJug + "pelota_loca_pequeña_jug_dog_02.jpg",
+      rutaBasePerrosJug + "pelota_loca_pequeña_jug_dog_01",
+    ],
+    descripcion: "",
   },
   {
     nombre: "Pelota Snacks",
