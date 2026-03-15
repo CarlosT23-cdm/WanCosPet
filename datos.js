@@ -1,12 +1,22 @@
-// =====================================================================
-// === RUTAS BASE ===
-// =====================================================================
+/**
+ * WANCOS PET - BASE DE DATOS DE PRODUCTOS
+ * Este archivo funciona como un almacén central. Todos los productos de la tienda
+ * están registrados aquí para que sea más fácil encontrarlos y editarlos.
+ */
+
+// --- NOTA EXPLICATIVA ---
+// Estas son las direcciones de las carpetas donde guardas tus fotos.
+// Se usan para no tener que escribir la ruta larga en cada producto.
 const rutaBasePerrosJug = "./img_tienda/img_perros_juguetes/";
 const rutaBasePerrosAcc = "./img_tienda/img_perros_accesorios/";
 const rutaBaseGatosJug = "./img_tienda/img_gatos_juguetes/";
 const rutaBaseGatosAcc = "./img_tienda/img_gatos_accesorios/";
 
-// === LISTADO DE PRODUCTOS ===
+// =====================================================================
+// SECCIÓN: PERROS
+// =====================================================================
+
+// Listado de juguetes para perros
 const juguetesPerros = [
   {
     nombre: "Ardilla Chillona",
@@ -112,6 +122,7 @@ const juguetesPerros = [
   },
 ];
 
+// Listado de accesorios para perros
 const accesoriosPerros = [
   {
     nombre: "Bebedero 4 en 1",
@@ -177,6 +188,11 @@ const accesoriosPerros = [
   },
 ];
 
+// =====================================================================
+// SECCIÓN: GATOS
+// =====================================================================
+
+// Listado de juguetes para gatos
 const juguetesGatos = [
   {
     nombre: "Paquete Ratones por 3",
@@ -260,6 +276,7 @@ const juguetesGatos = [
   },
 ];
 
+// Listado de accesorios para gatos
 const accesoriosGatos = [
   {
     nombre: "Arenera Moderna",
@@ -291,4 +308,14 @@ const accesoriosGatos = [
     precio: 8000,
     imagenes: [rutaBaseGatosAcc + "Palas_jarra_cat_acc_01.jpg"],
   },
+];
+
+// --- NOTA FINAL ---
+// Esta lista unifica todos los productos anteriores para que el buscador
+// pueda revisar todo el inventario de una sola vez si es necesario.
+const todosLosProductos = [
+  ...juguetesPerros,
+  ...accesoriosPerros,
+  ...juguetesGatos,
+  ...accesoriosGatos,
 ];
