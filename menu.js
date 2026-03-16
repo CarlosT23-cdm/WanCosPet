@@ -3,8 +3,8 @@ const menuHTML = `
   <a href="accesorios-perros.html" class="nav-link">Accesorios Perros</a>
   <a href="juguetes-gatos.html" class="nav-link">Juguetes Gatos</a>
   <a href="accesorios-gatos.html" class="nav-link">Accesorios Gatos</a>
-  <a href="accesorios-perros_gatos.html" class="nav-link">Accesorios para Perros y Gatos</a>
   <a href="juguetes-gatos_perros.html" class="nav-link">Juguetes para Perros y Gatos</a>
+  <a href="accesorios-perros_gatos.html" class="nav-link">Accesorios para Perros y Gatos</a>
 `;
 
 document.addEventListener("DOMContentLoaded", () => {
