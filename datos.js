@@ -31,6 +31,29 @@ const rutaBaseGatosPerrosJug = "./img_tienda/img_juguetes_perros&gatos/";
 // Listado de juguetes para perros
 const juguetesPerros = [
   {
+    nombre: "Zanahoria Chillona",
+    precio: 11000,
+    imagenes: [rutaBasePerrosJug + "Zanahoria_Chillona_jug_dog.jpg"],
+  },
+  {
+    nombre: "Peluche Zanahoria Chillona",
+    precio: 10000,
+    imagenes: [rutaBasePerrosJug + "Zanahoria_Chillona_(video)_jug_dog.mp4"], //Necesito poner videos en el html al igual que las imagenes
+    descripcion:
+      "Peluche con sonido, de tamaño mediano, recubierto con una tela muy suave", //necesito que esta descripción aparezca en el html
+  },
+
+  {
+    nombre: "Peluche Limpia dientes",
+    precio: 25000,
+    imagenes: [rutaBasePerrosJug + "Peluche_limpia_dientes_dog_jug.jpg"],
+  },
+  {
+    nombre: "Pollo Chillon Pequeño",
+    precio: 5000,
+    imagenes: [rutaBasePerrosJug + "Pollo_Chillon_Pequeño_jug_dog.jpg"],
+  },
+  {
     nombre: "Pelota Puntas",
     precio: 10000,
     imagenes: [rutaBasePerrosJug + "Pelota_puntas_jug_dog.jpg"],
