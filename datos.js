@@ -5,7 +5,7 @@
  *   {
     nombre: "ccc",
     precio: cccc,
-    imagenes: [rutaBasePerrosJug + "cccccc"],
+    imagenes: [rutaBasePerrosJug + "Peluche_Marranito_Felpa_Con_Sonido_jug_dog_01.jpg.jpg"],
   },
   
  */
@@ -30,6 +30,36 @@ const rutaBaseGatosPerrosJug = "./img_tienda/img_juguetes_perros&gatos/";
 
 // Listado de juguetes para perros
 const juguetesPerros = [
+  {
+    nombre: "Marrano",
+    precio: 15000,
+    imagenes: [
+      rutaBasePerrosJug +
+        "Peluche_Marranito_Felpa_Con_Sonido_jug_dog_01.jpg.jpg",
+    ],
+  },
+
+  {
+    nombre: "Elefante desnutrido",
+    precio: 15000,
+    imagenes: [rutaBasePerrosJug + "Peluche_Elefante_Felpa_jug_dog_01.jpg"],
+  },
+  {
+    nombre: "Drilococo",
+    precio: 25000,
+    imagenes: [
+      rutaBasePerrosJug + "Cocodrilo_jug_dog_01.jpg",
+      rutaBasePerrosJug + "Cocodrilo_jug_dog_02.jpg",
+    ],
+  },
+  {
+    nombre: "Puerco Espin",
+    precio: 7000,
+    imagenes: [
+      rutaBasePerrosJug + "Puercoespin_jug_dog_01.jpg",
+      "Puercoespin_jug_dog_02.jpg",
+    ],
+  },
   {
     nombre: "Zanahoria Chillona",
     precio: 11000,
