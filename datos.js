@@ -52,14 +52,6 @@ const juguetesPerros = [
     imagenes: [rutaBasePerrosJug + "Pelota_encias_jug_dog_01.jpg"],
   },
   {
-    nombre: "Bola Electrica",
-    precio: 22000,
-    imagenes: [
-      rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat&dog_01.jpg",
-      rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat&dog_02.jpg",
-    ],
-  },
-  {
     nombre: "Paleta para Refrigerar",
     precio: 12000,
     imagenes: [
