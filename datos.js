@@ -7,7 +7,7 @@
     precio: cccc,
     imagenes: [rutaBasePerrosJug + "cccccc"],
   },
-  Pelota_maciza_mediana_jug_dog_01.jpg
+  
  */
 
 // --- NOTA EXPLICATIVA ---
@@ -30,6 +30,11 @@ const rutaBaseGatosPerrosJug = "./img_tienda/img_juguetes_perros&gatos/";
 
 // Listado de juguetes para perros
 const juguetesPerros = [
+  {
+    nombre: "Pelota Puntas",
+    precio: 10000,
+    imagenes: [rutaBasePerrosJug + "Pelota_puntas_jug_dog.jpg"],
+  },
   {
     nombre: "Pelota Maciza Medinana",
     precio: 14000,
