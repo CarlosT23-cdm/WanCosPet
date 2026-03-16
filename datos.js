@@ -5,7 +5,7 @@
  *   {
     nombre: "ccc",
     precio: cccc,
-    imagenes: [rutaBasePerrosJug + "Peluche_Marranito_Felpa_Con_Sonido_jug_dog_01.jpg.jpg"],
+    imagenes: [rutaBasePerrosJug + "Cortauñas_Grande_Con_Lima_acc_dog.jpg"],
   },
   
  */
@@ -13,20 +13,39 @@
 // --- NOTA EXPLICATIVA ---
 // Estas son las direcciones de las carpetas donde guardas tus fotos.
 // Se usan para no tener que escribir la ruta larga en cada producto.
+const rutaBaseGatosPerrosAcc = "./img_tienda/img_accesorios_perros_y_gatos/";
+const rutaBaseGatosPerrosJug = "./img_tienda/img_juguetes_perros_y_gatos/";
 const rutaBasePerrosJug = "./img_tienda/img_perros_juguetes/";
 const rutaBasePerrosAcc = "./img_tienda/img_perros_accesorios/";
 const rutaBaseGatosJug = "./img_tienda/img_gatos_juguetes/";
 const rutaBaseGatosAcc = "./img_tienda/img_gatos_accesorios/";
-const rutaBasePerrosGatosAcc = "./img_tienda/img_accesorios_perros&gatos/";
-const rutaBaseGatosPerrosJug = "./img_tienda/img_juguetes_perros&gatos/";
 
 // Hay productos que funcionan muy bien para las dos especies, incorpore dos carpetas una de ellas con accesorios para perros y gatos y otra con juguetes para perros y
-// gatos, tambien incorpore estas dos rutas rutaBaseGatosPerrosAcc, rutaBaseGatosPerrosJug 15-03-2026, tengo que modifcar el logica.js y crear dos HTML para las carpetas
+// gatos, tambien incorpore estas dos rutas rutaBaseGatosPerrosAcc, rutaBaseGatosPerrosJug 15-03-2026, ¿tengo que modifcar el logica.js?, crear dos HTML para las carpetas
 // img_accesorios_perros&gatos y la de juguetes, asi como tambien pasar alli los porductos de otros html que sean para las dos especies y descargar los demas de telegram
 
 // =====================================================================
 // SECCIÓN: PERROS
 // =====================================================================
+
+const productosDosEspeciesAcc = [
+  {
+    nombre: "Cepillo Vapor",
+    precio: 23000,
+    imagenes: [rutaBaseGatosPerrosAcc + "Cepillo_Vapor_acc_dog_y_cat_01.jpg"],
+  },
+];
+
+const productosDosEspeciesJug = [
+  {
+    nombre: "Bola Electrica",
+    precio: 22000,
+    imagenes: [
+      rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat_y_dog_01.jpg",
+      rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat_y_dog_02.jpg",
+    ],
+  },
+];
 
 // Listado de juguetes para perros
 const juguetesPerros = [
@@ -36,6 +55,7 @@ const juguetesPerros = [
     imagenes: [
       rutaBasePerrosJug + "Peluche_Marranito_Felpa_Con_Sonido_jug_dog_01.jpg",
     ],
+    descripcion: "Cerdito con sonido, recubierto de tela, color rosado",
   },
 
   {
@@ -56,7 +76,7 @@ const juguetesPerros = [
     precio: 7000,
     imagenes: [
       rutaBasePerrosJug + "Puercoespin_jug_dog_01.jpg",
-      "Puercoespin_jug_dog_02.jpg",
+      rutaBasePerrosJug + "Puercoespin_jug_dog_02.jpg",
     ],
   },
   {
@@ -113,7 +133,7 @@ const juguetesPerros = [
     precio: 12000,
     imagenes: [
       rutaBasePerrosJug + "Paleta_para_refrigerar_dog_jug_01.jpg",
-      "Paleta_para_refrigerar_dog_jug_02.jpg",
+      rutaBasePerrosJug + "Paleta_para_refrigerar_dog_jug_02.jpg",
     ],
   },
   {
@@ -121,7 +141,7 @@ const juguetesPerros = [
     precio: 20000,
     imagenes: [
       rutaBasePerrosJug + "Oso_Jalador_jug_dog_01.jpg",
-      "Oso_Jalador_jug_dog_02.jpg",
+      rutaBasePerrosJug + "Oso_Jalador_jug_dog_02.jpg",
     ],
   },
   {
@@ -299,6 +319,11 @@ const juguetesPerros = [
 
 // Listado de accesorios para perros
 const accesoriosPerros = [
+  {
+    nombre: "Cortauñas Grande",
+    precio: 14100,
+    imagenes: [rutaBasePerrosJug + "Cortauñas_Grande_Con_Lima_acc_dog.jpg"],
+  },
   {
     nombre: "Bebedero 4 en 1",
     precio: 50000,

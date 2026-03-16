@@ -36,19 +36,29 @@ function renderizarPaginaActual() {
     "accesorios-perros.html": { data: accesoriosPerros, gal: "galeria-perros" },
     "juguetes-gatos.html": { data: juguetesGatos, gal: "galeria-gatos" },
     "accesorios-gatos.html": { data: accesoriosGatos, gal: "galeria-gatos" },
+    "accesorios-perros_gatos.html": {
+      data: productosDosEspeciesAcc,
+      gal: "galeria-perros-gatos",
+    },
+    "juguetes-gatos_perros.html": {
+      data: productosDosEspeciesJug,
+      gal: "galeria-perros-gatos",
+    },
   };
 
-  let currentPage = Object.keys(mapas).find((page) => path.includes(page));
-  if (!currentPage || path.endsWith("/") || path.includes("index.html")) {
-    currentPage = "index.html";
+  // Buscamos si el nombre del archivo actual está en nuestro mapa
+  let pageKey = Object.keys(mapas).find((key) => path.includes(key));
+
+  // Si no encuentra nada (o es la raíz), por defecto va al index
+  if (!pageKey || path.endsWith("/")) {
+    pageKey = "index.html";
   }
 
-  if (currentPage && mapas[currentPage]) {
-    renderLista(
-      "lista-productos",
-      mapas[currentPage].data,
-      mapas[currentPage].gal,
-    );
+  const configuracion = mapas[pageKey];
+
+  if (configuracion) {
+    // AQUÍ ESTÁ EL SECRETO: Asegúrate de que el ID sea "lista-productos" en el HTML
+    renderLista("lista-productos", configuracion.data, configuracion.gal);
   }
 }
 
@@ -150,6 +160,12 @@ function configurarBuscador() {
     } else if (path.includes("accesorios-gatos.html")) {
       productosFiltrar = accesoriosGatos;
       galeriaActual = "galeria-gatos";
+    } else if (path.includes("accesorios-perros_gatos.html")) {
+      productosFiltrar = productosDosEspeciesAcc;
+      galeriaActual = "galeria-perros-gatos";
+    } else if (path.includes("juguetes-gatos_perros.html")) {
+      productosFiltrar = productosDosEspeciesJug;
+      galeriaActual = "galeria-perros-gatos";
     }
 
     if (termino.trim() === "") {

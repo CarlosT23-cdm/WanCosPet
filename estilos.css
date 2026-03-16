@@ -110,8 +110,10 @@ nav {
 /* --- 4. GRID DE PRODUCTOS --- */
 .grid-productos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /*Cambiando auto-fit por auto.fill las imágenes ya no se distorsionan*/
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
