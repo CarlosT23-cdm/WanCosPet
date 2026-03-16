@@ -44,7 +44,7 @@ const juguetesPerros = [
     ],
   },
   {
-    nombre: "Pelota Mina de nueve Centimetros",
+    nombre: "Pelota Mina Chillona Grande 9 CM",
     precio: 12000,
     imagenes: [
       rutaBasePerrosJug + "Pelota_mina_chillona_grande_dog_jug_01.jpg",
