@@ -31,21 +31,20 @@ const rutaBaseGatosPerrosJug = "./img_tienda/img_juguetes_perros&gatos/";
 // Listado de juguetes para perros
 const juguetesPerros = [
   {
-    nombre: "Marrano",
+    nombre: "Peluche Cerdito Felpa",
     precio: 15000,
     imagenes: [
-      rutaBasePerrosJug +
-        "Peluche_Marranito_Felpa_Con_Sonido_jug_dog_01.jpg.jpg",
+      rutaBasePerrosJug + "Peluche_Marranito_Felpa_Con_Sonido_jug_dog_01.jpg",
     ],
   },
 
   {
-    nombre: "Elefante desnutrido",
+    nombre: "Elefante Felpa",
     precio: 15000,
     imagenes: [rutaBasePerrosJug + "Peluche_Elefante_Felpa_jug_dog_01.jpg"],
   },
   {
-    nombre: "Drilococo",
+    nombre: "Cocodrilo",
     precio: 25000,
     imagenes: [
       rutaBasePerrosJug + "Cocodrilo_jug_dog_01.jpg",
