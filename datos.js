@@ -7,7 +7,7 @@
     precio: cccc,
     imagenes: [rutaBasePerrosJug + "cccccc"],
   },
-  Paleta_para_refrigerar_dog_jug_01
+  Pelota_maciza_mediana_jug_dog_01.jpg
  */
 
 // --- NOTA EXPLICATIVA ---
@@ -17,6 +17,12 @@ const rutaBasePerrosJug = "./img_tienda/img_perros_juguetes/";
 const rutaBasePerrosAcc = "./img_tienda/img_perros_accesorios/";
 const rutaBaseGatosJug = "./img_tienda/img_gatos_juguetes/";
 const rutaBaseGatosAcc = "./img_tienda/img_gatos_accesorios/";
+const rutaBasePerrosGatosAcc = "./img_tienda/img_accesorios_perros&gatos/";
+const rutaBaseGatosPerrosJug = "./img_tienda/img_juguetes_perros&gatos/";
+
+// Hay productos que funcionan muy bien para las dos especies, incorpore dos carpetas una de ellas con accesorios para perros y gatos y otra con juguetes para perros y
+// gatos, tambien incorpore estas dos rutas rutaBaseGatosPerrosAcc, rutaBaseGatosPerrosJug 15-03-2026, tengo que modifcar el logica.js y crear dos HTML para las carpetas
+// img_accesorios_perros&gatos y la de juguetes, asi como tambien pasar alli los porductos de otros html que sean para las dos especies y descargar los demas de telegram
 
 // =====================================================================
 // SECCIÓN: PERROS
@@ -24,6 +30,35 @@ const rutaBaseGatosAcc = "./img_tienda/img_gatos_accesorios/";
 
 // Listado de juguetes para perros
 const juguetesPerros = [
+  {
+    nombre: "Pelota Maciza Medinana",
+    precio: 14000,
+    imagenes: [
+      rutaBasePerrosJug + "Pelota_maciza_mediana_jug_dog_02.jpg",
+      rutaBasePerrosJug + "Pelota_maciza_mediana_jug_dog_01.jpg",
+    ],
+  },
+  {
+    nombre: "Pelota Mina de nueve Centimetros",
+    precio: 12000,
+    imagenes: [
+      rutaBasePerrosJug + "Pelota_mina_chillona_grande_dog_jug_01.jpg",
+      rutaBasePerrosJug + "Pelota_mina_chillona_grande_dog_jug_02.jpg",
+    ],
+  },
+  {
+    nombre: "Pelota Encias",
+    precio: 10000,
+    imagenes: [rutaBasePerrosJug + "Pelota_encias_jug_dog_01.jpg"],
+  },
+  {
+    nombre: "Bola Electrica",
+    precio: 22000,
+    imagenes: [
+      rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat&dog_01.jpg",
+      rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat&dog_02.jpg",
+    ],
+  },
   {
     nombre: "Paleta para Refrigerar",
     precio: 12000,
@@ -345,11 +380,6 @@ const juguetesGatos = [
     nombre: "Paquete Juguete Gato x 3",
     precio: 10000,
     imagenes: [rutaBaseGatosJug + "Paquete_juguete_x3_cat_jug_01.jpg"],
-  },
-  {
-    nombre: "Bola Electrica",
-    precio: 22000,
-    imagenes: [rutaBaseGatosJug + "Bola_electrica_jug_cat.jpg"],
   },
 ];
 
