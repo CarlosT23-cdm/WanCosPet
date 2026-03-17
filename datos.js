@@ -34,6 +34,30 @@ const productosDosEspeciesAcc = [
     precio: 23000,
     imagenes: [rutaBaseGatosPerrosAcc + "Cepillo_Vapor_acc_dog_y_cat_01.jpg"],
   },
+  {
+    nombre: "Bolsas Biodegradable por Seis",
+    precio: 13500,
+    imagenes: [
+      rutaBaseGatosPerrosAcc +
+        "Bolsas_repuesto_paquete_dog_y_dat_x6_acc_01.jpg",
+    ],
+  },
+  {
+    nombre: "Comederos Flor",
+    precio: 13000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_01.jpg",
+      rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_02.jpg",
+      rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_03.jpg",
+    ],
+  },
+  {
+    nombre: "Bolsas Biodegradable por Tres",
+    precio: 7000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc + "Bolsas_repuesto_x3_acc_dog_y_dat_01.jpg",
+    ],
+  },
 ];
 
 const productosDosEspeciesJug = [
@@ -330,29 +354,9 @@ const accesoriosPerros = [
     imagenes: [rutaBasePerrosAcc + "Bebedero_4_en_uno_dog_acc_01.jpg"],
   },
   {
-    nombre: "Bolsas Biodegradable por 6",
-    precio: 13500,
-    imagenes: [rutaBasePerrosAcc + "Bolsas_repuesto_paquete_dog_x6_acc_01.jpg"],
-  },
-  {
-    nombre: "Bolsas Biodegradable por 3",
-    precio: 7000,
-    imagenes: [rutaBasePerrosAcc + "Bolsas_repuesto_x3_acc_dog_01.jpg"],
-  },
-  {
     nombre: "Cepillo Universal",
     precio: 10700,
     imagenes: [rutaBasePerrosAcc + "Cepillo_universal_grande_acc_dog_01.jpg"],
-  },
-  {
-    nombre: "Comedero Alto",
-    precio: 14000,
-    imagenes: [rutaBasePerrosAcc + "Comedero_alto_acc_dog_01.jpg"],
-  },
-  {
-    nombre: "Comederos Flor",
-    precio: 13000,
-    imagenes: [rutaBasePerrosAcc + "Comedero_flor_dog_acc_01.jpg"],
   },
   {
     nombre: "Correa Retráctil",
@@ -384,7 +388,10 @@ const accesoriosPerros = [
   {
     nombre: "Impermeable Wanda",
     precio: 41000,
-    imagenes: [rutaBasePerrosAcc + "Wanda_impermeable_dog_acc_05.jpg"],
+    imagenes: [
+      rutaBasePerrosAcc + "Wanda_impermeable_dog_acc_05.jpg",
+      rutaBasePerrosAcc + "Wanda_impermeable_dog_acc_09.jpg",
+    ],
   },
 ];
 
@@ -460,6 +467,11 @@ const juguetesGatos = [
 // Listado de accesorios para gatos
 const accesoriosGatos = [
   {
+    nombre: "Comedero Alto",
+    precio: 14000,
+    imagenes: [rutaBaseGatosAcc + "Comedero_alto_acc_cat__01.jpg"],
+  },
+  {
     nombre: "Arenera Moderna",
     precio: 37000,
     imagenes: [rutaBaseGatosAcc + "Arenera_morada_cat_acc_01.jpg"],
@@ -468,16 +480,6 @@ const accesoriosGatos = [
     nombre: "Arenera Gris",
     precio: 25000,
     imagenes: [rutaBaseGatosAcc + "Arenera_gris_cat_acc_01.jpg"],
-  },
-  {
-    nombre: "Comedero Alto",
-    precio: 14000,
-    imagenes: [rutaBaseGatosAcc + "Comedero_alto_acc_cat__01.jpg"],
-  },
-  {
-    nombre: "Comederos Flor",
-    precio: 13000,
-    imagenes: [rutaBaseGatosAcc + "Comedero_flor_acc_cat_01.jpg"],
   },
   {
     nombre: "Palas Cara de Gato",
