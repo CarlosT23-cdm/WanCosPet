@@ -305,7 +305,7 @@ const accesoriosPerros = [
     ],
   },
   {
-    nombre: "Correa Cinturon",
+    nombre: "Correa Cinturon de Carro",
     precio: 20000,
     imagenes: [rutaBasePerrosAcc + "Correa_cinturon_de_carro_acc_dog.jpg"],
   },
@@ -534,8 +534,29 @@ const productosDosEspeciesAcc = [
     precio: 60000,
     imagenes: [rutaBaseGatosPerrosAcc + "Cama_Eco_62cm_acc_dog_cat.jpg"],
   },
+
   {
-    nombre: "Guacal Pequeño 36Lx25Anx24Al",
+    nombre: "Guacal Grande",
+    precio: 45000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc +
+        "Guacal_Grande_de_45largo_33ancho_30alto_acc_dog_cat_01.jpg",
+      rutaBaseGatosPerrosAcc +
+        "Guacal_Grande_de_45largo_33ancho_30alto_acc_dog_cat_02.jpg",
+    ],
+  },
+  {
+    nombre: "Guacal Mediano",
+    precio: 45000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc +
+        "Guacal_Mediano_de_35largo_28ancho_30alto_acc_dog_cat_01.jpg",
+      rutaBaseGatosPerrosAcc +
+        "Guacal_Mediano_de_35largo_28ancho_30alto_acc_dog_cat_02.jpg",
+    ],
+  },
+  {
+    nombre: "Guacal Pequeño",
     precio: 30000,
     imagenes: [
       rutaBaseGatosPerrosAcc +
@@ -546,16 +567,6 @@ const productosDosEspeciesAcc = [
         "Guacal_Pequeno_de_36largo_25ancho_24alto_acc_dog_cat_01.jpg",
       rutaBaseGatosPerrosAcc +
         "Guacal_Pequeno_de_36largo_25ancho_24alto_acc_dog_cat_04.jpg",
-    ],
-  },
-  {
-    nombre: "Guacal Grande 45Lx33Anx30Al",
-    precio: 45000,
-    imagenes: [
-      rutaBaseGatosPerrosAcc +
-        "Guacal_Grande_de_45largo_33ancho_30alto_acc_dog_cat_01.jpg",
-      rutaBaseGatosPerrosAcc +
-        "Guacal_Grande_de_45largo_33ancho_30alto_acc_dog_cat_02.jpg",
     ],
   },
   {
