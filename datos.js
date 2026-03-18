@@ -470,6 +470,13 @@ const accesoriosGatos = [
 ];
 const productosDosEspeciesAcc = [
   {
+    nombre: "Cepillo Para Baño Dispensador Shampoo",
+    precio: 12000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc + "Cepillo_para_baño_dispensador_shampoo_01.jpg",
+    ],
+  },
+  {
     nombre: "Cepillo Boton Limpieza",
     precio: 25000,
     imagenes: [
@@ -502,9 +509,9 @@ const productosDosEspeciesAcc = [
     nombre: "Comederos Flor",
     precio: 13000,
     imagenes: [
+      rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_03.jpg",
       rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_01.jpg",
       rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_02.jpg",
-      rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_03.jpg",
     ],
   },
   {
