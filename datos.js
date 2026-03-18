@@ -65,13 +65,6 @@ const juguetesPerros = [
     precio: 11000,
     imagenes: [rutaBasePerrosJug + "Zanahoria_Chillona_jug_dog.jpg"],
   },
-  {
-    nombre: "Peluche Zanahoria Chillona",
-    precio: 10000,
-    imagenes: [rutaBasePerrosJug + "Zanahoria_Chillona_(video)_jug_dog.mp4"], //Necesito poner videos en el html al igual que las imagenes
-    descripcion:
-      "Peluche con sonido, de tamaño mediano, recubierto con una tela muy suave", //necesito que esta descripción aparezca en el html
-  },
 
   {
     nombre: "Peluche Limpia dientes",
@@ -301,6 +294,24 @@ const juguetesPerros = [
 // Listado de accesorios para perros
 const accesoriosPerros = [
   {
+    nombre: "Correa Cinturon",
+    precio: 20000,
+    imagenes: [rutaBasePerrosAcc + "Correa_cinturon_de_carro_acc_dog.jpg"],
+  },
+  {
+    nombre: "Comedero Plegable",
+    precio: 9500,
+    imagenes: [
+      rutaBasePerrosAcc + "Comedero_plegable_dog_01.jpg",
+      rutaBasePerrosAcc + "Comedero_plegable_dog_02.jpg",
+    ],
+  },
+  {
+    nombre: "Cama Grande Patitas",
+    precio: 40000,
+    imagenes: [rutaBasePerrosAcc + "Cama_Grande_68x83cm_acc_dog.jpg"],
+  },
+  {
     nombre: "Porta Bolsas Hueso",
     precio: 5000,
     imagenes: [
@@ -500,6 +511,19 @@ const productosDosEspeciesJug = [
   },
 ];
 const productosDosEspeciesAcc = [
+  {
+    nombre: "Collar Tono Camuflado",
+    precio: 8000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc + "Collar_tono_camuflado_dog_cat.jpg",
+      rutaBaseGatosPerrosAcc + "Collar_tono_degradado_acc_dog_cat.jpg",
+    ],
+  },
+  {
+    nombre: "Cama Eco Granade",
+    precio: 60000,
+    imagenes: [rutaBaseGatosPerrosAcc + "Cama_Eco_62cm_acc_dog_cat.jpg"],
+  },
   {
     nombre: "Guacal Pequeño 36Lx25Anx24Al",
     precio: 30000,
