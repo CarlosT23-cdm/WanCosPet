@@ -297,8 +297,8 @@ const accesoriosPerros = [
     nombre: "Porta Bolsas Hueso",
     precio: 5000,
     imagenes: [
-      rutaBasePerrosAcc + "Porta_bolsas_hueso_colorVerde_acc_dog_01.jpg",
       rutaBasePerrosAcc + "Porta_bolsas_hueso_colorGris_acc_dog_02.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_colorVerde_acc_dog_01.jpg",
       rutaBasePerrosAcc + "Porta_bolsas_hueso_colorGris_acc_dog_03.jpg",
       rutaBasePerrosAcc + "Porta_bolsas_hueso_colorRosado_acc_dog_04.jpg",
       rutaBasePerrosAcc + "Porta_bolsas_hueso_colorRosado_acc_dog_05.jpg",
@@ -522,10 +522,25 @@ const productosDosEspeciesJug = [
 ];
 const productosDosEspeciesAcc = [
   {
-    nombre: "Collar Tono Camuflado",
+    nombre: "Comedero Acero Inoxidable",
+    precio: 20000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc + "Comedero_acero_inoxidable_acc_dog_01.jpg",
+      rutaBaseGatosPerrosAcc + "Comedero_acero_inoxidable_acc_dog_02.jpg",
+    ],
+  },
+  {
+    nombre: "Collar Camuflado",
     precio: 8000,
     imagenes: [
       rutaBaseGatosPerrosAcc + "Collar_tono_camuflado_dog_cat.jpg",
+      rutaBaseGatosPerrosAcc + "Collar_tono_degradado_acc_dog_cat.jpg",
+    ],
+  },
+  {
+    nombre: "Collar Degradado",
+    precio: 8000,
+    imagenes: [
       rutaBaseGatosPerrosAcc + "Collar_tono_degradado_acc_dog_cat.jpg",
     ],
   },
