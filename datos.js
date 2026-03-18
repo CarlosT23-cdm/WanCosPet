@@ -28,38 +28,6 @@ const rutaBaseGatosAcc = "./img_tienda/img_gatos_accesorios/";
 // SECCIÓN: PERROS
 // =====================================================================
 
-const productosDosEspeciesAcc = [
-  {
-    nombre: "Cepillo Vapor",
-    precio: 23000,
-    imagenes: [rutaBaseGatosPerrosAcc + "Cepillo_Vapor_acc_dog_y_cat_01.jpg"],
-  },
-  {
-    nombre: "Bolsas Biodegradable por Seis",
-    precio: 13500,
-    imagenes: [
-      rutaBaseGatosPerrosAcc +
-        "Bolsas_repuesto_paquete_dog_y_dat_x6_acc_01.jpg",
-    ],
-  },
-  {
-    nombre: "Comederos Flor",
-    precio: 13000,
-    imagenes: [
-      rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_01.jpg",
-      rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_02.jpg",
-      rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_03.jpg",
-    ],
-  },
-  {
-    nombre: "Bolsas Biodegradable por Tres",
-    precio: 7000,
-    imagenes: [
-      rutaBaseGatosPerrosAcc + "Bolsas_repuesto_x3_acc_dog_y_dat_01.jpg",
-    ],
-  },
-];
-
 const productosDosEspeciesJug = [
   {
     nombre: "Bola Electrica",
@@ -500,6 +468,53 @@ const accesoriosGatos = [
     imagenes: [rutaBaseGatosAcc + "Palas_jarra_cat_acc_01.jpg"],
   },
 ];
+const productosDosEspeciesAcc = [
+  {
+    nombre: "Cepillo Boton Limpieza",
+    precio: 25000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc +
+        "Cepillo_con_boron_de_limpieza_acc_dog_cat_01.jpg",
+      rutaBaseGatosPerrosAcc +
+        "Cepillo_con_boron_de_limpieza_acc_dog_cat_02.jpg",
+      rutaBaseGatosPerrosAcc +
+        "Cepillo_con_boron_de_limpieza_acc_dog_cat_03.jpg",
+    ],
+  },
+  {
+    nombre: "Cepillo Vapor",
+    precio: 23000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc + "Cepillo_Vapor_acc_dog_y_cat_02.jpg",
+      rutaBaseGatosPerrosAcc + "Cepillo_Vapor_acc_dog_y_cat_01.jpg",
+      rutaBaseGatosPerrosAcc + "Cepillo_Vapor_acc_dog_y_cat_03.jpg",
+    ],
+  },
+  {
+    nombre: "Bolsas Biodegradable por Seis",
+    precio: 13500,
+    imagenes: [
+      rutaBaseGatosPerrosAcc +
+        "Bolsas_repuesto_paquete_dog_y_dat_x6_acc_01.jpg",
+    ],
+  },
+  {
+    nombre: "Comederos Flor",
+    precio: 13000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_01.jpg",
+      rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_02.jpg",
+      rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_03.jpg",
+    ],
+  },
+  {
+    nombre: "Bolsas Biodegradable por Tres",
+    precio: 7000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc + "Bolsas_repuesto_x3_acc_dog_y_dat_01.jpg",
+    ],
+  },
+];
 
 // --- NOTA FINAL ---
 // Esta lista unifica todos los productos anteriores para que el buscador
@@ -509,4 +524,6 @@ const todosLosProductos = [
   ...accesoriosPerros,
   ...juguetesGatos,
   ...accesoriosGatos,
+  ...productosDosEspeciesAcc,
+  ...productosDosEspeciesJug,
 ];
