@@ -412,9 +412,17 @@ const juguetesGatos = [
     imagenes: [rutaBaseGatosJug + "aguacate_jug_cat_01.jpg"],
   },
   {
-    nombre: "Caña libelula",
+    nombre: "Caña Flor",
     precio: 12000,
     imagenes: [rutaBaseGatosJug + "Caña_flores_cat_jug_01.jpg"],
+  },
+  {
+    nombre: "Caña Libelula",
+    precio: 9400,
+    imagenes: [
+      rutaBaseGatosJug + "Caña_libelula_jug_cat_01.jpg",
+      rutaBaseGatosJug + "Caña_libelula_jug_cat_02.jpg",
+    ],
   },
   {
     nombre: "Caña Flores",
@@ -472,7 +480,7 @@ const accesoriosGatos = [
     imagenes: [rutaBaseGatosAcc + "Comedero_alto_acc_cat__01.jpg"],
   },
   {
-    nombre: "Arenera Moderna",
+    nombre: "Arenera Morada",
     precio: 37000,
     imagenes: [rutaBaseGatosAcc + "Arenera_morada_cat_acc_01.jpg"],
   },
