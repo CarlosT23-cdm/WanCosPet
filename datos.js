@@ -301,6 +301,25 @@ const juguetesPerros = [
 // Listado de accesorios para perros
 const accesoriosPerros = [
   {
+    nombre: "Porta Bolsas Hueso",
+    precio: 5000,
+    imagenes: [
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_Gris_acc_dog_02.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_verde_acc_dog_01.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_Gris_acc_dog_03.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_Rosado_acc_dog_04.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_Rosado_acc_dog_05.jpg",
+    ],
+  },
+  {
+    nombre: "Porta Bolsas Cactus",
+    precio: 8000,
+    imagenes: [
+      rutaBasePerrosAcc + "Porta_bolsas_catctus_acc_dog_01.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_catctus_acc_dog_01.jpg",
+    ],
+  },
+  {
     nombre: "Collar Anti Pulgas",
     precio: 8000,
     imagenes: [rutaBasePerrosAcc + "Collar_anti_pulgas_acc_dog.jpg"],
@@ -482,11 +501,50 @@ const productosDosEspeciesJug = [
 ];
 const productosDosEspeciesAcc = [
   {
+    nombre: "Guacal Pequeño 36Lx25Anx24Al",
+    precio: 30000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc +
+        "Guacal_Pequeno_de_36largo_25ancho_24alto_acc_dog_cat_03.jpg",
+      rutaBaseGatosPerrosAcc +
+        "Guacal_Pequeno_de_36largo_25ancho_24alto_acc_dog_cat_02.jpg",
+      rutaBaseGatosPerrosAcc +
+        "Guacal_Pequeno_de_36largo_25ancho_24alto_acc_dog_cat_01.jpg",
+      rutaBaseGatosPerrosAcc +
+        "Guacal_Pequeno_de_36largo_25ancho_24alto_acc_dog_cat_04.jpg",
+    ],
+  },
+  {
+    nombre: "Guacal Grande 45Lx33Anx30Al",
+    precio: 45000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc +
+        "Guacal_Grande_de_45largo_33ancho_30alto_acc_dog_cat_01.jpg",
+      rutaBaseGatosPerrosAcc +
+        "Guacal_Grande_de_45largo_33ancho_30alto_acc_dog_cat_02.jpg",
+    ],
+  },
+  {
+    nombre: "Pala Gramera",
+    precio: 36000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc + "Pala_Gramera_01_acc_dod_cat.jpg",
+      rutaBaseGatosPerrosAcc + "Pala_Gramera_02_acc_dod_cat.jpg",
+    ],
+  },
+  {
     nombre: "Comedero Metalico Estampado",
     precio: 19000,
     imagenes: [
       rutaBaseGatosPerrosAcc + "Comedero_metalico_estampado_22cm_01.jpg",
       rutaBaseGatosPerrosAcc + "Comedero_metalico_estampado_22cm_03.jpg",
+    ],
+  },
+  {
+    nombre: "Pistola Para Pildoras",
+    precio: 9500,
+    imagenes: [
+      rutaBaseGatosPerrosAcc + "Pistola_para_pildoras_acc_cat_dog_01.jpg",
     ],
   },
   {
