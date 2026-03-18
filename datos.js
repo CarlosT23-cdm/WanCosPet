@@ -28,17 +28,6 @@ const rutaBaseGatosAcc = "./img_tienda/img_gatos_accesorios/";
 // SECCIÓN: PERROS
 // =====================================================================
 
-const productosDosEspeciesJug = [
-  {
-    nombre: "Bola Electrica",
-    precio: 22000,
-    imagenes: [
-      rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat_y_dog_01.jpg",
-      rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat_y_dog_02.jpg",
-    ],
-  },
-];
-
 // Listado de juguetes para perros
 const juguetesPerros = [
   {
@@ -366,6 +355,14 @@ const accesoriosPerros = [
       rutaBasePerrosAcc + "Wanda_impermeable_dog_acc_09.jpg",
     ],
   },
+  {
+    nombre: "Dispensador Bolsas Emoji",
+    precio: 13000,
+    imagenes: [
+      rutaBasePerrosAcc + "Diespensador_de_bolsas_cpn_emoji_01.jpg",
+      rutaBasePerrosAcc + "Diespensador_de_bolsas_cpn_emoji_02.jpg",
+    ],
+  },
 ];
 
 // =====================================================================
@@ -473,6 +470,16 @@ const accesoriosGatos = [
     imagenes: [rutaBaseGatosAcc + "Palas_jarra_cat_acc_01.jpg"],
   },
 ];
+const productosDosEspeciesJug = [
+  {
+    nombre: "Bola Electrica",
+    precio: 22000,
+    imagenes: [
+      rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat_y_dog_01.jpg",
+      rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat_y_dog_02.jpg",
+    ],
+  },
+];
 const productosDosEspeciesAcc = [
   {
     nombre: "Comedero Metalico Estampado",
@@ -544,6 +551,6 @@ const todosLosProductos = [
   ...accesoriosPerros,
   ...juguetesGatos,
   ...accesoriosGatos,
-  ...productosDosEspeciesAcc,
   ...productosDosEspeciesJug,
+  ...productosDosEspeciesAcc,
 ];
