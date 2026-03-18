@@ -412,7 +412,7 @@ const juguetesGatos = [
     imagenes: [rutaBaseGatosJug + "aguacate_jug_cat_01.jpg"],
   },
   {
-    nombre: "Caña Flor",
+    nombre: "Caña Flores",
     precio: 12000,
     imagenes: [rutaBaseGatosJug + "Caña_flores_cat_jug_01.jpg"],
   },
@@ -425,7 +425,7 @@ const juguetesGatos = [
     ],
   },
   {
-    nombre: "Caña Flores",
+    nombre: "Caña Pluma",
     precio: 10000,
     imagenes: [rutaBaseGatosJug + "Caña_pluma_cat_jug_02.jpg"],
   },
