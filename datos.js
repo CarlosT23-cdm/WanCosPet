@@ -475,6 +475,14 @@ const accesoriosGatos = [
 ];
 const productosDosEspeciesAcc = [
   {
+    nombre: "Comedero Metalico Estampado",
+    precio: 19000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc + "Comedero_metalico_estampado_22cm_01.jpg",
+      rutaBaseGatosPerrosAcc + "Comedero_metalico_estampado_22cm_03.jpg",
+    ],
+  },
+  {
     nombre: "Cepillo Para Baño Dispensador Shampoo",
     precio: 12000,
     imagenes: [
