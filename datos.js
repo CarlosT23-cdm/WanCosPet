@@ -297,11 +297,11 @@ const accesoriosPerros = [
     nombre: "Porta Bolsas Hueso",
     precio: 5000,
     imagenes: [
-      rutaBasePerrosAcc + "Porta_bolsas_hueso_Gris_acc_dog_02.jpg",
-      rutaBasePerrosAcc + "Porta_bolsas_hueso_verde_acc_dog_01.jpg",
-      rutaBasePerrosAcc + "Porta_bolsas_hueso_Gris_acc_dog_03.jpg",
-      rutaBasePerrosAcc + "Porta_bolsas_hueso_Rosado_acc_dog_04.jpg",
-      rutaBasePerrosAcc + "Porta_bolsas_hueso_Rosado_acc_dog_05.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_colorVerde_acc_dog_01.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_colorGris_acc_dog_02.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_colorGris_acc_dog_03.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_colorRosado_acc_dog_04.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_colorRosado_acc_dog_05.jpg",
     ],
   },
   {
