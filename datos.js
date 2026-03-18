@@ -402,10 +402,14 @@ const accesoriosPerros = [
 // Listado de juguetes para gatos
 const juguetesGatos = [
   {
-    nombre: "Paquete Ratones por 3",
+    nombre: "Ratones por tres",
     precio: 7200,
-    imagenes: [rutaBaseGatosJug + "Paquete_raton_x3_cat_jug_01.jpg"],
+    imagenes: [
+      rutaBaseGatosJug + "Ratones_por_tres_02_jug_cat.jpg",
+      rutaBaseGatosJug + "Ratones_por_tres_01_jug_cat.jpg",
+    ],
   },
+
   {
     nombre: "Catnip Aguacate",
     precio: 12000,
@@ -415,6 +419,11 @@ const juguetesGatos = [
     nombre: "Caña Flores",
     precio: 12000,
     imagenes: [rutaBaseGatosJug + "Caña_flores_cat_jug_01.jpg"],
+  },
+  {
+    nombre: "Paquete de Colores Ratones por tres",
+    precio: 7200,
+    imagenes: [rutaBaseGatosJug + "Paquete_raton_x3_cat_jug_01.jpg"],
   },
   {
     nombre: "Caña Libelula",
