@@ -294,6 +294,17 @@ const juguetesPerros = [
 // Listado de accesorios para perros
 const accesoriosPerros = [
   {
+    nombre: "Porta Bolsas Hueso",
+    precio: 5000,
+    imagenes: [
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_Gris_acc_dog_02.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_verde_acc_dog_01.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_Gris_acc_dog_03.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_Rosado_acc_dog_04.jpg",
+      rutaBasePerrosAcc + "Porta_bolsas_hueso_Rosado_acc_dog_05.jpg",
+    ],
+  },
+  {
     nombre: "Correa Cinturon",
     precio: 20000,
     imagenes: [rutaBasePerrosAcc + "Correa_cinturon_de_carro_acc_dog.jpg"],
@@ -311,17 +322,7 @@ const accesoriosPerros = [
     precio: 40000,
     imagenes: [rutaBasePerrosAcc + "Cama_Grande_68x83cm_acc_dog.jpg"],
   },
-  {
-    nombre: "Porta Bolsas Hueso",
-    precio: 5000,
-    imagenes: [
-      rutaBasePerrosAcc + "Porta_bolsas_hueso_Gris_acc_dog_02.jpg",
-      rutaBasePerrosAcc + "Porta_bolsas_hueso_verde_acc_dog_01.jpg",
-      rutaBasePerrosAcc + "Porta_bolsas_hueso_Gris_acc_dog_03.jpg",
-      rutaBasePerrosAcc + "Porta_bolsas_hueso_Rosado_acc_dog_04.jpg",
-      rutaBasePerrosAcc + "Porta_bolsas_hueso_Rosado_acc_dog_05.jpg",
-    ],
-  },
+
   {
     nombre: "Porta Bolsas Cactus",
     precio: 8000,
@@ -421,7 +422,7 @@ const juguetesGatos = [
     imagenes: [rutaBaseGatosJug + "Caña_flores_cat_jug_01.jpg"],
   },
   {
-    nombre: "Paquete de Colores Ratones por tres",
+    nombre: "Ratones Colores por tres",
     precio: 7200,
     imagenes: [rutaBaseGatosJug + "Paquete_raton_x3_cat_jug_01.jpg"],
   },
