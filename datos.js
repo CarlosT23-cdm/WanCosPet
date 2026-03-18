@@ -312,9 +312,14 @@ const juguetesPerros = [
 // Listado de accesorios para perros
 const accesoriosPerros = [
   {
+    nombre: "Collar Anti Pulgas",
+    precio: 8000,
+    imagenes: [rutaBasePerrosAcc + "Collar_anti_pulgas_acc_dog.jpg"],
+  },
+  {
     nombre: "Cortauñas Grande",
     precio: 14100,
-    imagenes: [rutaBasePerrosJug + "Cortauñas_Grande_Con_Lima_acc_dog.jpg"],
+    imagenes: [rutaBasePerrosAcc + "Cortauñas_Grande_Con_Lima_acc_dog.jpg"],
   },
   {
     nombre: "Bebedero 4 en 1",
@@ -481,11 +486,11 @@ const productosDosEspeciesAcc = [
     precio: 25000,
     imagenes: [
       rutaBaseGatosPerrosAcc +
-        "Cepillo_con_boron_de_limpieza_acc_dog_cat_01.jpg",
+        "Cepillo_con_boron_de_limpieza_acc_dog_cat_03.jpg",
       rutaBaseGatosPerrosAcc +
         "Cepillo_con_boron_de_limpieza_acc_dog_cat_02.jpg",
       rutaBaseGatosPerrosAcc +
-        "Cepillo_con_boron_de_limpieza_acc_dog_cat_03.jpg",
+        "Cepillo_con_boron_de_limpieza_acc_dog_cat_01.jpg",
     ],
   },
   {
