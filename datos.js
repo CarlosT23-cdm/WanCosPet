@@ -403,6 +403,11 @@ const accesoriosPerros = [
 // Listado de juguetes para gatos
 const juguetesGatos = [
   {
+    nombre: "Juguete Bola Raton",
+    precio: 6000,
+    imagenes: [rutaBaseGatosJug + "Juguete_bola_raton_01_jug_cat.jpg"],
+  },
+  {
     nombre: "Ratones por tres",
     precio: 7200,
     imagenes: [
@@ -523,7 +528,7 @@ const productosDosEspeciesJug = [
 const productosDosEspeciesAcc = [
   {
     nombre: "Comedero Acero Inoxidable",
-    precio: 20000,
+    precio: 13000,
     imagenes: [
       rutaBaseGatosPerrosAcc + "Comedero_acero_inoxidable_acc_dog_01.jpg",
       rutaBaseGatosPerrosAcc + "Comedero_acero_inoxidable_acc_dog_02.jpg",
@@ -657,6 +662,14 @@ const productosDosEspeciesAcc = [
     precio: 7000,
     imagenes: [
       rutaBaseGatosPerrosAcc + "Bolsas_repuesto_x3_acc_dog_y_dat_01.jpg",
+    ],
+  },
+  {
+    nombre: "Vaso medidor de alimentos",
+    precio: 3000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc + "Vaso_medidor_de_alimentos_acc_dog_01.jpg",
+      rutaBaseGatosPerrosAcc + "Vaso_medidor_de_alimentos_acc_dog_02.jpg",
     ],
   },
 ];
