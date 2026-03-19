@@ -9,10 +9,13 @@
 html,
 body {
   max-width: 100%;
-  overflow-x: hidden; /* La "cerca" de la finca */
-  background-color: #fefcfb;
+  overflow-x: hidden;
   color: #333;
   line-height: 1.6;
+  background-image: url("./img_sitio/CosmoWandaConCollares.jpeg"); /* Ruta a la imagen */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /* --- 2. SECCIÓN HERO (TÍTULOS) --- */
@@ -358,7 +361,6 @@ nav {
 }
 
 /* --- 7. RESPONSIVO (Media Queries) --- */
-/* --- 7. RESPONSIVO UNIFICADO Y COMPLETO --- */
 
 /* Ajustes Generales para Celulares */
 @media (max-width: 768px) {
