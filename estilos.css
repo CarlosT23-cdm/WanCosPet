@@ -12,8 +12,8 @@ body {
   overflow-x: hidden;
   color: #333;
   line-height: 1.6;
-  background-image: url("./img_sitio/CosmoWandaConCollares.jpeg"); /* Ruta a la imagen */
-  background-size: cover;
+  background-image: url("./img_sitio/CosmoWandaConCollares.jpeg");
+  background-size: contain;
   background-position: center;
   background-attachment: fixed;
 }
@@ -156,6 +156,13 @@ nav {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+}
+.producto-descripcion {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  overflow: hidden;
 }
 
 /* --- CARRITO --- */

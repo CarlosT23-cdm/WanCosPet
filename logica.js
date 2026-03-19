@@ -93,6 +93,7 @@ function renderLista(idContenedor, lista, nombreGaleria) {
 
                 <div class="producto-info">
                     <h3>${p.nombre}</h3>
+                    <p class="producto-descripcion">${p.descripcion}</p>
                     <div class="price">$${p.precio.toLocaleString()} COP</div>
                     <div style="display: flex; gap: 10px; align-items: center; justify-content: center;">
                         <button onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})">
