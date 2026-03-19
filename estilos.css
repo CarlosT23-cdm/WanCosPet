@@ -12,10 +12,33 @@ body {
   overflow-x: hidden;
   color: #333;
   line-height: 1.6;
-  background-image: url("./img_sitio/CosmoWandaConCollares.jpeg");
   background-size: contain;
   background-position: center;
   background-attachment: fixed;
+}
+
+/* Esta es la capa fantasma que tendrá la imagen */
+body::before {
+  content: ""; /* Obligatorio para que el pseudo-elemento exista */
+  position: fixed; /* Se queda quieta al hacer scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Tu configuración de imagen */
+  background-image: url("./img_sitio/CosmoWandaConCollares.jpeg");
+  background-size: contain;
+  background-position: center;
+
+  /* GRADUACIÓN DEL EFECTO: 
+       Aquí es donde ajustas la intensidad. 
+       0.1 es casi invisible, 0.9 es casi total. 
+       Prueba con 0.2 o 0.3 para marca de agua. */
+  opacity: 0.2;
+
+  z-index: -1; /* Envía la imagen al fondo, DETRÁS de todo el contenido */
+  pointer-events: none; /* Evita que la capa interfiera con los clics en botones */
 }
 
 /* --- 2. SECCIÓN HERO (TÍTULOS) --- */
@@ -158,10 +181,13 @@ nav {
   margin-top: 10px;
 }
 .producto-descripcion {
-  font-size: 0.9em;
-  color: #666;
-  margin-bottom: 10px;
+  font-size: 0.9em; /* Un poco más pequeña */
+  color: #666; /* Un gris más suave */
+  margin-bottom: 10px; /* Separación con el precio */
+  /* Para limitar a 2 o 3 líneas si son muy largas */
   display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
