@@ -84,28 +84,24 @@ function renderLista(idContenedor, lista, nombreGaleria) {
 
       // RETORNAMOS EL HTML COMPLETO (Aquí no falta nada, ni precios ni botones)
       return `
-            <article class="producto">
-                <a data-fancybox="${nombreGaleria}" href="${imgPrincipal}">
-                    <img src="${imgPrincipal}" alt="${p.nombre}" loading="lazy" decoding="async">
-                </a>
-                
-                ${imagenesOcultas}
+    <article class="producto">
+        <a data-fancybox="${nombreGaleria}" href="${imgPrincipal}">
+            <img src="${imgPrincipal}" alt="${p.nombre}">
+        </a>
+        ${imagenesOcultas}
+        <div class="producto-info">
+            <h3>${p.nombre}</h3>
+            
+            <p><strong>Descripción:</strong> ${p.descripcion}</p>
+            <p><strong>Material:</strong> ${p.material || "No especificado"}</p>
+            <p><strong>Textura:</strong> ${p.textura || "No especificado"}</p>
+            <p><strong>Color:</strong> ${p.color || "No especificado"}</p>
+            <p><strong>Tamaño:</strong> ${p.tamaño || "No especificado"}</p>
+            <p><strong>Beneficios:</strong> ${p.beneficios || "No especificado"}</p>
 
-                <div class="producto-info">
-                    <h3>${p.nombre}</h3>
-                    <p class="producto-descripcion">${p.descripcion}</p>
-                    <div class="price">$${p.precio.toLocaleString()} COP</div>
-                    <div style="display: flex; gap: 10px; align-items: center; justify-content: center;">
-                        <button onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})">
-                            Añadir al carrito
-                        </button>
-                        <button class="${claseBtn}" onclick="toggleFavorito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio}, '${imgPrincipal}')">
-                            ${icono}
-                        </button>
-                    </div>
-                </div>
-            </article>
-        `;
+            <div class="price"><strong>Precio:</strong> $${p.precio.toLocaleString()} COP</div>
+    </article>
+`;
     })
     .join("");
 }

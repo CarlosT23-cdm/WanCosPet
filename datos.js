@@ -32,11 +32,18 @@ const rutaBaseGatosAcc = "./img_tienda/img_gatos_accesorios/";
 const juguetesPerros = [
   {
     nombre: "Peluche Cerdito Felpa",
-    precio: 15000,
     imagenes: [
       rutaBasePerrosJug + "Peluche_Marranito_Felpa_Con_Sonido_jug_dog_01.jpg",
     ],
-    descripcion: "Cerdito con sonido, recubierto de tela, color rosado",
+    descripcion:
+      "Divertido cerdito con sonido interno (squeaky), ideal para mascotas que buscan un compañero de juego tierno y estimulante.",
+    // Estos son los campos nuevos que voy a agregar para daca producto:
+    material: "Felpa suave de alta calidad con relleno de algodón siliconado.",
+    textura: "Rugosa con puntos de relieve",
+    color: "Rosado pastel",
+    tamaño: "15 - 20 cm",
+    beneficios: "Sonido interactivo, ideal para cachorros",
+    precio: 15000,
   },
 
   {
@@ -44,7 +51,13 @@ const juguetesPerros = [
     precio: 15000,
     imagenes: [rutaBasePerrosJug + "Peluche_Elefante_Felpa_jug_dog_01.jpg"],
     descripcion:
-      "Este es un juguete de peluche interactivo y visualmente atractivo diseñado para mascotas pequeñas y medianas, como gatos y perros pequeños, Material y Textura: Está confeccionado con un material de felpa ultra suave y de pelo corto (microfibra afelpada)",
+      "Compañero suave diseñado para fomentar el instinto de caza y la relajación. Su forma tubular es perfecta para que tu mascota lo cargue a todas partes.",
+    textura: "Lisa y sedosa al tacto.",
+    color: "Gris con detalles azul y blanco",
+    tamaño: "25 - 30 cm",
+    beneficios:
+      "Fomenta el juego de 'pateo' en gatos y es ideal como almohada de descanso.",
+    precio: 15000,
   },
 
   {
@@ -54,6 +67,14 @@ const juguetesPerros = [
       rutaBasePerrosJug + "Cocodrilo_jug_dog_01.jpg",
       rutaBasePerrosJug + "Cocodrilo_jug_dog_02.jpg",
     ],
+    descripcion:
+      "Juguete que combina diversión y estimulación sensorial. Diseño prehistórico capta la atención de mascotas curiosas al instante.",
+    material: "Felpa de microfibra.",
+    textura: "Puntos en relieve que simulan escamas.",
+    color: "Morado lavanda con amarillo y blanco",
+    tamaño: "25 - 30 cm",
+    beneficios: "Masajea encías suavemente y brinda alta estimulación visual.",
+    precio: 25000,
   },
   {
     nombre: "Puerco Espin",
@@ -62,6 +83,14 @@ const juguetesPerros = [
       rutaBasePerrosJug + "Puercoespin_jug_dog_01.jpg",
       rutaBasePerrosJug + "Puercoespin_jug_dog_02.jpg",
     ],
+    descripcion:
+      "Pelota interactiva de alta visibilidad, excelente para juegos de lanzar y atrapar que promueven la actividad física diaria.",
+    material: "Caucho/Goma no tóxica y duradera.",
+    textura: "Púas de goma flexibles para limpieza dental.",
+    color: "Rojo vibrante",
+    tamaño: "7 cm (Diámetro)",
+    beneficios: "Ayuda a la salud dental y reduce el estrés por aburrimiento.",
+    precio: 7000,
   },
   {
     nombre: "Zanahoria Chillona",
