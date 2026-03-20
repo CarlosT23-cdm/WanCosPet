@@ -154,14 +154,14 @@ nav {
 
 .producto img {
   width: 100%;
-  height: 200px;
+  height: 350px;
   object-fit: cover;
   display: block;
 }
 
 .producto-info {
   padding: 15px;
-  text-align: center;
+  text-align: left;
 
   /* 1. Definimos el tamaño mínimo */
   min-height: 380px; /* Ajusta este valor (350px a 400px suele funcionar bien) */
