@@ -43,7 +43,10 @@ const juguetesPerros = [
     nombre: "Elefante Felpa",
     precio: 15000,
     imagenes: [rutaBasePerrosJug + "Peluche_Elefante_Felpa_jug_dog_01.jpg"],
+    descripcion:
+      "Este es un juguete de peluche interactivo y visualmente atractivo diseñado para mascotas pequeñas y medianas, como gatos y perros pequeños, Material y Textura: Está confeccionado con un material de felpa ultra suave y de pelo corto (microfibra afelpada)",
   },
+
   {
     nombre: "Cocodrilo",
     precio: 25000,
@@ -445,7 +448,7 @@ const juguetesGatos = [
     imagenes: [rutaBaseGatosJug + "Caña_pluma_cat_jug_02.jpg"],
   },
   {
-    nombre: "Juguetes con Catnip",
+    nombre: "Juguete con Catnip",
     precio: 12000,
     imagenes: [rutaBaseGatosJug + "Catnip_gato_jug_01.jpg"],
   },
@@ -490,14 +493,38 @@ const juguetesGatos = [
 // Listado de accesorios para gatos
 const accesoriosGatos = [
   {
+    nombre: "Gimnasio Torre - por encargo",
+    precio: 0,
+    imagenes: [rutaBaseGatosAcc + "Modelo_gimnasio_torre_acc_cat_02.jpeg"],
+    descripcion:
+      "Puedes encargar este lindo gimnasio, nosotros lo construimos a la medida de tu gato.",
+  },
+  {
     nombre: "Comedero Alto",
     precio: 14000,
     imagenes: [rutaBaseGatosAcc + "Comedero_alto_acc_cat__01.jpg"],
   },
   {
+    nombre: "Gimnasio Cosmo- por encargo",
+    precio: 0,
+    imagenes: [rutaBaseGatosAcc + "Modelo_gimnasio_Cosmo_acc_cat_01.jpeg"],
+    descripcion:
+      "Puedes encargar este lindo gimnasio, nosotros lo construimos a la medida de tu gato.",
+  },
+  {
     nombre: "Arenera Morada",
     precio: 37000,
     imagenes: [rutaBaseGatosAcc + "Arenera_morada_cat_acc_01.jpg"],
+  },
+  {
+    nombre: "Gimnasio Imalaya- por encargo",
+    precio: 0,
+    imagenes: [
+      rutaBaseGatosAcc + "Modelo_gimnasio_imalaya_acc_cat_01.jpeg",
+      rutaBaseGatosAcc + "Modelo_gimnasio_imalaya_acc_cat_02.jpeg",
+    ],
+    descripcion:
+      "Puedes encargar este lindo gimnasio, nosotros lo construimos a la medida de tu gato. Dimesiones: Largo 72 Cm x Ancho 41 Cm x Alto 1,55 Cm / 12,4 Kg /",
   },
   {
     nombre: "Arenera Gris",
@@ -522,6 +549,21 @@ const productosDosEspeciesJug = [
     imagenes: [
       rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat_y_dog_01.jpg",
       rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat_y_dog_02.jpg",
+    ],
+  },
+  {
+    nombre: "Pescado Electrico",
+    precio: 25000,
+    imagenes: [
+      rutaBaseGatosPerrosJug + "Pescado_electrico_naranja_01_jug_cat.jpg",
+    ],
+  },
+  {
+    nombre: "Carro Control Remoto",
+    precio: 45000,
+    imagenes: [
+      rutaBaseGatosPerrosJug + "Carro_control_remoto_jug_cat_dog_01.jpg",
+      rutaBaseGatosPerrosJug + "Carro_control_remoto_jug_cat_dog_02.jpg",
     ],
   },
 ];

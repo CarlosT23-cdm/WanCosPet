@@ -19,7 +19,7 @@ body {
 
 body::before {
   content: ""; /* Esta caracteristica es bligatoria para que el pseudo-elemento before exista */
-  position: fixed; /* La capa y la imagen ee queda quieta al hacer scroll */
+  position: fixed; /* La capa que esta sobre la imagen se queda quieta al hacer scroll */
   top: 0;
   left: 0;
   width: 100%;
