@@ -32,6 +32,7 @@ const rutaBaseGatosAcc = "./img_tienda/img_gatos_accesorios/";
 const juguetesPerros = [
   {
     nombre: "Peluche Cerdito Felpa",
+    precio: 15000,
     imagenes: [
       rutaBasePerrosJug + "Peluche_Marranito_Felpa_Con_Sonido_jug_dog_01.jpg",
     ],
@@ -43,7 +44,6 @@ const juguetesPerros = [
     color: "Rosado pastel",
     tamaño: "15 - 20 cm",
     beneficios: "Sonido interactivo, ideal para cachorros",
-    precio: 15000,
   },
 
   {
@@ -57,7 +57,6 @@ const juguetesPerros = [
     tamaño: "25 - 30 cm",
     beneficios:
       "Fomenta el juego de 'pateo' en gatos y es ideal como almohada de descanso.",
-    precio: 15000,
   },
 
   {
@@ -74,7 +73,6 @@ const juguetesPerros = [
     color: "Morado lavanda con amarillo y blanco",
     tamaño: "25 - 30 cm",
     beneficios: "Masajea encías suavemente y brinda alta estimulación visual.",
-    precio: 25000,
   },
   {
     nombre: "Puerco Espin",
@@ -90,12 +88,18 @@ const juguetesPerros = [
     color: "Rojo vibrante",
     tamaño: "7 cm (Diámetro)",
     beneficios: "Ayuda a la salud dental y reduce el estrés por aburrimiento.",
-    precio: 7000,
   },
   {
     nombre: "Zanahoria Chillona",
     precio: 11000,
     imagenes: [rutaBasePerrosJug + "Zanahoria_Chillona_jug_dog.jpg"],
+    descripcion:
+      "Juguete clásico y resistente en forma de zanahoria que emite un divertido sonido al presionarlo, manteniendo a tu mascota activa.",
+    material: "Vinilo no tóxico de alta durabilidad.",
+    textura: "Relieve lineal que facilita el agarre y la mordida.",
+    color: "Naranja con tallo verde",
+    tamaño: "15 cm aprox.",
+    beneficios: "Estimulación auditiva y física; material fácil de lavar.",
   },
 
   {
