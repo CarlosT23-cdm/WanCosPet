@@ -29,7 +29,7 @@ body::before {
   background-size: contain;
   background-position: center;
   /* GRADUACIÓN DEL EFECTO: Los niveles son los siguientes, 0.1 - casi invisible, 0.9 - casi total. De 0.2 o 0.3 para la marca de agua. */
-  opacity: 0.2;
+  opacity: 0.4;
   z-index: -1; /* Envía la imagen al fondo, DETRÁS de todo el contenido */
   pointer-events: none; /* Evita que la capa interfiera con los clics en botones */
 }
