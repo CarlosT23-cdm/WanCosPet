@@ -406,6 +406,57 @@ const accesoriosPerros = [
 // Listado de juguetes para gatos
 const juguetesGatos = [
   {
+    nombre: "Ratón de Cuerda",
+    precio: 8000,
+    imagenes: [
+      rutaBaseGatosJug + "Raton_de_cuerda_cat_jug_01.jpg",
+      rutaBaseGatosJug + "Raton_de_cuerda_cat_jug_02.jpg",
+    ],
+  },
+  {
+    nombre: "Ratón de Impulso",
+    precio: 14000,
+    imagenes: [
+      rutaBaseGatosJug + "Raton_de_impulso_negro_cat_jug_04.jpg",
+      rutaBaseGatosJug + "Raton_de_impulso_negro_cat_jug_02.jpg",
+      rutaBaseGatosJug + "Raton_de_impulso_negro_cat_jug_03.jpg",
+      rutaBaseGatosJug + "Raton_de_impulso_negro_cat_jug_01.jpg",
+    ],
+  },
+  {
+    nombre: "Ratón Con Alas",
+    precio: 14000,
+    imagenes: [rutaBaseGatosJug + "Raton_con_alas_cat_jug_01.jpg"],
+  },
+  {
+    nombre: "Caña de Pescar",
+    precio: 10000,
+    imagenes: [rutaBaseGatosJug + "Cana_de_pescar_jug_cat_01.jpg"],
+  },
+  {
+    nombre: "Pelota Multi Color",
+    precio: 10000,
+    imagenes: [rutaBaseGatosJug + "Pelota_multi_color_jug_cat_01.jpg"],
+  },
+  {
+    nombre: "Juguete Hierba Gatera",
+    precio: 6000,
+    imagenes: [rutaBaseGatosJug + "Juguete_hierba_gatera_01.jpg"],
+    descripcion:
+      "El exterior esta compuesto por un esamblado de madera y en su interior se encuentra un pequeño objeto el cual tu gato tendra que intentar alcanzar.",
+  },
+  {
+    nombre: "Ratón Boxeador",
+    precio: 10500,
+    imagenes: [
+      rutaBaseGatosJug + "Raton_boxeador_jug_cat_01.jpg",
+      rutaBaseGatosJug + "Raton_boxeador_jug_cat_02.jpg",
+      rutaBaseGatosJug + "Raton_boxeador_jug_cat_03.jpg",
+    ],
+    descripcion:
+      "Ratón de juguete recubierto de tela suave, en su base losostiene una pelota que le permite rebotar",
+  },
+  {
     nombre: "Juguete Bola Raton",
     precio: 6000,
     imagenes: [rutaBaseGatosJug + "Juguete_bola_raton_01_jug_cat.jpg"],
@@ -568,6 +619,14 @@ const productosDosEspeciesJug = [
   },
 ];
 const productosDosEspeciesAcc = [
+  {
+    nombre: "Collar Reflectivo",
+    precio: 5000,
+    imagenes: [
+      rutaBaseGatosPerrosAcc + "Collar_reflectivo_rojo_acc_cat_dog_01.jpg",
+      rutaBaseGatosPerrosAcc + "Collar_reflectivo_negro_acc_cat_dog_01.jpg",
+    ],
+  },
   {
     nombre: "Comedero Acero Inoxidable",
     precio: 13000,
