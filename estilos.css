@@ -174,11 +174,25 @@ nav {
 .producto-info {
   padding: 15px;
   text-align: left;
-  min-height: 480px; /* Asegúrate de que este alto sea suficiente */
+  min-height: 520px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* <--- CAMBIA ESTO: Esto empuja el precio al fondo */
+  justify-content: flex-start;
   gap: 10px;
+}
+
+.price {
+  font-size: 1.2rem;
+  color: #ff914d;
+  font-weight: 800;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px dashed #eee;
+}
+
+.producto-detalles-texto p {
+  margin-bottom: 12px; /* Ajusta este valor según el espacio que desees */
+  line-height: 1.4; /* Esto también ayuda a que el texto no se vea amontonado */
 }
 
 .producto-info button {
@@ -199,15 +213,6 @@ nav {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.price {
-  font-size: 1.2rem;
-  color: #ff914d;
-  font-weight: 800;
-  margin-top: auto; /* <--- Ahora esto sí funcionará como un imán al fondo */
-  padding-top: 10px;
-  border-top: 1px dashed #eee;
 }
 
 /* --- CARRITO --- */

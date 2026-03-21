@@ -147,7 +147,7 @@ const juguetesPerros = [
       rutaBasePerrosJug + "Pelota_maciza_mediana_jug_dog_01.jpg",
     ],
     descripcion:
-      "Pelota de goma de alta resistencia, perfecta para perros con mordida fuerte y juegos intensos de lanzar y capturar.",
+      "Pelota de goma de alta resistencia, perfecta para perros con mordida fuerte y juegos intensos de lanzar y capturar. Esta pelota tiene un rebote excelente y posee buena resistencia..",
     material: "Caucho macizo, no tóxico y duradero.",
     textura: "Goma lisa y compacta para un rebote potente.",
     color: "Verde lima vibrante",
@@ -628,11 +628,25 @@ const accesoriosPerros = [
       rutaBasePerrosAcc + "Porta_bolsas_hueso_colorRosado_acc_dog_04.jpg",
       rutaBasePerrosAcc + "Porta_bolsas_hueso_colorRosado_acc_dog_05.jpg",
     ],
+    descripcion:
+      "Dispensador práctico con forma de hueso y mosquetón para enganchar en la correa. Incluye un rollo de bolsas para mantener la limpieza durante cada paseo.",
+    material: "Plástico rígido duradero.",
+    textura: "Lisa y compacta.",
+    color: "Gris",
+    tamaño: "Estándar para rollos universales",
+    beneficios: "Higiene y comodidad en un solo accesorio.",
   },
   {
     nombre: "Correa Cinturon de Carro",
     precio: 20000,
     imagenes: [rutaBasePerrosAcc + "Correa_cinturon_de_carro_acc_dog.jpg"],
+    descripcion:
+      "Accesorio de seguridad esencial para viajes en vehículo. Se ancla directamente al broche del cinturón para mantener a tu mascota protegida en el asiento.",
+    material: "Nylon de alta resistencia y herrajes metálicos.",
+    textura: "Tejido de cinta plana.",
+    color: "Negro",
+    tamaño: "Ajustable",
+    beneficios: "Seguridad vial y prevención de distracciones al conducir.",
   },
   {
     nombre: "Comedero Plegable",
@@ -641,11 +655,25 @@ const accesoriosPerros = [
       rutaBasePerrosAcc + "Comedero_plegable_dog_01.jpg",
       rutaBasePerrosAcc + "Comedero_plegable_dog_02.jpg",
     ],
+    descripcion:
+      "Plato colapsable ideal para viajes, senderismo o paseos largos. Su diseño ultra delgado permite guardarlo en cualquier morral sin ocupar espacio.",
+    material: "Silicona de grado alimenticio.",
+    textura: "Flexible y antideslizante.",
+    color: "Rojo",
+    tamaño: "Mediano",
+    beneficios: "Portabilidad extrema y fácil limpieza.",
   },
   {
     nombre: "Cama Grande Patitas",
     precio: 40000,
     imagenes: [rutaBasePerrosAcc + "Cama_Grande_68x83cm_acc_dog.jpg"],
+    descripcion:
+      "Cojín acolchado con bordes elevados para mayor soporte térmico y confort. Su estampado de huellas le da un toque tierno a cualquier rincón del hogar.",
+    material: "Tela térmica y relleno de algodón siliconado.",
+    textura: "Suave y acolchada.",
+    color: "Azul oscuro con estampado blanco",
+    tamaño: "Grande",
+    beneficios: "Descanso reparador y aislamiento del frío del suelo.",
   },
 
   {
@@ -655,36 +683,85 @@ const accesoriosPerros = [
       rutaBasePerrosAcc + "Porta_bolsas_catctus_acc_dog_01.jpg",
       rutaBasePerrosAcc + "Porta_bolsas_catctus_acc_dog_01.jpg",
     ],
+    descripcion:
+      "Divertido dispensador con forma de cactus. Incluye mosquetón para colgar en la correa y un rollo de bolsas biodegradable para cada paseo.",
+    material: "Plástico rígido duradero.",
+    textura: "Superficie lisa y compacta.",
+    color: "Verde con base naranja",
+    tamaño: "Estándar para rollos universales",
+    beneficios: "Estilo y practicidad en la higiene de tu mascota.",
   },
   {
     nombre: "Collar Anti Pulgas",
     precio: 8000,
     imagenes: [rutaBasePerrosAcc + "Collar_anti_pulgas_acc_dog.jpg"],
+    descripcion:
+      "Collar repelente diseñado para proteger a tu perro contra pulgas y garrapatas de forma efectiva y continua por hasta 4 meses.",
+    material: "Plástico medicado repelente.",
+    textura: "Flexible y suave.",
+    color: "Rojo (según empaque)",
+    tamaño: "Ajustable para perros medianos",
+    beneficios: "Prevención eficaz y descanso para tu mascota.",
   },
   {
     nombre: "Cortauñas Grande",
     precio: 14100,
     imagenes: [rutaBasePerrosAcc + "Cortauñas_Grande_Con_Lima_acc_dog.jpg"],
+    descripcion:
+      "Herramienta profesional de corte tipo guillotina con tope de seguridad. Permite un corte preciso y limpio sin causar dolor ni estrés.",
+    material: "Acero inoxidable y mango de goma.",
+    textura: "Mango ergonómico antideslizante.",
+    color: "Naranja y Negro",
+    tamaño: "Grande",
+    beneficios: "Pedicura segura, cómoda y en casa.",
   },
   {
     nombre: "Bebedero 4 en 1",
     precio: 50000,
     imagenes: [rutaBasePerrosAcc + "Bebedero_4_en_uno_dog_acc_01.jpg"],
+    descripcion:
+      "Accesorio de viaje multifuncional que integra botella de agua, comedero plegable, dispensador de bolsas y pala para desechos.",
+    material: "Plástico libre de BPA.",
+    textura: "Exterior liso y plegable.",
+    color: "Verde neón",
+    tamaño: "Compacto y portátil",
+    beneficios: "Hidratación y alimentación organizada en cualquier lugar.",
   },
   {
     nombre: "Cepillo Universal",
     precio: 10700,
     imagenes: [rutaBasePerrosAcc + "Cepillo_universal_grande_acc_dog_01.jpg"],
+    descripcion:
+      "Carda profesional con cerdas metálicas finas. Ideal para desenredar y eliminar el pelo muerto en mantos medios y largos sin lastimar la piel.",
+    material: "Plástico ABS y cerdas de acero.",
+    textura: "Mango ergonómico y cerdas rígidas.",
+    color: "Gris",
+    tamaño: "Grande",
+    beneficios: "Manto brillante y reducción de nudos.",
   },
   {
     nombre: "Correa Retráctil",
     precio: 22000,
     imagenes: [rutaBasePerrosAcc + "Correa_retractil_acc_dog_01.jpg"],
+    descripcion:
+      "Sistema de cinta extensible con bloqueo de seguridad. Ofrece libertad de movimiento controlada durante los paseos en ciudad o campo.",
+    material: "Carcasa de plástico y cinta de nylon.",
+    textura: "Agarre antideslizante.",
+    color: "Negro",
+    tamaño: "5 metros de largo",
+    beneficios: "Libertad y control total en cada salida.",
   },
   {
     nombre: "Dispensadores de Bolsas Fino",
     precio: 11000,
     imagenes: [rutaBasePerrosAcc + "Dispensador_bolsas_fino_acc_dog_01.jpg"],
+    descripcion:
+      "Estuche de tela resistente con cierre de cremallera y mosquetón. Un diseño elegante y discreto para portar las bolsas de higiene.",
+    material: "Tela tipo lona y metal.",
+    textura: "Tejido suave al tacto.",
+    color: "Gris jaspeado",
+    tamaño: "Compacto",
+    beneficios: "Acceso rápido y diseño sofisticado.",
   },
   {
     nombre: "Dispensador bolsas con linterna",
@@ -692,16 +769,37 @@ const accesoriosPerros = [
     imagenes: [
       rutaBasePerrosAcc + "Dispensador_bolsas_linterna_acc_dog_01.jpg",
     ],
+    descripcion:
+      "Accesorio 2 en 1 que combina un dispensador de bolsas con una potente linterna LED. Perfecto para mayor seguridad en paseos nocturnos.",
+    material: "Plástico reforzado.",
+    textura: "Cuerpo cilíndrico liso.",
+    color: "Beige / Durazno",
+    tamaño: "Portátil",
+    beneficios: "Visibilidad y limpieza en horarios nocturnos.",
   },
   {
     nombre: "Dosificador Dog Agua",
     precio: 16000,
     imagenes: [rutaBasePerrosAcc + "Dosificador_dog_acc_01.jpg"],
+    descripcion:
+      "Botella portátil con tazón integrado en forma de hoja. Permite hidratar a tu perro de forma higiénica y sin desperdiciar agua en exteriores.",
+    material: "Plástico libre de BPA.",
+    textura: "Superficie lisa ergonómica.",
+    color: "Azul claro",
+    tamaño: "500 ml",
+    beneficios: "Hidratación rápida y sin derrames.",
   },
   {
     nombre: "Guante Quita Pelo",
     precio: 14000,
     imagenes: [rutaBasePerrosAcc + "guante_quita_pelo_dog_acc_01.jpg"],
+    descripcion:
+      "Guante de silicona con puntas suaves que atrapan el pelo suelto mientras acaricias a tu mascota. Ideal para masajes relajantes.",
+    material: "Silicona y malla transpirable.",
+    textura: "Nodos de goma suaves.",
+    color: "Azul y Negro",
+    tamaño: "Ajustable (Talla única)",
+    beneficios: "Elimina exceso de pelo y mejora la circulación.",
   },
   {
     nombre: "Impermeable Wanda",
@@ -710,6 +808,13 @@ const accesoriosPerros = [
       rutaBasePerrosAcc + "Wanda_impermeable_dog_acc_05.jpg",
       rutaBasePerrosAcc + "Wanda_impermeable_dog_acc_09.jpg",
     ],
+    descripcion:
+      "Capa transparente resistente al agua con bordes reforzados. Protege a tu perro de la lluvia sin ocultar su pelaje ni limitar su movimiento.",
+    material: "Vinilo impermeable ligero.",
+    textura: "Plástica flexible.",
+    color: "Transparente con bordes blancos",
+    tamaño: "Grande (ajustable)",
+    beneficios: "Mantiene a la mascota seca y limpia.",
   },
   {
     nombre: "Dispensador Bolsas Emoji",
@@ -718,6 +823,13 @@ const accesoriosPerros = [
       rutaBasePerrosAcc + "Diespensador_de_bolsas_cpn_emoji_01.jpg",
       rutaBasePerrosAcc + "Diespensador_de_bolsas_cpn_emoji_02.jpg",
     ],
+    descripcion:
+      "Divertido porta bolsas con forma de emoji. Cuenta con un mosquetón de seguridad para colgarlo fácilmente en cualquier pechera o correa.",
+    material: "Plástico rígido.",
+    textura: "Mate con relieves.",
+    color: "Café",
+    tamaño: "Compacto",
+    beneficios: "Aporta un toque divertido a la limpieza diaria.",
   },
 ];
 
@@ -728,12 +840,55 @@ const accesoriosPerros = [
 // Listado de juguetes para gatos
 const juguetesGatos = [
   {
+    nombre: "Pluma Catnip",
+    precio: 9000,
+    imagenes: [rutaBaseGatosJug + "Pluma_Catnip_jug_cat_01.jpg"],
+    descripcion:
+      "Juguete interactivo con plumas naturales y esencia de catnip. Estimula el instinto de caza y mantiene a tu gato activo y entretenido.",
+    material: "Plumas, madera y tela.",
+    textura: "Suave y ligera.",
+    color: "Natural con detalles verdes",
+    tamaño: "Estándar",
+    beneficios: "Reduce el estrés y fomenta el ejercicio físico.",
+  },
+  {
+    nombre: "Pelota Astro Luminosa",
+    precio: 10500,
+    imagenes: [rutaBaseGatosJug + "Pelota_astro_luminosa_jug_cat_01.jpg"],
+    descripcion:
+      "Pelota con diseño galáctico que brilla o rebota de forma errática. Captura la atención de tu felino incluso en condiciones de poca luz.",
+    material: "Plástico resistente no tóxico.",
+    textura: "Rígida con relieves.",
+    color: "Verde Neón / Azul",
+    tamaño: "Pequeño",
+    beneficios: "Estimulación visual y agilidad mental.",
+  },
+  {
+    nombre: "Ratones Chillones por tres",
+    precio: 6000,
+    imagenes: [rutaBaseGatosJug + "Ratones_chillones_por_tres_cat_jug_01.jpg"],
+    descripcion:
+      "Set de tres ratones coloridos que emiten un pequeño sonido al ser golpeados. El tamaño perfecto para que tu gato los cargue y lance.",
+    material: "Tela sintética y sonajero interno.",
+    textura: "Peluda y suave.",
+    color: "Naranja, Rojo y Gris",
+    tamaño: "Mini",
+    beneficios: "Diversión multiplicada y juego independiente.",
+  },
+  {
     nombre: "Ratón de Cuerda",
     precio: 8000,
     imagenes: [
       rutaBaseGatosJug + "Raton_de_cuerda_cat_jug_01.jpg",
       rutaBaseGatosJug + "Raton_de_cuerda_cat_jug_02.jpg",
     ],
+    descripcion:
+      "Clásico juguete mecánico que se desplaza por el suelo al girar la llave. Imita el movimiento de una presa real para horas de diversión.",
+    material: "Plástico y recubrimiento textil.",
+    textura: "Afelpada.",
+    color: "Marrón con detalles blancos",
+    tamaño: "Mediano",
+    beneficios: "Promueve la actividad física intensa sin baterías.",
   },
   {
     nombre: "Ratón de Impulso",
@@ -762,7 +917,7 @@ const juguetesGatos = [
   },
   {
     nombre: "Juguete Hierba Gatera",
-    precio: 6000,
+    precio: 30000,
     imagenes: [rutaBaseGatosJug + "Juguete_hierba_gatera_01.jpg"],
     descripcion:
       "El exterior esta compuesto por un esamblado de madera y en su interior se encuentra un pequeño objeto el cual tu gato tendra que intentar alcanzar.",
@@ -866,9 +1021,12 @@ const juguetesGatos = [
 // Listado de accesorios para gatos
 const accesoriosGatos = [
   {
-    nombre: "Gimnasio Torre - por encargo",
-    precio: 0,
-    imagenes: [rutaBaseGatosAcc + "Modelo_gimnasio_torre_acc_cat_02.jpeg"],
+    nombre: "Gimnasio Cosmo",
+    precio: 300000,
+    imagenes: [
+      rutaBaseGatosAcc + "Modelo_gimnasio_Cosmo_acc_cat_02.jpeg",
+      rutaBaseGatosAcc + "Modelo_gimnasio_Cosmo_acc_cat_01.jpeg",
+    ],
     descripcion:
       "Puedes encargar este lindo gimnasio, nosotros lo construimos a la medida de tu gato.",
   },
@@ -878,20 +1036,13 @@ const accesoriosGatos = [
     imagenes: [rutaBaseGatosAcc + "Comedero_alto_acc_cat__01.jpg"],
   },
   {
-    nombre: "Gimnasio Cosmo- por encargo",
-    precio: 0,
-    imagenes: [rutaBaseGatosAcc + "Modelo_gimnasio_Cosmo_acc_cat_01.jpeg"],
-    descripcion:
-      "Puedes encargar este lindo gimnasio, nosotros lo construimos a la medida de tu gato.",
-  },
-  {
     nombre: "Arenera Morada",
     precio: 37000,
     imagenes: [rutaBaseGatosAcc + "Arenera_morada_cat_acc_01.jpg"],
   },
   {
-    nombre: "Gimnasio Imalaya- por encargo",
-    precio: 0,
+    nombre: "Gimnasio Imalaya",
+    precio: 300000,
     imagenes: [
       rutaBaseGatosAcc + "Modelo_gimnasio_imalaya_acc_cat_01.jpeg",
       rutaBaseGatosAcc + "Modelo_gimnasio_imalaya_acc_cat_02.jpeg",
@@ -916,6 +1067,13 @@ const accesoriosGatos = [
   },
 ];
 const productosDosEspeciesJug = [
+  {
+    nombre: "Juguete Interactivo",
+    precio: 22000,
+    imagenes: [
+      rutaBaseGatosPerrosJug + "Juguete_interactivo_jug_cat_dog_01.jpg",
+    ],
+  },
   {
     nombre: "Bola Electrica",
     precio: 22000,

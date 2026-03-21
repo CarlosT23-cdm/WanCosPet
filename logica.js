@@ -73,8 +73,7 @@ function renderLista(idContenedor, lista, nombreGaleria) {
       const claseBtn = esFav ? "btn-favorito activo" : "btn-favorito";
       const imgPrincipal = p.imagenes[0];
 
-      // AQUÍ ESTÁ LA MAGIA:
-      // Creamos las imágenes ocultas sin tocar nada más del diseño
+      // Generamos las imágenes ocultas para Fancybox
       const imagenesOcultas = p.imagenes
         .slice(1)
         .map((imgExtra) => {
@@ -82,14 +81,13 @@ function renderLista(idContenedor, lista, nombreGaleria) {
         })
         .join("");
 
-      // RETORNAMOS EL HTML COMPLETO (Aquí no falta nada, ni precios ni botones)
-      // Dentro de tu .map((p) => { ...
       return `
     <article class="producto">
         <a data-fancybox="${nombreGaleria}" href="${imgPrincipal}">
             <img src="${imgPrincipal}" alt="${p.nombre}">
         </a>
         ${imagenesOcultas}
+        
         <div class="producto-info">
             <div class="producto-detalles-texto">
                 <h3>${p.nombre}</h3>
@@ -101,7 +99,9 @@ function renderLista(idContenedor, lista, nombreGaleria) {
                 <p><strong>Beneficios:</strong> ${p.beneficios || "No especificado"}</p>
             </div>
 
-            <div class="price"><strong>Precio:</strong> $${p.precio.toLocaleString()} COP</div>
+            <div class="price">
+                <strong>Precio:</strong> $${p.precio.toLocaleString()} COP
+            </div>
         </div>
     </article>
 `;
