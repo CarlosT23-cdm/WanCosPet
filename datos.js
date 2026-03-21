@@ -899,28 +899,61 @@ const juguetesGatos = [
       rutaBaseGatosJug + "Raton_de_impulso_negro_cat_jug_03.jpg",
       rutaBaseGatosJug + "Raton_de_impulso_negro_cat_jug_01.jpg",
     ],
+    descripcion:
+      "Juguete mecánico que avanza rápidamente al retrocederlo. Su movimiento veloz despierta el instinto natural de persecución en gatos de todas las edades.",
+    material: "Plástico ABS resistente.",
+    textura: "Superficie con relieves realistas.",
+    color: "Negro",
+    tamaño: "10 cm de largo",
+    beneficios: "Fomenta la actividad física y la agilidad.",
   },
   {
     nombre: "Ratón Con Alas",
     precio: 14000,
     imagenes: [rutaBaseGatosJug + "Raton_con_alas_cat_jug_01.jpg"],
+    descripcion:
+      "Adorable peluche con alas de fieltro y texturas variadas. Estimula el instinto de caceria mientras empieza a girar en circulos.",
+    material: "Tela suave y fieltro.",
+    textura: "Acolchada y aterciopelada.",
+    color: "Rosado con detalles azules",
+    tamaño: "Pequeño",
+    beneficios: "Proporciona confort y reduce el aburrimiento.",
   },
   {
     nombre: "Caña de Pescar",
     precio: 10000,
     imagenes: [rutaBaseGatosJug + "Cana_de_pescar_jug_cat_01.jpg"],
+    descripcion:
+      "Varita interactiva con cuerda elástica y juguete colgante con plumas. Permite un juego compartido que fortalece el vínculo entre dueño y mascota.",
+    material: "Madera natural y plumas.",
+    textura: "Mango liso y punta ligera.",
+    color: "Madera clara y azul",
+    tamaño: "Vara de 40 cm",
+    beneficios: "Mejora los reflejos y la coordinación.",
   },
   {
     nombre: "Pelota Multi Color",
     precio: 10000,
     imagenes: [rutaBaseGatosJug + "Pelota_multi_color_jug_cat_01.jpg"],
+    descripcion:
+      "Pelota tipo nudo fabricada con tiras de colores entrelazadas. Su forma irregular provoca rebotes divertidos que mantienen al gato alerta.",
+    material: "Goma flexible.",
+    textura: "Entramado de tiras.",
+    color: "Multicolor",
+    tamaño: "5 cm de diámetro",
+    beneficios: "Fácil de atrapar y transportar con la boca.",
   },
   {
     nombre: "Juguete Hierba Gatera",
     precio: 30000,
     imagenes: [rutaBaseGatosJug + "Juguete_hierba_gatera_01.jpg"],
     descripcion:
-      "El exterior esta compuesto por un esamblado de madera y en su interior se encuentra un pequeño objeto el cual tu gato tendra que intentar alcanzar.",
+      "Estructura artesanal de madera con una esfera de catnip prensado en su interior. Despierta el interés sensorial y promueve el juego prolongado.",
+    material: "Madera natural y catnip.",
+    textura: "Rústica y sólida.",
+    color: "Madera natural",
+    tamaño: "Estándar",
+    beneficios: "Estimulación cognitiva y bienestar emocional.",
   },
   {
     nombre: "Ratón Boxeador",
@@ -931,12 +964,24 @@ const juguetesGatos = [
       rutaBaseGatosJug + "Raton_boxeador_jug_cat_03.jpg",
     ],
     descripcion:
-      "Ratón de juguete recubierto de tela suave, en su base losostiene una pelota que le permite rebotar",
+      "Ratón de peluche montado sobre una base esférica pesada. Su diseño le permite tambalearse y rebotar ante cada zarpazo sin caerse.",
+    material: "Tela suave y base plástica.",
+    textura: "Peluda con base lisa.",
+    color: "Blanco, Rosado y Verde",
+    tamaño: "Mediano",
+    beneficios: "Fomenta la coordinación motriz y el juego solitario.",
   },
   {
     nombre: "Juguete Bola Raton",
     precio: 6000,
     imagenes: [rutaBaseGatosJug + "Juguete_bola_raton_01_jug_cat.jpg"],
+    descripcion:
+      "Divertida esfera de rejilla metálica que contiene un pequeño ratón en su interior. El sonido y movimiento incitan a la persecución constante.",
+    material: "Metal ligero y tela.",
+    textura: "Rejilla rígida.",
+    color: "Amarillo y Rojo",
+    tamaño: "Pequeño",
+    beneficios: "Mantiene al gato activo y alerta.",
   },
   {
     nombre: "Ratones por tres",
@@ -945,22 +990,50 @@ const juguetesGatos = [
       rutaBaseGatosJug + "Ratones_por_tres_02_jug_cat.jpg",
       rutaBaseGatosJug + "Ratones_por_tres_01_jug_cat.jpg",
     ],
+    descripcion:
+      "Trío de ratones clásicos de felpa con colas largas. Ideales para que tu mascota los cace, muerda y traslade por toda la casa.",
+    material: "Fieltro y relleno blando.",
+    textura: "Suave y fácil de morder.",
+    color: "Gris, Café y Blanco",
+    tamaño: "Mini",
+    beneficios: "Satisface el instinto de caza de forma segura.",
   },
 
   {
     nombre: "Catnip Aguacate",
     precio: 12000,
     imagenes: [rutaBaseGatosJug + "aguacate_jug_cat_01.jpg"],
+    descripcion:
+      "Juguete con bola de catnip giratoria. Se adhiere a superficies planas para que tu gato lama y juegue mientras se relaja con su esencia natural.",
+    material: "Plástico ABS y catnip natural.",
+    textura: "Lisa con centro rugoso.",
+    color: "Verde y Amarillo",
+    tamaño: "6 cm de diámetro",
+    beneficios: "Alivia el estrés y ayuda a la limpieza dental.",
   },
   {
     nombre: "Caña Flores",
     precio: 12000,
     imagenes: [rutaBaseGatosJug + "Caña_flores_cat_jug_01.jpg"],
+    descripcion:
+      "Vara flexible con flores de tela y plumas. Ideal para estimular el instinto de caza mediante juegos de persecución y saltos acrobáticos.",
+    material: "Madera, tela y plumas.",
+    textura: "Suave y plumosa.",
+    color: "Morado, Blanco y Rosado",
+    tamaño: "Vara de 45 cm",
+    beneficios: "Fomenta el ejercicio y mejora los reflejos.",
   },
   {
     nombre: "Ratones Colores por tres",
     precio: 7200,
     imagenes: [rutaBaseGatosJug + "Paquete_raton_x3_cat_jug_01.jpg"],
+    descripcion:
+      "Trío de ratones en colores neón con colas plumosas. Su peso ligero permite que el gato los lance y capture fácilmente por toda la casa.",
+    material: "Peluche y plumas sintéticas.",
+    textura: "Esponjosa.",
+    color: "Verde, Fucsia y Blanco",
+    tamaño: "Mini",
+    beneficios: "Perfecto para el juego independiente y activo.",
   },
   {
     nombre: "Caña Libelula",
@@ -969,52 +1042,122 @@ const juguetesGatos = [
       rutaBaseGatosJug + "Caña_libelula_jug_cat_01.jpg",
       rutaBaseGatosJug + "Caña_libelula_jug_cat_02.jpg",
     ],
+    descripcion:
+      "Caña interactiva con una libélula de alas iridiscentes. Los reflejos de luz captan la atención de tu felino para horas de diversión visual.",
+    material: "Plástico y material reflectante.",
+    textura: "Rígida y brillante.",
+    color: "Verde, Naranja y Azul",
+    tamaño: "Vara de 40 cm",
+    beneficios: "Estimulación visual y agilidad mental.",
   },
   {
     nombre: "Caña Pluma",
     precio: 10000,
     imagenes: [rutaBaseGatosJug + "Caña_pluma_cat_jug_02.jpg"],
+    descripcion:
+      "Vara flexible para juegos de persecución. Su pluma ligera imita el vuelo de una presa, manteniendo a tu gato activo y alerta.",
+    material: "Plástico y plumas naturales.",
+    textura: "Vara lisa con punta plumosa.",
+    color: "Rosa Neón y Morado",
+    tamaño: "Vara de 45 cm",
+    beneficios: "Fomenta el ejercicio y los reflejos.",
   },
   {
     nombre: "Juguete con Catnip",
     precio: 12000,
     imagenes: [rutaBaseGatosJug + "Catnip_gato_jug_01.jpg"],
+    descripcion:
+      "Base adhesiva con forma de gato y esfera de catnip natural. Estimula el sentido del gusto y olfato de forma divertida.",
+    material: "Plástico ABS y Catnip.",
+    textura: "Suave al tacto con esfera rugosa.",
+    color: "Rosa Pastel",
+    tamaño: "Estándar",
+    beneficios: "Relajación y limpieza dental natural.",
   },
   {
     nombre: "Peluche con Catnip",
     precio: 12000,
     imagenes: [rutaBaseGatosJug + "Peluche_con_catnip_cat_jug_01.jpg"],
+    descripcion:
+      "Juguete de felpa suave relleno de hierba gatera. Perfecto para morder, patear y llevar a todas partes como compañero.",
+    material: "Felpa y algodón.",
+    textura: "Acolchada y muy suave.",
+    color: "Azul y Blanco",
+    tamaño: "Pequeño",
+    beneficios: "Reduce la ansiedad y el estrés.",
   },
   {
     nombre: "Catnip Puercoespin",
     precio: 10000,
     imagenes: [rutaBaseGatosJug + "Catnip_cuerpoespin_dosenuno_cat_jug_01.jpg"],
+    descripcion:
+      "Original dispensador con bola de catnip protegida. Sus relieves permiten que el gato se frote y masajee sus encías.",
+    material: "Silicona suave y Catnip.",
+    textura: "Relieves de goma para masaje.",
+    color: "Verde Menta",
+    tamaño: "6 cm de largo",
+    beneficios: "Masaje facial y estimulación sensorial.",
   },
   {
     nombre: "Catnip Vaquita",
     precio: 10000,
     imagenes: [rutaBaseGatosJug + "Catnip_mariquita_cat_jug_01.jpg"],
+    descripcion:
+      "Juguete interactivo adhesivo con forma de mariquita. Contiene una bola giratoria de catnip 100% puro para atraer y entretener a tu gato.",
+    material: "Plástico ABS de grado alimenticio y Catnip natural.",
+    textura: "Lisa con centro orgánico.",
+    color: "Rojo con puntos negros y base amarilla.",
+    tamaño: "6 cm de diámetro",
+    beneficios: "Relajación, alivio de estrés y estimulación sensorial.",
   },
   {
     nombre: "Catnip Queso",
     precio: 12000,
     imagenes: [rutaBaseGatosJug + "queso_amarillo_jug_cat_01.jpg"],
+    descripcion:
+      "Juguete adhesivo con diseño divertido de queso y ratón. Sus relieves y orificios permiten que el gato acceda al catnip mientras masajea su cara.",
+    material: "Silicona suave no tóxica y Catnip premium.",
+    textura: "Flexible con relieves de fricción.",
+    color: "Amarillo brillante con detalles grises.",
+    tamaño: "7 cm de largo",
+    beneficios: "Masaje facial, reducción de ansiedad y fácil limpieza dental.",
   },
   {
     nombre: "Ratón Catnip Más Pelota",
     precio: 10000,
     imagenes: [rutaBaseGatosJug + "Juguete_catnip_mas_pelota_cat_jug_01.jpg"],
+    descripcion:
+      "Dúo dinámico para gato. Incluye un ratón de felpa relleno de catnip con pluma y una pelota translúcida con figura interna para persecución.",
+    material: "Tela sintética, plástico, plumas sintéticas y Catnip.",
+    textura: "Suave (ratón) y lisa (pelota).",
+    color: "Gris/Amarillo (ratón) y Azul (pelota).",
+    tamaño: "Estándar",
+    beneficios: "Variedad de estímulos visuales, táctiles y olfativos.",
   },
   {
     nombre: "Juguete Con Resorte",
     precio: 20000,
     imagenes: [rutaBaseGatosJug + "Juguete_resorte_gato_cat_jug_01.jpg"],
+    descripcion:
+      "Plataforma de felpa acolchada con un resorte flexible y un juguete colgante. Diseñado para incentivar saltos, mordidas y juego activo continuo.",
+    material: "Madera (base), metal y tela de peluche.",
+    textura: "Suave acolchada con metal flexible.",
+    color: "Rojo con estampado de huellas blancas.",
+    tamaño: "Base de 15x15 cm / Alto 20 cm",
+    beneficios: "Mejora agilidad, coordinación y mantiene al gato activo.",
   },
 
   {
     nombre: "Paquete Juguete Gato x 3",
     precio: 10000,
     imagenes: [rutaBaseGatosJug + "Paquete_juguete_x3_cat_jug_01.jpg"],
+    descripcion:
+      "Kit variado para entretenimiento felino. Incluye un ratón de felpa, una pelota de cascabel y una pelota tejida para diferentes estímulos.",
+    material: "Peluche, plástico, metal (cascabel) y sisal.",
+    textura: "Suave, lisa y rugosa.",
+    color: "Multicolor (como en la imagen)",
+    tamaño: "Pequeño",
+    beneficios: "Fomenta la actividad física, la caza y el juego.",
   },
 ];
 
@@ -1028,17 +1171,36 @@ const accesoriosGatos = [
       rutaBaseGatosAcc + "Modelo_gimnasio_Cosmo_acc_cat_01.jpeg",
     ],
     descripcion:
-      "Puedes encargar este lindo gimnasio, nosotros lo construimos a la medida de tu gato.",
+      "Estructura multinivel compacta con cueva superior y hamaca inferior. Ideal para espacios reducidos, proporcionando descanso y zona de rascado.",
+    material: "Madera, tela de peluche y cuerda de fique.",
+    textura: "Suave y resistente al rascado.",
+    color: "Gris y Negro",
+    tamaño: "Diseño compacto para apartamentos.",
+    beneficios: "Reduce el estrés y protege tus muebles.",
   },
   {
     nombre: "Comedero Alto",
     precio: 14000,
     imagenes: [rutaBaseGatosAcc + "Comedero_alto_acc_cat__01.jpg"],
+    descripcion:
+      "Plato elevado con diseño ergonómico en forma de gato. Facilita la alimentación al reducir la tensión en el cuello de tu mascota.",
+    material: "Plástico de alta densidad no tóxico.",
+    textura: "Lisa de fácil lavado.",
+    color: "Verde Lima y Amarillo",
+    tamaño: "Estándar",
+    beneficios: "Mejora la digestión y la postura al comer.",
   },
   {
     nombre: "Arenera Morada",
     precio: 37000,
     imagenes: [rutaBaseGatosAcc + "Arenera_morada_cat_acc_01.jpg"],
+    descripcion:
+      "Bandeja sanitaria amplia con bordes elevados para evitar la salida de arena. Incluye pala recolectora con diseño temático.",
+    material: "Polipropileno resistente.",
+    textura: "Rígida.",
+    color: "Morado Vibrante",
+    tamaño: "Grande",
+    beneficios: "Higiene facilitada y mayor comodidad para el gato.",
   },
   {
     nombre: "Gimnasio Imalaya",
@@ -1048,22 +1210,49 @@ const accesoriosGatos = [
       rutaBaseGatosAcc + "Modelo_gimnasio_imalaya_acc_cat_02.jpeg",
     ],
     descripcion:
-      "Puedes encargar este lindo gimnasio, nosotros lo construimos a la medida de tu gato. Dimesiones: Largo 72 Cm x Ancho 41 Cm x Alto 1,55 Cm / 12,4 Kg /",
+      "Centro de actividades de gran altura con múltiples niveles, dos cuevas de descanso y postes rascadores reforzados.",
+    material: "Madera, alfombra y fibras naturales.",
+    textura: "Acolchada con zonas rugosas.",
+    color: "Azul Oscuro y Beige",
+    tamaño: "72 cm x 41 cm x 1.55 m",
+    beneficios: "Fomenta la escalada y el ejercicio en gatos activos.",
   },
   {
     nombre: "Arenera Gris",
     precio: 25000,
     imagenes: [rutaBaseGatosAcc + "Arenera_gris_cat_acc_01.jpg"],
+    descripcion:
+      "Bandeja sanitaria de diseño abierto y bordes redondeados. Su estructura facilita la limpieza diaria y proporciona un espacio cómodo para gatos de diversos tamaños.",
+    material: "Plástico de alta resistencia.",
+    textura: "Lisa y fácil de desinfectar.",
+    color: "Gris neutro con borde decorativo de huellas.",
+    tamaño: "Grande",
+    beneficios:
+      "Durabilidad, facilidad de uso y control de esparcimiento de arena.",
   },
   {
     nombre: "Palas Cara de Gato",
     precio: 5000,
     imagenes: [rutaBaseGatosAcc + "Palas_cara_gato_cat_acc__01.jpg"],
+    descripcion:
+      "Palas recolectoras con un toque divertido. Cuentan con ranuras precisas para tamizar la arena de forma eficiente, ahorrando tiempo y producto.",
+    material: "Plástico rígido duradero.",
+    textura: "Lisa.",
+    color: "Rojo y Morado",
+    tamaño: "Estándar con mango ergonómico.",
+    beneficios: "Limpieza rápida y diseño ergonómico para un mejor agarre.",
   },
   {
     nombre: "Palas Jarra",
     precio: 8000,
     imagenes: [rutaBaseGatosAcc + "Palas_jarra_cat_acc_01.jpg"],
+    descripcion:
+      "Innovadora pala con diseño de jarra integrada. Permite recoger los desechos y verter arena nueva de manera más controlada y sin derrames.",
+    material: "Polímero de alta calidad.",
+    textura: "Suave al tacto.",
+    color: "Rojo y Verde neón",
+    tamaño: "Compacto",
+    beneficios: "Versatilidad 2 en 1 y optimización de la higiene en el hogar.",
   },
 ];
 const productosDosEspeciesJug = [
@@ -1073,6 +1262,13 @@ const productosDosEspeciesJug = [
     imagenes: [
       rutaBaseGatosPerrosJug + "Juguete_interactivo_jug_cat_dog_01.jpg",
     ],
+    descripcion:
+      "Juguete con movimiento aleatorio que simula el desplazamiento de una presa. Su cuerpo articulado y colores vibrantes despiertan el instinto de caza en perros pequeños y gatos.",
+    material: "Plástico ABS de alta resistencia.",
+    textura: "Segmentada y lisa.",
+    color: "Rojo con detalles negros.",
+    tamaño: "Largo extendido de 40 cm.",
+    beneficios: "Estimulación mental y ejercicio físico autónomo.",
   },
   {
     nombre: "Bola Electrica",
@@ -1081,6 +1277,13 @@ const productosDosEspeciesJug = [
       rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat_y_dog_01.jpg",
       rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat_y_dog_02.jpg",
     ],
+    descripcion:
+      "Pelota inteligente con rotación automática de 360 grados. Cambia de dirección al detectar obstáculos, manteniendo la atención de la mascota por más tiempo.",
+    material: "Silicona suave y componentes electrónicos.",
+    textura: "Rugosa para mejor agarre y limpieza dental leve.",
+    color: "Rosa Pastel.",
+    tamaño: "4.3 cm de diámetro (ideal para gatos y perros miniatura).",
+    beneficios: "Evita el sedentarismo y reduce la ansiedad por separación.",
   },
   {
     nombre: "Pescado Electrico",
@@ -1088,6 +1291,13 @@ const productosDosEspeciesJug = [
     imagenes: [
       rutaBaseGatosPerrosJug + "Pescado_electrico_naranja_01_jug_cat.jpg",
     ],
+    descripcion:
+      "Juguete realista con sensor de movimiento que activa un aleteo constante al ser tocado. Incluye un motor recargable vía USB.",
+    material: "Tela de felpa suave y algodón de polipropileno.",
+    textura: "Blanda y acolchada.",
+    color: "Naranja y Blanco (Simulación de Nemo).",
+    tamaño: "28 cm de largo.",
+    beneficios: "Proporciona una experiencia de caza realista y reconfortante.",
   },
   {
     nombre: "Carro Control Remoto",
@@ -1096,6 +1306,13 @@ const productosDosEspeciesJug = [
       rutaBaseGatosPerrosJug + "Carro_control_remoto_jug_cat_dog_01.jpg",
       rutaBaseGatosPerrosJug + "Carro_control_remoto_jug_cat_dog_02.jpg",
     ],
+    descripcion:
+      "Vehículo acrobático diseñado para juegos de persecución a alta velocidad. Su estructura reforzada resiste impactos y vuelcos durante la sesión de juego.",
+    material: "Plástico reforzado y caucho en ruedas.",
+    textura: "Rígida con neumáticos de alta tracción.",
+    color: "Blanco y Azul con luces LED.",
+    tamaño: "Compacto.",
+    beneficios: "Fomenta el vínculo dueño-mascota a través del juego activo.",
   },
 ];
 const productosDosEspeciesAcc = [
