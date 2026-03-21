@@ -83,6 +83,7 @@ function renderLista(idContenedor, lista, nombreGaleria) {
         .join("");
 
       // RETORNAMOS EL HTML COMPLETO (Aquí no falta nada, ni precios ni botones)
+      // Dentro de tu .map((p) => { ...
       return `
     <article class="producto">
         <a data-fancybox="${nombreGaleria}" href="${imgPrincipal}">
@@ -90,16 +91,18 @@ function renderLista(idContenedor, lista, nombreGaleria) {
         </a>
         ${imagenesOcultas}
         <div class="producto-info">
-            <h3>${p.nombre}</h3>
-            
-            <p><strong>Descripción:</strong> ${p.descripcion}</p>
-            <p><strong>Material:</strong> ${p.material || "No especificado"}</p>
-            <p><strong>Textura:</strong> ${p.textura || "No especificado"}</p>
-            <p><strong>Color:</strong> ${p.color || "No especificado"}</p>
-            <p><strong>Tamaño:</strong> ${p.tamaño || "No especificado"}</p>
-            <p><strong>Beneficios:</strong> ${p.beneficios || "No especificado"}</p>
+            <div class="producto-detalles-texto">
+                <h3>${p.nombre}</h3>
+                <p><strong>Descripción:</strong> ${p.descripcion}</p>
+                <p><strong>Material:</strong> ${p.material || "No especificado"}</p>
+                <p><strong>Textura:</strong> ${p.textura || "No especificado"}</p>
+                <p><strong>Color:</strong> ${p.color || "No especificado"}</p>
+                <p><strong>Tamaño:</strong> ${p.tamaño || "No especificado"}</p>
+                <p><strong>Beneficios:</strong> ${p.beneficios || "No especificado"}</p>
+            </div>
 
             <div class="price"><strong>Precio:</strong> $${p.precio.toLocaleString()} COP</div>
+        </div>
     </article>
 `;
     })

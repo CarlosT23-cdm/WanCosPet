@@ -37,7 +37,7 @@ const juguetesPerros = [
       rutaBasePerrosJug + "Peluche_Marranito_Felpa_Con_Sonido_jug_dog_01.jpg",
     ],
     descripcion:
-      "Divertido cerdito con sonido interno (squeaky), ideal para mascotas que buscan un compañero de juego tierno y estimulante.",
+      "Divertido cerdito con sonido interno tipo squeaky, ideal para mascotas que buscan un compañero de juego tierno y estimulante.",
     // Estos son los campos nuevos que voy a agregar para daca producto:
     material: "Felpa suave de alta calidad con relleno de algodón siliconado.",
     textura: "Rugosa con puntos de relieve",
@@ -106,16 +106,38 @@ const juguetesPerros = [
     nombre: "Peluche Limpia dientes",
     precio: 25000,
     imagenes: [rutaBasePerrosJug + "Peluche_limpia_dientes_dog_jug.jpg"],
+    descripcion:
+      "Divertido mapache que combina la suavidad de un peluche con un cuerpo central diseñado para la higiene dental de tu mascota.",
+    material: "Tela afelpada y centro de caucho termoplástico (TPR).",
+    textura: "Mixta: extremidades suaves y centro con púas de goma.",
+    color: "Gris, azul y blanco",
+    tamaño: "22 cm aprox.",
+    beneficios:
+      "Ayuda a remover el sarro mientras juegan; doble textura para mayor interés.",
   },
   {
     nombre: "Pollo Chillon Pequeño",
     precio: 5000,
     imagenes: [rutaBasePerrosJug + "Pollo_Chillon_Pequeño_jug_dog.jpg"],
+    descripcion:
+      "El juguete icónico que nunca falla. Emite un grito característico que despierta instantáneamente el instinto de juego.",
+    material: "Caucho flexible y seguro.",
+    textura: "Rugosa y porosa para un agarre firme.",
+    color: "Amarillo con detalles rojos",
+    tamaño: "16 cm aprox.",
+    beneficios: "Alta respuesta sonora; ideal para liberar estrés y ansiedad.",
   },
   {
     nombre: "Pelota Puntas",
     precio: 10000,
     imagenes: [rutaBasePerrosJug + "Pelota_puntas_jug_dog.jpg"],
+    descripcion:
+      "Pelota versátil de alto rebote con puntas suaves, diseñada para juegos de lanzar y capturar en cualquier espacio.",
+    material: "Goma maciza resistente.",
+    textura: "Puntas romas que proporcionan un masaje constante en las encías.",
+    color: "Azul vibrante",
+    tamaño: "7 cm (Diámetro)",
+    beneficios: "Promueve la salud oral y el ejercicio cardiovascular.",
   },
   {
     nombre: "Pelota Maciza Medinana",
@@ -124,6 +146,13 @@ const juguetesPerros = [
       rutaBasePerrosJug + "Pelota_maciza_mediana_jug_dog_02.jpg",
       rutaBasePerrosJug + "Pelota_maciza_mediana_jug_dog_01.jpg",
     ],
+    descripcion:
+      "Pelota de goma de alta resistencia, perfecta para perros con mordida fuerte y juegos intensos de lanzar y capturar.",
+    material: "Caucho macizo, no tóxico y duradero.",
+    textura: "Goma lisa y compacta para un rebote potente.",
+    color: "Verde lima vibrante",
+    tamaño: "Mediano (aprox. 7 cm)",
+    beneficios: "Fomenta el ejercicio, es ideal para la estimulación física.",
   },
   {
     nombre: "Pelota Mina Chillona Grande 9 CM",
@@ -132,11 +161,26 @@ const juguetesPerros = [
       rutaBasePerrosJug + "Pelota_mina_chillona_grande_dog_jug_01.jpg",
       rutaBasePerrosJug + "Pelota_mina_chillona_grande_dog_jug_02.jpg",
     ],
+    descripcion:
+      "Una pelota grande y divertida con un sonido potente. Su forma única de mina facilita que tu mascota la agarre con la boca.",
+    material: "Vinilo suave pero resistente.",
+    textura: "Púas romas y grandes que proporcionan un masaje sensorial.",
+    color: "Azul eléctrico",
+    tamaño: "Grande (9 cm)",
+    beneficios:
+      "Estimulación auditiva de alto nivel, ideal para juegos interactivos.",
   },
   {
     nombre: "Pelota Encias",
     precio: 10000,
     imagenes: [rutaBasePerrosJug + "Pelota_encias_jug_dog_01.jpg"],
+    descripcion:
+      "Pelota diseñada pensando en la salud bucal de tu perro. Sus púas suaves ayudan a limpiar los dientes mientras juega.",
+    material: "Goma flexible y segura.",
+    textura: "Púas de goma flexibles para limpieza dental.",
+    color: "Azul vibrante",
+    tamaño: "7 cm (aprox.)",
+    beneficios: "Ayuda a la salud dental, reduce el estrés.",
   },
   {
     nombre: "Paleta para Refrigerar",
@@ -145,6 +189,13 @@ const juguetesPerros = [
       rutaBasePerrosJug + "Paleta_para_refrigerar_dog_jug_01.jpg",
       rutaBasePerrosJug + "Paleta_para_refrigerar_dog_jug_02.jpg",
     ],
+    descripcion:
+      "Juguete innovador que se puede llenar con agua y congelar, proporcionando alivio y frescura en días calurosos.",
+    material: "Goma resistente al frío y no tóxica.",
+    textura: "Variada: rugosa y con relieves para estimular la lengua.",
+    color: "Azul hielo con patrón de rombos",
+    tamaño: "14 cm (aprox.)",
+    beneficios: "Alivio para encías doloridas, refresca en verano.",
   },
   {
     nombre: "Oso Jalador",
@@ -153,12 +204,29 @@ const juguetesPerros = [
       rutaBasePerrosJug + "Oso_Jalador_jug_dog_01.jpg",
       rutaBasePerrosJug + "Oso_Jalador_jug_dog_02.jpg",
     ],
+    descripcion:
+      "Juguete multifuncional que combina un peluche suave, un cuerpo de caucho texturizado para morder y una cuerda resistente para juegos de tirar.",
+    material: "Peluche, caucho termoplástico (TPR) y cuerda de algodón.",
+    textura:
+      "Combinación de suavidad, relieves en el caucho y nudos de cuerda.",
+    color: "Azul con detalles en beige y blanco",
+    tamaño: "No especificado",
+    beneficios:
+      "Ideal para la limpieza dental y juegos interactivos de fuerza.",
   },
   {
     nombre: "Paquete de Pelotas por cinco",
     precio: 25000,
     imagenes: [rutaBasePerrosJug + "Paquete_pelotas_x5_jug_dog.jpg"],
+    descripcion:
+      "Set variado de cinco pelotas de diferentes deportes (fútbol, baloncesto, tenis, etc.), perfecto para mantener la novedad en el juego diario.",
+    material: "Diferentes densidades de caucho y fieltro sintético.",
+    textura: "Variada (lisa, rugosa y con costuras simuladas).",
+    color: "Multicolor",
+    tamaño: "Tamaño promedio de pelota de tenis",
+    beneficios: "Versatilidad de juego y excelente visibilidad en exteriores.",
   },
+
   {
     nombre: "Pelota Chillona",
     precio: 6000,
@@ -166,53 +234,132 @@ const juguetesPerros = [
       rutaBasePerrosJug + "Pelota_Chillona_dog_jug.jpg",
       rutaBasePerrosJug + "Pelota_Chillona_02_dog_jug.jpg",
     ],
+    descripcion:
+      "Pelota clásica con sonido integrado que se activa al morder. Su diseño imita una pelota de béisbol para un mejor agarre.",
+    material: "Vinilo resistente no tóxico.",
+    textura: "Lisa con grabados de costura para facilitar el cobro.",
+    color: "Naranja vibrante",
+    tamaño: "No especificado",
+    beneficios:
+      "Estimulación auditiva que mantiene el interés de la mascota por más tiempo.",
   },
   {
     nombre: "Pelota Asteroide",
     precio: 14000,
     imagenes: [rutaBasePerrosJug + "Pelota_asteroide_dog_jug_01.jpg"],
+    descripcion:
+      "Pelota de diseño irregular con múltiples puntas romas que generan un rebote impredecible, desafiando los reflejos de tu mascota.",
+    material: "Caucho macizo de alta durabilidad.",
+    textura: "Puntas redondeadas de gran relieve.",
+    color: "Morado",
+    tamaño: "No especificado",
+    beneficios:
+      "Masajea las encías durante el juego y promueve el ejercicio intenso.",
   },
   {
     nombre: "Muslo Macizo",
     precio: 7600,
     imagenes: [rutaBasePerrosJug + "Muslo_dog_jug.jpg"],
+    descripcion:
+      "Juguete de caucho resistente en forma de pierna de pollo con relieves que masajean las encías mientras el perro muerde.",
+    material: "Caucho macizo de alta resistencia.",
+    textura: "Superficie lisa con protuberancias romas distribuidas.",
+    color: "Beige / Crema",
+    tamaño: "Similar a un marcador Sharpie (aprox. 13 cm).",
+    beneficios:
+      "Excelente para perros con mordida fuerte y para la salud de las encías.",
   },
   {
     nombre: "Mordedor Cuerda Circular",
     precio: 9600,
     imagenes: [rutaBasePerrosJug + "Mordedor_cuerda_circular_dog_jug.jpg"],
+    descripcion:
+      "Aro rígido con texturas de huellas envuelto en cuerda de algodón multicolor, ideal para juegos de forcejeo y lanzamiento.",
+    material: "Plástico TPR y cuerda de algodón natural.",
+    textura: "Combinación de relieves circulares y trenzado de cuerda.",
+    color: "Rosa neón con cuerda multicolor.",
+    tamaño: "Diámetro mediano.",
+    beneficios:
+      "Ayuda a limpiar los dientes mediante la fricción con la cuerda.",
   },
   {
     nombre: "Mordedor Con Hueso Chillon",
     precio: 14000,
     imagenes: [rutaBasePerrosJug + "Mordedor_con_hueso_chillon_jug_dog.jpg"],
+    descripcion:
+      "Hueso de caucho azul con la frase 'GOOD DOG' que emite sonido al presionarlo, unido a una cuerda gruesa para mayor agarre.",
+    material: "Vinilo resistente y cuerda de fibra sintética.",
+    textura: "Goma lisa y cuerda trenzada suave.",
+    color: "Azul con cuerda multicolor.",
+    tamaño: "No especificado.",
+    beneficios: "Estimulación sonora y física en un solo juguete.",
   },
   {
     nombre: "Mazorca Chillona",
     precio: 9800,
     imagenes: [rutaBasePerrosJug + "Mazorca_chillona_dog_jug_01.jpg"],
+    descripcion:
+      "Juguete con forma de maíz que incluye un pito interno. Su diseño ergonómico facilita que la mascota lo cargue en la boca.",
+    material: "Látex o vinilo suave.",
+    textura: "Relieve que imita los granos de la mazorca.",
+    color: "Amarillo con hojas verdes.",
+    tamaño: "Pequeño / Mediano.",
+    beneficios:
+      "Material flexible ideal para cachorros o perros de mordida suave.",
   },
   {
-    nombre: "Llanta",
+    nombre: "Llanta de Goma Resistente",
     precio: 10800,
     imagenes: [rutaBasePerrosJug + "Llanta_jug_dog.jpg"],
-    descripcion: "",
+    descripcion:
+      "Mordedor clásico y ultra resistente con forma de neumático. Ideal para perros destructores, fomentando horas de masticación segura y entretenida.",
+    material: "Caucho macizo de alta resistencia y durabilidad.",
+    textura:
+      "Goma compacta con relieves marcados que simulan la huella de un neumático.",
+    color: "Azul eléctrico",
+    tamaño: "Mediano (aprox. 15 cm)",
+    beneficios:
+      "Excelente para perros con mordida fuerte y para ayudar a limpiar la placa bacteriana.",
   },
   {
     nombre: "Lazo Hueso",
     precio: 7400,
     imagenes: [rutaBasePerrosJug + "Lazo_hueso_jug_dog.jpg"],
-    descripcion: "",
+    descripcion:
+      "Combinación dinámica para jugar: un hueso de goma texturizada en el centro, ideal para morder, unido a extremos de cuerda trenzada para juegos de fuerza.",
+    material:
+      "Cuerpo de caucho termoplástico (TPR) y cuerda trenzada de algodón.",
+    textura: "Goma flexible con relieves sensoriales y cuerda trenzada gruesa.",
+    color: "Azul transparente / Cuerda multicolor",
+    tamaño: "Aproximadamente 25 cm (largo total)",
+    beneficios:
+      "Fortalece la mandíbula y ayuda a limpiar los dientes mediante la fricción con la cuerda.",
   },
   {
-    nombre: "Dona",
+    nombre: "Dona Chillona Antiestrés",
     precio: 19000,
     imagenes: [rutaBasePerrosJug + "Dona_jug_dog.jpg"],
+    descripcion:
+      "Adorable mordedor en forma de dona con 'sprinkles' de colores. Emite un sonido divertido al presionarlo, manteniendo la atención de tu mascota.",
+    material: "Vinilo suave y flexible, seguro para la salud de tu mascota.",
+    textura:
+      "Superficie lisa y blanda, fácil de morder incluso para mascotas pequeñas.",
+    color: "Rosa con detalles de colores",
+    tamaño: "Pequeño / Mediano (aprox. 12 cm)",
+    beneficios:
+      "Estimulación auditiva y física en un diseño llamativo; ideal para cachorros.",
   },
   {
     nombre: "Cuerda Pelota Pequeña",
     precio: 7400,
     imagenes: [rutaBasePerrosJug + "Cuerda_pelota_pequeña_dog_jug.jpg"],
+    descripcion:
+      "Nudo de cuerda grueso y resistente, diseñado para juegos de 'tira y afloja' o para lanzar. Perfecto para gatos y perros de raza pequeña.",
+    material: "Cuerda de algodón natural trenzado de alta densidad.",
+    textura: "Rústica y porosa, excelente para que los dientes penetren.",
+    color: "Verde neón vibrante con cuerda natural",
+    tamaño: "Nudo de 7 cm aprox. + cuerda de agarre",
+    beneficios: "Fomenta el ejercicio y la salud oral de forma 100% natural.",
   },
   {
     nombre: "Ardilla Chillona",

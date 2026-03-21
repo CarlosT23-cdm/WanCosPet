@@ -127,6 +127,18 @@ nav {
 }
 
 /* --- 4. GRID DE PRODUCTOS --- */
+.producto-info h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #5e1717;
+  text-align: center;
+}
+
+.item-precio {
+  color: blue;
+}
+
 .grid-productos {
   display: grid;
   grid-template-columns: repeat(
@@ -162,14 +174,11 @@ nav {
 .producto-info {
   padding: 15px;
   text-align: left;
-
-  /* 1. Definimos el tamaño mínimo */
-  min-height: 380px; /* Ajusta este valor (350px a 400px suele funcionar bien) */
-
-  /* 2. Convertimos en contenedor flex para alinear el contenido */
+  min-height: 630px; /* Asegúrate de que este alto sea suficiente */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /* <--- CAMBIA ESTO: Esto empuja el precio al fondo */
+  gap: 10px;
 }
 
 .producto-info button {
@@ -190,6 +199,15 @@ nav {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.price {
+  font-size: 1.2rem;
+  color: #ff914d;
+  font-weight: 800;
+  margin-top: auto; /* <--- Ahora esto sí funcionará como un imán al fondo */
+  padding-top: 10px;
+  border-top: 1px dashed #eee;
 }
 
 /* --- CARRITO --- */
