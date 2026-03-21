@@ -83,6 +83,7 @@ function renderLista(idContenedor, lista, nombreGaleria) {
 
       return `
     <article class="producto">
+    
         <a data-fancybox="${nombreGaleria}" href="${imgPrincipal}">
             <img src="${imgPrincipal}" alt="${p.nombre}">
         </a>
@@ -101,6 +102,16 @@ function renderLista(idContenedor, lista, nombreGaleria) {
 
             <div class="price">
                 <strong>Precio:</strong> $${p.precio.toLocaleString()} COP
+            </div>
+
+            <div class="producto-acciones" style="display: flex; gap: 10px; margin-top: 15px; justify-content: center;">
+                <button class="btn-carrito" onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})">
+                    Añadir al carrito
+                </button>
+                
+                <button class="${claseBtn}" onclick="toggleFavorito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio}, '${imgPrincipal}')">
+                    ${icono}
+                </button>
             </div>
         </div>
     </article>

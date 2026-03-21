@@ -143,7 +143,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(
     auto-fill,
-    minmax(250px, 1fr)
+    minmax(300px, 1fr)
   ); /*Cambiando auto-fit por auto.fill las imágenes ya no se distorsionan*/
   padding: 20px;
   max-width: 1200px;
@@ -174,7 +174,7 @@ nav {
 .producto-info {
   padding: 15px;
   text-align: left;
-  min-height: 470px;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -193,6 +193,9 @@ nav {
 .producto-detalles-texto p {
   margin-bottom: 12px; /* Ajusta este valor según el espacio que desees */
   line-height: 1.4; /* Esto también ayuda a que el texto no se vea amontonado */
+  flex-grow: 1; /* Esto le dice a la descripción: "Ocupa todo el espacio que puedas" */
+  display: flex;
+  flex-direction: column;
 }
 
 .producto-info button {

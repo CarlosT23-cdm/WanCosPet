@@ -1494,7 +1494,7 @@ const productosDosEspeciesAcc = [
     imagenes: [
       rutaBaseGatosPerrosAcc + "Cepillo_para_baño_dispensador_shampoo_01.jpg",
     ],
-    description:
+    descripcion:
       "Cepillo de silicona que almacena shampoo en su interior y lo libera mientras masajeas a tu mascota durante el baño.",
     material: "Silicona suave de grado médico.",
     textura: "Cerdas de goma flexibles.",
