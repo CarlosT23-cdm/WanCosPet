@@ -1323,6 +1323,13 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc + "Collar_reflectivo_rojo_acc_cat_dog_01.jpg",
       rutaBaseGatosPerrosAcc + "Collar_reflectivo_negro_acc_cat_dog_01.jpg",
     ],
+    descripcion:
+      "Collar de seguridad con banda reflectiva de alta visibilidad para paseos nocturnos. Incluye broche de liberación rápida y cascabel opcional.",
+    material: "Nylon con cinta reflectiva.",
+    textura: "Tejido firme y suave.",
+    color: "Rojo / Negro",
+    tamaño: "Ajustable para gatos y perros pequeños.",
+    beneficios: "Aumenta la seguridad en la oscuridad y es muy ligero.",
   },
   {
     nombre: "Comedero Acero Inoxidable",
@@ -1331,6 +1338,13 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc + "Comedero_acero_inoxidable_acc_dog_01.jpg",
       rutaBaseGatosPerrosAcc + "Comedero_acero_inoxidable_acc_dog_02.jpg",
     ],
+    descripcion:
+      "Tazón clásico de acero inoxidable, resistente a la corrosión y libre de bacterias. Base estable para evitar que se deslice mientras tu mascota come.",
+    material: "Acero inoxidable pulido.",
+    textura: "Lisa de fácil limpieza.",
+    color: "Plateado",
+    tamaño: "Estándar",
+    beneficios: "Máxima higiene y durabilidad de por vida.",
   },
   {
     nombre: "Collar Camuflado",
@@ -1339,6 +1353,13 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc + "Collar_tono_camuflado_dog_cat.jpg",
       rutaBaseGatosPerrosAcc + "Collar_tono_degradado_acc_dog_cat.jpg",
     ],
+    descripcion:
+      "Collar con diseño militar moderno. Fabricado con materiales resistentes para aguantar el ritmo de las mascotas más aventureras.",
+    material: "Nylon reforzado.",
+    textura: "Cinta tejida resistente.",
+    color: "Verde Camuflaje",
+    tamaño: "Ajustable",
+    beneficios: "Resistente a tirones y con estilo aventurero.",
   },
   {
     nombre: "Collar Degradado",
@@ -1346,11 +1367,26 @@ const productosDosEspeciesAcc = [
     imagenes: [
       rutaBaseGatosPerrosAcc + "Collar_tono_degradado_acc_dog_cat.jpg",
     ],
+    descripcion:
+      "Collar con acabado en degradado de colores vibrantes. Una opción única y estética para que tu mascota destaque en el parque.",
+    material: "Poliéster suave de alta densidad.",
+    textura: "Sedosa al tacto.",
+    color: "Multicolor degradado",
+    tamaño: "Ajustable",
+    beneficios: "Diseño exclusivo y suavidad para el cuello de la mascota.",
   },
   {
     nombre: "Cama Eco Granade",
     precio: 60000,
     imagenes: [rutaBaseGatosPerrosAcc + "Cama_Eco_62cm_acc_dog_cat.jpg"],
+    descripcion:
+      "Cama ecológica de amplio espacio, diseñada para brindar un descanso profundo. Su base acolchada se adapta a la forma de la mascota para mayor confort.",
+    material:
+      "Textil reciclado de alta resistencia y relleno de fibra siliconada.",
+    textura: "Suave y térmica.",
+    color: "Gris con detalles oscuros",
+    tamaño: "62 cm",
+    beneficios: "Sostenible, fácil de lavar y ultra cómoda.",
   },
 
   {
@@ -1362,6 +1398,13 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc +
         "Guacal_Grande_de_45largo_33ancho_30alto_acc_dog_cat_02.jpg",
     ],
+    descripcion:
+      "Transportador espacioso y seguro para viajes largos o visitas al veterinario. Cuenta con rejillas de ventilación óptimas en los laterales.",
+    material: "Plástico rígido de alta densidad.",
+    textura: "Rígida.",
+    color: "Azul y Gris",
+    tamaño: "45 cm largo x 33 cm ancho x 30 cm alto",
+    beneficios: "Seguridad garantizada y excelente flujo de aire.",
   },
   {
     nombre: "Guacal Mediano",
@@ -1372,6 +1415,13 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc +
         "Guacal_Mediano_de_35largo_28ancho_30alto_acc_dog_cat_02.jpg",
     ],
+    descripcion:
+      "Guacal de tamaño intermedio ideal para gatos adultos o perros de raza pequeña. Estructura robusta con cierre de seguridad frontal.",
+    material: "Polímero resistente.",
+    textura: "Rígida.",
+    color: "Verde y Gris",
+    tamaño: "35 cm largo x 28 cm ancho x 30 cm alto",
+    beneficios: "Ligero de transportar y fácil de armar.",
   },
   {
     nombre: "Guacal Pequeño",
@@ -1386,6 +1436,13 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc +
         "Guacal_Pequeno_de_36largo_25ancho_24alto_acc_dog_cat_04.jpg",
     ],
+    descripcion:
+      "Transportador compacto perfecto para cachorros o gatitos jóvenes. Diseño ergonómico para un traslado manual cómodo.",
+    material: "Plástico resistente no tóxico.",
+    textura: "Rígida.",
+    color: "Rojo / Azul / Verde",
+    tamaño: "36 cm largo x 25 cm ancho x 24 cm alto",
+    beneficios: "Ideal para trayectos cortos y fácil de guardar.",
   },
   {
     nombre: "Pala Gramera",
@@ -1394,6 +1451,13 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc + "Pala_Gramera_01_acc_dod_cat.jpg",
       rutaBaseGatosPerrosAcc + "Pala_Gramera_02_acc_dod_cat.jpg",
     ],
+    descripcion:
+      "Herramienta de precisión para medir la ración exacta de alimento. Incluye báscula digital integrada en el mango.",
+    material: "Plástico ABS de grado alimenticio.",
+    textura: "Lisa con pantalla digital.",
+    color: "Blanco",
+    tamaño: "Estándar",
+    beneficios: "Evita el sobrepeso controlando las porciones exactas.",
   },
   {
     nombre: "Comedero Metalico Estampado",
@@ -1402,6 +1466,13 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc + "Comedero_metalico_estampado_22cm_01.jpg",
       rutaBaseGatosPerrosAcc + "Comedero_metalico_estampado_22cm_03.jpg",
     ],
+    descripcion:
+      "Plato de acero con decoraciones laterales. Combina la resistencia del metal con un diseño estético para el hogar.",
+    material: "Acero inoxidable con recubrimiento externo.",
+    textura: "Lisa.",
+    color: "Estampado variado",
+    tamaño: "22 cm de diámetro",
+    beneficios: "Antioxidante y base con mayor estabilidad.",
   },
   {
     nombre: "Pistola Para Pildoras",
@@ -1409,6 +1480,13 @@ const productosDosEspeciesAcc = [
     imagenes: [
       rutaBaseGatosPerrosAcc + "Pistola_para_pildoras_acc_cat_dog_01.jpg",
     ],
+    descripcion:
+      "Dispositivo práctico para suministrar medicamentos orales sin lastimar a la mascota ni arriesgar tus dedos.",
+    material: "Plástico y punta de silicona suave.",
+    textura: "Lisa y flexible en la punta.",
+    color: "Verde / Azul",
+    tamaño: "15 cm",
+    beneficios: "Facilita la medicación y reduce el estrés del animal.",
   },
   {
     nombre: "Cepillo Para Baño Dispensador Shampoo",
@@ -1416,6 +1494,13 @@ const productosDosEspeciesAcc = [
     imagenes: [
       rutaBaseGatosPerrosAcc + "Cepillo_para_baño_dispensador_shampoo_01.jpg",
     ],
+    description:
+      "Cepillo de silicona que almacena shampoo en su interior y lo libera mientras masajeas a tu mascota durante el baño.",
+    material: "Silicona suave de grado médico.",
+    textura: "Cerdas de goma flexibles.",
+    color: "Amarillo / Azul / Rosa",
+    tamaño: "Estándar",
+    beneficios: "Limpieza profunda y ahorro de shampoo.",
   },
   {
     nombre: "Cepillo Boton Limpieza",
@@ -1428,6 +1513,13 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc +
         "Cepillo_con_boron_de_limpieza_acc_dog_cat_01.jpg",
     ],
+    descripcion:
+      "Carda retráctil profesional. Con solo presionar el botón, el pelo acumulado se desprende automáticamente del cepillo.",
+    material: "Plástico y cerdas de acero inoxidable.",
+    textura: "Cerdas finas con puntas protegidas.",
+    color: "Gris / Azul",
+    tamaño: "Grande",
+    beneficios: "Elimina nudos y pelo muerto sin esfuerzo.",
   },
   {
     nombre: "Cepillo Vapor",
@@ -1437,6 +1529,13 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc + "Cepillo_Vapor_acc_dog_y_cat_01.jpg",
       rutaBaseGatosPerrosAcc + "Cepillo_Vapor_acc_dog_y_cat_03.jpg",
     ],
+    descripcion:
+      "Innovador cepillo 3 en 1 que utiliza vapor de agua para desinfectar, limpiar y peinar el pelaje de forma suave.",
+    material: "Plástico y silicona.",
+    textura: "Cerdas de silicona con salida de vapor.",
+    color: "Amarillo / Verde",
+    tamaño: "Compacto",
+    beneficios: "Elimina olores y deja el pelaje brillante.",
   },
   {
     nombre: "Bolsas Biodegradable por Seis",
@@ -1445,6 +1544,13 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc +
         "Bolsas_repuesto_paquete_dog_y_dat_x6_acc_01.jpg",
     ],
+    descripcion:
+      "Paquete de repuesto de bolsas para recolección de desechos. Amigables con el medio ambiente.",
+    material: "Plástico biodegradable.",
+    textura: "Delgada y resistente.",
+    color: "Verde / Negro",
+    tamaño: "6 rollos",
+    beneficios: "Resistentes a goteos y eco-amigables.",
   },
   {
     nombre: "Comederos Flor",
@@ -1454,6 +1560,13 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_01.jpg",
       rutaBaseGatosPerrosAcc + "Comedero_flor_dog_y_cat_acc_02.jpg",
     ],
+    descripcion:
+      "Plato con diseño de flor que permite colocar agua o alimento en compartimentos separados.",
+    material: "Plástico de alta resistencia.",
+    textura: "Lisa.",
+    color: "Azul / Rosa / Verde",
+    tamaño: "Pequeño",
+    beneficios: "Diseño divertido y fácil de lavar.",
   },
   {
     nombre: "Bolsas Biodegradable por Tres",
@@ -1461,6 +1574,13 @@ const productosDosEspeciesAcc = [
     imagenes: [
       rutaBaseGatosPerrosAcc + "Bolsas_repuesto_x3_acc_dog_y_dat_01.jpg",
     ],
+    descripcion:
+      "Paquete compacto de bolsas para desechos. Ideal para llevar en el dispensador de paseo.",
+    material: "Plástico biodegradable.",
+    textura: "Resistente.",
+    color: "Verde",
+    tamaño: "3 rollos",
+    beneficios: "Prácticas para el uso diario.",
   },
   {
     nombre: "Vaso medidor de alimentos",
@@ -1469,6 +1589,13 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc + "Vaso_medidor_de_alimentos_acc_dog_01.jpg",
       rutaBaseGatosPerrosAcc + "Vaso_medidor_de_alimentos_acc_dog_02.jpg",
     ],
+    descripcion:
+      "Vaso graduado para servir la cantidad justa de concentrado. Ayuda a mantener la dieta balanceada de tu mascota.",
+    material: "Plástico transparente.",
+    textura: "Rígida con marcas de medición.",
+    color: "Transparente",
+    tamaño: "250 ml",
+    beneficios: "Precisión en la alimentación y bajo costo.",
   },
 ];
 
