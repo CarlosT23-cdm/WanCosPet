@@ -4,6 +4,7 @@
 let carrito = JSON.parse(localStorage.getItem("wancos_carrito_v1") || "[]");
 let favoritos = JSON.parse(localStorage.getItem("wancos_favoritos") || "[]");
 
+
 document.addEventListener("DOMContentLoaded", () => {
   // Inicializar funciones clave
   configurarBuscador();
@@ -278,19 +279,79 @@ function toggleCarrito() {
 }
 
 function enviarPedidoWhatsApp() {
-  if (carrito.length === 0) return alert("El carrito está vacío.");
-  let msg = `📦 PEDIDO WANCOS PET:\n`;
-  carrito.forEach(
-    (i) => (msg += `✅ ${i.producto} - $${i.precio.toLocaleString()}\n`),
-  );
-  window.open(
-    `https://api.whatsapp.com/send?phone=573022375413&text=${encodeURIComponent(msg)}`,
-    "_blank",
-  );
+  // 1. Obtener valores de los inputs
+  const nombre = document.getElementById("nombre-cliente").value;
+  const direccion = document.getElementById("direccion-cliente").value;
+  const pago = document.getElementById("metodo-pago").value;
+
+  // 2. Validaciones Administrativas
+  if (!nombre || !direccion) {
+    alert("Por favor, completa tu nombre y dirección.");
+    return;
+  }
+  if (carrito.length === 0) {
+    alert("El carrito está vacío.");
+    return;
+  }
+
+  // 3. Construir el cuerpo del mensaje (Unificado)
+  let textoFinal = `*📦 NUEVO PEDIDO WANCOS PET*%0A%0A`;
+  textoFinal += `*Cliente:* ${nombre}%0A`;
+  textoFinal += `*Dirección:* ${direccion}%0A`;
+  textoFinal += `*Pago:* ${pago}%0A`;
+  textoFinal += `--------------------------%0A`;
+  textoFinal += `*Productos:*%0A`;
+
+  // 4. Recorrer el carrito (usando la variable global 'carrito')
+  carrito.forEach((item) => {
+    textoFinal += `✅ ${item.producto} - $${item.precio.toLocaleString()}%0A`;
+  });
+
+  // 5. Calcular Total
+  const total = carrito.reduce((acc, item) => acc + item.precio, 0);
+  textoFinal += `--------------------------%0A`;
+  textoFinal += `*TOTAL: $${total.toLocaleString()}*%0A%0A`;
+  textoFinal += `_Enviado desde la tienda virtual_`;
+
+  // 6. Abrir WhatsApp (Usando encodeURI para seguridad)
+  const url = `https://api.whatsapp.com/send?phone=573022375413&text=${textoFinal}`;
+  window.open(url, "_blank");
 }
 
 function initFancybox() {
   if (typeof Fancybox !== "undefined") {
     Fancybox.bind("[data-fancybox]", { infinite: true });
   }
+}
+
+// --- LÓGICA PARA CERRAR EL CARRITO AL HACER CLIC AFUERA ---
+document.addEventListener("click", (event) => {
+  const sidebar = document.getElementById("sidebarCarrito");
+  const botonFlotante = document.querySelector(".carrito");
+
+  if (sidebar.classList.contains("active")) {
+    if (
+      !sidebar.contains(event.target) &&
+      !botonFlotante.contains(event.target) &&
+      !event.target.closest(".btn-carrito") &&
+      !event.target.closest(".btn-eliminar")
+    ) {
+      // AGREGAMOS ESTA LÍNEA
+
+      sidebar.classList.remove("active");
+    }
+  }
+});
+
+// Funciones para los pasos del carrito
+function mostrarFormulario() {
+  document.getElementById("lista-carrito").style.display = "none";
+  document.getElementById("paso-1-carrito").style.display = "none";
+  document.getElementById("paso-2-datos").style.display = "block";
+}
+
+function volverAProductos() {
+  document.getElementById("lista-carrito").style.display = "block";
+  document.getElementById("paso-1-carrito").style.display = "block";
+  document.getElementById("paso-2-datos").style.display = "none";
 }

@@ -257,9 +257,9 @@ nav {
 .sidebar-carrito {
   position: fixed;
   top: 20px; /* Separado del borde superior en escritorio */
-  right: -400px; /* Oculto fuera de pantalla */
-  width: 350px;
-  max-height: 80vh; /* Para que no ocupe toda la altura y se vea flotante */
+  right: -500px; /* Oculto fuera de pantalla */
+  width: 450px;
+  max-height: 95vh; /* Para que no ocupe toda la altura y se vea flotante */
   background: #ffffff;
   z-index: 9999;
   border-radius: 20px; /* Bordes redondeados para efecto premium */
@@ -302,6 +302,7 @@ nav {
   padding: 20px;
   flex-grow: 1;
   overflow-y: auto;
+  max-height: 400px;
 }
 
 /* Estilo de cada producto dentro del carrito */
@@ -346,6 +347,7 @@ nav {
 }
 
 .footer-carrito {
+  margin-top: auto;
   padding: 20px;
   background: #fafafa;
   border-top: 1px solid #eee;
@@ -432,9 +434,11 @@ nav {
 
   /* Botón carrito flotante */
   .carrito {
-    bottom: 20px;
-    right: 20px;
-    padding: 12px 18px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10001 !important; 
+    transform: scale(0.85);
   }
 
   /* Bandeja carrito (Ocupa todo en móvil) */
