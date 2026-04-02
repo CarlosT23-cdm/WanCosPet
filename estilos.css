@@ -437,7 +437,7 @@ nav {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    z-index: 10001 !important; 
+    z-index: 10001 !important;
     transform: scale(0.85);
   }
 
@@ -520,6 +520,30 @@ nav {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/*Boton de videos*/
+.btn-video-flotante {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 5;
+  background: #ff914d;
+  color: white !important;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+.btn-video-flotante:hover {
+  background: #ff4d4d;
+  transform: scale(1.05);
+}
+
 .btn-favorito.activo {
   background: #ff4d4d;
   border-color: #ff4d4d;
@@ -568,4 +592,26 @@ nav {
   height: 250px;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
+}
+
+/* Descripción dentro de Fancybox */
+.fancy-descripcion {
+  padding: 20px;
+  background: rgba(40, 40, 40, 0.9); /* Gris minimalista con transparencia */
+  color: white;
+  border-radius: 10px;
+  max-width: 300px;
+}
+
+.fancy-descripcion h4 {
+  color: #ff914d;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Forzar que el video ocupe el espacio correcto */
+.fancybox__content video {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
 }

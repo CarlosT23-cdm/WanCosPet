@@ -4,7 +4,6 @@
 let carrito = JSON.parse(localStorage.getItem("wancos_carrito_v1") || "[]");
 let favoritos = JSON.parse(localStorage.getItem("wancos_favoritos") || "[]");
 
-
 document.addEventListener("DOMContentLoaded", () => {
   // Inicializar funciones clave
   configurarBuscador();
@@ -68,55 +67,72 @@ function renderLista(idContenedor, lista, nombreGaleria) {
   if (!cont || !lista) return;
 
   cont.innerHTML = lista
-    .map((p) => {
+    .map((p, index) => {
       const esFav = favoritos.some((f) => f.nombre === p.nombre);
       const icono = esFav ? "❤️" : "🤍";
       const claseBtn = esFav ? "btn-favorito activo" : "btn-favorito";
       const imgPrincipal = p.imagenes[0];
 
-      // Generamos las imágenes ocultas para Fancybox
+      // Mantenemos el ID único por producto para un carrusel organizado
+      const galeriaID = `prod-${index}-${nombreGaleria}`;
+
+      // DISEÑO MINIMALISTA: Preparamos la descripción para que aparezca en el carrusel
+      const captionHtml = `
+        <div class="fancy-descripcion">
+          <h4>${p.nombre}</h4>
+          <p>${p.descripcion}</p>
+          <span>Precio: $${p.precio.toLocaleString()} COP</span>
+        </div>
+      `;
+
+      // Lógica de Video: Forzamos el reconocimiento del formato mp4
+      let htmlVideo = "";
+      if (p.video) {
+        htmlVideo = `
+          <a href="${p.video.trim()}" 
+             data-fancybox="${galeriaID}" 
+             data-type="html5video" 
+             data-caption='${captionHtml}'
+             class="btn-video-flotante">
+             <i class="fas fa-play-circle"></i> Ver Video
+          </a>`;
+      }
+
       const imagenesOcultas = p.imagenes
         .slice(1)
         .map((imgExtra) => {
-          return `<a data-fancybox="${nombreGaleria}" href="${imgExtra}" style="display:none;"></a>`;
+          return `<a data-fancybox="${galeriaID}" data-caption='${captionHtml}' href="${imgExtra}" style="display:none;"></a>`;
         })
         .join("");
 
       return `
-    <article class="producto">
-    
-        <a data-fancybox="${nombreGaleria}" href="${imgPrincipal}">
+    <article class="producto" style="position: relative;"> 
+        ${htmlVideo}
+        <a data-fancybox="${galeriaID}" data-caption='${captionHtml}' href="${imgPrincipal}">
             <img src="${imgPrincipal}" alt="${p.nombre}">
         </a>
         ${imagenesOcultas}
-        
         <div class="producto-info">
             <div class="producto-detalles-texto">
                 <h3>${p.nombre}</h3>
                 <p><strong>Descripción:</strong> ${p.descripcion}</p>
                 <p><strong>Material:</strong> ${p.material || "No especificado"}</p>
-                <p><strong>Textura:</strong> ${p.textura || "No especificado"}</p>
                 <p><strong>Color:</strong> ${p.color || "No especificado"}</p>
                 <p><strong>Tamaño:</strong> ${p.tamaño || "No especificado"}</p>
-                <p><strong>Beneficios:</strong> ${p.beneficios || "No especificado"}</p>
             </div>
-
             <div class="price">
                 <strong>Precio:</strong> $${p.precio.toLocaleString()} COP
             </div>
-
             <div class="producto-acciones" style="display: flex; gap: 10px; margin-top: 15px; justify-content: center;">
                 <button class="btn-carrito" onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})">
                     Añadir al carrito
                 </button>
-                
                 <button class="${claseBtn}" onclick="toggleFavorito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio}, '${imgPrincipal}')">
                     ${icono}
                 </button>
             </div>
         </div>
-    </article>
-`;
+    </article>`;
     })
     .join("");
 }
@@ -319,8 +335,15 @@ function enviarPedidoWhatsApp() {
 }
 
 function initFancybox() {
+  // Mantenemos tu validación de seguridad original
   if (typeof Fancybox !== "undefined") {
-    Fancybox.bind("[data-fancybox]", { infinite: true });
+    Fancybox.bind("[data-fancybox]", {
+      infinite: true, // Tu configuración original
+      // Añadimos la configuración para que los videos se reproduzcan solos al abrirse
+      Html: {
+        videoAutoplay: true,
+      },
+    });
   }
 }
 

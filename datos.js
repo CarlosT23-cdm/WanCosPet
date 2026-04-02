@@ -743,6 +743,8 @@ const accesoriosPerros = [
     nombre: "Correa Retráctil",
     precio: 22000,
     imagenes: [rutaBasePerrosAcc + "Correa_retractil_acc_dog_01.jpg"],
+    video:
+      "./videos_tienda/Videos_accesorios_perros/Correa_retractil_negra_video_acc_dog.mp4",
     descripcion:
       "Sistema de cinta extensible con bloqueo de seguridad. Ofrece libertad de movimiento controlada durante los paseos en ciudad o campo.",
     material: "Carcasa de plástico y cinta de nylon.",
@@ -1529,6 +1531,8 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc + "Cepillo_Vapor_acc_dog_y_cat_01.jpg",
       rutaBaseGatosPerrosAcc + "Cepillo_Vapor_acc_dog_y_cat_03.jpg",
     ],
+    video:
+      "./videos_tienda/Videos_accesorios_perros_y_gatos/Cepillo_Vapor_video_01.mp4",
     descripcion:
       "Innovador cepillo 3 en 1 que utiliza vapor de agua para desinfectar, limpiar y peinar el pelaje de forma suave.",
     material: "Plástico y silicona.",
