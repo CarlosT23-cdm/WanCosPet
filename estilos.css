@@ -179,6 +179,7 @@ nav {
   flex-direction: column;
   justify-content: flex-start;
   gap: 10px;
+  height: 100%; /* Para que el producto ocupe toda la altura disponible, lo que ayuda a alinear los precios al fondo */
 }
 
 .price {
@@ -191,7 +192,7 @@ nav {
 }
 
 .producto-detalles-texto p {
-  margin-bottom: 12px; /* Ajusta este valor según el espacio que desees */
+  margin-bottom: 4px; /* Ajusta este valor según el espacio que desees */
   line-height: 1.4; /* Esto también ayuda a que el texto no se vea amontonado */
   flex-grow: 1; /* Esto le dice a la descripción: "Ocupa todo el espacio que puedas" */
   display: flex;
@@ -610,8 +611,76 @@ nav {
 }
 
 /* Forzar que el video ocupe el espacio correcto */
-.fancybox__content video {
-  width: 100%;
-  height: auto;
-  max-height: 80vh;
+
+/* Ajuste para que el texto en la ventana del video sea legible */
+
+.fancybox__content > video {
+  margin-bottom: 40px !important; /* Deja espacio para el texto abajo */
+}
+
+/* --- DISEÑO PERSONALIZADO FANCYBOX WANCOS --- */
+
+/* 1. Recuadro Rojo: Descripción a la izquierda con estilo minimalista */
+.fancybox__caption {
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  width: 350px !important; /* Espacio para el recuadro rojo */
+  height: 100%;
+  background: rgba(20, 20, 20, 0.95) !important; /* Fondo oscuro */
+  padding: 40px 20px !important;
+  text-align: left !important;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-right: 2px solid #ff914d; /* Línea naranja divisoria */
+}
+
+/* Estilo del Título (Naranja) y Texto (Blanco) dentro del caption */
+.fancybox__caption h4,
+.fancybox__caption strong {
+  color: #ff914d !important;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.fancybox__caption p {
+  color: #ffffff !important;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* 2. Recuadro Verde: Espacio para la imagen/video al centro */
+.fancybox__content {
+  margin-left: 350px !important; /* Deja espacio para la descripción roja */
+  background: transparent !important;
+}
+
+/* 3. Recuadro Azul: Miniaturas en la parte inferior */
+.fancybox__thumbs {
+  background: rgba(0, 0, 0, 0.5) !important;
+  padding: 10px 0 !important;
+}
+
+/* 4. Recuadros Amarillos: Mantener controles visibles */
+.fancybox__toolbar,
+.fancybox__nav {
+  color: #fff !important;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Ajuste para móviles: Si la pantalla es pequeña, volvemos al diseño normal */
+@media (max-width: 900px) {
+  .fancybox__caption {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    border-right: none;
+    border-top: 2px solid #ff914d;
+  }
+  .fancybox__content {
+    margin-left: 0 !important;
+  }
 }

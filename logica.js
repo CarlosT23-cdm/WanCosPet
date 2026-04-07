@@ -115,10 +115,12 @@ function renderLista(idContenedor, lista, nombreGaleria) {
         <div class="producto-info">
             <div class="producto-detalles-texto">
                 <h3>${p.nombre}</h3>
-                <p><strong>Descripción:</strong> ${p.descripcion}</p>
-                <p><strong>Material:</strong> ${p.material || "No especificado"}</p>
-                <p><strong>Color:</strong> ${p.color || "No especificado"}</p>
-                <p><strong>Tamaño:</strong> ${p.tamaño || "No especificado"}</p>
+                  <p><strong>Descripción:</strong> ${p.descripcion}</p>
+                  <p><strong>Material:</strong> ${p.material || "No especificado"}</p>
+                  <p><strong>Textura:</strong> ${p.textura || "No especificada"}</p>
+                  <p><strong>Color:</strong> ${p.color || "No especificado"}</p>
+                  <p><strong>Tamaño:</strong> ${p.tamaño || "No especificado"}</p>
+                  <p><strong>Beneficios:</strong> ${p.beneficios || "Consultar"}</p>
             </div>
             <div class="price">
                 <strong>Precio:</strong> $${p.precio.toLocaleString()} COP
@@ -335,13 +337,17 @@ function enviarPedidoWhatsApp() {
 }
 
 function initFancybox() {
-  // Mantenemos tu validación de seguridad original
   if (typeof Fancybox !== "undefined") {
     Fancybox.bind("[data-fancybox]", {
-      infinite: true, // Tu configuración original
-      // Añadimos la configuración para que los videos se reproduzcan solos al abrirse
-      Html: {
-        videoAutoplay: true,
+      infinite: true,
+      Html: { videoAutoplay: true },
+      // Recuadro Azul: Activamos las miniaturas abajo
+      Thumbs: {
+        autoStart: true,
+      },
+      // Configuramos el layout para que el caption (Rojo) sea visible
+      Carousel: {
+        Panzoom: { touch: false },
       },
     });
   }
