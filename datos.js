@@ -287,7 +287,7 @@ const juguetesPerros = [
     precio: 14000,
     imagenes: [rutaBasePerrosJug + "Mordedor_con_hueso_chillon_jug_dog.jpg"],
     descripcion:
-      "Hueso de caucho azul con la frase 'GOOD DOG' que emite sonido al presionarlo, unido a una cuerda gruesa para mayor agarre.",
+      "Hueso de caucho azul con la frase GOOD DOG que emite sonido al presionarlo, unido a una cuerda gruesa para mayor agarre.",
     material: "Vinilo resistente y cuerda de fibra sintética.",
     textura: "Goma lisa y cuerda trenzada suave.",
     color: "Azul con cuerda multicolor.",
