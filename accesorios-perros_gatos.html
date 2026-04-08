@@ -64,10 +64,12 @@
       <ul id="lista-carrito"></ul>
 
       <div class="footer-carrito">
-        <div id="total-carrito"></div>
-        <div class="footer-carrito">
-          <div id="total-carrito"></div>
+        <div
+          id="total-carrito"
+          style="font-weight: bold; margin-bottom: 15px; text-align: center"
+        ></div>
 
+        <div id="paso-1-carrito">
           <button
             onclick="vaciarCarrito()"
             style="
@@ -84,8 +86,115 @@
             <i class="fas fa-trash-alt"></i> Vaciar Carrito
           </button>
 
-          <button onclick="enviarPedidoWhatsApp()" class="btn-whatsapp">
+          <button
+            onclick="mostrarFormulario()"
+            style="
+              width: 100%;
+              background: #ff914d;
+              color: white;
+              border: none;
+              padding: 12px;
+              border-radius: 8px;
+              font-weight: bold;
+              cursor: pointer;
+            "
+          >
+            Siguiente: Datos de Envío <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <div id="paso-2-datos" style="display: none">
+          <h4
+            style="
+              margin-bottom: 10px;
+              border-bottom: 1px solid #ddd;
+              color: #333;
+            "
+          >
+            Datos de Entrega
+          </h4>
+
+          <input
+            type="text"
+            id="nombre-cliente"
+            placeholder="Nombre completo"
+            style="
+              width: 100%;
+              margin-bottom: 10px;
+              padding: 10px;
+              border-radius: 8px;
+              border: 1px solid #ccc;
+              box-sizing: border-box;
+            "
+          />
+
+          <input
+            type="text"
+            id="direccion-cliente"
+            placeholder="Dirección y Barrio"
+            style="
+              width: 100%;
+              margin-bottom: 10px;
+              padding: 10px;
+              border-radius: 8px;
+              border: 1px solid #ccc;
+              box-sizing: border-box;
+            "
+          />
+
+          <label
+            style="
+              display: block;
+              margin-bottom: 5px;
+              font-size: 0.8rem;
+              color: #666;
+            "
+            >Método de Pago:</label
+          >
+          <select
+            id="metodo-pago"
+            style="
+              width: 100%;
+              margin-bottom: 15px;
+              padding: 10px;
+              border-radius: 8px;
+              border: 1px solid #ccc;
+              background: white;
+            "
+          >
+            <option value="Efectivo">💵 Efectivo (Contra entrega)</option>
+            <option value="Nequi">📱 Nequi</option>
+          </select>
+
+          <button
+            onclick="enviarPedidoWhatsApp()"
+            style="
+              width: 100%;
+              background-color: #25d366;
+              color: white;
+              border: none;
+              padding: 12px;
+              border-radius: 8px;
+              font-weight: bold;
+              cursor: pointer;
+            "
+          >
             <i class="fab fa-whatsapp"></i> Finalizar Compra
+          </button>
+
+          <button
+            onclick="volverAProductos()"
+            style="
+              background: none;
+              border: none;
+              color: #666;
+              width: 100%;
+              margin-top: 10px;
+              cursor: pointer;
+              font-size: 0.8rem;
+            "
+          >
+            ← Modificar Pedido
           </button>
         </div>
       </div>

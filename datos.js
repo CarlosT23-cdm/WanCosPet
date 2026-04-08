@@ -340,7 +340,7 @@ const juguetesPerros = [
     precio: 19000,
     imagenes: [rutaBasePerrosJug + "Dona_jug_dog.jpg"],
     descripcion:
-      "Adorable mordedor en forma de dona con 'sprinkles' de colores. Emite un sonido divertido al presionarlo, manteniendo la atención de tu mascota.",
+      "Adorable mordedor en forma de dona con sprinkles de colores. Emite un sonido divertido al presionarlo, manteniendo la atención de tu mascota.",
     material: "Vinilo suave y flexible, seguro para la salud de tu mascota.",
     textura:
       "Superficie lisa y blanda, fácil de morder incluso para mascotas pequeñas.",
@@ -354,7 +354,7 @@ const juguetesPerros = [
     precio: 7400,
     imagenes: [rutaBasePerrosJug + "Cuerda_pelota_pequeña_dog_jug.jpg"],
     descripcion:
-      "Nudo de cuerda grueso y resistente, diseñado para juegos de 'tira y afloja' o para lanzar. Perfecto para gatos y perros de raza pequeña.",
+      "Nudo de cuerda grueso y resistente, diseñado para juegos de tira y afloja o para lanzar. Perfecto para gatos y perros de raza pequeña.",
     material: "Cuerda de algodón natural trenzado de alta densidad.",
     textura: "Rústica y porosa, excelente para que los dientes penetren.",
     color: "Verde neón vibrante con cuerda natural",

@@ -148,6 +148,7 @@ nav {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
 .producto {
@@ -158,6 +159,7 @@ nav {
   display: flex;
   flex-direction: column;
   transition: transform 0.3s;
+  height: 100%; /* Para que todas las tarjetas tengan la misma altura, lo que ayuda a alinear los precios al fondo */
 }
 
 .producto:hover {
@@ -172,6 +174,7 @@ nav {
 }
 
 .producto-info {
+  flex-grow: 1;
   padding: 15px;
   text-align: left;
   min-height: 600px;
@@ -197,6 +200,7 @@ nav {
   flex-grow: 1; /* Esto le dice a la descripción: "Ocupa todo el espacio que puedas" */
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
 .producto-info button {
