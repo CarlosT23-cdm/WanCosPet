@@ -248,6 +248,22 @@ nav {
   border: 2px solid rgb(255, 72, 27);
   display: inline-flex;
 }
+.mensaje-float {
+  position: fixed;
+  z-index: 9999;
+  font-weight: bold;
+  color: #ff914d;
+  pointer-events: none;
+  animation: floatUp 0.8s ease forwards;
+}
+
+.carrito.glow {
+  box-shadow: 0 0 20px rgba(255, 145, 77, 0.9);
+  transition: box-shadow 0.3s ease;
+}
+.contador-animado {
+  animation: popContador 0.3s ease;
+}
 .rebote {
   animation: reboteCarrito 0.3s ease;
 }
@@ -256,8 +272,10 @@ nav {
   z-index: 9999;
   pointer-events: none;
   border-radius: 12px;
-  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform, top, left, width, opacity;
+
+  /* 🔥 ESTA ES LA CLAVE QUE TE FALTA */
+  transition: all 0.5s ease-out;
 }
 
 .carrito.vibrar {
@@ -777,5 +795,28 @@ footer {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes popContador {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(1.5);
   }
 }

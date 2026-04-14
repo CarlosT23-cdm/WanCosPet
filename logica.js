@@ -3,6 +3,8 @@
 // 1. Variables Globales de Estado
 let carrito = JSON.parse(localStorage.getItem("wancos_carrito_v1") || "[]");
 let favoritos = JSON.parse(localStorage.getItem("wancos_favoritos") || "[]");
+const audioPerro = new Audio("audios_tienda/ladrido_wanda_01.mp3");
+const audioGato = new Audio("audios_tienda/maullido_cosmo_01.mp3");
 
 document.addEventListener("DOMContentLoaded", () => {
   // Inicializar funciones clave
@@ -126,7 +128,7 @@ function renderLista(idContenedor, lista, nombreGaleria) {
                 <strong>Precio:</strong> $${p.precio.toLocaleString()} COP
             </div>
             <div class="producto-acciones" style="display: flex; gap: 10px; margin-top: 15px; justify-content: center;">
-                <button class="btn-carrito" onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio}, this)">
+                <button class="btn-carrito" onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio}, this, '${p.tipo}')">
                     Añadir al carrito
                 </button>
                 <button class="${claseBtn}" onclick="toggleFavorito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio}, '${imgPrincipal}')">
@@ -137,6 +139,15 @@ function renderLista(idContenedor, lista, nombreGaleria) {
     </article>`;
     })
     .join("");
+}
+function reproducirSonido(tipo) {
+  if (tipo === "perro") {
+    audioPerro.currentTime = 0;
+    audioPerro.play();
+  } else if (tipo === "gato") {
+    audioGato.currentTime = 0;
+    audioGato.play();
+  }
 }
 
 // === FAVORITOS ===
@@ -239,27 +250,36 @@ function configurarBuscador() {
 }
 
 // === CARRITO ===
-function agregarAlCarrito(producto, precio, boton) {
+function agregarAlCarrito(producto, precio, boton, tipo) {
   const tarjeta = boton.closest(".producto");
-  const img = tarjeta.querySelector("img");
+  const img = boton.closest(".producto").querySelector("img");
+  if (!img) {
+    console.error("No se encontró imagen");
+    return;
+  }
+  console.log(img);
 
   carrito.push({ producto, precio });
   localStorage.setItem("wancos_carrito_v1", JSON.stringify(carrito));
   actualizarVista();
 
-  animarCarrito();
-  volarAlCarrito(img); // 🔥 AHORA SÍ FUNCIONA
-}
+  // 🔥 ANIMACIONES
+  function animarCarrito() {
+    const carrito = document.querySelector(".carrito");
+    if (!carrito) return;
 
-function animarCarrito() {
-  const carrito = document.querySelector(".carrito");
-  if (!carrito) return;
+    carrito.classList.add("vibrar");
 
-  carrito.classList.add("vibrar");
+    setTimeout(() => {
+      carrito.classList.remove("vibrar");
+    }, 400);
+  }
+  volarAlCarrito(img);
+  reproducirSonido(tipo);
 
-  setTimeout(() => {
-    carrito.classList.remove("vibrar");
-  }, 400);
+  // 🔥 MENSAJE +1 (AQUÍ ES DONDE VA)
+  const rect = boton.getBoundingClientRect();
+  mostrarMensajeFloat(rect.left, rect.top);
 }
 
 function eliminarDelCarrito(index) {
@@ -401,11 +421,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (currentScroll > lastScroll) {
       // scroll hacia abajo → ocultar suave
-      carrito.style.transform = "translateY(120px)";
+      carrito.style.bottom = "-100px";
       carrito.style.opacity = "0";
     } else {
       // scroll hacia arriba → mostrar suave
-      carrito.style.transform = "translateY(0)";
+      carrito.style.bottom = "30px";
       carrito.style.opacity = "1";
     }
 
@@ -419,12 +439,12 @@ if (window.innerWidth > 768) {
 
   document.addEventListener("mousemove", (e) => {
     const carrito = document.querySelector(".carrito");
-    if (!carrito) return;
+    if (!carrito || carrito.classList.contains("animando")) return;
 
     const rect = carrito.getBoundingClientRect();
 
-    offsetX = (e.clientX - rect.left - rect.width / 2) * 0.05;
-    offsetY = (e.clientY - rect.top - rect.height / 2) * 0.05;
+    const offsetX = (e.clientX - rect.left - rect.width / 2) * 0.05;
+    const offsetY = (e.clientY - rect.top - rect.height / 2) * 0.05;
 
     carrito.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
   });
@@ -466,49 +486,77 @@ function volarAlCarrito(imgElemento) {
   const carrito = document.querySelector(".carrito");
   if (!carrito || !imgElemento) return;
 
+  carrito.classList.add("animando");
+
   const imgRect = imgElemento.getBoundingClientRect();
   const carritoRect = carrito.getBoundingClientRect();
 
   const img = imgElemento.cloneNode(true);
   img.classList.add("fly-img");
 
-  // Posición inicial
+  img.style.position = "fixed";
+  img.style.zIndex = "9999";
+  img.style.pointerEvents = "none";
+
   img.style.top = imgRect.top + "px";
   img.style.left = imgRect.left + "px";
   img.style.width = imgRect.width + "px";
 
   document.body.appendChild(img);
 
-  // 🔥 CURVA (control intermedio)
   const curvaX = (imgRect.left + carritoRect.left) / 2;
-  const curvaY = imgRect.top - 100; // sube primero
+  const curvaY = imgRect.top - 120;
 
+  // 🔥 AQUÍ ESTÁ LA MAGIA QUE PERDISTE
   setTimeout(() => {
     img.style.transition = "all 0.5s ease-out";
     img.style.left = curvaX + "px";
     img.style.top = curvaY + "px";
   }, 10);
 
-  // 🔥 ABSORCIÓN (entrada al carrito)
   setTimeout(() => {
     img.style.transition = "all 0.4s ease-in";
     img.style.top = carritoRect.top + "px";
     img.style.left = carritoRect.left + "px";
     img.style.width = "20px";
-    img.style.opacity = "0.3";
+    img.style.opacity = "0.2";
   }, 500);
 
-  // 🔥 REBOTE DEL CARRITO
   setTimeout(() => {
     carrito.classList.add("rebote");
+  }, 800);
 
-    setTimeout(() => {
-      carrito.classList.remove("rebote");
-    }, 300);
-  }, 850);
+  setTimeout(() => {
+    carrito.classList.remove("rebote");
+    carrito.classList.remove("animando");
+  }, 1100);
 
-  // Eliminar imagen
   setTimeout(() => {
     img.remove();
   }, 900);
+  console.log("IMG CLONADA:", img);
+  console.log("POSICIÓN INICIAL:", imgRect);
+  console.log("POSICIÓN CARRITO:", carritoRect);
+}
+
+function mostrarMensajeFloat(x, y) {
+  const msg = document.createElement("div");
+  msg.classList.add("mensaje-float");
+  msg.textContent = "+1";
+
+  msg.style.left = x + "px";
+  msg.style.top = y + "px";
+
+  document.body.appendChild(msg);
+
+  setTimeout(() => {
+    msg.remove();
+  }, 800);
+}
+function prueba() {
+  console.log("1");
+
+  noExiste();
+
+  console.log("2");
 }

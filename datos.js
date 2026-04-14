@@ -44,6 +44,7 @@ const juguetesPerros = [
     color: "Rosado pastel",
     tamaño: "15 - 20 cm",
     beneficios: "Sonido interactivo, ideal para cachorros",
+    tipo: "perro",
   },
 
   {
@@ -631,6 +632,7 @@ const accesoriosPerros = [
     color: "Gris",
     tamaño: "Estándar para rollos universales",
     beneficios: "Higiene y comodidad en un solo accesorio.",
+    tipo: "perro",
   },
   {
     nombre: "Correa Cinturon de Carro",
@@ -848,6 +850,7 @@ const juguetesGatos = [
     color: "Natural con detalles verdes",
     tamaño: "Estándar",
     beneficios: "Reduce el estrés y fomenta el ejercicio físico.",
+    tipo: "gato",
   },
   {
     nombre: "Pelota Astro Luminosa",
@@ -1177,6 +1180,7 @@ const accesoriosGatos = [
     color: "Gris y Negro",
     tamaño: "Diseño compacto para apartamentos.",
     beneficios: "Reduce el estrés y protege tus muebles.",
+    tipo: "gato",
   },
   {
     nombre: "Comedero Alto",
