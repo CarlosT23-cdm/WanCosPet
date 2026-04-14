@@ -1040,6 +1040,8 @@ const juguetesGatos = [
       rutaBaseGatosJug + "Caña_libelula_jug_cat_01.jpg",
       rutaBaseGatosJug + "Caña_libelula_jug_cat_02.jpg",
     ],
+    video:
+      "./videos_tienda/Videos_juguetes_gatos/Caña_libelula_video_jug_cat.mp4",
     descripcion:
       "Caña interactiva con una libélula de alas iridiscentes. Los reflejos de luz captan la atención de tu felino para horas de diversión visual.",
     material: "Plástico y material reflectante.",
