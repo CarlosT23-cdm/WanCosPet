@@ -225,7 +225,10 @@ nav {
 
 /* --- CARRITO --- */
 .carrito {
-  will-change: transform;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+  will-change: transform, opacity;
   position: fixed;
   bottom: 30px; /* base */
   right: 20px;
@@ -241,10 +244,19 @@ nav {
   display: flex;
   align-items: center;
   gap: 12px;
-  transition: all 0.3s ease;
   font-weight: 700;
   border: 2px solid rgb(255, 72, 27);
   display: inline-flex;
+}
+.fly-img {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.carrito.vibrar {
+  animation: vibrarCarrito 0.4s ease;
 }
 .carrito.oculto {
   opacity: 0;
@@ -727,5 +739,23 @@ footer {
 
   .hero h2 {
     font-size: 3rem;
+  }
+}
+
+@keyframes vibrarCarrito {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }

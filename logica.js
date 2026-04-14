@@ -126,7 +126,7 @@ function renderLista(idContenedor, lista, nombreGaleria) {
                 <strong>Precio:</strong> $${p.precio.toLocaleString()} COP
             </div>
             <div class="producto-acciones" style="display: flex; gap: 10px; margin-top: 15px; justify-content: center;">
-                <button class="btn-carrito" onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio})">
+                <button class="btn-carrito" onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio}, this)">
                     Añadir al carrito
                 </button>
                 <button class="${claseBtn}" onclick="toggleFavorito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio}, '${imgPrincipal}')">
@@ -239,10 +239,27 @@ function configurarBuscador() {
 }
 
 // === CARRITO ===
-function agregarAlCarrito(producto, precio) {
+function agregarAlCarrito(producto, precio, boton) {
+  const tarjeta = boton.closest(".producto");
+  const img = tarjeta.querySelector("img");
+
   carrito.push({ producto, precio });
   localStorage.setItem("wancos_carrito_v1", JSON.stringify(carrito));
   actualizarVista();
+
+  animarCarrito();
+  volarAlCarrito(img); // 🔥 AHORA SÍ FUNCIONA
+}
+
+function animarCarrito() {
+  const carrito = document.querySelector(".carrito");
+  if (!carrito) return;
+
+  carrito.classList.add("vibrar");
+
+  setTimeout(() => {
+    carrito.classList.remove("vibrar");
+  }, 400);
 }
 
 function eliminarDelCarrito(index) {
@@ -313,26 +330,28 @@ function enviarPedidoWhatsApp() {
   }
 
   // 3. Construir el cuerpo del mensaje (Unificado)
-  let textoFinal = `*📦 NUEVO PEDIDO WANCOS PET*%0A%0A`;
-  textoFinal += `*Cliente:* ${nombre}%0A`;
-  textoFinal += `*Dirección:* ${direccion}%0A`;
-  textoFinal += `*Pago:* ${pago}%0A`;
-  textoFinal += `--------------------------%0A`;
-  textoFinal += `*Productos:*%0A`;
+  let textoFinal = `📦 NUEVO PEDIDO WANCOS PET\n\n`;
+  textoFinal += `Cliente: ${nombre}\n`;
+  textoFinal += `Dirección: ${direccion}\n`;
+  textoFinal += `Pago: ${pago}\n`;
+  textoFinal += `--------------------------\n`;
+  textoFinal += `Productos:\n`;
+
+  console.log(carrito);
 
   // 4. Recorrer el carrito (usando la variable global 'carrito')
   carrito.forEach((item) => {
-    textoFinal += `✅ ${item.producto} - $${item.precio.toLocaleString()}%0A`;
+    textoFinal += `✅ ${item.producto} - $${item.precio.toLocaleString()}\n`;
   });
 
   // 5. Calcular Total
   const total = carrito.reduce((acc, item) => acc + item.precio, 0);
-  textoFinal += `--------------------------%0A`;
-  textoFinal += `*TOTAL: $${total.toLocaleString()}*%0A%0A`;
+  textoFinal += `--------------------------\n`;
+  textoFinal += `*TOTAL: $${total.toLocaleString()}*\n\n`;
   textoFinal += `_Enviado desde la tienda virtual_`;
 
   // 6. Abrir WhatsApp (Usando encodeURI para seguridad)
-  const url = `https://api.whatsapp.com/send?phone=573022375413&text=${textoFinal}`;
+  const url = `https://api.whatsapp.com/send?phone=573022375413&text=${encodeURIComponent(textoFinal)}`;
   window.open(url, "_blank");
 }
 
@@ -368,23 +387,48 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-window.addEventListener("scroll", () => {
+document.addEventListener("DOMContentLoaded", () => {
+  let lastScroll = 0;
   const carrito = document.querySelector(".carrito");
-  const footer = document.querySelector("footer");
 
-  if (!carrito || !footer) return;
+  if (!carrito) return;
 
-  const footerRect = footer.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
 
-  if (footerRect.top < windowHeight) {
-    const overlap = windowHeight - footerRect.top;
+    // 🔥 evita micro-movimientos (clave para suavidad)
+    if (Math.abs(currentScroll - lastScroll) < 10) return;
 
-    carrito.style.bottom = overlap + 20 + "px"; // 🔥 dinámico
-  } else {
-    carrito.style.bottom = "30px";
-  }
+    if (currentScroll > lastScroll) {
+      // scroll hacia abajo → ocultar suave
+      carrito.style.transform = "translateY(120px)";
+      carrito.style.opacity = "0";
+    } else {
+      // scroll hacia arriba → mostrar suave
+      carrito.style.transform = "translateY(0)";
+      carrito.style.opacity = "1";
+    }
+
+    lastScroll = currentScroll;
+  });
 });
+
+if (window.innerWidth > 768) {
+  let offsetX = 0;
+  let offsetY = 0;
+
+  document.addEventListener("mousemove", (e) => {
+    const carrito = document.querySelector(".carrito");
+    if (!carrito) return;
+
+    const rect = carrito.getBoundingClientRect();
+
+    offsetX = (e.clientX - rect.left - rect.width / 2) * 0.05;
+    offsetY = (e.clientY - rect.top - rect.height / 2) * 0.05;
+
+    carrito.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+  });
+}
 
 // --- LÓGICA PARA CERRAR EL CARRITO AL HACER CLIC AFUERA ---
 document.addEventListener("click", (event) => {
@@ -416,4 +460,32 @@ function volverAProductos() {
   document.getElementById("lista-carrito").style.display = "block";
   document.getElementById("paso-1-carrito").style.display = "block";
   document.getElementById("paso-2-datos").style.display = "none";
+}
+
+function volarAlCarrito(imgElemento) {
+  const carrito = document.querySelector(".carrito");
+  if (!carrito || !imgElemento) return;
+
+  const imgRect = imgElemento.getBoundingClientRect();
+  const carritoRect = carrito.getBoundingClientRect();
+
+  const img = imgElemento.cloneNode(true);
+  img.classList.add("fly-img");
+
+  img.style.top = imgRect.top + "px";
+  img.style.left = imgRect.left + "px";
+  img.style.width = imgRect.width + "px";
+
+  document.body.appendChild(img);
+
+  setTimeout(() => {
+    img.style.top = carritoRect.top + "px";
+    img.style.left = carritoRect.left + "px";
+    img.style.width = "30px";
+    img.style.opacity = "0.5";
+  }, 10);
+
+  setTimeout(() => {
+    img.remove();
+  }, 700);
 }
