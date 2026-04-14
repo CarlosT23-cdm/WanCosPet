@@ -372,13 +372,17 @@ window.addEventListener("scroll", () => {
   const carrito = document.querySelector(".carrito");
   const footer = document.querySelector("footer");
 
-  const footerTop = footer.getBoundingClientRect().top;
+  if (!carrito || !footer) return;
+
+  const footerRect = footer.getBoundingClientRect();
   const windowHeight = window.innerHeight;
 
-  if (footerTop < windowHeight) {
-    carrito.style.bottom = "120px"; // sube cuando toca footer
+  if (footerRect.top < windowHeight) {
+    const overlap = windowHeight - footerRect.top;
+
+    carrito.style.bottom = overlap + 20 + "px"; // 🔥 dinámico
   } else {
-    carrito.style.bottom = "30px"; // posición normal
+    carrito.style.bottom = "30px";
   }
 });
 

@@ -225,6 +225,7 @@ nav {
 
 /* --- CARRITO --- */
 .carrito {
+  will-change: transform;
   position: fixed;
   bottom: 30px; /* base */
   right: 20px;
@@ -684,7 +685,7 @@ footer {
 
 @media (max-width: 600px) {
   .carrito {
-    bottom: 20px;
+    bottom: 25px;
     right: 15px;
     transform: scale(0.9);
 
