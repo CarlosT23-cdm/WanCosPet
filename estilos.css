@@ -228,6 +228,8 @@ nav {
   position: fixed;
   bottom: 30px; /* base */
   right: 20px;
+  height: auto;
+  top: auto;
   background: #fffffffb;
   color: rgb(10, 5, 5);
   padding: 15px 25px;
@@ -691,6 +693,14 @@ footer {
 
   .hero h2 {
     font-size: 2.2rem;
+  }
+  .carrito {
+    bottom: 20px;
+    right: 15px;
+    transform: scale(0.9);
+
+    height: auto !important; /* 🔥 fuerza forma correcta */
+    top: auto !important; /* 🔥 evita conflicto */
   }
 }
 
