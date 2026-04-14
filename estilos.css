@@ -226,9 +226,8 @@ nav {
 /* --- CARRITO --- */
 .carrito {
   position: fixed;
-  top: 20px;
+  bottom: 30px; /* base */
   right: 20px;
-  bottom: auto; /* importante */
   background: #fffffffb;
   color: rgb(10, 5, 5);
   padding: 15px 25px;
@@ -242,6 +241,10 @@ nav {
   transition: all 0.3s ease;
   font-weight: 700;
   border: 2px solid rgb(255, 72, 27);
+}
+.carrito.oculto {
+  opacity: 0;
+  pointer-events: none;
 }
 .carrito:hover {
   transform: scale(1.05);
@@ -350,6 +353,10 @@ nav {
 .btn-eliminar:hover {
   background: #ff4d4d;
   color: white;
+}
+footer {
+  position: relative;
+  z-index: 1;
 }
 
 .footer-carrito {

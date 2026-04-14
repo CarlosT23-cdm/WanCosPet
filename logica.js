@@ -352,6 +352,35 @@ function initFancybox() {
     });
   }
 }
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof Fancybox !== "undefined") {
+    Fancybox.bind("[data-fancybox]", {
+      on: {
+        reveal: () => {
+          document.querySelector(".carrito")?.classList.add("oculto");
+        },
+
+        destroy: () => {
+          document.querySelector(".carrito")?.classList.remove("oculto");
+        },
+      },
+    });
+  }
+});
+
+window.addEventListener("scroll", () => {
+  const carrito = document.querySelector(".carrito");
+  const footer = document.querySelector("footer");
+
+  const footerTop = footer.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (footerTop < windowHeight) {
+    carrito.style.bottom = "120px"; // sube cuando toca footer
+  } else {
+    carrito.style.bottom = "30px"; // posición normal
+  }
+});
 
 // --- LÓGICA PARA CERRAR EL CARRITO AL HACER CLIC AFUERA ---
 document.addEventListener("click", (event) => {

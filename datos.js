@@ -1204,8 +1204,11 @@ const accesoriosGatos = [
     nombre: "Gimnasio Imalaya",
     precio: 300000,
     imagenes: [
-      rutaBaseGatosAcc + "Modelo_gimnasio_imalaya_acc_cat_01.jpeg",
-      rutaBaseGatosAcc + "Modelo_gimnasio_imalaya_acc_cat_02.jpeg",
+      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_01.jpeg",
+      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_02.jpeg",
+      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_03.jpeg",
+      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_04.jpeg",
+      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_05.jpeg",
     ],
     descripcion:
       "Centro de actividades de gran altura con múltiples niveles, dos cuevas de descanso y postes rascadores reforzados.",
