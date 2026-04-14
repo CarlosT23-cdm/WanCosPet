@@ -177,13 +177,40 @@ function actualizarVistaFavoritos() {
   contenedor.innerHTML = favoritos
     .map(
       (p) => `
-        <div class="item-favorito-mini" style="min-width: 120px; text-align: center;">
-            <img src="${p.imagen}" style="width: 80px; height: 80px; border-radius: 10px; object-fit: cover;">
-            <p style="font-size: 0.8rem; font-weight: bold; margin-top: 5px;">${p.nombre}</p>
-        </div>
+      <div class="item-favorito-mini" style="position: relative; min-width: 120px; text-align: center;">
+        
+        <button onclick="eliminarFavorito('${p.nombre.replace(/'/g, "\\'")}')" 
+          style="
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            font-size: 12px;
+          ">
+          ✕
+        </button>
+
+        <img src="${p.imagen}" style="width: 80px; height: 80px; border-radius: 10px; object-fit: cover;">
+        <p style="font-size: 0.8rem; font-weight: bold; margin-top: 5px;">${p.nombre}</p>
+      </div>
     `,
     )
     .join("");
+}
+
+function eliminarFavorito(nombre) {
+  favoritos = favoritos.filter((p) => p.nombre !== nombre);
+
+  localStorage.setItem("wancos_favoritos", JSON.stringify(favoritos));
+
+  actualizarVistaFavoritos();
+  renderizarPaginaActual(); // 🔥 actualiza corazones
 }
 
 // === BUSCADOR ===
