@@ -226,9 +226,10 @@ nav {
 /* --- CARRITO --- */
 .carrito {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #fffffffb; /* Naranja corporativo */
+  top: 20px;
+  right: 20px;
+  bottom: auto; /* importante */
+  background: #fffffffb;
   color: rgb(10, 5, 5);
   padding: 15px 25px;
   border-radius: 50px;
@@ -242,7 +243,6 @@ nav {
   font-weight: 700;
   border: 2px solid rgb(255, 72, 27);
 }
-
 .carrito:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(255, 145, 77, 0.6);
@@ -259,32 +259,33 @@ nav {
 }
 
 /* --- 5. SIDEBAR CARRITO --- */
+
+/* === BASE: COMPUTADOR === */
 .sidebar-carrito {
   position: fixed;
-  top: 20px; /* Separado del borde superior en escritorio */
-  right: -500px; /* Oculto fuera de pantalla */
-  width: 450px;
-  max-height: 95vh; /* Para que no ocupe toda la altura y se vea flotante */
-  background: #ffffff;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100vh;
+  background-color: #fff;
   z-index: 9999;
-  border-radius: 20px; /* Bordes redondeados para efecto premium */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra para elevarlo */
-  display: flex;
-  flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  overflow: hidden;
+  transition: right 0.3s ease;
+  border-radius: 10px 0 0 10px;
 }
+
+/* Y asegúrate de que cuando esté activo, el right sea 0 */
 .sidebar-carrito.active {
-  right: 20px; /* Se queda a 20px del borde derecho */
+  right: 0;
 }
 
 .sidebar-header {
-  padding: 20px;
-  background: #fbb0e3;
+  padding: 15px 20px;
+  background: #ffb7c5;
   color: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #ddd;
 }
 
 .sidebar-header h3 {
@@ -352,9 +353,8 @@ nav {
 }
 
 .footer-carrito {
-  margin-top: auto;
   padding: 20px;
-  background: #fafafa;
+  background-color: #f9f9f9;
   border-top: 1px solid #eee;
 }
 
@@ -427,52 +427,7 @@ nav {
   transform: scale(1.2);
 }
 
-/* --- 7. RESPONSIVO (Media Queries) --- */
-
-/* Ajustes Generales para Celulares */
-@media (max-width: 768px) {
-  /* Footer vertical */
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  /* Botón carrito flotante */
-  .carrito {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 10001 !important;
-    transform: scale(0.85);
-  }
-
-  /* Bandeja carrito (Ocupa todo en móvil) */
-  .sidebar-carrito {
-    width: 100% !important;
-    right: -100% !important;
-  }
-  .sidebar-carrito.active {
-    right: 0 !important;
-  }
-}
-
-/* Ajustes Específicos para el Hero (Patitas y Títulos) */
-@media (max-width: 480px) {
-  .hero h2 {
-    font-size: 1.8rem;
-  }
-  .hero h2::before {
-    left: -35px;
-    font-size: 1.2rem;
-  }
-  .hero h2::after {
-    right: -35px;
-    font-size: 1.2rem;
-  }
-}
-
 /*ICONOS DE REDES SOCIALES CARRITO Y FOOTER */
-/* Mejora de tamaño para iconos en redes sociales */
 .footer-social a i {
   font-size: 1.8rem;
   transition: transform 0.3s ease;
@@ -675,16 +630,77 @@ nav {
   text-shadow: 1px 1px 2px #000;
 }
 
-/* Ajuste para móviles: Si la pantalla es pequeña, volvemos al diseño normal */
-@media (max-width: 900px) {
-  .fancybox__caption {
-    position: relative !important;
-    width: 100% !important;
-    height: auto !important;
-    border-right: none;
-    border-top: 2px solid #ff914d;
+/* ==========================================================================
+   7. ADAPTABILIDAD WANCOS PET - UNIFICADA
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .sidebar-carrito {
+    width: 100%;
+    right: -100%;
+    border-radius: 0;
   }
-  .fancybox__content {
-    margin-left: 0 !important;
+
+  .sidebar-carrito.active {
+    right: 0;
+  }
+
+  .carrito {
+    top: 15px;
+    right: 15px;
+    transform: scale(0.8);
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .sidebar-carrito {
+    width: 100%;
+    right: -100%;
+    border-radius: 0;
+  }
+
+  .sidebar-carrito.active {
+    right: 0;
+  }
+
+  .carrito {
+    transform: scale(0.9);
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .sidebar-carrito {
+    width: 320px;
+    right: -320px;
+  }
+
+  .sidebar-carrito.active {
+    right: 0;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1600px) {
+  .sidebar-carrito {
+    width: 380px;
+    right: -380px;
+  }
+}
+
+@media (min-width: 1601px) {
+  .sidebar-carrito {
+    width: 420px;
+    right: -420px;
+  }
+
+  .hero h2 {
+    font-size: 3rem;
   }
 }

@@ -372,7 +372,6 @@ const juguetesPerros = [
     color: "Gris con detalles rosas",
     tamaño: "Pequeño (Ideal para gatos)",
     beneficios: "Estimula la actividad física y reduce el estrés.",
-    precio: 12000,
   },
   {
     nombre: "Cangrejo Limpia Dientes",
@@ -385,7 +384,6 @@ const juguetesPerros = [
     color: "Amarillo",
     tamaño: "Mediano",
     beneficios: "Mejora la salud oral y fortalece la mandíbula.",
-    precio: 15000,
   },
   {
     nombre: "Berenjena Chillona",
@@ -398,7 +396,6 @@ const juguetesPerros = [
     color: "Morado y Verde",
     tamaño: "12 cm aprox.",
     beneficios: "Entretenimiento prolongado gracias a su sonido atrayente.",
-    precio: 9500,
   },
   {
     nombre: "Dona Antisarro",
@@ -411,7 +408,6 @@ const juguetesPerros = [
     color: "Rojo",
     tamaño: "10 cm de diámetro",
     beneficios: "Aliento más fresco y encías más saludables.",
-    precio: 14000,
   },
   {
     nombre: "Cerdito Chillón",
