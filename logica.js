@@ -472,20 +472,43 @@ function volarAlCarrito(imgElemento) {
   const img = imgElemento.cloneNode(true);
   img.classList.add("fly-img");
 
+  // Posición inicial
   img.style.top = imgRect.top + "px";
   img.style.left = imgRect.left + "px";
   img.style.width = imgRect.width + "px";
 
   document.body.appendChild(img);
 
-  setTimeout(() => {
-    img.style.top = carritoRect.top + "px";
-    img.style.left = carritoRect.left + "px";
-    img.style.width = "30px";
-    img.style.opacity = "0.5";
-  }, 10);
+  // 🔥 CURVA (control intermedio)
+  const curvaX = (imgRect.left + carritoRect.left) / 2;
+  const curvaY = imgRect.top - 100; // sube primero
 
   setTimeout(() => {
+    img.style.transition = "all 0.5s ease-out";
+    img.style.left = curvaX + "px";
+    img.style.top = curvaY + "px";
+  }, 10);
+
+  // 🔥 ABSORCIÓN (entrada al carrito)
+  setTimeout(() => {
+    img.style.transition = "all 0.4s ease-in";
+    img.style.top = carritoRect.top + "px";
+    img.style.left = carritoRect.left + "px";
+    img.style.width = "20px";
+    img.style.opacity = "0.3";
+  }, 500);
+
+  // 🔥 REBOTE DEL CARRITO
+  setTimeout(() => {
+    carrito.classList.add("rebote");
+
+    setTimeout(() => {
+      carrito.classList.remove("rebote");
+    }, 300);
+  }, 850);
+
+  // Eliminar imagen
+  setTimeout(() => {
     img.remove();
-  }, 700);
+  }, 900);
 }

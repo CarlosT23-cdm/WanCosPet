@@ -248,11 +248,16 @@ nav {
   border: 2px solid rgb(255, 72, 27);
   display: inline-flex;
 }
+.rebote {
+  animation: reboteCarrito 0.3s ease;
+}
 .fly-img {
   position: fixed;
   z-index: 9999;
   pointer-events: none;
-  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 12px;
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, top, left, width, opacity;
 }
 
 .carrito.vibrar {
@@ -754,6 +759,21 @@ footer {
   }
   75% {
     transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes reboteCarrito {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  60% {
+    transform: scale(0.95);
   }
   100% {
     transform: scale(1);
