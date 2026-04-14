@@ -243,6 +243,7 @@ nav {
   transition: all 0.3s ease;
   font-weight: 700;
   border: 2px solid rgb(255, 72, 27);
+  display: inline-flex;
 }
 .carrito.oculto {
   opacity: 0;
@@ -681,6 +682,20 @@ footer {
   }
 }
 
+@media (max-width: 600px) {
+  .carrito {
+    bottom: 20px;
+    right: 15px;
+    transform: scale(0.9);
+
+    top: auto !important;
+    height: auto !important;
+    width: auto !important;
+
+    display: inline-flex; /* 🔥 clave real */
+  }
+}
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .sidebar-carrito {
     width: 320px;
@@ -693,14 +708,6 @@ footer {
 
   .hero h2 {
     font-size: 2.2rem;
-  }
-  .carrito {
-    bottom: 20px;
-    right: 15px;
-    transform: scale(0.9);
-
-    height: auto !important; /* 🔥 fuerza forma correcta */
-    top: auto !important; /* 🔥 evita conflicto */
   }
 }
 
