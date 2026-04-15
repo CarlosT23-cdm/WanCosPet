@@ -45,7 +45,7 @@ const juguetesPerros = [
     tamaño: "15 - 20 cm",
     beneficios: "Sonido interactivo, ideal para cachorros",
     tipo: "perro",
-    stock: "agotado",
+    stock: 6,
   },
 
   {

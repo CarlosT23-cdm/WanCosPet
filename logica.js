@@ -313,10 +313,18 @@ function agregarAlCarrito(producto, precio, boton, tipo, stock) {
     return;
   }
   if (stock === "encargo") {
-    alert("Este producto es por encargo, puede tardar más tiempo.");
+    alert(
+      "Este producto es por encargo, puede tardar más tiempo, pero te lo hacemos llegar.",
+    );
   }
 
-  carrito.push({ producto, precio, stock });
+  const existente = carrito.find((p) => p.producto === producto);
+
+  if (existente) {
+    existente.cantidad += 1;
+  } else {
+    carrito.push({ producto, precio, stock, cantidad: 1 });
+  }
 
   localStorage.setItem("wancos_carrito_v1", JSON.stringify(carrito));
   actualizarVista();
@@ -348,7 +356,7 @@ function actualizarVista() {
       (i, idx) => `
         <li class="item-carrito">
           <div class="item-info">
-            <span class="item-nombre">${i.producto}</span>
+            <span class="item-nombre">${i.producto} x${i.cantidad}</span>
             <span class="item-precio">$${i.precio.toLocaleString()} COP</span>
           </div>
           <button class="btn-eliminar" onclick="eliminarDelCarrito(${idx})">
@@ -359,7 +367,7 @@ function actualizarVista() {
     )
     .join("");
 
-  const total = carrito.reduce((sum, i) => sum + i.precio, 0);
+  const total = carrito.reduce((sum, i) => sum + i.precio * i.cantidad, 0);
   if (totalEl)
     totalEl.innerHTML = `<strong>Total: $${total.toLocaleString()} COP</strong>`;
   if (countEl) countEl.innerText = carrito.length;
@@ -417,11 +425,14 @@ function enviarPedidoWhatsApp() {
           ? "🕒 Por encargo"
           : "✅ Disponible";
 
-    textoFinal += `• ${item.producto} (${estado}) - $${item.precio}\n`;
+    textoFinal += `• ${item.producto} x${item.cantidad} (${estado}) - $${item.precio}\n`;
   });
 
   // 5. Calcular Total
-  const total = carrito.reduce((acc, item) => acc + item.precio, 0);
+  const total = carrito.reduce(
+    (acc, item) => acc + item.precio * item.cantidad,
+    0,
+  );
   textoFinal += `--------------------------\n`;
   textoFinal += `*TOTAL: $${total.toLocaleString()}*\n\n`;
   textoFinal += `_Enviado desde la tienda virtual_`;
