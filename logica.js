@@ -276,6 +276,7 @@ function configurarBuscador() {
       if (listaProductosNormal) listaProductosNormal.style.display = "grid";
       return;
     }
+    document.querySelector(".seccion-favoritos").style.display = "block";
 
     // Filtramos SOLO los productos de la página actual
     const filtrados = productosFiltrar.filter((p) =>
@@ -425,7 +426,7 @@ function enviarPedidoWhatsApp() {
           ? "🕒 Por encargo"
           : "✅ Disponible";
 
-    textoFinal += `• ${item.producto} x${item.cantidad} (${estado}) - $${item.precio}\n`;
+    textoFinal += `• ${item.producto} x${item.cantidad} (${estado}) - $${(item.precio * item.cantidad).toLocaleString()}\n`;
   });
 
   // 5. Calcular Total
