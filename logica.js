@@ -3,8 +3,8 @@
 // 1. Variables Globales de Estado
 let carrito = JSON.parse(localStorage.getItem("wancos_carrito_v1") || "[]");
 let favoritos = JSON.parse(localStorage.getItem("wancos_favoritos") || "[]");
-//const audioPerro = new Audio("audios_tienda/ladrido_wanda_01.mp3");
-const audioGato = new Audio("audios_tienda/maullido_cosmo_02.mp3");
+const audioPerro = new Audio("audios_tienda/ladrido_wanda_03.mp3");
+const audioGato = new Audio("audios_tienda/maullido_cosmo_04.mp3");
 
 document.addEventListener("DOMContentLoaded", () => {
   // Inicializar funciones clave
@@ -149,7 +149,7 @@ function renderLista(idContenedor, lista, nombreGaleria) {
                   <button 
                          class="btn-carrito ${p.stock === "agotado" ? "btn-agotado" : ""}" 
                                           ${p.stock === "agotado" ? "disabled" : ""} 
-                                               onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio}, this, '${p.tipo}')"
+                                               onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio}, this, '${p.tipo}', '${p.stock}')"
                                                               >
                                                          ${p.stock === "agotado" ? "Agotado" : p.stock === "encargo" ? "Encargar" : "Añadir al carrito"}
                                                         </button>
@@ -299,44 +299,37 @@ function configurarBuscador() {
 }
 
 // === CARRITO ===
-function agregarAlCarrito(producto, precio, boton, tipo) {
-  const tarjeta = boton.closest(".producto");
-  const img = boton.closest(".producto").querySelector("img");
+function agregarAlCarrito(producto, precio, boton, tipo, stock) {
+  const img = boton.closest(".producto")?.querySelector("img");
+
   if (!img) {
     console.error("No se encontró imagen");
     return;
   }
-  if (boton.innerText === "Agotado") {
-    alert("Este producto está agotado 😢");
+
+  // ✅ USA STOCK, NO innerText
+  if (stock === "agotado") {
+    alert("❌ Este producto está agotado y no se puede agregar");
     return;
   }
-  if (boton.innerText.includes("Encargo")) {
+  if (stock === "encargo") {
     alert("Este producto es por encargo, puede tardar más tiempo.");
   }
-  console.log(img);
 
-  carrito.push({ producto, precio });
+  carrito.push({ producto, precio, stock });
+
   localStorage.setItem("wancos_carrito_v1", JSON.stringify(carrito));
   actualizarVista();
 
-  // 🔥 ANIMACIONES
-  function animarCarrito() {
-    const carrito = document.querySelector(".carrito");
-    if (!carrito) return;
-
-    carrito.classList.add("vibrar");
-
-    setTimeout(() => {
-      carrito.classList.remove("vibrar");
-    }, 400);
-  }
+  // 🔥 animaciones limpias
   volarAlCarrito(img);
   reproducirSonido(tipo);
 
-  // 🔥 MENSAJE +1 (AQUÍ ES DONDE VA)
   const rect = boton.getBoundingClientRect();
   mostrarMensajeFloat(rect.left, rect.top);
 }
+
+window.agregarAlCarrito = agregarAlCarrito;
 
 function eliminarDelCarrito(index) {
   carrito.splice(index, 1);
@@ -417,7 +410,14 @@ function enviarPedidoWhatsApp() {
 
   // 4. Recorrer el carrito (usando la variable global 'carrito')
   carrito.forEach((item) => {
-    textoFinal += `✅ ${item.producto} (${item.stock || "disponible"}) - $${item.precio}\n`;
+    const estado =
+      item.stock === "agotado"
+        ? "❌ Agotado"
+        : item.stock === "encargo"
+          ? "🕒 Por encargo"
+          : "✅ Disponible";
+
+    textoFinal += `• ${item.producto} (${estado}) - $${item.precio}\n`;
   });
 
   // 5. Calcular Total
