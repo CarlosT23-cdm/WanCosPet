@@ -45,6 +45,7 @@ const juguetesPerros = [
     tamaño: "15 - 20 cm",
     beneficios: "Sonido interactivo, ideal para cachorros",
     tipo: "perro",
+    stock: "disponible",
   },
 
   {
@@ -58,6 +59,8 @@ const juguetesPerros = [
     tamaño: "25 - 30 cm",
     beneficios:
       "Fomenta el juego de 'pateo' en gatos y es ideal como almohada de descanso.",
+    tipo: "perro",
+    stock: "disponible",
   },
 
   {
@@ -74,6 +77,8 @@ const juguetesPerros = [
     color: "Morado lavanda con amarillo y blanco",
     tamaño: "25 - 30 cm",
     beneficios: "Masajea encías suavemente y brinda alta estimulación visual.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Puerco Espin",
@@ -89,6 +94,8 @@ const juguetesPerros = [
     color: "Rojo vibrante",
     tamaño: "7 cm (Diámetro)",
     beneficios: "Ayuda a la salud dental y reduce el estrés por aburrimiento.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Zanahoria Chillona",
@@ -101,6 +108,8 @@ const juguetesPerros = [
     color: "Naranja con tallo verde",
     tamaño: "15 cm aprox.",
     beneficios: "Estimulación auditiva y física; material fácil de lavar.",
+    tipo: "perro",
+    stock: "disponible",
   },
 
   {
@@ -115,6 +124,8 @@ const juguetesPerros = [
     tamaño: "22 cm aprox.",
     beneficios:
       "Ayuda a remover el sarro mientras juegan; doble textura para mayor interés.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Pollo Chillon Pequeño",
@@ -127,6 +138,8 @@ const juguetesPerros = [
     color: "Amarillo con detalles rojos",
     tamaño: "16 cm aprox.",
     beneficios: "Alta respuesta sonora; ideal para liberar estrés y ansiedad.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Puntas",
@@ -139,6 +152,8 @@ const juguetesPerros = [
     color: "Azul vibrante",
     tamaño: "7 cm (Diámetro)",
     beneficios: "Promueve la salud oral y el ejercicio cardiovascular.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Maciza Medinana",
@@ -154,6 +169,8 @@ const juguetesPerros = [
     color: "Verde lima vibrante",
     tamaño: "Mediano (aprox. 7 cm)",
     beneficios: "Fomenta el ejercicio, es ideal para la estimulación física.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Mina Chillona Grande 9 CM",
@@ -170,6 +187,8 @@ const juguetesPerros = [
     tamaño: "Grande (9 cm)",
     beneficios:
       "Estimulación auditiva de alto nivel, ideal para juegos interactivos.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Encias",
@@ -182,6 +201,8 @@ const juguetesPerros = [
     color: "Azul vibrante",
     tamaño: "7 cm (aprox.)",
     beneficios: "Ayuda a la salud dental, reduce el estrés.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Paleta para Refrigerar",
@@ -197,6 +218,8 @@ const juguetesPerros = [
     color: "Azul hielo con patrón de rombos",
     tamaño: "14 cm (aprox.)",
     beneficios: "Alivio para encías doloridas, refresca en verano.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Oso Jalador",
@@ -214,6 +237,8 @@ const juguetesPerros = [
     tamaño: "No especificado",
     beneficios:
       "Ideal para la limpieza dental y juegos interactivos de fuerza.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Paquete de Pelotas por cinco",
@@ -226,6 +251,8 @@ const juguetesPerros = [
     color: "Multicolor",
     tamaño: "Tamaño promedio de pelota de tenis",
     beneficios: "Versatilidad de juego y excelente visibilidad en exteriores.",
+    tipo: "perro",
+    stock: "disponible",
   },
 
   {
@@ -243,6 +270,8 @@ const juguetesPerros = [
     tamaño: "No especificado",
     beneficios:
       "Estimulación auditiva que mantiene el interés de la mascota por más tiempo.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Asteroide",
@@ -256,6 +285,8 @@ const juguetesPerros = [
     tamaño: "No especificado",
     beneficios:
       "Masajea las encías durante el juego y promueve el ejercicio intenso.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Muslo Macizo",
@@ -269,6 +300,8 @@ const juguetesPerros = [
     tamaño: "Similar a un marcador Sharpie (aprox. 13 cm).",
     beneficios:
       "Excelente para perros con mordida fuerte y para la salud de las encías.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Mordedor Cuerda Circular",
@@ -282,6 +315,8 @@ const juguetesPerros = [
     tamaño: "Diámetro mediano.",
     beneficios:
       "Ayuda a limpiar los dientes mediante la fricción con la cuerda.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Mordedor Con Hueso Chillon",
@@ -294,6 +329,8 @@ const juguetesPerros = [
     color: "Azul con cuerda multicolor.",
     tamaño: "No especificado.",
     beneficios: "Estimulación sonora y física en un solo juguete.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Mazorca Chillona",
@@ -307,6 +344,8 @@ const juguetesPerros = [
     tamaño: "Pequeño / Mediano.",
     beneficios:
       "Material flexible ideal para cachorros o perros de mordida suave.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Llanta de Goma Resistente",
@@ -321,6 +360,8 @@ const juguetesPerros = [
     tamaño: "Mediano (aprox. 15 cm)",
     beneficios:
       "Excelente para perros con mordida fuerte y para ayudar a limpiar la placa bacteriana.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Lazo Hueso",
@@ -335,6 +376,8 @@ const juguetesPerros = [
     tamaño: "Aproximadamente 25 cm (largo total)",
     beneficios:
       "Fortalece la mandíbula y ayuda a limpiar los dientes mediante la fricción con la cuerda.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Dona Chillona Antiestrés",
@@ -349,6 +392,8 @@ const juguetesPerros = [
     tamaño: "Pequeño / Mediano (aprox. 12 cm)",
     beneficios:
       "Estimulación auditiva y física en un diseño llamativo; ideal para cachorros.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Cuerda Pelota Pequeña",
@@ -361,6 +406,8 @@ const juguetesPerros = [
     color: "Verde neón vibrante con cuerda natural",
     tamaño: "Nudo de 7 cm aprox. + cuerda de agarre",
     beneficios: "Fomenta el ejercicio y la salud oral de forma 100% natural.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Ardilla Chillona",
@@ -373,6 +420,8 @@ const juguetesPerros = [
     color: "Gris con detalles rosas",
     tamaño: "Pequeño (Ideal para gatos)",
     beneficios: "Estimula la actividad física y reduce el estrés.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Cangrejo Limpia Dientes",
@@ -385,6 +434,8 @@ const juguetesPerros = [
     color: "Amarillo",
     tamaño: "Mediano",
     beneficios: "Mejora la salud oral y fortalece la mandíbula.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Berenjena Chillona",
@@ -397,6 +448,8 @@ const juguetesPerros = [
     color: "Morado y Verde",
     tamaño: "12 cm aprox.",
     beneficios: "Entretenimiento prolongado gracias a su sonido atrayente.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Dona Antisarro",
@@ -409,6 +462,8 @@ const juguetesPerros = [
     color: "Rojo",
     tamaño: "10 cm de diámetro",
     beneficios: "Aliento más fresco y encías más saludables.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Cerdito Chillón",
@@ -421,6 +476,8 @@ const juguetesPerros = [
     color: "Rosado vibrante",
     tamaño: "10 cm de diámetro",
     beneficios: "Fomenta el juego interactivo y reduce el aburrimiento.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Hueso Dentado",
@@ -433,6 +490,8 @@ const juguetesPerros = [
     color: "Transparente con base roja",
     tamaño: "15 cm de largo",
     beneficios: "Limpieza dental profunda y fortalecimiento de mandíbula.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Hueso Dino",
@@ -445,6 +504,8 @@ const juguetesPerros = [
     color: "Crema / Hueso",
     tamaño: "18 cm (Grande)",
     beneficios: "Ideal para liberar estrés en masticadores fuertes.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Hueso Mordedor",
@@ -457,6 +518,8 @@ const juguetesPerros = [
     color: "Naranja",
     tamaño: "12 cm de largo",
     beneficios: "Alivia la picazón en encías de cachorros.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Hueso Pitbull",
@@ -469,6 +532,8 @@ const juguetesPerros = [
     color: "Verde menta",
     tamaño: "16 cm (Robusto)",
     beneficios: "Máxima durabilidad para perros destructores.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Jalador Trenza",
@@ -484,6 +549,8 @@ const juguetesPerros = [
     color: "Verde neón",
     tamaño: "Mediano (25 cm aprox.)",
     beneficios: "Fortalece el vínculo y la musculatura del cuello.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Chillona Futbol Americano",
@@ -498,6 +565,8 @@ const juguetesPerros = [
     color: "Café con detalles negros",
     tamaño: "14 cm de largo",
     beneficios: "Estimula la agilidad y los reflejos.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Rugby",
@@ -510,6 +579,8 @@ const juguetesPerros = [
     color: "Azul con detalles verdes",
     tamaño: "12 cm aprox.",
     beneficios: "Ligera y fácil de atrapar en el aire.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Disco",
@@ -522,6 +593,8 @@ const juguetesPerros = [
     color: "Azul con centro amarillo",
     tamaño: "23 cm (Abierta)",
     beneficios: "Fomenta el ejercicio cardiovascular y la agilidad.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Lazo",
@@ -534,6 +607,8 @@ const juguetesPerros = [
     color: "Blanco y Rosa",
     tamaño: "Pequeña / Mediana",
     beneficios: "Limpieza dental natural y fortalecimiento cervical.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Lazo Pelota de Tenis",
@@ -546,6 +621,8 @@ const juguetesPerros = [
     color: "Verde Neón y Blanco",
     tamaño: "Estándar con extensión",
     beneficios: "Ideal para juegos de cobro y lanzar a distancia.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Loca Pequeña",
@@ -562,6 +639,8 @@ const juguetesPerros = [
     color: "Morado",
     tamaño: "6 cm de diámetro",
     beneficios: "Estimulación mental y masaje de encías.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Snacks",
@@ -574,6 +653,8 @@ const juguetesPerros = [
     color: "Calipso / Turquesa",
     tamaño: "7 cm de diámetro",
     beneficios: "Estimulación cognitiva y limpieza dental pasiva.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Peluche Lona",
@@ -586,6 +667,8 @@ const juguetesPerros = [
     color: "Gris con detalles azules",
     tamaño: "Mediano (20 cm aprox.)",
     beneficios: "Alta durabilidad frente a mordidas constantes.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Peluche Kiwi Chillón",
@@ -598,6 +681,8 @@ const juguetesPerros = [
     color: "Café exterior, verde interior",
     tamaño: "10 cm de diámetro",
     beneficios: "Proporciona consuelo y reduce la ansiedad.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Pesa Antisarro",
@@ -610,10 +695,16 @@ const juguetesPerros = [
     color: "Rojo vibrante",
     tamaño: "15 cm de largo",
     beneficios: "Prevención de sarro y fortalecimiento gingival.",
+    tipo: "perro",
+    stock: "disponible",
   },
 ];
 
 // Listado de accesorios para perros
+/* Cada accesorio incluye detalles específicos como material, textura, color, tamaño y beneficios para el cuidado y comodidad de tu mascota.
+se recomienda revisar cada producto para elegir el que mejor se adapte a las necesidades de tu perro, asegurando su bienestar y felicidad.
+a
+ */
 const accesoriosPerros = [
   {
     nombre: "Porta Bolsas Hueso",
@@ -633,6 +724,7 @@ const accesoriosPerros = [
     tamaño: "Estándar para rollos universales",
     beneficios: "Higiene y comodidad en un solo accesorio.",
     tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Correa Cinturon de Carro",
@@ -645,6 +737,8 @@ const accesoriosPerros = [
     color: "Negro",
     tamaño: "Ajustable",
     beneficios: "Seguridad vial y prevención de distracciones al conducir.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Comedero Plegable",
@@ -660,6 +754,8 @@ const accesoriosPerros = [
     color: "Rojo",
     tamaño: "Mediano",
     beneficios: "Portabilidad extrema y fácil limpieza.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Cama Grande Patitas",
@@ -672,6 +768,8 @@ const accesoriosPerros = [
     color: "Azul oscuro con estampado blanco",
     tamaño: "Grande",
     beneficios: "Descanso reparador y aislamiento del frío del suelo.",
+    tipo: "perro",
+    stock: "disponible",
   },
 
   {
@@ -688,6 +786,8 @@ const accesoriosPerros = [
     color: "Verde con base naranja",
     tamaño: "Estándar para rollos universales",
     beneficios: "Estilo y practicidad en la higiene de tu mascota.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Collar Anti Pulgas",
@@ -700,6 +800,8 @@ const accesoriosPerros = [
     color: "Rojo (según empaque)",
     tamaño: "Ajustable para perros medianos",
     beneficios: "Prevención eficaz y descanso para tu mascota.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Cortauñas Grande",
@@ -712,6 +814,8 @@ const accesoriosPerros = [
     color: "Naranja y Negro",
     tamaño: "Grande",
     beneficios: "Pedicura segura, cómoda y en casa.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Bebedero 4 en 1",
@@ -724,6 +828,8 @@ const accesoriosPerros = [
     color: "Verde neón",
     tamaño: "Compacto y portátil",
     beneficios: "Hidratación y alimentación organizada en cualquier lugar.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Cepillo Universal",
@@ -736,6 +842,8 @@ const accesoriosPerros = [
     color: "Gris",
     tamaño: "Grande",
     beneficios: "Manto brillante y reducción de nudos.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Correa Retráctil",
@@ -750,6 +858,8 @@ const accesoriosPerros = [
     color: "Negro",
     tamaño: "5 metros de largo",
     beneficios: "Libertad y control total en cada salida.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Dispensadores de Bolsas Fino",
@@ -762,6 +872,8 @@ const accesoriosPerros = [
     color: "Gris jaspeado",
     tamaño: "Compacto",
     beneficios: "Acceso rápido y diseño sofisticado.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Dispensador bolsas con linterna",
@@ -776,6 +888,8 @@ const accesoriosPerros = [
     color: "Beige / Durazno",
     tamaño: "Portátil",
     beneficios: "Visibilidad y limpieza en horarios nocturnos.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Dosificador Dog Agua",
@@ -788,6 +902,8 @@ const accesoriosPerros = [
     color: "Azul claro",
     tamaño: "500 ml",
     beneficios: "Hidratación rápida y sin derrames.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Guante Quita Pelo",
@@ -800,6 +916,8 @@ const accesoriosPerros = [
     color: "Azul y Negro",
     tamaño: "Ajustable (Talla única)",
     beneficios: "Elimina exceso de pelo y mejora la circulación.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Impermeable Wanda",
@@ -815,6 +933,8 @@ const accesoriosPerros = [
     color: "Transparente con bordes blancos",
     tamaño: "Grande (ajustable)",
     beneficios: "Mantiene a la mascota seca y limpia.",
+    tipo: "perro",
+    stock: "disponible",
   },
   {
     nombre: "Dispensador Bolsas Emoji",
@@ -830,6 +950,8 @@ const accesoriosPerros = [
     color: "Café",
     tamaño: "Compacto",
     beneficios: "Aporta un toque divertido a la limpieza diaria.",
+    tipo: "perro",
+    stock: "disponible",
   },
 ];
 
@@ -838,6 +960,11 @@ const accesoriosPerros = [
 // =====================================================================
 
 // Listado de juguetes para gatos
+/* Cada juguete incluye detalles específicos como material, textura, color, tamaño y beneficios para el entretenimiento y bienestar de tu gato.
+Se recomienda revisar cada producto para elegir el que mejor se adapte a las necesidades de tu felino, asegurando su felicidad y salud.
+los juguetes para gatos están diseñados para estimular su instinto de caza, promover la actividad física y mental, y proporcionar horas de diversión segura en el hogar.
+es importante elegir juguetes que sean apropiados para la edad, tamaño y nivel de actividad de tu gato para maximizar los beneficios y minimizar los riesgos.
+ */
 const juguetesGatos = [
   {
     nombre: "Pluma Catnip",
@@ -851,6 +978,7 @@ const juguetesGatos = [
     tamaño: "Estándar",
     beneficios: "Reduce el estrés y fomenta el ejercicio físico.",
     tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Astro Luminosa",
@@ -863,6 +991,8 @@ const juguetesGatos = [
     color: "Verde Neón / Azul",
     tamaño: "Pequeño",
     beneficios: "Estimulación visual y agilidad mental.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Ratones Chillones por tres",
@@ -875,6 +1005,8 @@ const juguetesGatos = [
     color: "Naranja, Rojo y Gris",
     tamaño: "Mini",
     beneficios: "Diversión multiplicada y juego independiente.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Ratón de Cuerda",
@@ -890,6 +1022,8 @@ const juguetesGatos = [
     color: "Marrón con detalles blancos",
     tamaño: "Mediano",
     beneficios: "Promueve la actividad física intensa sin baterías.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Ratón de Impulso",
@@ -907,6 +1041,8 @@ const juguetesGatos = [
     color: "Negro",
     tamaño: "10 cm de largo",
     beneficios: "Fomenta la actividad física y la agilidad.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Ratón Con Alas",
@@ -919,6 +1055,8 @@ const juguetesGatos = [
     color: "Rosado con detalles azules",
     tamaño: "Pequeño",
     beneficios: "Proporciona confort y reduce el aburrimiento.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Caña de Pescar",
@@ -931,6 +1069,8 @@ const juguetesGatos = [
     color: "Madera clara y azul",
     tamaño: "Vara de 40 cm",
     beneficios: "Mejora los reflejos y la coordinación.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Multi Color",
@@ -943,6 +1083,8 @@ const juguetesGatos = [
     color: "Multicolor",
     tamaño: "5 cm de diámetro",
     beneficios: "Fácil de atrapar y transportar con la boca.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Juguete Hierba Gatera",
@@ -955,6 +1097,8 @@ const juguetesGatos = [
     color: "Madera natural",
     tamaño: "Estándar",
     beneficios: "Estimulación cognitiva y bienestar emocional.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Ratón Boxeador",
@@ -971,6 +1115,8 @@ const juguetesGatos = [
     color: "Blanco, Rosado y Verde",
     tamaño: "Mediano",
     beneficios: "Fomenta la coordinación motriz y el juego solitario.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Juguete Bola Raton",
@@ -983,6 +1129,8 @@ const juguetesGatos = [
     color: "Amarillo y Rojo",
     tamaño: "Pequeño",
     beneficios: "Mantiene al gato activo y alerta.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Ratones por tres",
@@ -998,6 +1146,8 @@ const juguetesGatos = [
     color: "Gris, Café y Blanco",
     tamaño: "Mini",
     beneficios: "Satisface el instinto de caza de forma segura.",
+    tipo: "gato",
+    stock: "disponible",
   },
 
   {
@@ -1011,6 +1161,8 @@ const juguetesGatos = [
     color: "Verde y Amarillo",
     tamaño: "6 cm de diámetro",
     beneficios: "Alivia el estrés y ayuda a la limpieza dental.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Caña Flores",
@@ -1023,6 +1175,8 @@ const juguetesGatos = [
     color: "Morado, Blanco y Rosado",
     tamaño: "Vara de 45 cm",
     beneficios: "Fomenta el ejercicio y mejora los reflejos.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Ratones Colores por tres",
@@ -1035,6 +1189,8 @@ const juguetesGatos = [
     color: "Verde, Fucsia y Blanco",
     tamaño: "Mini",
     beneficios: "Perfecto para el juego independiente y activo.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Caña Libelula",
@@ -1052,6 +1208,8 @@ const juguetesGatos = [
     color: "Verde, Naranja y Azul",
     tamaño: "Vara de 40 cm",
     beneficios: "Estimulación visual y agilidad mental.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Caña Pluma",
@@ -1064,6 +1222,8 @@ const juguetesGatos = [
     color: "Rosa Neón y Morado",
     tamaño: "Vara de 45 cm",
     beneficios: "Fomenta el ejercicio y los reflejos.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Juguete con Catnip",
@@ -1076,6 +1236,8 @@ const juguetesGatos = [
     color: "Rosa Pastel",
     tamaño: "Estándar",
     beneficios: "Relajación y limpieza dental natural.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Peluche con Catnip",
@@ -1088,6 +1250,8 @@ const juguetesGatos = [
     color: "Azul y Blanco",
     tamaño: "Pequeño",
     beneficios: "Reduce la ansiedad y el estrés.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Catnip Puercoespin",
@@ -1100,6 +1264,8 @@ const juguetesGatos = [
     color: "Verde Menta",
     tamaño: "6 cm de largo",
     beneficios: "Masaje facial y estimulación sensorial.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Catnip Vaquita",
@@ -1112,6 +1278,8 @@ const juguetesGatos = [
     color: "Rojo con puntos negros y base amarilla.",
     tamaño: "6 cm de diámetro",
     beneficios: "Relajación, alivio de estrés y estimulación sensorial.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Catnip Queso",
@@ -1124,6 +1292,8 @@ const juguetesGatos = [
     color: "Amarillo brillante con detalles grises.",
     tamaño: "7 cm de largo",
     beneficios: "Masaje facial, reducción de ansiedad y fácil limpieza dental.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Ratón Catnip Más Pelota",
@@ -1136,6 +1306,8 @@ const juguetesGatos = [
     color: "Gris/Amarillo (ratón) y Azul (pelota).",
     tamaño: "Estándar",
     beneficios: "Variedad de estímulos visuales, táctiles y olfativos.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Juguete Con Resorte",
@@ -1148,6 +1320,8 @@ const juguetesGatos = [
     color: "Rojo con estampado de huellas blancas.",
     tamaño: "Base de 15x15 cm / Alto 20 cm",
     beneficios: "Mejora agilidad, coordinación y mantiene al gato activo.",
+    tipo: "gato",
+    stock: "disponible",
   },
 
   {
@@ -1161,10 +1335,20 @@ const juguetesGatos = [
     color: "Multicolor (como en la imagen)",
     tamaño: "Pequeño",
     beneficios: "Fomenta la actividad física, la caza y el juego.",
+    tipo: "gato",
+    stock: "disponible",
   },
 ];
 
 // Listado de accesorios para gatos
+/*
+ * Cada accesorio incluye detalles específicos como material, textura, color, tamaño y beneficios para el cuidado y comodidad de tu mascota.
+ * Se recomienda revisar cada producto para elegir el que mejor se adapte a las necesidades de tu gato, asegurando su bienestar y felicidad.
+ * Los accesorios para gatos están diseñados para mejorar la calidad de vida de tu felino, proporcionando espacios de descanso, higiene y entretenimiento adecuados a sus instintos y preferencias.
+ * Es importante elegir accesorios que sean seguros, duraderos y apropiados para el tamaño y nivel de actividad de tu gato para maximizar los beneficios y minimizar los riesgos.
+ * Cada producto ha sido seleccionado pensando en la salud, comodidad y felicidad de tu gato, asegurando que cada accesorio cumpla con los estándares de calidad y funcionalidad necesarios para el cuidado óptimo de tu mascota.
+ * Los accesorios para gatos no solo mejoran su entorno, sino que también fortalecen el vínculo entre tú y tu mascota al proporcionarles un espacio seguro y estimulante donde puedan descansar, jugar y sentirse amados.
+ */
 const accesoriosGatos = [
   {
     nombre: "Gimnasio Cosmo",
@@ -1181,6 +1365,7 @@ const accesoriosGatos = [
     tamaño: "Diseño compacto para apartamentos.",
     beneficios: "Reduce el estrés y protege tus muebles.",
     tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Comedero Alto",
@@ -1193,6 +1378,8 @@ const accesoriosGatos = [
     color: "Verde Lima y Amarillo",
     tamaño: "Estándar",
     beneficios: "Mejora la digestión y la postura al comer.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Arenera Morada",
@@ -1205,6 +1392,8 @@ const accesoriosGatos = [
     color: "Morado Vibrante",
     tamaño: "Grande",
     beneficios: "Higiene facilitada y mayor comodidad para el gato.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Gimnasio Imalaya",
@@ -1223,6 +1412,8 @@ const accesoriosGatos = [
     color: "Azul Oscuro y Beige",
     tamaño: "72 cm x 41 cm x 1.55 m",
     beneficios: "Fomenta la escalada y el ejercicio en gatos activos.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Arenera Gris",
@@ -1236,6 +1427,8 @@ const accesoriosGatos = [
     tamaño: "Grande",
     beneficios:
       "Durabilidad, facilidad de uso y control de esparcimiento de arena.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Palas Cara de Gato",
@@ -1248,6 +1441,8 @@ const accesoriosGatos = [
     color: "Rojo y Morado",
     tamaño: "Estándar con mango ergonómico.",
     beneficios: "Limpieza rápida y diseño ergonómico para un mejor agarre.",
+    tipo: "gato",
+    stock: "disponible",
   },
   {
     nombre: "Palas Jarra",
@@ -1260,8 +1455,19 @@ const accesoriosGatos = [
     color: "Rojo y Verde neón",
     tamaño: "Compacto",
     beneficios: "Versatilidad 2 en 1 y optimización de la higiene en el hogar.",
+    tipo: "gato",
+    stock: "disponible",
   },
 ];
+
+/* Listado de productos para gatos y perros
+ * Cada producto incluye detalles específicos como material, textura, color, tamaño y beneficios para el entretenimiento y bienestar de tu mascota.
+ * Se recomienda revisar cada producto para elegir el que mejor se adapte a las necesidades de tu gato o perro, asegurando su felicidad y salud.
+ * Los productos para gatos y perros están diseñados para estimular sus instintos naturales, promover la actividad física y mental, y proporcionar horas de diversión segura en el hogar.
+ * Es importante elegir productos que sean apropiados para la edad, tamaño y nivel de actividad de tu mascota para maximizar los beneficios y minimizar los riesgos.
+ *  Cada producto ha sido seleccionado pensando en la salud, comodidad y felicidad de tu mascota, asegurando que cada artículo cumpla con los estándares de calidad y funcionalidad necesarios para el cuidado óptimo de tu gato o perro.
+ * Los productos para gatos y perros no solo mejoran su entorno, sino que también fortalecen el vínculo entre tú y tu mascota al proporcionarles un espacio seguro y estimulante donde puedan descansar, jugar y sentirse amados.
+ */
 const productosDosEspeciesJug = [
   {
     nombre: "Juguete Interactivo",
@@ -1276,6 +1482,7 @@ const productosDosEspeciesJug = [
     color: "Rojo con detalles negros.",
     tamaño: "Largo extendido de 40 cm.",
     beneficios: "Estimulación mental y ejercicio físico autónomo.",
+    stock: "disponible",
   },
   {
     nombre: "Bola Electrica",
@@ -1291,6 +1498,7 @@ const productosDosEspeciesJug = [
     color: "Rosa Pastel.",
     tamaño: "4.3 cm de diámetro (ideal para gatos y perros miniatura).",
     beneficios: "Evita el sedentarismo y reduce la ansiedad por separación.",
+    stock: "disponible",
   },
   {
     nombre: "Pescado Electrico",
@@ -1305,6 +1513,7 @@ const productosDosEspeciesJug = [
     color: "Naranja y Blanco (Simulación de Nemo).",
     tamaño: "28 cm de largo.",
     beneficios: "Proporciona una experiencia de caza realista y reconfortante.",
+    stock: "disponible",
   },
   {
     nombre: "Carro Control Remoto",
@@ -1320,8 +1529,17 @@ const productosDosEspeciesJug = [
     color: "Blanco y Azul con luces LED.",
     tamaño: "Compacto.",
     beneficios: "Fomenta el vínculo dueño-mascota a través del juego activo.",
+    stock: "disponible",
   },
 ];
+
+/*
+ * Listado de productos para gatos y perros
+ * Cada producto incluye detalles específicos como material, textura, color, tamaño y beneficios para el cuidado y comodidad de tu mascota.
+ * Se recomienda revisar cada producto para elegir el que mejor se adapte a las necesidades de tu gato o perro, asegurando su felicidad y salud.
+ * Los productos para gatos y perros están diseñados para mejorar la calidad de vida de tu mascota, proporcionando espacios de descanso, higiene y entretenimiento adecuados a sus instintos y preferencias.
+ * Es importante elegir productos que sean seguros, duraderos y apropiados para el tamaño y nivel de actividad de tu mascota para maximizar los beneficios y minimizar los riesgos.
+ */
 const productosDosEspeciesAcc = [
   {
     nombre: "Collar Reflectivo",
@@ -1337,6 +1555,7 @@ const productosDosEspeciesAcc = [
     color: "Rojo / Negro",
     tamaño: "Ajustable para gatos y perros pequeños.",
     beneficios: "Aumenta la seguridad en la oscuridad y es muy ligero.",
+    stock: "disponible",
   },
   {
     nombre: "Comedero Acero Inoxidable",
@@ -1352,6 +1571,7 @@ const productosDosEspeciesAcc = [
     color: "Plateado",
     tamaño: "Estándar",
     beneficios: "Máxima higiene y durabilidad de por vida.",
+    stock: "disponible",
   },
   {
     nombre: "Collar Camuflado",
@@ -1367,6 +1587,7 @@ const productosDosEspeciesAcc = [
     color: "Verde Camuflaje",
     tamaño: "Ajustable",
     beneficios: "Resistente a tirones y con estilo aventurero.",
+    stock: "disponible",
   },
   {
     nombre: "Collar Degradado",
@@ -1381,6 +1602,7 @@ const productosDosEspeciesAcc = [
     color: "Multicolor degradado",
     tamaño: "Ajustable",
     beneficios: "Diseño exclusivo y suavidad para el cuello de la mascota.",
+    stock: "disponible",
   },
   {
     nombre: "Cama Eco Granade",
@@ -1394,6 +1616,7 @@ const productosDosEspeciesAcc = [
     color: "Gris con detalles oscuros",
     tamaño: "62 cm",
     beneficios: "Sostenible, fácil de lavar y ultra cómoda.",
+    stock: "disponible",
   },
 
   {
@@ -1412,6 +1635,7 @@ const productosDosEspeciesAcc = [
     color: "Azul y Gris",
     tamaño: "45 cm largo x 33 cm ancho x 30 cm alto",
     beneficios: "Seguridad garantizada y excelente flujo de aire.",
+    stock: "disponible",
   },
   {
     nombre: "Guacal Mediano",
@@ -1429,6 +1653,7 @@ const productosDosEspeciesAcc = [
     color: "Verde y Gris",
     tamaño: "35 cm largo x 28 cm ancho x 30 cm alto",
     beneficios: "Ligero de transportar y fácil de armar.",
+    stock: "disponible",
   },
   {
     nombre: "Guacal Pequeño",
@@ -1450,6 +1675,7 @@ const productosDosEspeciesAcc = [
     color: "Rojo / Azul / Verde",
     tamaño: "36 cm largo x 25 cm ancho x 24 cm alto",
     beneficios: "Ideal para trayectos cortos y fácil de guardar.",
+    stock: "disponible",
   },
   {
     nombre: "Pala Gramera",
@@ -1465,6 +1691,7 @@ const productosDosEspeciesAcc = [
     color: "Blanco",
     tamaño: "Estándar",
     beneficios: "Evita el sobrepeso controlando las porciones exactas.",
+    stock: "disponible",
   },
   {
     nombre: "Comedero Metalico Estampado",
@@ -1480,6 +1707,7 @@ const productosDosEspeciesAcc = [
     color: "Estampado variado",
     tamaño: "22 cm de diámetro",
     beneficios: "Antioxidante y base con mayor estabilidad.",
+    stock: "disponible",
   },
   {
     nombre: "Pistola Para Pildoras",
@@ -1494,6 +1722,7 @@ const productosDosEspeciesAcc = [
     color: "Verde / Azul",
     tamaño: "15 cm",
     beneficios: "Facilita la medicación y reduce el estrés del animal.",
+    stock: "disponible",
   },
   {
     nombre: "Cepillo Para Baño Dispensador Shampoo",
@@ -1508,6 +1737,7 @@ const productosDosEspeciesAcc = [
     color: "Amarillo / Azul / Rosa",
     tamaño: "Estándar",
     beneficios: "Limpieza profunda y ahorro de shampoo.",
+    stock: "disponible",
   },
   {
     nombre: "Cepillo Boton Limpieza",
@@ -1527,6 +1757,7 @@ const productosDosEspeciesAcc = [
     color: "Gris / Azul",
     tamaño: "Grande",
     beneficios: "Elimina nudos y pelo muerto sin esfuerzo.",
+    stock: "disponible",
   },
   {
     nombre: "Cepillo Vapor",
@@ -1545,6 +1776,7 @@ const productosDosEspeciesAcc = [
     color: "Amarillo / Verde",
     tamaño: "Compacto",
     beneficios: "Elimina olores y deja el pelaje brillante.",
+    stock: "disponible",
   },
   {
     nombre: "Bolsas Biodegradable por Seis",
@@ -1560,6 +1792,7 @@ const productosDosEspeciesAcc = [
     color: "Verde / Negro",
     tamaño: "6 rollos",
     beneficios: "Resistentes a goteos y eco-amigables.",
+    stock: "disponible",
   },
   {
     nombre: "Comederos Flor",
@@ -1576,6 +1809,7 @@ const productosDosEspeciesAcc = [
     color: "Azul / Rosa / Verde",
     tamaño: "Pequeño",
     beneficios: "Diseño divertido y fácil de lavar.",
+    stock: "disponible",
   },
   {
     nombre: "Bolsas Biodegradable por Tres",
@@ -1590,6 +1824,7 @@ const productosDosEspeciesAcc = [
     color: "Verde",
     tamaño: "3 rollos",
     beneficios: "Prácticas para el uso diario.",
+    stock: "disponible",
   },
   {
     nombre: "Vaso medidor de alimentos",
@@ -1605,6 +1840,7 @@ const productosDosEspeciesAcc = [
     color: "Transparente",
     tamaño: "250 ml",
     beneficios: "Precisión en la alimentación y bajo costo.",
+    stock: "disponible",
   },
 ];
 

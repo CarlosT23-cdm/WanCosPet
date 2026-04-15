@@ -107,9 +107,27 @@ function renderLista(idContenedor, lista, nombreGaleria) {
         })
         .join("");
 
+      let etiquetaStock = "";
+      let claseStock = "";
+
+      if (p.stock === "agotado") {
+        etiquetaStock = "AGOTADO";
+        claseStock = "stock-agotado";
+      } else if (p.stock === "encargo") {
+        etiquetaStock = "POR ENCARGO";
+        claseStock = "stock-encargo";
+      } else {
+        etiquetaStock = "DISPONIBLE";
+        claseStock = "stock-disponible";
+      }
+
       return `
-    <article class="producto" style="position: relative;"> 
-        ${htmlVideo}
+        <article class="producto" style="position: relative;"> 
+        <span class="stock-label ${claseStock}">
+        ${etiquetaStock}
+        </span>
+
+      ${htmlVideo}
         <a data-fancybox="${galeriaID}" data-caption='${captionHtml}' href="${imgPrincipal}">
             <img src="${imgPrincipal}" alt="${p.nombre}">
         </a>
@@ -128,9 +146,13 @@ function renderLista(idContenedor, lista, nombreGaleria) {
                 <strong>Precio:</strong> $${p.precio.toLocaleString()} COP
             </div>
             <div class="producto-acciones" style="display: flex; gap: 10px; margin-top: 15px; justify-content: center;">
-                <button class="btn-carrito" onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio}, this, '${p.tipo}')">
-                    Añadir al carrito
-                </button>
+                  <button 
+                         class="btn-carrito ${p.stock === "agotado" ? "btn-agotado" : ""}" 
+                                          ${p.stock === "agotado" ? "disabled" : ""} 
+                                               onclick="agregarAlCarrito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio}, this, '${p.tipo}')"
+                                                              >
+                                                         ${p.stock === "agotado" ? "Agotado" : p.stock === "encargo" ? "Encargar" : "Añadir al carrito"}
+                                                        </button>
                 <button class="${claseBtn}" onclick="toggleFavorito('${p.nombre.replace(/'/g, "\\'")}', ${p.precio}, '${imgPrincipal}')">
                     ${icono}
                 </button>
@@ -284,6 +306,13 @@ function agregarAlCarrito(producto, precio, boton, tipo) {
     console.error("No se encontró imagen");
     return;
   }
+  if (boton.innerText === "Agotado") {
+    alert("Este producto está agotado 😢");
+    return;
+  }
+  if (boton.innerText.includes("Encargo")) {
+    alert("Este producto es por encargo, puede tardar más tiempo.");
+  }
   console.log(img);
 
   carrito.push({ producto, precio });
@@ -388,7 +417,7 @@ function enviarPedidoWhatsApp() {
 
   // 4. Recorrer el carrito (usando la variable global 'carrito')
   carrito.forEach((item) => {
-    textoFinal += `✅ ${item.producto} - $${item.precio.toLocaleString()}\n`;
+    textoFinal += `✅ ${item.producto} (${item.stock || "disponible"}) - $${item.precio}\n`;
   });
 
   // 5. Calcular Total
@@ -579,11 +608,4 @@ function mostrarMensajeFloat(x, y) {
   setTimeout(() => {
     msg.remove();
   }, 800);
-}
-function prueba() {
-  console.log("1");
-
-  noExiste();
-
-  console.log("2");
 }
