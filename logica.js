@@ -3,8 +3,8 @@
 // 1. Variables Globales de Estado
 let carrito = JSON.parse(localStorage.getItem("wancos_carrito_v1") || "[]");
 let favoritos = JSON.parse(localStorage.getItem("wancos_favoritos") || "[]");
-const audioPerro = new Audio("audios_tienda/ladrido_wanda_01.mp3");
-const audioGato = new Audio("audios_tienda/maullido_cosmo_01.mp3");
+//const audioPerro = new Audio("audios_tienda/ladrido_wanda_01.mp3");
+const audioGato = new Audio("audios_tienda/maullido_cosmo_02.mp3");
 
 document.addEventListener("DOMContentLoaded", () => {
   // Inicializar funciones clave
