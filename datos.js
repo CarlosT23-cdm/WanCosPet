@@ -60,7 +60,7 @@ const juguetesPerros = [
     beneficios:
       "Fomenta el juego de 'pateo' en gatos y es ideal como almohada de descanso.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "encargo",
   },
 
   {
@@ -78,7 +78,7 @@ const juguetesPerros = [
     tamaño: "25 - 30 cm",
     beneficios: "Masajea encías suavemente y brinda alta estimulación visual.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "encargo",
   },
   {
     nombre: "Puerco Espin",
@@ -95,7 +95,7 @@ const juguetesPerros = [
     tamaño: "7 cm (Diámetro)",
     beneficios: "Ayuda a la salud dental y reduce el estrés por aburrimiento.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "encargo",
   },
   {
     nombre: "Zanahoria Chillona",
@@ -125,7 +125,7 @@ const juguetesPerros = [
     beneficios:
       "Ayuda a remover el sarro mientras juegan; doble textura para mayor interés.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "encargo",
   },
   {
     nombre: "Pollo Chillon Pequeño",
@@ -139,7 +139,7 @@ const juguetesPerros = [
     tamaño: "16 cm aprox.",
     beneficios: "Alta respuesta sonora; ideal para liberar estrés y ansiedad.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "encargo",
   },
   {
     nombre: "Pelota Puntas",
@@ -153,7 +153,7 @@ const juguetesPerros = [
     tamaño: "7 cm (Diámetro)",
     beneficios: "Promueve la salud oral y el ejercicio cardiovascular.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "encargo",
   },
   {
     nombre: "Pelota Maciza Medinana",
@@ -188,7 +188,7 @@ const juguetesPerros = [
     beneficios:
       "Estimulación auditiva de alto nivel, ideal para juegos interactivos.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "encargo",
   },
   {
     nombre: "Pelota Encias",
@@ -238,7 +238,7 @@ const juguetesPerros = [
     beneficios:
       "Ideal para la limpieza dental y juegos interactivos de fuerza.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "encargo",
   },
   {
     nombre: "Paquete de Pelotas por cinco",
@@ -252,7 +252,7 @@ const juguetesPerros = [
     tamaño: "Tamaño promedio de pelota de tenis",
     beneficios: "Versatilidad de juego y excelente visibilidad en exteriores.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "encargo",
   },
 
   {
@@ -271,7 +271,7 @@ const juguetesPerros = [
     beneficios:
       "Estimulación auditiva que mantiene el interés de la mascota por más tiempo.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "encargo",
   },
   {
     nombre: "Pelota Asteroide",
@@ -286,7 +286,7 @@ const juguetesPerros = [
     beneficios:
       "Masajea las encías durante el juego y promueve el ejercicio intenso.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "encargo",
   },
   {
     nombre: "Muslo Macizo",
@@ -330,7 +330,7 @@ const juguetesPerros = [
     tamaño: "No especificado.",
     beneficios: "Estimulación sonora y física en un solo juguete.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "encargo",
   },
   {
     nombre: "Mazorca Chillona",
@@ -393,7 +393,7 @@ const juguetesPerros = [
     beneficios:
       "Estimulación auditiva y física en un diseño llamativo; ideal para cachorros.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "encargo",
   },
   {
     nombre: "Cuerda Pelota Pequeña",
@@ -449,7 +449,7 @@ const juguetesPerros = [
     tamaño: "12 cm aprox.",
     beneficios: "Entretenimiento prolongado gracias a su sonido atrayente.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "encargo",
   },
   {
     nombre: "Dona Antisarro",
