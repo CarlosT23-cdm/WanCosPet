@@ -1284,6 +1284,7 @@ const juguetesGatos = [
   {
     nombre: "Catnip Queso",
     precio: 12000,
+    video: "./videos_tienda/Videos_juguetes_gatos/Catnip_queso_video_01.mp4",
     imagenes: [rutaBaseGatosJug + "queso_amarillo_jug_cat_01.jpg"],
     descripcion:
       "Juguete adhesivo con diseño divertido de queso y ratón. Sus relieves y orificios permiten que el gato acceda al catnip mientras masajea su cara.",
