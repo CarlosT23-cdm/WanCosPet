@@ -1368,7 +1368,7 @@ const accesoriosGatos = [
     tamaño: "Diseño compacto para apartamentos.",
     beneficios: "Reduce el estrés y protege tus muebles.",
     tipo: "gato",
-    stock: "disponible",
+    stock: "encargo",
   },
   {
     nombre: "Comedero Alto",
@@ -1402,12 +1402,12 @@ const accesoriosGatos = [
     nombre: "Gimnasio Imalaya",
     precio: 300000,
     imagenes: [
-      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_01.JPEG",
-      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_02.JPEG",
-      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_03.JPEG",
-      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_04.JPEG",
-      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_05.JPEG",
-      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_06.JPEG",
+      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_01.jpg",
+      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_02.jpg",
+      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_03.jpg",
+      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_04.jpg",
+      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_06.jpg",
+      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_05.jpg",
     ],
     descripcion:
       "Centro de actividades de gran altura con múltiples niveles, dos cuevas de descanso y postes rascadores reforzados.",
@@ -1417,7 +1417,7 @@ const accesoriosGatos = [
     tamaño: "72 cm x 41 cm x 1.55 m",
     beneficios: "Fomenta la escalada y el ejercicio en gatos activos.",
     tipo: "gato",
-    stock: "disponible",
+    stock: "encargo",
   },
   {
     nombre: "Arenera Gris",
