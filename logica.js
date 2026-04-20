@@ -5,6 +5,8 @@ let carrito = JSON.parse(localStorage.getItem("wancos_carrito_v1") || "[]");
 let favoritos = JSON.parse(localStorage.getItem("wancos_favoritos") || "[]");
 const audioPerro = new Audio("audios_tienda/ladrido_wanda_03.mp3");
 const audioGato = new Audio("audios_tienda/maullido_cosmo_04.mp3");
+const ENVIO = 12000;
+const UMBRAL_ENVIO_GRATIS = 3;
 
 document.addEventListener("DOMContentLoaded", () => {
   // Inicializar funciones clave
@@ -12,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   actualizarVista();
   actualizarVistaFavoritos();
   initFancybox();
+  renderClientesFelices();
 
   // Renderizar la página por primera vez
   renderizarPaginaActual();
@@ -368,9 +371,19 @@ function actualizarVista() {
     )
     .join("");
 
-  const total = carrito.reduce((sum, i) => sum + i.precio * i.cantidad, 0);
+  const totalProductos = carrito.reduce((sum, i) => sum + i.cantidad, 0);
+
+  const subtotal = carrito.reduce((sum, i) => sum + i.precio * i.cantidad, 0);
+
+  const costoEnvio = totalProductos >= UMBRAL_ENVIO_GRATIS ? 0 : ENVIO;
+
+  const totalFinal = subtotal + costoEnvio;
   if (totalEl)
-    totalEl.innerHTML = `<strong>Total: $${total.toLocaleString()} COP</strong>`;
+    totalEl.innerHTML = `
+  <div>Subtotal: $${subtotal.toLocaleString()} COP</div>
+  <div>Envío: ${costoEnvio === 0 ? "GRATIS 🎉" : "$" + ENVIO.toLocaleString() + " COP"}</div>
+  <strong>Total: $${totalFinal.toLocaleString()} COP</strong>
+`;
   if (countEl) countEl.innerText = carrito.length;
 }
 
@@ -430,12 +443,21 @@ function enviarPedidoWhatsApp() {
   });
 
   // 5. Calcular Total
-  const total = carrito.reduce(
+  const totalProductos = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+
+  const subtotal = carrito.reduce(
     (acc, item) => acc + item.precio * item.cantidad,
     0,
   );
+
+  const costoEnvio = totalProductos >= UMBRAL_ENVIO_GRATIS ? 0 : ENVIO;
+
+  const total = subtotal + costoEnvio;
   textoFinal += `--------------------------\n`;
-  textoFinal += `*TOTAL: $${total.toLocaleString()}*\n\n`;
+  textoFinal += `--------------------------\n`;
+  textoFinal += `Subtotal: $${subtotal.toLocaleString()} COP\n`;
+  textoFinal += `Envío: ${costoEnvio === 0 ? "GRATIS 🎉" : "$" + ENVIO.toLocaleString() + " COP"}\n`;
+  textoFinal += `*TOTAL: $${total.toLocaleString()} COP*\n\n`;
   textoFinal += `_Enviado desde la tienda virtual_`;
 
   // 6. Abrir WhatsApp (Usando encodeURI para seguridad)
@@ -620,4 +642,45 @@ function mostrarMensajeFloat(x, y) {
   setTimeout(() => {
     msg.remove();
   }, 800);
+}
+
+function renderClientesFelices() {
+  const cont = document.getElementById("clientes-felices");
+  if (!cont) return;
+
+  cont.innerHTML = clientesFelices
+    .map((cliente) => {
+      if (cliente.tipo === "video") {
+        return `
+    <div class="cliente-card">
+
+      <!-- CLICK ABRE VIDEO CON SONIDO -->
+      <a href="${cliente.src}" 
+         data-fancybox="clientes"
+         data-type="html5video">
+
+        <!-- VIDEO PREVIEW -->
+        <video src="${cliente.src}" muted loop playsinline></video>
+
+        <div class="video-overlay">
+          <i class="fas fa-play-circle"></i>
+        </div>
+
+      </a>
+
+      <p class="comentario">"${cliente.comentario}"</p>
+      <span class="nombre">${cliente.nombre}</span>
+    </div>
+  `;
+      }
+
+      return `
+      <div class="cliente-card">
+        <img src="${cliente.src}" alt="${cliente.nombre}">
+        <p class="comentario">"${cliente.comentario}"</p>
+        <span class="nombre">${cliente.nombre}</span>
+      </div>
+    `;
+    })
+    .join("");
 }
