@@ -823,6 +823,8 @@ const accesoriosPerros = [
     nombre: "Bebedero 4 en 1",
     precio: 50000,
     imagenes: [rutaBasePerrosAcc + "Bebedero_4_en_uno_dog_acc_01.jpg"],
+    video:
+      "./videos_tienda/Videos_accesorios_perros/BebederoCuatroEnUno_video_acc_dog_01.mp4",
     descripcion:
       "Accesorio de viaje multifuncional que integra botella de agua, comedero plegable, dispensador de bolsas y pala para desechos.",
     material: "Plástico libre de BPA.",
