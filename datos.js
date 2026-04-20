@@ -1403,10 +1403,6 @@ const accesoriosGatos = [
     precio: 300000,
     imagenes: [
       rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_01.jpeg",
-      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_02.jpeg",
-      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_03.jpeg",
-      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_04.jpeg",
-      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_05.jpeg",
       rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_06.jpeg",
     ],
     descripcion:
