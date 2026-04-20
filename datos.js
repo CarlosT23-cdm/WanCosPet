@@ -1478,6 +1478,23 @@ const accesoriosGatos = [
  */
 const productosDosEspeciesJug = [
   {
+    nombre: "Bola Giratoria con Luz y Pluma",
+    precio: 30000,
+    imagenes: [
+      rutaBaseGatosPerrosJug + "BolaGiratoriaConLuzyPluma_cat_dog_jug_01.jpg",
+    ],
+    video:
+      "./videos_tienda/Videos_jugetes_perros_y_Gatos/BolaGiratoriaConLuzYplumas_video_jug_cat_dog_01.mp4",
+    descripcion:
+      "Pelota interactiva que combina movimiento giratorio, luces LED y una pluma colgante. Diseñada para estimular el instinto de caza tanto en perros pequeños como en gatos, proporcionando horas de entretenimiento activo.",
+    material: "Plástico ABS resistente y plumas artificiales.",
+    textura: "Lisa.",
+    color: "Rosada con luces multicolor y pluma rosa.",
+    tamaño: "Aproximadamente 10 cm de diámetro.",
+    beneficios: "Estimulación mental y ejercicio físico autónomo.",
+    stock: "disponible",
+  },
+  {
     nombre: "Juguete Interactivo",
     precio: 22000,
     imagenes: [
