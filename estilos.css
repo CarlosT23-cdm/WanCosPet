@@ -772,6 +772,14 @@ footer {
   position: relative;
 }
 
+/* Alerta de envío */
+#alerta-envio {
+  font-size: 0.9rem;
+  padding: 8px;
+  border-radius: 8px;
+  background: #fff3e6;
+}
+
 /* ==========================================================================
    7. ADAPTABILIDAD WANCOS PET - UNIFICADA
    ========================================================================== */

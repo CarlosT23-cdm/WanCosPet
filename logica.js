@@ -8,6 +8,14 @@ const audioGato = new Audio("audios_tienda/maullido_cosmo_04.mp3");
 const ENVIO = 12000;
 const UMBRAL_ENVIO_GRATIS = 3;
 
+function calcularEnvio(totalProductos, esBogota) {
+  if (esBogota) {
+    return totalProductos >= 3 ? 0 : 12000;
+  } else {
+    return 20000;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Inicializar funciones clave
   configurarBuscador();
@@ -350,6 +358,40 @@ function eliminarDelCarrito(index) {
 }
 
 function actualizarVista() {
+  // 🔥 Cantidad total de productos
+  const totalProductos = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+
+  // 🔥 Subtotal (dinero sin envío)
+  const subtotal = carrito.reduce(
+    (acc, item) => acc + item.precio * item.cantidad,
+    0,
+  );
+
+  // 🔥 Detectar si es Bogotá (si tienes input de dirección)
+  const ciudad = document.getElementById("ciudad-cliente")?.value;
+  const esBogota = ciudad === "bogota";
+
+  // 🔥 Definir costo base
+  let costoEnvio = 12000;
+
+  // 🔥 Lógica de envío
+  let envioFinal = calcularEnvio(totalProductos, esBogota);
+
+  // 🔥 Total final
+  const totalFinal = subtotal + envioFinal;
+  // 🔥 Texto dinámico de envío (FORMA CORRECTA)
+  let textoEnvio = "";
+
+  if (esBogota) {
+    if (envioFinal === 0) {
+      textoEnvio = "🎉 Envío GRATIS en Bogotá";
+    } else {
+      textoEnvio = "🚚 Envío en Bogotá: $12.000 aprox";
+    }
+  } else {
+    textoEnvio = "🌍 Envío nacional: se calcula según tu ciudad";
+  }
+
   const lista = document.getElementById("lista-carrito");
   const totalEl = document.getElementById("total-carrito");
   const countEl = document.getElementById("carrito-count");
@@ -371,17 +413,26 @@ function actualizarVista() {
     )
     .join("");
 
-  const totalProductos = carrito.reduce((sum, i) => sum + i.cantidad, 0);
+  const alerta = document.getElementById("alerta-envio");
 
-  const subtotal = carrito.reduce((sum, i) => sum + i.precio * i.cantidad, 0);
+  if (alerta) {
+    if (totalProductos === 0) {
+      alerta.innerHTML = "";
+    } else if (totalProductos >= UMBRAL_ENVIO_GRATIS) {
+      alerta.innerHTML = "🎉 ¡Tienes envío GRATIS!";
+      alerta.style.color = "green";
+    } else {
+      const faltan = UMBRAL_ENVIO_GRATIS - totalProductos;
 
-  const costoEnvio = totalProductos >= UMBRAL_ENVIO_GRATIS ? 0 : ENVIO;
+      alerta.innerHTML = `🚚 Te faltan ${faltan} producto${faltan > 1 ? "s" : ""} para envío GRATIS`;
+      alerta.style.color = "#ff914d";
+    }
+  }
 
-  const totalFinal = subtotal + costoEnvio;
   if (totalEl)
     totalEl.innerHTML = `
   <div>Subtotal: $${subtotal.toLocaleString()} COP</div>
-  <div>Envío: ${costoEnvio === 0 ? "GRATIS 🎉" : "$" + ENVIO.toLocaleString() + " COP"}</div>
+  <div>${textoEnvio}</div>
   <strong>Total: $${totalFinal.toLocaleString()} COP</strong>
 `;
   if (countEl) countEl.innerText = carrito.length;
@@ -410,7 +461,7 @@ function enviarPedidoWhatsApp() {
   const direccion = document.getElementById("direccion-cliente").value;
   const pago = document.getElementById("metodo-pago").value;
 
-  // 2. Validaciones Administrativas
+  // 2. Validaciones
   if (!nombre || !direccion) {
     alert("Por favor, completa tu nombre y dirección.");
     return;
@@ -419,8 +470,39 @@ function enviarPedidoWhatsApp() {
     alert("El carrito está vacío.");
     return;
   }
+  // 🔥 Detectar si es Bogotá
+  const ciudad = document.getElementById("ciudad-cliente")?.value;
 
-  // 3. Construir el cuerpo del mensaje (Unificado)
+  if (!ciudad) {
+    alert("Por favor selecciona tu ciudad");
+    return;
+  }
+  const esBogota = ciudad === "bogota";
+
+  // 🔥 Cantidad total de productos
+  const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+
+  // 🔥 Subtotal (ÚNICO y correcto)
+  const subtotal = carrito.reduce(
+    (acc, item) => acc + item.precio * item.cantidad,
+    0,
+  );
+
+  // 🔥 Lógica de envío (ÚNICA)
+  let envioFinal = calcularEnvio(totalItems, esBogota);
+
+  let mensajeEnvio = "";
+
+  if (esBogota) {
+    mensajeEnvio =
+      envioFinal === 0
+        ? "🚚 Envío GRATIS (Bogotá)"
+        : "🚚 Envío Bogotá: $12.000";
+  } else {
+    mensajeEnvio = "🌍 Envío nacional: se calcula al confirmar pedido";
+  }
+
+  // 3. Construir mensaje
   let textoFinal = `📦 NUEVO PEDIDO WANCOS PET\n\n`;
   textoFinal += `Cliente: ${nombre}\n`;
   textoFinal += `Dirección: ${direccion}\n`;
@@ -428,9 +510,7 @@ function enviarPedidoWhatsApp() {
   textoFinal += `--------------------------\n`;
   textoFinal += `Productos:\n`;
 
-  console.log(carrito);
-
-  // 4. Recorrer el carrito (usando la variable global 'carrito')
+  // 4. Listar productos
   carrito.forEach((item) => {
     const estado =
       item.stock === "agotado"
@@ -439,28 +519,23 @@ function enviarPedidoWhatsApp() {
           ? "🕒 Por encargo"
           : "✅ Disponible";
 
-    textoFinal += `• ${item.producto} x${item.cantidad} (${estado}) - $${(item.precio * item.cantidad).toLocaleString()}\n`;
+    textoFinal += `• ${item.producto} x${item.cantidad} (${estado}) - $${(
+      item.precio * item.cantidad
+    ).toLocaleString()}\n`;
   });
 
-  // 5. Calcular Total
-  const totalProductos = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+  // 5. Totales
 
-  const subtotal = carrito.reduce(
-    (acc, item) => acc + item.precio * item.cantidad,
-    0,
-  );
+  // 🔥 Total final REAL
+  const total = subtotal + envioFinal;
 
-  const costoEnvio = totalProductos >= UMBRAL_ENVIO_GRATIS ? 0 : ENVIO;
-
-  const total = subtotal + costoEnvio;
-  textoFinal += `--------------------------\n`;
   textoFinal += `--------------------------\n`;
   textoFinal += `Subtotal: $${subtotal.toLocaleString()} COP\n`;
-  textoFinal += `Envío: ${costoEnvio === 0 ? "GRATIS 🎉" : "$" + ENVIO.toLocaleString() + " COP"}\n`;
+  textoFinal += `${mensajeEnvio}\n`;
   textoFinal += `*TOTAL: $${total.toLocaleString()} COP*\n\n`;
   textoFinal += `_Enviado desde la tienda virtual_`;
 
-  // 6. Abrir WhatsApp (Usando encodeURI para seguridad)
+  // 6. Enviar a WhatsApp
   const url = `https://api.whatsapp.com/send?phone=573022375413&text=${encodeURIComponent(textoFinal)}`;
   window.open(url, "_blank");
 }
