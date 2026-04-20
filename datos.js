@@ -1499,6 +1499,8 @@ const productosDosEspeciesJug = [
       rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat_y_dog_01.jpg",
       rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat_y_dog_02.jpg",
     ],
+    video:
+      "./videos_tienda/Videos_jugetes_perros_y_Gatos/Bola_electrica_video_cat_jug_01.mp4",
     descripcion:
       "Pelota inteligente con rotación automática de 360 grados. Cambia de dirección al detectar obstáculos, manteniendo la atención de la mascota por más tiempo.",
     material: "Silicona suave y componentes electrónicos.",
