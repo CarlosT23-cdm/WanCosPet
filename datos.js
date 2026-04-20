@@ -747,6 +747,8 @@ const accesoriosPerros = [
       rutaBasePerrosAcc + "Comedero_plegable_dog_01.jpg",
       rutaBasePerrosAcc + "Comedero_plegable_dog_02.jpg",
     ],
+    video:
+      "./videos_tienda/Videos_accesorios_perros/ComederoBebederoPlegable_video_acc_dog_01.mp4",
     descripcion:
       "Plato colapsable ideal para viajes, senderismo o paseos largos. Su diseño ultra delgado permite guardarlo en cualquier morral sin ocupar espacio.",
     material: "Silicona de grado alimenticio.",
@@ -850,7 +852,7 @@ const accesoriosPerros = [
     precio: 22000,
     imagenes: [rutaBasePerrosAcc + "Correa_retractil_acc_dog_01.jpg"],
     video:
-      "./videos_tienda/Videos_accesorios_perros/Correa_retractil_negra_video_acc_dog.mp4",
+      "./videos_tienda/Videos_accesorios_perros/Correa_retractil_negra_video_acc_dog_02.mp4",
     descripcion:
       "Sistema de cinta extensible con bloqueo de seguridad. Ofrece libertad de movimiento controlada durante los paseos en ciudad o campo.",
     material: "Carcasa de plástico y cinta de nylon.",
