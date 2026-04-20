@@ -1284,6 +1284,7 @@ const juguetesGatos = [
   {
     nombre: "Catnip Queso",
     precio: 12000,
+    video: "./videos_tienda/Videos_juguetes_gatos/Catnip_queso_video_01.mp4",
     imagenes: [rutaBaseGatosJug + "queso_amarillo_jug_cat_01.jpg"],
     video:
       "./videos_tienda/Videos_juguetes_gatos/CatnipAguacateQuesoCosmo_01.mp4",
