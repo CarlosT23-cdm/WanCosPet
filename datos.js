@@ -1358,6 +1358,23 @@ const juguetesGatos = [
  */
 const accesoriosGatos = [
   {
+    nombre: "Cepillo de Dientes * 4",
+    precio: 9000,
+    imagenes: [rutaBaseGatosAcc + "CepiloDientesCatAcc.jpg"],
+    video:
+      "./videos_tienda/Videos_accesorios_gatos/VideoCepillosDeDienteGatos.mp4",
+    descripcion:
+      "Cepillo de dientes diseñado para gatos con cerdas suaves y mango ergonómico. Facilita la limpieza dental diaria, ayudando a prevenir enfermedades bucales.",
+    material: "Plástico y cerdas de nylon.",
+    textura: "Suave.",
+    color: "Varios",
+    tamaño: "Estándar",
+    beneficios:
+      "Facilita la limpieza dental diaria y previene enfermedades bucales.",
+    tipo: "gato",
+    stock: "disponible",
+  },
+  {
     nombre: "Gimnasio Cosmo",
     precio: 300000,
     imagenes: [
