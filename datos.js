@@ -1285,6 +1285,8 @@ const juguetesGatos = [
     nombre: "Catnip Queso",
     precio: 12000,
     imagenes: [rutaBaseGatosJug + "queso_amarillo_jug_cat_01.jpg"],
+    video:
+      "./videos_tienda/Videos_juguetes_gatos/CatnipAguacateQuesoCosmo_01.mp4",
     descripcion:
       "Juguete adhesivo con diseño divertido de queso y ratón. Sus relieves y orificios permiten que el gato acceda al catnip mientras masajea su cara.",
     material: "Silicona suave no tóxica y Catnip premium.",
@@ -1399,11 +1401,12 @@ const accesoriosGatos = [
     nombre: "Gimnasio Imalaya",
     precio: 300000,
     imagenes: [
-      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_01.jpeg",
-      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_02.jpeg",
-      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_03.jpeg",
-      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_04.jpeg",
-      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_05.jpeg",
+      rutaBaseGatosAcc + "GimnasioImalayaAccCat_01.jpeg",
+      rutaBaseGatosAcc + "GimnasioImalayaAccCat_02.jpeg",
+      rutaBaseGatosAcc + "GimnasioImalayaAccCat_03.jpeg",
+      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_01.jpeg",
+      rutaBaseGatosAcc + "GimnasioImalayaAccCat_04.jpeg",
+      rutaBaseGatosAcc + "GimnasioImalayaAccCat_05.jpeg",
     ],
     descripcion:
       "Centro de actividades de gran altura con múltiples niveles, dos cuevas de descanso y postes rascadores reforzados.",
@@ -1768,7 +1771,7 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc + "Cepillo_Vapor_acc_dog_y_cat_03.jpg",
     ],
     video:
-      "./videos_tienda/Videos_accesorios_perros_y_gatos/Cepillo_Vapor_video_01.mp4",
+      "./videos_tienda/Videos_accesorios_perros_y_gatos/CepilloVaporWanda_conMusica_02.mp4",
     descripcion:
       "Innovador cepillo 3 en 1 que utiliza vapor de agua para desinfectar, limpiar y peinar el pelaje de forma suave.",
     material: "Plástico y silicona.",
