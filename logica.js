@@ -88,17 +88,6 @@ function renderLista(idContenedor, lista, nombreGaleria) {
       `;
 
       // Lógica de Video: Forzamos el reconocimiento del formato mp4
-      let htmlVideo = "";
-      if (p.video) {
-        htmlVideo = `
-          <a href="${p.video.trim()}" 
-             data-fancybox="${galeriaID}" 
-             data-type="html5video" 
-             data-caption='${captionHtml}'
-             class="btn-video-flotante">
-             <i class="fas fa-play-circle"></i> Ver Video
-          </a>`;
-      }
 
       const imagenesOcultas = p.imagenes
         .slice(1)
@@ -121,16 +110,63 @@ function renderLista(idContenedor, lista, nombreGaleria) {
         claseStock = "stock-disponible";
       }
 
+      let videoSlide = "";
+
+      if (p.video) {
+        videoSlide = `
+    <a href="${p.video.trim()}"
+       data-fancybox="${galeriaID}"
+       data-type="html5video"
+       data-caption='${captionHtml}'
+       style="display:none;">
+    </a>
+  `;
+      }
+
       return `
         <article class="producto" style="position: relative;"> 
         <span class="stock-label ${claseStock}">
         ${etiquetaStock}
         </span>
 
-      ${htmlVideo}
-        <a data-fancybox="${galeriaID}" data-caption='${captionHtml}' href="${imgPrincipal}">
-            <img src="${imgPrincipal}" alt="${p.nombre}">
-        </a>
+${
+  p.video
+    ? `
+  <a href="${p.video.trim()}" 
+     data-fancybox="${galeriaID}" 
+     data-type="html5video" 
+     data-caption='${captionHtml}'
+     class="video-principal">
+     
+     <div class="video-overlay">
+       <i class="fas fa-play-circle"></i>
+       <span>Ver video</span>
+     </div>
+
+     <img src="${imgPrincipal}" alt="${p.nombre}">
+  </a>
+`
+    : `
+${videoSlide}
+
+<a data-fancybox="${galeriaID}" data-caption='${captionHtml}' href="${imgPrincipal}" class="video-principal">
+  
+  ${
+    p.video
+      ? `
+    <div class="video-overlay">
+      <i class="fas fa-play-circle"></i>
+      <span>Ver video</span>
+    </div>
+  `
+      : ""
+  }
+
+  <img src="${imgPrincipal}" alt="${p.nombre}">
+</a>
+
+`
+}
         ${imagenesOcultas}
         <div class="producto-info">
             <div class="producto-detalles-texto">
