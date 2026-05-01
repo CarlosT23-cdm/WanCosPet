@@ -60,7 +60,7 @@ const juguetesPerros = [
     beneficios:
       "Fomenta el juego de 'pateo' en gatos y es ideal como almohada de descanso.",
     tipo: "perro",
-    stock: "encargo",
+    stock: "disponible",
   },
 
   {
@@ -78,7 +78,7 @@ const juguetesPerros = [
     tamaño: "25 - 30 cm",
     beneficios: "Masajea encías suavemente y brinda alta estimulación visual.",
     tipo: "perro",
-    stock: "encargo",
+    stock: "disponible",
   },
   {
     nombre: "Puerco Espin",
@@ -95,7 +95,7 @@ const juguetesPerros = [
     tamaño: "7 cm (Diámetro)",
     beneficios: "Ayuda a la salud dental y reduce el estrés por aburrimiento.",
     tipo: "perro",
-    stock: "encargo",
+    stock: "disponible",
   },
   {
     nombre: "Zanahoria Chillona",
@@ -125,7 +125,7 @@ const juguetesPerros = [
     beneficios:
       "Ayuda a remover el sarro mientras juegan; doble textura para mayor interés.",
     tipo: "perro",
-    stock: "encargo",
+    stock: "disponible",
   },
   {
     nombre: "Pollo Chillon Pequeño",
@@ -139,7 +139,7 @@ const juguetesPerros = [
     tamaño: "16 cm aprox.",
     beneficios: "Alta respuesta sonora; ideal para liberar estrés y ansiedad.",
     tipo: "perro",
-    stock: "encargo",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Puntas",
@@ -153,7 +153,7 @@ const juguetesPerros = [
     tamaño: "7 cm (Diámetro)",
     beneficios: "Promueve la salud oral y el ejercicio cardiovascular.",
     tipo: "perro",
-    stock: "encargo",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Maciza Medinana",
@@ -188,7 +188,7 @@ const juguetesPerros = [
     beneficios:
       "Estimulación auditiva de alto nivel, ideal para juegos interactivos.",
     tipo: "perro",
-    stock: "encargo",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Encias",
@@ -202,7 +202,7 @@ const juguetesPerros = [
     tamaño: "7 cm (aprox.)",
     beneficios: "Ayuda a la salud dental, reduce el estrés.",
     tipo: "perro",
-    stock: "agotado",
+    stock: "disponible",
   },
   {
     nombre: "Paleta para Refrigerar",
@@ -238,7 +238,7 @@ const juguetesPerros = [
     beneficios:
       "Ideal para la limpieza dental y juegos interactivos de fuerza.",
     tipo: "perro",
-    stock: "encargo",
+    stock: "disponible",
   },
   {
     nombre: "Paquete de Pelotas por cinco",
@@ -252,7 +252,7 @@ const juguetesPerros = [
     tamaño: "Tamaño promedio de pelota de tenis",
     beneficios: "Versatilidad de juego y excelente visibilidad en exteriores.",
     tipo: "perro",
-    stock: "encargo",
+    stock: "disponible",
   },
 
   {
@@ -271,7 +271,7 @@ const juguetesPerros = [
     beneficios:
       "Estimulación auditiva que mantiene el interés de la mascota por más tiempo.",
     tipo: "perro",
-    stock: "encargo",
+    stock: "disponible",
   },
   {
     nombre: "Pelota Asteroide",
@@ -286,7 +286,7 @@ const juguetesPerros = [
     beneficios:
       "Masajea las encías durante el juego y promueve el ejercicio intenso.",
     tipo: "perro",
-    stock: "encargo",
+    stock: "disponible",
   },
   {
     nombre: "Muslo Macizo",
@@ -330,7 +330,7 @@ const juguetesPerros = [
     tamaño: "No especificado.",
     beneficios: "Estimulación sonora y física en un solo juguete.",
     tipo: "perro",
-    stock: "encargo",
+    stock: "disponible",
   },
   {
     nombre: "Mazorca Chillona",
@@ -393,7 +393,7 @@ const juguetesPerros = [
     beneficios:
       "Estimulación auditiva y física en un diseño llamativo; ideal para cachorros.",
     tipo: "perro",
-    stock: "encargo",
+    stock: "disponible",
   },
   {
     nombre: "Cuerda Pelota Pequeña",
@@ -449,7 +449,7 @@ const juguetesPerros = [
     tamaño: "12 cm aprox.",
     beneficios: "Entretenimiento prolongado gracias a su sonido atrayente.",
     tipo: "perro",
-    stock: "encargo",
+    stock: "disponible",
   },
   {
     nombre: "Dona Antisarro",
@@ -747,6 +747,8 @@ const accesoriosPerros = [
       rutaBasePerrosAcc + "Comedero_plegable_dog_01.jpg",
       rutaBasePerrosAcc + "Comedero_plegable_dog_02.jpg",
     ],
+    video:
+      "./videos_tienda/Videos_accesorios_perros/ComederoBebederoPlegable_video_acc_dog_01.mp4",
     descripcion:
       "Plato colapsable ideal para viajes, senderismo o paseos largos. Su diseño ultra delgado permite guardarlo en cualquier morral sin ocupar espacio.",
     material: "Silicona de grado alimenticio.",
@@ -821,6 +823,8 @@ const accesoriosPerros = [
     nombre: "Bebedero 4 en 1",
     precio: 50000,
     imagenes: [rutaBasePerrosAcc + "Bebedero_4_en_uno_dog_acc_01.jpg"],
+    video:
+      "./videos_tienda/Videos_accesorios_perros/BebederoCuatroEnUno_video_acc_dog_01.mp4",
     descripcion:
       "Accesorio de viaje multifuncional que integra botella de agua, comedero plegable, dispensador de bolsas y pala para desechos.",
     material: "Plástico libre de BPA.",
@@ -850,7 +854,7 @@ const accesoriosPerros = [
     precio: 22000,
     imagenes: [rutaBasePerrosAcc + "Correa_retractil_acc_dog_01.jpg"],
     video:
-      "./videos_tienda/Videos_accesorios_perros/Correa_retractil_negra_video_acc_dog.mp4",
+      "./videos_tienda/Videos_accesorios_perros/Correa_retractil_negra_video_acc_dog_02.mp4",
     descripcion:
       "Sistema de cinta extensible con bloqueo de seguridad. Ofrece libertad de movimiento controlada durante los paseos en ciudad o campo.",
     material: "Carcasa de plástico y cinta de nylon.",
@@ -1257,6 +1261,7 @@ const juguetesGatos = [
     nombre: "Catnip Puercoespin",
     precio: 10000,
     imagenes: [rutaBaseGatosJug + "Catnip_cuerpoespin_dosenuno_cat_jug_01.jpg"],
+    video: "./videos_tienda/Videos_juguetes_gatos/CatNipPuerEspin_02.mp4",
     descripcion:
       "Original dispensador con bola de catnip protegida. Sus relieves permiten que el gato se frote y masajee sus encías.",
     material: "Silicona suave y Catnip.",
@@ -1286,6 +1291,8 @@ const juguetesGatos = [
     precio: 12000,
     video: "./videos_tienda/Videos_juguetes_gatos/Catnip_queso_video_01.mp4",
     imagenes: [rutaBaseGatosJug + "queso_amarillo_jug_cat_01.jpg"],
+    video:
+      "./videos_tienda/Videos_juguetes_gatos/CatnipAguacateQuesoCosmo_01.mp4",
     descripcion:
       "Juguete adhesivo con diseño divertido de queso y ratón. Sus relieves y orificios permiten que el gato acceda al catnip mientras masajea su cara.",
     material: "Silicona suave no tóxica y Catnip premium.",
@@ -1352,6 +1359,23 @@ const juguetesGatos = [
  */
 const accesoriosGatos = [
   {
+    nombre: "Cepillo de Dientes * 4",
+    precio: 9000,
+    imagenes: [rutaBaseGatosAcc + "CepiloDientesCatAcc.jpg"],
+    video:
+      "./videos_tienda/Videos_accesorios_gatos/VideoCepillosDeDienteGatos.mp4",
+    descripcion:
+      "Cepillo de dientes diseñado para gatos con cerdas suaves y mango ergonómico. Facilita la limpieza dental diaria, ayudando a prevenir enfermedades bucales.",
+    material: "Plástico y cerdas de nylon.",
+    textura: "Suave.",
+    color: "Varios",
+    tamaño: "Estándar",
+    beneficios:
+      "Facilita la limpieza dental diaria y previene enfermedades bucales.",
+    tipo: "gato",
+    stock: "disponible",
+  },
+  {
     nombre: "Gimnasio Cosmo",
     precio: 300000,
     imagenes: [
@@ -1366,7 +1390,7 @@ const accesoriosGatos = [
     tamaño: "Diseño compacto para apartamentos.",
     beneficios: "Reduce el estrés y protege tus muebles.",
     tipo: "gato",
-    stock: "disponible",
+    stock: "encargo",
   },
   {
     nombre: "Comedero Alto",
@@ -1400,11 +1424,12 @@ const accesoriosGatos = [
     nombre: "Gimnasio Imalaya",
     precio: 300000,
     imagenes: [
-      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_01.jpeg",
-      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_02.jpeg",
-      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_03.jpeg",
-      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_04.jpeg",
-      rutaBaseGatosAcc + "Gimnasio_imalaya_acc_cat_05.jpeg",
+      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_01.jpg",
+      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_02.jpg",
+      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_03.jpg",
+      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_04.jpg",
+      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_06.jpg",
+      rutaBaseGatosAcc + "ModeloGimnasioImalayaAccCat_05.jpg",
     ],
     descripcion:
       "Centro de actividades de gran altura con múltiples niveles, dos cuevas de descanso y postes rascadores reforzados.",
@@ -1414,7 +1439,7 @@ const accesoriosGatos = [
     tamaño: "72 cm x 41 cm x 1.55 m",
     beneficios: "Fomenta la escalada y el ejercicio en gatos activos.",
     tipo: "gato",
-    stock: "disponible",
+    stock: "encargo",
   },
   {
     nombre: "Arenera Gris",
@@ -1471,6 +1496,23 @@ const accesoriosGatos = [
  */
 const productosDosEspeciesJug = [
   {
+    nombre: "Bola Giratoria con Luz y Pluma",
+    precio: 30000,
+    imagenes: [
+      rutaBaseGatosPerrosJug + "BolaGiratoriaConLuzyPluma_cat_dog_jug_01.jpg",
+    ],
+    video:
+      "./videos_tienda/Videos_jugetes_perros_y_Gatos/BolaGiratoriaConLuzYplumas_video_jug_cat_dog_01.mp4",
+    descripcion:
+      "Pelota interactiva que combina movimiento giratorio, luces LED y una pluma colgante. Diseñada para estimular el instinto de caza tanto en perros pequeños como en gatos, proporcionando horas de entretenimiento activo.",
+    material: "Plástico ABS resistente y plumas artificiales.",
+    textura: "Lisa.",
+    color: "Rosada con luces multicolor y pluma rosa.",
+    tamaño: "Aproximadamente 10 cm de diámetro.",
+    beneficios: "Estimulación mental y ejercicio físico autónomo.",
+    stock: "disponible",
+  },
+  {
     nombre: "Juguete Interactivo",
     precio: 22000,
     imagenes: [
@@ -1492,6 +1534,8 @@ const productosDosEspeciesJug = [
       rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat_y_dog_01.jpg",
       rutaBaseGatosPerrosJug + "Bola_electrica_jug_cat_y_dog_02.jpg",
     ],
+    video:
+      "./videos_tienda/Videos_jugetes_perros_y_Gatos/Bola_electrica_video_cat_jug_01.mp4",
     descripcion:
       "Pelota inteligente con rotación automática de 360 grados. Cambia de dirección al detectar obstáculos, manteniendo la atención de la mascota por más tiempo.",
     material: "Silicona suave y componentes electrónicos.",
@@ -1769,7 +1813,7 @@ const productosDosEspeciesAcc = [
       rutaBaseGatosPerrosAcc + "Cepillo_Vapor_acc_dog_y_cat_03.jpg",
     ],
     video:
-      "./videos_tienda/Videos_accesorios_perros_y_gatos/Cepillo_Vapor_video_01.mp4",
+      "./videos_tienda/Videos_accesorios_perros_y_gatos/CepilloVaporWanda_conMusica_02.mp4",
     descripcion:
       "Innovador cepillo 3 en 1 que utiliza vapor de agua para desinfectar, limpiar y peinar el pelaje de forma suave.",
     material: "Plástico y silicona.",
